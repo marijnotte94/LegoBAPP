@@ -1648,6 +1648,9 @@ containing a value of this type.
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020035;
         public static final int abc_textfield_search_material=0x7f020036;
         public static final int ic_launcher=0x7f020037;
+        public static final int logo_duplo=0x7f020038;
+        public static final int logo_lego=0x7f020039;
+        public static final int logo_share2pley=0x7f02003a;
     }
     public static final class id {
         public static final int action_bar=0x7f090031;
@@ -1663,7 +1666,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09002e;
         public static final int action_mode_bar_stub=0x7f09002d;
         public static final int action_mode_close_button=0x7f090020;
-        public static final int action_settings=0x7f09003f;
+        public static final int action_settings=0x7f090041;
         public static final int activity_chooser_view_content=0x7f090021;
         public static final int always=0x7f090014;
         public static final int beginning=0x7f09001b;
@@ -1678,6 +1681,7 @@ containing a value of this type.
         public static final int end=0x7f09001c;
         public static final int expand_activities_button=0x7f090022;
         public static final int expanded_menu=0x7f090028;
+        public static final int fragmentContainer=0x7f09003f;
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f090026;
@@ -1707,6 +1711,7 @@ containing a value of this type.
         public static final int showHome=0x7f090011;
         public static final int showTitle=0x7f090012;
         public static final int split_action_bar=0x7f090004;
+        public static final int start_button=0x7f090040;
         public static final int submit_area=0x7f09003c;
         public static final int tabMode=0x7f09000c;
         public static final int title=0x7f090027;
@@ -1768,7 +1773,8 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030014;
         public static final int abc_simple_dropdown_hint=0x7f030015;
         public static final int activity_start=0x7f030016;
-        public static final int support_simple_spinner_dropdown_item=0x7f030017;
+        public static final int fragment_start=0x7f030017;
+        public static final int support_simple_spinner_dropdown_item=0x7f030018;
     }
     public static final class menu {
         public static final int start=0x7f0c0000;
@@ -1833,6 +1839,10 @@ containing a value of this type.
         public static final int action_settings=0x7f0a0012;
         public static final int app_name=0x7f0a0010;
         public static final int hello_world=0x7f0a0011;
+        public static final int start_banner=0x7f0a0014;
+        /**  Strings for start fragment 
+         */
+        public static final int start_button=0x7f0a0013;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0b00cf;
@@ -2018,6 +2028,7 @@ containing a value of this type.
     
          */
         public static final int Base_Widget_AppCompat_Toolbar_Button_Navigation=0x7f0b0095;
+        public static final int LegoDuplo=0x7f0b00fa;
         public static final int Platform_AppCompat=0x7f0b00d5;
         public static final int Platform_AppCompat_Dialog=0x7f0b00d7;
         public static final int Platform_AppCompat_Light=0x7f0b00d6;

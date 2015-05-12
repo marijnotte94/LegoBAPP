@@ -4,5 +4,9 @@
     <string name="app_name">Share2PleyApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    <!-- Strings for start fragment -->
+    <string name="start_button">Start</string>
+    <string name="start_banner">LEGO&#174; sup&gt;3&lt;/sup&gt; HUREN TIJDENS UW VAKANTIE</string>
 
 </resources>
