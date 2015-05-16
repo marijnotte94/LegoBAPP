@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/fill_name"
+        android:textColor="#106097"
+        android:textSize="30sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/first_name"
+        android:textColor="#E8490F"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edit_first_name"
+        android:layout_width="200sp"
+        android:layout_height="30sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#D3D8E3"
+        android:inputType="text"
+        android:textColor="#106097" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:text="@string/last_name"
+        android:textColor="#E8490F"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edit_last_name"
+        android:layout_width="200sp"
+        android:layout_height="30sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#D3D8E3"
+        android:inputType="text"
+        android:textColor="#106097" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center|bottom"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_shape_menu"
+            android:text="@string/confirm_button"
+            android:textColor="#106097" />
+    </LinearLayout>
+
+</LinearLayout>
