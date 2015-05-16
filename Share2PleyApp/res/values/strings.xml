@@ -4,9 +4,20 @@
     <string name="app_name">Share2PleyApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    
+
     <!-- Strings for start fragment -->
     <string name="start_button">Start</string>
     <string name="start_banner">LEGO®  HUREN TIJDENS UW VAKANTIE</string>
+    <string name="lego_duplo">LEGO® Duplo</string>
+    <string name="share2pley">Share2Pley</string>
+    <string name="choose_set">Choose a Set</string>
+    <string name="menu">Menu</string>
+    <string name="other_apps">Other LEGO Apps</string>
+    <string name="about_us">About Us</string>
+    <string name="exit">Exit</string>
+    <string name="fill_name">Fill in your name here:</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="confirm_button">Confirm</string>
 
 </resources>
