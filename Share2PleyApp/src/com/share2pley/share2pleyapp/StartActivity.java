@@ -1,19 +1,32 @@
 package com.share2pley.share2pleyapp;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 
-public class StartActivity extends SingleFragmentActivity {
+public class StartActivity extends Activity {
+	Button mStartButton;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//Setup the GUI with the corresponding XML file
 		super.onCreate(savedInstanceState);
-	}
-
-	@Override
-	protected Fragment createFragment() {
-		return new StartFragment();
+		setContentView(R.layout.activity_start);
+		
+		/**
+		 * StartButton with new OnClickListener
+		 * Starts new NameActivity and finishes the StartActivity
+		 */
+		mStartButton = (Button)findViewById(R.id.start_button);
+		mStartButton.setOnClickListener(new View.OnClickListener() {	
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getBaseContext(), NameActivity.class);
+				startActivity(i);
+			}
+		});
 	}
 }
