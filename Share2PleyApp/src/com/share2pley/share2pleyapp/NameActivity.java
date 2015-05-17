@@ -13,7 +13,7 @@ public class NameActivity extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		//Setup the GUI with the corresponding XML file
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_name_fill);
+		setContentView(R.layout.activity_name_fill);
 
 		mNextButton = (Button)findViewById(R.id.confirm_button);
 		mNextButton.setOnClickListener(new View.OnClickListener() {

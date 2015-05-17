@@ -19,5 +19,10 @@
     <string name="first_name">First Name:</string>
     <string name="last_name">Last Name:</string>
     <string name="confirm_button">Confirm</string>
+    <string name="take_picture">Take a picture of your build LEGO model</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="build">Build</string>
 
 </resources>

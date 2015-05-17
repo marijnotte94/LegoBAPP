@@ -21,13 +21,13 @@
         android:text="@string/choose_set" />
 
     <Button
-        android:id="@+id/references"
+        android:id="@+id/references_button"
         style="@style/Menu_Button"
         android:layout_marginTop="10dp"
         android:text="@string/other_apps" />
 
     <Button
-        android:id="@+id/about_us"
+        android:id="@+id/about_us_button"
         style="@style/Menu_Button"
         android:layout_marginTop="10dp"
         android:text="@string/about_us" />
@@ -39,7 +39,7 @@
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/exit"
+            android:id="@+id/exit_button"
             style="@style/Menu_Button"
             android:layout_gravity="bottom|center"
             android:layout_marginTop="10dp"

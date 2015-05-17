@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        
+
         <!-- Start Activity of the Application which is the title Screen -->
         <activity
             android:name=".StartActivity"
@@ -24,15 +24,41 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!-- This is the Activity for filling in the name of the user -->
         <activity
             android:name=".NameActivity"
             android:label="NameActivity" >
         </activity>
+
         <!-- This is the Activity for the Menu -->
         <activity
             android:name=".MenuActivity"
             android:label="MenuActivity" >
+        </activity>
+
+        <!-- This is the Activity for choosing the set -->
+        <activity
+            android:name=".ChooseActivity"
+            android:label="ChooseActivity" >
+        </activity>
+
+        <!-- This is the Activity for the other Apps -->
+        <activity
+            android:name=".ReferenceActivity"
+            android:label="ReferenceActivity" >
+        </activity>
+
+        <!-- This is the Activity for the about us -->
+        <activity
+            android:name=".AboutUsActivity"
+            android:label="AboutUsActivity" >
+        </activity>
+
+        <!-- This is the Build Activity -->
+        <activity
+            android:name=".BuildActivity"
+            android:label="BuildActivity" >
         </activity>
     </application>
 
