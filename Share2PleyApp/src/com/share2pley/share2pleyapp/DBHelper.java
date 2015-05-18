@@ -25,7 +25,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(
 			"create table Persons " + 
-		"(Firsname text, Lastname text, cleared integer)"
+		"(id integer primary key, Firstname text, Lastname text, Cleared integer)"
 		);
 		
 	}
@@ -46,9 +46,9 @@ public class DBHelper extends SQLiteOpenHelper {
 		return true;
 	}
 	
-	public Cursor getData(String firstname, String lastname) {
+	public Cursor getData(int id) {
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor res = db.rawQuery("select * from Persons where Firstname =" + firstname + "AND Lastname = " + lastname, null);
+		Cursor res = db.rawQuery("select * from Persons where id ="+id+"" , null);
 		return res;
 	}
 	
@@ -58,17 +58,20 @@ public class DBHelper extends SQLiteOpenHelper {
 		return numRows;
 	}
 	
-	public boolean updateContent(String firstname, String lastname, int cleared) {
+	public boolean updateContent(Integer id, String firstname, String lastname, int cleared) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
 		contentValues.put("Firstname", firstname);
 		contentValues.put("Lastname", lastname);
 		contentValues.put("Cleared", cleared);
-		db.update("Persons", contentValues, "FirstName = ?", new String[] {firstname});
+		db.update("Persons", contentValues, "id = ?", new String[] {Integer.toString(id)});
 		return true;
 	}
 	
-	public Integer deletePerson(String firstname, String lastname) {
-		return Integer.decode("3");
+	public Integer deletePerson(Integer id) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		return db.delete("Persons",
+				"id = ?", 
+				new String[] {Integer.toString(id)});
 	}
 }
