@@ -2,6 +2,7 @@ package com.share2pley.share2pleyapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -28,9 +29,16 @@ public class NameActivity extends Activity{
 		});		
 	}
 	
+
 	public void insertIntoDataBase() {
 		SQLiteDatabase spDatabase = openOrCreateDatabase("Share2Pley",MODE_PRIVATE,null);
-		spDatabase.execSQL("INSERT INTO Person (Firstname, Lastname, Cleared) VALUES ('TEST', 'TEST', 'TEST') ");
+		Cursor resultSet = spDatabase.rawQuery("Select * FROM Person", null);
+		if(resultSet.getString(1)==null) {
+			spDatabase.execSQL("INSERT INTO Person (Firstname, Lastname, Cleared) VALUES ('TEST', 'TEST', 'TEST') ");
+		}
+		else {
+			spDatabase.execSQL("INSERT INTO Person (Firstname, Lastname, Cleared) VALUES ('TEST', 'TEST', 'TEST') ");
+		}
 	}
 
 }
