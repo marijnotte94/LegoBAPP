@@ -2,9 +2,10 @@ package com.share2pley.share2pleyapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 
 public class StartActivity extends Activity {
@@ -12,6 +13,9 @@ public class StartActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		setDatabase();
+//		spDatabase.close();
+		
 		//Setup the GUI with the corresponding XML file
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start);
@@ -28,5 +32,15 @@ public class StartActivity extends Activity {
 				startActivity(i);
 			}
 		});
+	}
+	
+	/**
+	 * This method sets the Database
+	 * If not exists it creates one Person table, with first name, last name and cleared values.
+	 */
+	private void setDatabase() {
+		SQLiteDatabase spDatabase = openOrCreateDatabase("Share2Pley",MODE_PRIVATE,null);
+		spDatabase.execSQL("CREATE TABLE IF NOT EXISTS Person(Firstname VARCHAR(15), Lastname VARCHAR(30), Cleared VARCHAR(6)) ");
+		spDatabase.close();
 	}
 }
