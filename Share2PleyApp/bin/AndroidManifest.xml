@@ -57,8 +57,8 @@
 
         <!-- This is the Build Activity -->
         <activity
-            android:name=".BuildActivity"
-            android:label="BuildActivity" >
+            android:name=".ClearActivity"
+            android:label="ClearActivity" >
         </activity>
     </application>
 

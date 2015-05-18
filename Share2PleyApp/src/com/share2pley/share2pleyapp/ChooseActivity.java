@@ -34,7 +34,7 @@ public class ChooseActivity extends Activity {
 	View.OnClickListener setListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			Intent i = new Intent(getBaseContext(), BuildActivity.class);
+			Intent i = new Intent(getBaseContext(), ClearActivity.class);
 			startActivity(i);
 		}
 	};
