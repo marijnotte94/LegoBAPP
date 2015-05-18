@@ -2,9 +2,10 @@ package com.share2pley.share2pleyapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 
 public class StartActivity extends Activity {
@@ -12,6 +13,7 @@ public class StartActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		
 		//Setup the GUI with the corresponding XML file
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start);
