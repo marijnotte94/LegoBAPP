@@ -15,19 +15,19 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/choose_set_button"
+        android:id="@+id/button_menu_choose_set"
         style="@style/Menu_Button"
         android:layout_marginTop="10dp"
         android:text="@string/choose_set" />
 
     <Button
-        android:id="@+id/references_button"
+        android:id="@+id/button_menu_references"
         style="@style/Menu_Button"
         android:layout_marginTop="10dp"
         android:text="@string/other_apps" />
 
     <Button
-        android:id="@+id/about_us_button"
+        android:id="@+id/button_menu_about_us"
         style="@style/Menu_Button"
         android:layout_marginTop="10dp"
         android:text="@string/about_us" />
@@ -39,7 +39,7 @@
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/exit_button"
+            android:id="@+id/button_menu_exit"
             style="@style/Menu_Button"
             android:layout_gravity="bottom|center"
             android:layout_marginTop="10dp"

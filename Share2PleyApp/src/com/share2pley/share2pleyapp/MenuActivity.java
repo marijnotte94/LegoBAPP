@@ -21,7 +21,7 @@ public class MenuActivity extends Activity {
 		/**
 		 * find the choose set button in the menu and start its activity
 		 */
-		mChooseSetButton = (Button)findViewById(R.id.choose_set_button);
+		mChooseSetButton = (Button)findViewById(R.id.button_menu_choose_set);
 		mChooseSetButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -32,7 +32,7 @@ public class MenuActivity extends Activity {
 		/**
 		 * find the about button in the menu and start its activity
 		 */
-		mAboutButton = (Button)findViewById(R.id.about_us_button);
+		mAboutButton = (Button)findViewById(R.id.button_menu_about_us);
 		mAboutButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -44,7 +44,7 @@ public class MenuActivity extends Activity {
 		/**
 		 * find the reference button in the menu and start its activity
 		 */
-		mReferencesButton = (Button)findViewById(R.id.references_button);
+		mReferencesButton = (Button)findViewById(R.id.button_menu_references);
 		mReferencesButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -56,7 +56,7 @@ public class MenuActivity extends Activity {
 		/**
 		 * find the exit button and close application
 		 */
-		mExitButton = (Button)findViewById(R.id.exit_button);
+		mExitButton = (Button)findViewById(R.id.button_menu_exit);
 		mExitButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override

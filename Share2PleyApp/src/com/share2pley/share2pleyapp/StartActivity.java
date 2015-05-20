@@ -22,7 +22,7 @@ public class StartActivity extends Activity {
 		 * StartButton with new OnClickListener
 		 * Starts new NameActivity and finishes the StartActivity
 		 */
-		mStartButton = (Button)findViewById(R.id.start_button);
+		mStartButton = (Button)findViewById(R.id.button_start);
 		mStartButton.setOnClickListener(new View.OnClickListener() {	
 			@Override
 			public void onClick(View v) {

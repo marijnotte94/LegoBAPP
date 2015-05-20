@@ -23,8 +23,8 @@ public class NameActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_name_fill);
 
-		mFirstName = (EditText)findViewById(R.id.edit_first_name);
-		mLastName = (EditText)findViewById(R.id.edit_last_name);
+		mFirstName = (EditText)findViewById(R.id.edit_fillname_first_name);
+		mLastName = (EditText)findViewById(R.id.edit_fillname_last_name);
 
 		getBaseContext().deleteDatabase("Persons");
 		spDb = new DBHelper(this);
@@ -49,7 +49,7 @@ public class NameActivity extends Activity{
 			Log.i("NameActivity", e.toString());
 		}
 
-		mConfirmButton = (Button)findViewById(R.id.confirm_button);
+		mConfirmButton = (Button)findViewById(R.id.button_fillname_confirm);
 		mConfirmButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
