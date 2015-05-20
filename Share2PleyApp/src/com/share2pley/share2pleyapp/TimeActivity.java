@@ -11,7 +11,9 @@ public class TimeActivity extends Activity{
 
 	private TextView text;
 	private Button button;
-	int time  = 0;
+	private long time;
+	private long minutes;
+	private long seconds;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -20,10 +22,10 @@ public class TimeActivity extends Activity{
 		Intent i = getIntent();
 		Bundle b = i.getExtras();
 		if(b != null){
-			time = b.getInt("TIME");
+			time = b.getLong("TIME");
 		}
 		text = (TextView)findViewById(R.id.timeView);
-		text.setText(time + "");
+		text.setText(timeToString(time));
 
 		button = (Button)findViewById(R.id.goToPhoto);
 		button.setOnClickListener(new View.OnClickListener(){
@@ -33,6 +35,18 @@ public class TimeActivity extends Activity{
 				startActivity(i);
 			}
 		});
+	}
+	
+	public String timeToString(long time){
+		if(time < 60){
+			minutes = 0;
+		}
+		else{
+			minutes = time / 60;
+		}
+		seconds = time % 60;
+		return "Your time is " + minutes + ":" + seconds;
+		
 	}
 }
 

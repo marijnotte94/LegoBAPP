@@ -20,10 +20,10 @@ public class ClearActivity extends Activity {
 	private Instruction current;
 	private int index;
 	private int s = 0;
-	long startTime;
-	long endTime;
-	long clearTime = 0;
-
+	private long startTime;
+	private long endTime;
+	private long clearTime = 0;
+	private String timeString;
 
 
 
@@ -65,7 +65,7 @@ public class ClearActivity extends Activity {
 				//If no more instructions go to timeactivity
 				else{
 					endTime = System.nanoTime();
-					clearTime = endTime - startTime;	
+					clearTime = (endTime - startTime);
 					Intent i = new Intent(getBaseContext(), TimeActivity.class);
 					i.putExtra("TIME", clearTime);
 					startActivity(i);
@@ -97,6 +97,8 @@ public class ClearActivity extends Activity {
 		message.setBackgroundColor(current.setBackGround(current.getColor()));
 		message.setText(current.toString());
 	}
+	
+	
 
 
 }
