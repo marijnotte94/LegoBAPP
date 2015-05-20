@@ -1409,6 +1409,7 @@ containing a value of this type.
         public static final int bright_foreground_material_light=0x7f060015;
         public static final int button_material_dark=0x7f060010;
         public static final int button_material_light=0x7f060011;
+        public static final int button_menu_textcolor=0x7f06003a;
         public static final int dim_foreground_disabled_material_dark=0x7f06001c;
         public static final int dim_foreground_disabled_material_light=0x7f06001d;
         public static final int dim_foreground_material_dark=0x7f06001a;
@@ -1647,11 +1648,13 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020034;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020035;
         public static final int abc_textfield_search_material=0x7f020036;
-        public static final int button_shape_menu=0x7f020037;
-        public static final int ic_launcher=0x7f020038;
-        public static final int logo_duplo_lego=0x7f020039;
-        public static final int logo_share2pley=0x7f02003a;
-        public static final int rocket_racer=0x7f02003b;
+        public static final int button_menu_effect=0x7f020037;
+        public static final int button_shape_menu=0x7f020038;
+        public static final int button_shape_menu_pressed=0x7f020039;
+        public static final int ic_launcher=0x7f02003a;
+        public static final int logo_duplo_lego=0x7f02003b;
+        public static final int logo_share2pley=0x7f02003c;
+        public static final int rocket_racer=0x7f02003d;
     }
     public static final class id {
         public static final int about_us_button=0x7f090046;

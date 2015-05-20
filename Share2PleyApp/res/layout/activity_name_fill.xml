@@ -64,9 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/button_shape_menu"
+            android:background="@drawable/button_menu_effect"
             android:text="@string/confirm_button"
-            android:textColor="#106097" />
+            android:textColor="@color/button_menu_textcolor" />
     </LinearLayout>
 
 </LinearLayout>

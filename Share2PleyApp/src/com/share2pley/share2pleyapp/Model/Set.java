@@ -16,7 +16,7 @@ public class Set {
 	private int gold;
 	private int grey;
 	private int black;
-	
+
 	private ArrayList<Instruction> instructions;
 	private final int max = 10;
 
@@ -32,7 +32,7 @@ public class Set {
 		other = mOther;
 
 		instructions = new ArrayList<Instruction>();
-		
+
 		instructions.add(new Instruction("White", mWhite));
 		instructions.add(new Instruction("Gold", mGold));
 		instructions.add(new Instruction("Red", mRed));
@@ -61,7 +61,7 @@ public class Set {
 		return false;
 	}
 
-	public ArrayList<Instruction> split(ArrayList<Instruction> ins){
+	public ArrayList<Instruction> split(ArrayList<Instruction> ins) {
 		ArrayList<Instruction> newins = new ArrayList<Instruction>();
 		Random rand = new Random();
 		for(Instruction instruction : ins){
@@ -82,7 +82,7 @@ public class Set {
 		return newins;
 	}
 
-	public void randomize(ArrayList<Instruction> ins){
+	public void randomize(ArrayList<Instruction> ins) {
 		Instruction other = ins.remove(ins.size()-1);
 		Collections.shuffle(ins);	
 		ins.add(other);
