@@ -1,6 +1,8 @@
 
 package com.share2pley.share2pleyapp;
 
+
+
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
@@ -26,7 +28,7 @@ public class NameActivity extends Activity{
 
 		mFirstName = (EditText)findViewById(R.id.edit_first_name);
 		mLastName = (EditText)findViewById(R.id.edit_last_name);
-		
+
 		getBaseContext().deleteDatabase("Persons");
 		spDb = new DBHelper(this);
 		try {
@@ -50,19 +52,19 @@ public class NameActivity extends Activity{
 			Log.i("NameActivity", e.toString());
 		}
 
-			mConfirmButton = (Button)findViewById(R.id.confirm_button);
-			mConfirmButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					if(isAlreadyFilled) {
-						spDb.updateContent(1, mFirstName.getText().toString(), mLastName.getText().toString(), 0);
-					}
-					spDb.insertPerson(mFirstName.getText().toString(), mLastName.getText().toString(), 0);
-					Intent i = new Intent(getBaseContext(), MenuActivity.class);
-					startActivity(i);
-					finish();
+		mConfirmButton = (Button)findViewById(R.id.confirm_button);
+		mConfirmButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(isAlreadyFilled) {
+					spDb.updateContent(1, mFirstName.getText().toString(), mLastName.getText().toString(), 0);
 				}
-			});		
-		}
-
+				spDb.insertPerson(mFirstName.getText().toString(), mLastName.getText().toString(), 0);
+				Intent i = new Intent(getBaseContext(), MenuActivity.class);
+				startActivity(i);
+				finish();
+			}
+		});		
 	}
+
+}
