@@ -41,9 +41,9 @@ public class Set {
 		instructions.add(new Instruction("Grey", mGrey));
 		instructions.add(new Instruction("Blue", mBlue));
 		instructions.add(new Instruction("Black", mBlack));
-		instructions.add(new Instruction("Other", mOther));
 		instructions = split(instructions);
 		randomize(instructions);
+		instructions.add(new Instruction("Other", mOther));
 	}
 
 	public Instruction getInstruction(int index){
@@ -59,6 +59,13 @@ public class Set {
 			return true;
 		}
 		return false;
+	}
+	
+	public boolean hasPrevious(int ins){
+		if(ins == 0){
+			return false;
+		}
+		return true;
 	}
 
 	public ArrayList<Instruction> split(ArrayList<Instruction> ins){
@@ -83,9 +90,8 @@ public class Set {
 	}
 
 	public void randomize(ArrayList<Instruction> ins){
-		Instruction other = ins.remove(ins.size()-1);
 		Collections.shuffle(ins);	
-		ins.add(other);
+	
 
 	}
 }

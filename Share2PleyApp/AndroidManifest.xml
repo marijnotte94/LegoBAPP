@@ -60,6 +60,18 @@
             android:name=".ClearActivity"
             android:label="ClearActivity" >
         </activity>
+        
+        <!-- This is the Activitity to take a photo -->
+        <activity
+            android:name=".TakePhotoActivity"
+            android:label="TakePhotoActivity" >
+        </activity>
+        
+        <!--  Activity where time displayed -->
+        <activity
+            android:name=".TimeActivity"
+            android:label="TimeActivity" >
+        </activity>
     </application>
 
 </manifest>

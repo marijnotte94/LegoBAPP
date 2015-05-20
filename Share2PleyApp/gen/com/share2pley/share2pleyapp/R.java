@@ -1922,7 +1922,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09003d;
         public static final int action_mode_bar_stub=0x7f09003c;
         public static final int action_mode_close_button=0x7f090025;
-        public static final int action_settings=0x7f09005e;
+        public static final int action_settings=0x7f090060;
         public static final int activity_choose_set_tableLayout=0x7f09004f;
         public static final int activity_chooser_view_content=0x7f090026;
         public static final int alertTitle=0x7f090030;
@@ -1951,6 +1951,7 @@ containing a value of this type.
         public static final int exit_button=0x7f090057;
         public static final int expand_activities_button=0x7f090027;
         public static final int expanded_menu=0x7f090037;
+        public static final int goToPhoto=0x7f09005f;
         public static final int home=0x7f090000;
         public static final int homeAsUp=0x7f09000e;
         public static final int icon=0x7f09002b;
@@ -1996,6 +1997,7 @@ containing a value of this type.
         public static final int tabMode=0x7f09000c;
         public static final int take_picutre=0x7f09005d;
         public static final int textSpacerNoButtons=0x7f090033;
+        public static final int timeView=0x7f09005e;
         public static final int title=0x7f09002c;
         public static final int title_template=0x7f09002f;
         public static final int topPanel=0x7f09002e;
@@ -2067,11 +2069,12 @@ containing a value of this type.
         public static final int activity_references=0x7f03001e;
         public static final int activity_start=0x7f03001f;
         public static final int activity_take_photo=0x7f030020;
-        public static final int button_row=0x7f030021;
-        public static final int select_dialog_item_material=0x7f030022;
-        public static final int select_dialog_multichoice_material=0x7f030023;
-        public static final int select_dialog_singlechoice_material=0x7f030024;
-        public static final int support_simple_spinner_dropdown_item=0x7f030025;
+        public static final int activity_time=0x7f030021;
+        public static final int button_row=0x7f030022;
+        public static final int select_dialog_item_material=0x7f030023;
+        public static final int select_dialog_multichoice_material=0x7f030024;
+        public static final int select_dialog_singlechoice_material=0x7f030025;
+        public static final int support_simple_spinner_dropdown_item=0x7f030026;
     }
     public static final class menu {
         public static final int start=0x7f0c0000;
