@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/clear_screen"
+    android:id="@+id/layout_clear_screen"
     android:background="#FFFFFF"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,7 +16,7 @@
         android:textSize="30sp" />
     
     <TextView
-        android:id="@+id/message_instruction"
+        android:id="@+id/textview_message_instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -40,7 +40,7 @@
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/build_previous"
+            android:id="@+id/button_build_previous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
@@ -52,7 +52,7 @@
             android:textColor="@color/button_menu_textcolor" />
 
         <Button
-            android:id="@+id/build_next"
+            android:id="@+id/button_build_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"

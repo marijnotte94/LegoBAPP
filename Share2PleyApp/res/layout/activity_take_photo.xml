@@ -25,7 +25,7 @@
         android:layout_marginTop="10dp" />
 
     <Button
-        android:id="@+id/take_picutre"
+        android:id="@+id/button_takePhoto_takePicture"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -41,7 +41,7 @@
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/confirm_button"
+            android:id="@+id/button_takePhoto_confirm"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"

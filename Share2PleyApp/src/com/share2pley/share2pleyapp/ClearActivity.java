@@ -20,40 +20,45 @@ public class ClearActivity extends Activity {
 	private Instruction current;
 	private int index;
 	private int s = 0;
+	
 	private long startTime;
 	private long endTime;
 	private long clearTime = 0;
 	private String timeString;
-
-
-
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_clear);
 
-		
+
 		//find set belonging to button pressed
 		Intent i = getIntent();
 		Bundle b = i.getExtras();
 		if(b != null){
 			s = b.getInt("SETNO");
 		}
-		
+
+	
 		set = SetLab.get().getSet(s);
 		current = set.getInstruction(0);
 		index = 0;
 
 		//display first instruction
-		message = (TextView)findViewById(R.id.message_instruction);
+		message = (TextView)findViewById(R.id.textview_message_instruction);
 		message.setTextColor(current.setForeGround(current.getColor()));
 		message.setText(current.toString());
 		
 		startTime = System.nanoTime();
 		
 		
-		nextButton = (Button)findViewById(R.id.build_next);
+		nextButton = (Button)findViewById(R.id.button_build_next);
+
+		message = (TextView)findViewById(R.id.textview_message_instruction);
+		message.setTextColor(current.setForeGround(current.getColor()));
+		message.setText(current.toString());
+
+		nextButton = (Button)findViewById(R.id.button_build_next);
 		nextButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				//If there is next instruction, display instruction
@@ -73,7 +78,7 @@ public class ClearActivity extends Activity {
 			}
 		});
 		
-		previousButton = (Button)findViewById(R.id.build_previous);
+		previousButton = (Button)findViewById(R.id.button_build_previous);
 		previousButton.setOnClickListener(new View.OnClickListener(){
 			//find previous instruction
 			public void onClick(View v){
@@ -89,6 +94,7 @@ public class ClearActivity extends Activity {
 			}
 		});
 	}
+
 	
 	//find instruction if previous or next button is pushed
 	public void update(int i){
@@ -98,7 +104,7 @@ public class ClearActivity extends Activity {
 		message.setText(current.toString());
 	}
 	
-	
+
 
 
 }
