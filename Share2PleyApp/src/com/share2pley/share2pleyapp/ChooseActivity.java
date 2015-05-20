@@ -9,21 +9,27 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 
 public class ChooseActivity extends Activity {
+	
+	int number = 1;
+	int no;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose_set);
 
 		TableLayout tableLayout = (TableLayout)findViewById(R.id.activity_choose_set_tableLayout);
-		int number = 1;
+		
 		for (int i = 0; i < tableLayout.getChildCount(); i++) {
 			TableRow row = (TableRow)tableLayout.getChildAt(i);
 			for (int j = 0; j < row.getChildCount(); j++) {
 				Button button = (Button)row.getChildAt(j);
 				button.setText("" + number);
+				button.setTag(Integer.valueOf(number));
 				button.setOnClickListener(setListener);
 				number++;
 			}
+			
 		}
 	}
 
@@ -35,7 +41,10 @@ public class ChooseActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			Intent i = new Intent(getBaseContext(), ClearActivity.class);
+			int tag = (Integer) v.getTag();
+			i.putExtra("SETNO", tag-1);
 			startActivity(i);
+			
 		}
 	};
 }
