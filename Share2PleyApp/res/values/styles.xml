@@ -25,8 +25,8 @@
     <style name="Menu_Button">
         <item name="android:layout_width">200dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@drawable/button_shape_menu</item>
-        <item name="android:textColor">#106097</item>
+        <item name="android:background">@drawable/button_menu_effect</item>
+        <item name="android:textColor">@color/button_menu_textcolor</item>
         <item name="android:layout_gravity">center</item>
     </style>
 

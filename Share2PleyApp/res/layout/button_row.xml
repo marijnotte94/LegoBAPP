@@ -6,12 +6,12 @@
 
     <Button
         android:layout_gravity="center"
-        android:background="@drawable/button_shape_menu"
-        android:textColor="#106097" />
+        android:background="@drawable/button_menu_effect"
+        android:textColor="@color/button_menu_textcolor" />
 
     <Button
         android:layout_gravity="center"
-        android:background="@drawable/button_shape_menu"
-        android:textColor="#106097" />
+        android:background="@drawable/button_menu_effect"
+        android:textColor="@color/button_menu_textcolor" />
 
 </TableRow>

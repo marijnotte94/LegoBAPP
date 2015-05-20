@@ -1,4 +1,3 @@
-
 package com.share2pley.share2pleyapp;
 
 import android.app.Activity;
@@ -14,11 +13,11 @@ public class StartActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		
+
 		//Setup the GUI with the corresponding XML file
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start);
-		
+
 		/**
 		 * StartButton with new OnClickListener
 		 * Starts new NameActivity and finishes the StartActivity
@@ -33,4 +32,5 @@ public class StartActivity extends Activity {
 		});
 	}
 }
+
 
