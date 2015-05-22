@@ -1,8 +1,14 @@
 package com.share2pley.share2pleyapp;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +20,8 @@ public class TakePhotoActivity extends Activity{
 	public static final String EXTRA_PHOTO_FILENAME = "com.share2pley.share2pleyapp.photo_filename";
 	private ImageView mImageView;
 	private Button mTakePhotoButton;
+	private Button mConfirmButton;
+	private Bitmap attachment;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,41 @@ public class TakePhotoActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				open();
+				attachment = mImageView.getDrawingCache();
+				if (mImageView.getDrawingCache() != null) {
+					try {
+						FileOutputStream fos = openFileOutput(EXTRA_PHOTO_FILENAME, Context.MODE_WORLD_READABLE);
+						attachment.compress(Bitmap.CompressFormat.JPEG, 0, fos);
+						fos.close();
+					} catch (FileNotFoundException e) {
+						Log.e(TAG, "Error file not found ", e);
+					} catch (IOException e) {
+						Log.e(TAG, "Error in closing Stream ", e);
+					}
+				}
+			}
+		});
+
+		mConfirmButton = (Button)findViewById(R.id.button_takePhoto_confirm);
+		mConfirmButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// set up message subject and message
+				String subject = "Cleared LEGO set";
+				String message = "Test 123 test";
+				Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "share2pleytest@gmail.com", null));
+				intent.setType("message/rfc822");
+				intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+				intent.putExtra(Intent.EXTRA_TEXT, message);
+				intent.putExtra(Intent.EXTRA_STREAM, EXTRA_PHOTO_FILENAME);
+				// start mail activity
+				try {
+					startActivity(Intent.createChooser(intent, "Send mail..."));
+				} catch (android.content.ActivityNotFoundException ex) {
+					Log.e(TAG, "There are no email clients installed", ex);
+				}
+				finish();
 			}
 		});
 	}
