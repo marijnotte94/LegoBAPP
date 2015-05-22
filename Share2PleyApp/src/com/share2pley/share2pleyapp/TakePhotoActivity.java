@@ -56,7 +56,7 @@ public class TakePhotoActivity extends Activity{
 				// set up message subject and message
 				String subject = "Cleared LEGO set";
 				String message = "Test 123 test";
-				Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "share2pleytest@gmail.com", null));
+				Intent intent = new Intent(Intent.ACTION_SEND, Uri.fromParts("mailto", "share2pleytest@gmail.com", null));
 				intent.setType("message/rfc822");
 				intent.putExtra(Intent.EXTRA_SUBJECT, subject);
 				intent.putExtra(Intent.EXTRA_TEXT, message);
