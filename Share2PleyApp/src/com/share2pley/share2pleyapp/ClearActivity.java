@@ -4,7 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.share2pley.share2pleyapp.Model.Instruction;
@@ -18,11 +22,15 @@ public class ClearActivity extends Activity {
 	private Button nextButton;
 	private Button previousButton;
 	private Instruction current;
+	private ImageView brick;
+	private ImageView box;
+	
+	private long xCurrentPos, yCurrentPos, xNewPos, yNewPos;
+	
 	private int index;
 	private int s = 0;
 	
-	private long startTime;
-	private long endTime;
+	private long startTime, endTime;
 	private long clearTime = 0;
 	private String timeString;
 
@@ -46,17 +54,12 @@ public class ClearActivity extends Activity {
 
 		//display first instruction
 		message = (TextView)findViewById(R.id.textview_message_instruction);
-		message.setTextColor(current.setForeGround(current.getColor()));
-		message.setText(current.toString());
-		
 		startTime = System.nanoTime();
 		
 		
 		nextButton = (Button)findViewById(R.id.button_build_next);
 
-		message = (TextView)findViewById(R.id.textview_message_instruction);
-		message.setTextColor(current.setForeGround(current.getColor()));
-		message.setText(current.toString());
+		update(index);
 
 		nextButton = (Button)findViewById(R.id.button_build_next);
 		nextButton.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +95,7 @@ public class ClearActivity extends Activity {
 					startActivity(i);
 				}
 			}
-		});
+		});		
 	}
 
 	
@@ -100,8 +103,29 @@ public class ClearActivity extends Activity {
 	public void update(int i){
 		current = set.getInstruction(index);
 		message.setTextColor(current.setForeGround(current.getColor()));
-		message.setBackgroundColor(current.setBackGround(current.getColor()));
+		if(current.getColor().equals("Yellow") || current.getColor().equals("White")){
+			message.setShadowLayer(2, 0, 0, 0xff000000);
+		}
+		else{
+			message.setShadowLayer(0, 0, 0, 0xff000000);
+		}
 		message.setText(current.toString());
+		animateBrick();
+	}
+	
+	public void animateBrick(){	
+		brick = (ImageView)findViewById(R.id.imageview_brick);
+		xCurrentPos = brick.getLeft();
+		yCurrentPos = brick.getTop();
+		
+		box = (ImageView)findViewById(R.id.imageview_box);
+		xNewPos = box.getLeft();
+		yNewPos = box.getBottom() - box.getTop();
+		
+		Animation anim = new TranslateAnimation(xCurrentPos, xNewPos, yCurrentPos, yNewPos);
+		anim.setDuration(4000);
+		anim.setRepeatCount(Animation.INFINITE);
+		brick.startAnimation(anim);
 	}
 	
 

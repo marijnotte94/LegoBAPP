@@ -29,24 +29,21 @@ public class TimeActivity extends Activity{
 
 		button = (Button)findViewById(R.id.goToPhoto);
 		button.setOnClickListener(new View.OnClickListener(){
-			
+
 			public void onClick(View v){ 
 				Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
 				startActivity(i);
 			}
 		});
 	}
-	
+
 	public String timeToString(long time){
-		if(time < 60){
-			minutes = 0;
-		}
-		else{
-			minutes = time / 60;
-		}
+		time = time / 1000000000;
+		minutes = time / 60;
 		seconds = time % 60;
-		return "Your time is " + minutes + ":" + seconds;
 		
+		return "Your time is " + minutes + ":" + seconds;
+
 	}
 }
 
