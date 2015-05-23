@@ -10,6 +10,7 @@
         android:id="@+id/imageview_brick"
       	android:layout_width="match_parent"
         android:layout_height="30sp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="270dp"
         android:src="@drawable/lego_brick" />
 	
@@ -17,7 +18,7 @@
         android:id="@+id/imageview_box"
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="200dp"
         android:src="@drawable/box"/>
    
@@ -28,7 +29,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="nog in te vullen tekstwolk"
         android:textColor="#106097"
@@ -41,44 +42,36 @@
         android:src="@drawable/rocket_racer" />
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_gravity="center|bottom"
-        android:layout_weight="1"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200sp"
-            android:layout_marginLeft="65dp"
-            android:layout_marginRight="65dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/rocket_racer" />
-
-        <Button
-            android:id="@+id/button_build_previous"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|bottom"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_menu_effect"
-            android:text="@string/previous"
-            android:textColor="@color/button_menu_textcolor" />
-
-        <Button
-            android:id="@+id/button_build_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|bottom"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_menu_effect"
-            android:text="@string/next"
-            android:textColor="@color/button_menu_textcolor" />
-    </LinearLayout>
+         <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="0dp"
+         android:layout_gravity="center|bottom"
+         android:layout_weight="1" >
+ 
+         <Button
+             android:id="@+id/button_build_previous"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center|bottom"
+             android:layout_marginBottom="10dp"
+             android:layout_marginRight="10dp"
+             android:layout_marginTop="10dp"
+             android:background="@drawable/button_menu_effect"
+             android:text="@string/previous"
+             android:textColor="@color/button_menu_textcolor" />
+ 
+         <Button
+             android:id="@+id/button_build_next"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center|bottom"
+             android:layout_marginBottom="10dp"
+             android:layout_marginLeft="10dp"
+             android:layout_marginTop="10dp"
+             android:background="@drawable/button_menu_effect"
+             android:text="@string/next"
+             android:textColor="@color/button_menu_textcolor" />
+     </LinearLayout>
+ 
 
 </LinearLayout>
