@@ -1926,7 +1926,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09003d;
         public static final int action_mode_bar_stub=0x7f09003c;
         public static final int action_mode_close_button=0x7f090025;
-        public static final int action_settings=0x7f090063;
+        public static final int action_settings=0x7f090066;
         public static final int activity_choose_set_tableLayout=0x7f09004f;
         public static final int activity_chooser_view_content=0x7f090026;
         public static final int alertTitle=0x7f090030;
@@ -1946,6 +1946,9 @@ containing a value of this type.
         public static final int checkbox=0x7f090038;
         public static final int collapseActionView=0x7f09001a;
         public static final int contentPanel=0x7f090031;
+        public static final int crime_camera_progressContainer=0x7f090065;
+        public static final int crime_camera_surfaceView=0x7f090063;
+        public static final int crime_camera_takePictureButton=0x7f090064;
         public static final int custom=0x7f090035;
         public static final int customPanel=0x7f090034;
         public static final int decor_content_parent=0x7f09003e;
@@ -1965,6 +1968,7 @@ containing a value of this type.
         public static final int icon=0x7f09002b;
         public static final int ifRoom=0x7f09001b;
         public static final int image=0x7f090028;
+        public static final int imageView_take_photo=0x7f09005e;
         public static final int imageview_box=0x7f090052;
         public static final int imageview_brick=0x7f090051;
         public static final int layout_clear_screen=0x7f090050;
@@ -2001,7 +2005,6 @@ containing a value of this type.
         public static final int src_in=0x7f090017;
         public static final int src_over=0x7f090018;
         public static final int submit_area=0x7f09004b;
-        public static final int surfaceView_take_photo=0x7f09005e;
         public static final int tabMode=0x7f09000c;
         public static final int textSpacerNoButtons=0x7f090033;
         public static final int textview_message_instruction=0x7f090053;
@@ -2079,10 +2082,11 @@ containing a value of this type.
         public static final int activity_take_photo=0x7f030020;
         public static final int activity_time=0x7f030021;
         public static final int button_row=0x7f030022;
-        public static final int select_dialog_item_material=0x7f030023;
-        public static final int select_dialog_multichoice_material=0x7f030024;
-        public static final int select_dialog_singlechoice_material=0x7f030025;
-        public static final int support_simple_spinner_dropdown_item=0x7f030026;
+        public static final int fragment_crime_camera=0x7f030023;
+        public static final int select_dialog_item_material=0x7f030024;
+        public static final int select_dialog_multichoice_material=0x7f030025;
+        public static final int select_dialog_singlechoice_material=0x7f030026;
+        public static final int support_simple_spinner_dropdown_item=0x7f030027;
     }
     public static final class menu {
         public static final int start=0x7f0c0000;

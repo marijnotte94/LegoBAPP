@@ -4,6 +4,10 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
@@ -17,7 +21,8 @@
         <!-- Start Activity of the Application which is the title Screen -->
         <activity
             android:name=".StartActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,49 +33,57 @@
         <!-- This is the Activity for filling in the name of the user -->
         <activity
             android:name=".NameActivity"
-            android:label="NameActivity" >
+            android:label="NameActivity"
+            android:screenOrientation="portrait" >
         </activity>
 
         <!-- This is the Activity for the Menu -->
         <activity
             android:name=".MenuActivity"
-            android:label="MenuActivity" >
+            android:label="MenuActivity"
+            android:screenOrientation="portrait" >
         </activity>
 
         <!-- This is the Activity for choosing the set -->
         <activity
             android:name=".ChooseActivity"
-            android:label="ChooseActivity" >
+            android:label="ChooseActivity"
+            android:screenOrientation="portrait" >
         </activity>
 
         <!-- This is the Activity for the other Apps -->
         <activity
             android:name=".ReferenceActivity"
-            android:label="ReferenceActivity" >
+            android:label="ReferenceActivity"
+            android:screenOrientation="portrait" >
         </activity>
 
         <!-- This is the Activity for the about us -->
         <activity
             android:name=".AboutUsActivity"
-            android:label="AboutUsActivity" >
+            android:label="AboutUsActivity"
+            android:screenOrientation="portrait" >
         </activity>
 
         <!-- This is the Build Activity -->
         <activity
             android:name=".ClearActivity"
-            android:label="ClearActivity" >
+            android:label="ClearActivity"
+            android:screenOrientation="portrait" >
         </activity>
-        
+
         <!-- This is the Activitity to take a photo -->
         <activity
             android:name=".TakePhotoActivity"
-            android:label="TakePhotoActivity" >
+            android:label="TakePhotoActivity"
+            android:screenOrientation="landscape" >
         </activity>
-        
-        <!--  Activity where time displayed -->
+
+        <!-- Activity where time displayed -->
         <activity
             android:name=".TimeActivity"
-            android:label="TimeActivity" >
+            android:label="TimeActivity"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
