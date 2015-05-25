@@ -5,40 +5,56 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/build"
-        android:textColor="#106097"
-        android:textSize="30sp" />
-
+	
+    
+    
     <TextView
         android:id="@+id/textview_message_instruction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
         android:text="nog in te vullen tekstwolk"
         android:textColor="#106097"
-        android:textSize="30sp" />
+        android:textSize="20sp"
+        android:background ="@drawable/textballoon" />
+
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginRight="190dp"
+        android:src="@drawable/rocket_racer" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_marginRight = "100dp">
+
+        <ImageView
+            android:id="@+id/imageview_brick"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+     
+            android:src="@drawable/lego_brick"/>
+		
+        <ImageView
+            android:id="@+id/imageview_bag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="80dp"
+            android:src="@drawable/box"
+			/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center|bottom"
-        android:layout_weight="1"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200sp"
-            android:layout_marginLeft="65dp"
-            android:layout_marginRight="65dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/rocket_racer" />
+        android:layout_weight="1" >
 
         <Button
             android:id="@+id/button_build_previous"
@@ -47,7 +63,6 @@
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/button_menu_effect"
             android:text="@string/previous"
             android:textColor="@color/button_menu_textcolor" />
@@ -59,7 +74,6 @@
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/button_menu_effect"
             android:text="@string/next"
             android:textColor="@color/button_menu_textcolor" />

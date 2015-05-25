@@ -59,8 +59,13 @@ public class TakePhotoActivity extends Activity{
 				String subject = "Cleared LEGO set";
 				String message = "Test 123 test";
 				Intent intent = new Intent(Intent.ACTION_SEND);
+<<<<<<< HEAD
 				intent.setType(HTTP.PLAIN_TEXT_TYPE);
 				intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"share2pleytest@gmail.com"});
+=======
+				intent.setType("message/rfc8222");
+				intent.setType("text/plain");
+>>>>>>> 4fffcdb1233c4704e24faebadd0d2e94f60bb6bb
 				intent.putExtra(Intent.EXTRA_SUBJECT, subject);
 				intent.putExtra(Intent.EXTRA_TEXT, message);
 				intent.putExtra(Intent.EXTRA_STREAM, EXTRA_PHOTO_FILENAME);

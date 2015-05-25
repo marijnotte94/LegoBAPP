@@ -14,7 +14,7 @@ public class Instruction {
 	}
 	
 	public String toString(){
-		return "Ruim " + amount + " " + color + " stukjes op";
+		return "Put " + amount + " " + color +"\n"+ " pieces in the bag";
 	}
 	
 	public int getAmount(){
