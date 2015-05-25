@@ -1911,6 +1911,7 @@ containing a value of this type.
         public static final int logo_duplo_lego=0x7f020041;
         public static final int logo_share2pley=0x7f020042;
         public static final int rocket_racer=0x7f020043;
+        public static final int textballoon=0x7f020044;
     }
     public static final class id {
         public static final int action_bar=0x7f090040;
@@ -1969,8 +1970,8 @@ containing a value of this type.
         public static final int ifRoom=0x7f09001b;
         public static final int image=0x7f090028;
         public static final int imageView_take_photo=0x7f09005e;
-        public static final int imageview_box=0x7f090052;
-        public static final int imageview_brick=0x7f090051;
+        public static final int imageview_bag=0x7f090053;
+        public static final int imageview_brick=0x7f090052;
         public static final int layout_clear_screen=0x7f090050;
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f09002a;
@@ -2007,7 +2008,7 @@ containing a value of this type.
         public static final int submit_area=0x7f09004b;
         public static final int tabMode=0x7f09000c;
         public static final int textSpacerNoButtons=0x7f090033;
-        public static final int textview_message_instruction=0x7f090053;
+        public static final int textview_message_instruction=0x7f090051;
         public static final int timeView=0x7f090061;
         public static final int title=0x7f09002c;
         public static final int title_template=0x7f09002f;

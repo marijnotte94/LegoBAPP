@@ -23,7 +23,7 @@ public class ClearActivity extends Activity {
 	private Button previousButton;
 	private Instruction current;
 	private ImageView brick;
-	private ImageView box;
+	private ImageView bag;
 	
 	private long xCurrentPos, yCurrentPos, xNewPos, yNewPos;
 	
@@ -115,16 +115,16 @@ public class ClearActivity extends Activity {
 	
 	public void animateBrick(){	
 		brick = (ImageView)findViewById(R.id.imageview_brick);
-		xCurrentPos = brick.getLeft();
-		yCurrentPos = brick.getTop();
+		bag = (ImageView)findViewById(R.id.imageview_bag);
+				
+		xNewPos = bag.getLeft() - brick.getLeft();
+		yNewPos = bag.getTop() - brick.getTop();
 		
-		box = (ImageView)findViewById(R.id.imageview_box);
-		xNewPos = box.getLeft();
-		yNewPos = box.getBottom() - box.getTop();
-		
-		Animation anim = new TranslateAnimation(xCurrentPos, xNewPos, yCurrentPos, yNewPos);
-		anim.setDuration(4000);
+		Animation anim = new TranslateAnimation(0, xNewPos, 0, yNewPos);
+		anim.setDuration(1500);
 		anim.setRepeatCount(Animation.INFINITE);
+		brick.bringToFront();
+	
 		brick.startAnimation(anim);
 	}
 	
