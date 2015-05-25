@@ -26,7 +26,7 @@ public class TakePhotoActivity extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_take_photo);
+		setContentView(R.layout.);
 		mImageView = (ImageView)findViewById(R.id.imageView_take_photo);
 		mTakePhotoButton = (Button)findViewById(R.id.button_takePhoto_takePicture);
 		mTakePhotoButton.setOnClickListener(new View.OnClickListener(){
