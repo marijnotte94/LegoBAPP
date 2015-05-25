@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.apache.http.protocol.HTTP;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -56,9 +58,9 @@ public class TakePhotoActivity extends Activity{
 				// set up message subject and message
 				String subject = "Cleared LEGO set";
 				String message = "Test 123 test";
-				Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "share2pleytest@gmail.com", null));
-				intent.setType("message/rfc8222");
-				intent.setType("text/plain");
+				Intent intent = new Intent(Intent.ACTION_SEND);
+				intent.setType(HTTP.PLAIN_TEXT_TYPE);
+				intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"share2pleytest@gmail.com"});
 				intent.putExtra(Intent.EXTRA_SUBJECT, subject);
 				intent.putExtra(Intent.EXTRA_TEXT, message);
 				intent.putExtra(Intent.EXTRA_STREAM, EXTRA_PHOTO_FILENAME);
