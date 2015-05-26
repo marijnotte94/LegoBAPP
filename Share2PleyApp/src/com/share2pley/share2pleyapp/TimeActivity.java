@@ -1,5 +1,7 @@
 package com.share2pley.share2pleyapp;
 
+import java.text.DecimalFormat;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,11 +40,16 @@ public class TimeActivity extends Activity{
 	}
 
 	public String timeToString(long time){
+		DecimalFormat formatter = new DecimalFormat("00");
+		
 		time = time / 1000000000;
 		minutes = time / 60;
 		seconds = time % 60;
 		
-		return "Your time is " + minutes + ":" + seconds;
+		String secondsFormat = formatter.format(seconds);
+		String minutesFormat = formatter.format(minutes);
+		
+		return "Your time is " + minutesFormat + ":" + secondsFormat;
 
 	}
 }
