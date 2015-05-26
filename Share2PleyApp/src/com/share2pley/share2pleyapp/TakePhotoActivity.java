@@ -1,5 +1,6 @@
 package com.share2pley.share2pleyapp;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -54,21 +55,27 @@ public class TakePhotoActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				// set up message subject and message
-				String subject = "Cleared LEGO set";
-				String message = "Test 123 test";
-				Intent intent = new Intent(Intent.ACTION_SEND);
-				intent.setType("message/rfc8222");
-				intent.setType("text/plain");
-				intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-				intent.putExtra(Intent.EXTRA_TEXT, message);
-				intent.putExtra(Intent.EXTRA_STREAM, EXTRA_PHOTO_FILENAME);
-				// start mail activity
+//				String subject = "Cleared LEGO set";
+//				Uri address = Uri.parse("mailto:share2pleytest@gmail.com");
+//				String message = "Test 123 test";
+//				Intent intent = new Intent(Intent.ACTION_SENDTO, address);
+				// ACTION_SENDTO filters for email apps (discard bluetooth and others)
+				Uri file = Uri.fromFile(new File(EXTRA_PHOTO_FILENAME+".JPEG"));
+				String uriText =
+						"mailto:share2pleytest@gmail.com" + 
+								"?subject=" + Uri.encode("Cleared LEGO set") + 
+								"&body=" + Uri.encode("Test 123 Test") + "&attachment=" + file;
+
+				Uri uri = Uri.parse(uriText);
+
+				Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
+				sendIntent.setData(uri);
 				try {
-					startActivity(Intent.createChooser(intent, "Send mail..."));
+					startActivity(Intent.createChooser(sendIntent, "Send email"));
 				} catch (android.content.ActivityNotFoundException ex) {
 					Log.e(TAG, "There are no email clients installed", ex);
-				}
-				finish();
+				} 
+				finish();								
 			}
 		});
 	}
