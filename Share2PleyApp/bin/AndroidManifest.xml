@@ -3,11 +3,15 @@
     package="com.share2pley.share2pleyapp"
     android:versionCode="1"
     android:versionName="1.0" >
+    
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+    android:targetPackage="com.share2pley.share2pleyapp"
+    android:label="your tests label" />
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
+    
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
@@ -17,6 +21,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
+        <uses-library android:name="android.test.runner" />
 
         <!-- Start Activity of the Application which is the title Screen -->
         <activity

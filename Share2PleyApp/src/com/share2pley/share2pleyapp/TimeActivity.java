@@ -17,6 +17,7 @@ public class TimeActivity extends Activity{
 	private long minutes;
 	private long seconds;
 
+	//display time after instructions finished
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,7 +39,7 @@ public class TimeActivity extends Activity{
 			}
 		});
 	}
-
+	//convert time to mm:ss
 	public String timeToString(long time){
 		DecimalFormat formatter = new DecimalFormat("00");
 		

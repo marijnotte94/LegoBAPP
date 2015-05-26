@@ -13,6 +13,7 @@ public class ChooseActivity extends Activity {
 	int number = 1;
 	int no;
 	
+	//Adding buttons to layout
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class ChooseActivity extends Activity {
 
 
 	/**
-	 * Additional method to use for all 16 buttons.
+	 * Additional method to use for all 16 buttons. Start instructions after button of setno pressed.
 	 */
 	View.OnClickListener setListener = new View.OnClickListener() {
 		@Override

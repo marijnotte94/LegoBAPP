@@ -2,6 +2,8 @@ package com.share2pley.share2pleyapp.Model;
 
 import java.util.ArrayList;
 
+
+//Lab with all sets
 public class SetLab {
 
 	private static Set set1; 

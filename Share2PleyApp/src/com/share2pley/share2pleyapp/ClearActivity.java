@@ -27,7 +27,7 @@ public class ClearActivity extends Activity {
 	
 	private long xCurrentPos, yCurrentPos, xNewPos, yNewPos;
 	
-	private int index;
+	private int index = 0;
 	private int s = 0;
 	
 	private long startTime, endTime;
@@ -47,20 +47,14 @@ public class ClearActivity extends Activity {
 			s = b.getInt("SETNO");
 		}
 
-	
+		
 		set = SetLab.get().getSet(s);
-		current = set.getInstruction(0);
-		index = 0;
-
-		//display first instruction
 		message = (TextView)findViewById(R.id.textview_message_instruction);
 		startTime = System.nanoTime();
 		
+		update(index);	
 		
-		nextButton = (Button)findViewById(R.id.button_build_next);
-
-		update(index);
-
+		//next button pressed for new instruction
 		nextButton = (Button)findViewById(R.id.button_build_next);
 		nextButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -99,7 +93,7 @@ public class ClearActivity extends Activity {
 	}
 
 	
-	//find instruction if previous or next button is pushed
+	//find instruction if previous or next button is pushed + layout of letters so that its readable
 	public void update(int i){
 		current = set.getInstruction(index);
 		message.setTextColor(current.setForeGround(current.getColor()));
@@ -113,6 +107,7 @@ public class ClearActivity extends Activity {
 		animateBrick();
 	}
 	
+	//animation of brick into bag
 	public void animateBrick(){	
 		brick = (ImageView)findViewById(R.id.imageview_brick);
 		bag = (ImageView)findViewById(R.id.imageview_bag);

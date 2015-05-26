@@ -12,7 +12,10 @@ public class MenuActivity extends Activity {
 	Button mOtherAppsButton;
 	Button mReferencesButton;
 	Button mExitButton;
-
+	
+	
+	//menu with 4 buttons: choose set, other apps, about us and exit
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,6 +62,8 @@ public class MenuActivity extends Activity {
 		mExitButton = (Button)findViewById(R.id.button_menu_exit);
 		mExitButton.setOnClickListener(new View.OnClickListener() {
 			
+			
+			//exit app
 			@Override
 			public void onClick(View v) {
 				finish();

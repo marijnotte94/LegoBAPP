@@ -53,21 +53,23 @@ public class Set {
 	public ArrayList<Instruction> getIntructions(){
 		return instructions;
 	}
-
+	
+	//check if there is a next instruction
 	public boolean hasNext(int ins){
 		if(ins <= instructions.size()-2){
 			return true;
 		}
 		return false;
 	}
-	
+	//check if there is a previous instruction
 	public boolean hasPrevious(int ins){
 		if(ins == 0){
 			return false;
 		}
 		return true;
 	}
-
+	
+	//split instruction of one color into multiple instructions of max 10 pieces per instruction (amount is random)
 	public ArrayList<Instruction> split(ArrayList<Instruction> ins) {
 		ArrayList<Instruction> newins = new ArrayList<Instruction>();
 		Random rand = new Random();
@@ -88,7 +90,9 @@ public class Set {
 		}
 		return newins;
 	}
-
+	
+	
+	//shuffle all instructions 
 	public void randomize(ArrayList<Instruction> ins){
 		Instruction other = ins.remove(ins.size()-1);
 		Collections.shuffle(ins);	

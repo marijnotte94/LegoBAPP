@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+
+//activity to homescren. 
 public class StartActivity extends Activity {
 	Button mStartButton;
 
