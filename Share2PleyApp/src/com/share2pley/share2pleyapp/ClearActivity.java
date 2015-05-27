@@ -5,15 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.share2pley.share2pleyapp.Model.Instruction;
 import com.share2pley.share2pleyapp.Model.Set;
 import com.share2pley.share2pleyapp.Model.SetLab;
+import com.share2pley.share2pleyapp.Model.Brick;
 
 public class ClearActivity extends Activity {
 
@@ -21,15 +20,15 @@ public class ClearActivity extends Activity {
 	private TextView message;
 	private Button nextButton;
 	private Button previousButton;
-	private Instruction current;
+	private Brick current;
 	private ImageView brick;
 	private ImageView bag;
-	
+
 	private long xCurrentPos, yCurrentPos, xNewPos, yNewPos;
-	
+
 	private int index = 0;
 	private int s = 0;
-	
+
 	private long startTime, endTime;
 	private long clearTime = 0;
 	private String timeString;
@@ -47,13 +46,13 @@ public class ClearActivity extends Activity {
 			s = b.getInt("SETNO");
 		}
 
-		
+
 		set = SetLab.get().getSet(s);
 		message = (TextView)findViewById(R.id.textview_message_instruction);
 		startTime = System.nanoTime();
-		
+
 		update(index);	
-		
+
 		//next button pressed for new instruction
 		nextButton = (Button)findViewById(R.id.button_build_next);
 		nextButton.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +61,7 @@ public class ClearActivity extends Activity {
 				if(set.hasNext(index)){
 					index ++;
 					update(index);
-					
+
 				}
 				//If no more instructions go to timeactivity
 				else{
@@ -74,7 +73,7 @@ public class ClearActivity extends Activity {
 				}
 			}
 		});
-		
+
 		previousButton = (Button)findViewById(R.id.button_build_previous);
 		previousButton.setOnClickListener(new View.OnClickListener(){
 			//find previous instruction
@@ -92,37 +91,36 @@ public class ClearActivity extends Activity {
 		});		
 	}
 
-	
+
 	//find instruction if previous or next button is pushed + layout of letters so that its readable
 	public void update(int i){
-		current = set.getInstruction(index);
-		message.setTextColor(current.setForeGround(current.getColor()));
-		if(current.getColor().equals("Yellow") || current.getColor().equals("White")){
-			message.setShadowLayer(2, 0, 0, 0xff000000);
-		}
-		else{
-			message.setShadowLayer(0, 0, 0, 0xff000000);
-		}
+		ImageView brick = (ImageView)findViewById(R.id.imageview_brick);
+
+		current = set.getStone(index);
+		brick.setImageResource(current.getSource());
+
 		message.setText(current.toString());
+
+
 		animateBrick();
 	}
-	
+
 	//animation of brick into bag
 	public void animateBrick(){	
 		brick = (ImageView)findViewById(R.id.imageview_brick);
 		bag = (ImageView)findViewById(R.id.imageview_bag);
-				
+
 		xNewPos = bag.getLeft() - brick.getLeft();
 		yNewPos = bag.getTop() - brick.getTop();
-		
+
 		Animation anim = new TranslateAnimation(0, xNewPos, 0, yNewPos);
 		anim.setDuration(1500);
 		anim.setRepeatCount(Animation.INFINITE);
 		brick.bringToFront();
-	
+
 		brick.startAnimation(anim);
 	}
-	
+
 
 
 

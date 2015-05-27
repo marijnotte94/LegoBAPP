@@ -4,59 +4,24 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import android.util.Log;
+
+import com.share2pley.share2pleyapp.Model.Brick;
+
 public class Set {
 
-	private int red;
-	private int green;
-	private int blue;
-	private int pink;
-	private int yellow;
-	private int other;
-	private int white;
-	private int gold;
-	private int grey;
-	private int black;
+	private String name;
 
-	private ArrayList<Instruction> instructions;
-	private final int max = 10;
+	private ArrayList<Brick> bricks;
 
-	public Set(int mWhite, int mGold, int mRed, int mYellow, int mGreen, int mGrey, int mBlack, int mBlue, int mOther){
-		white = mWhite;
-		gold = mGold;
-		red = mRed;
-		yellow = mYellow;
-		green = mGreen;
-		grey = mGrey;
-		black = mBlack;
-		blue = mBlue;
-		other = mOther;
-
-		instructions = new ArrayList<Instruction>();
-
-		instructions.add(new Instruction("White", mWhite));
-		instructions.add(new Instruction("Gold", mGold));
-		instructions.add(new Instruction("Red", mRed));
-		instructions.add(new Instruction("Yellow", mYellow));
-		instructions.add(new Instruction("Green", mGreen));
-		instructions.add(new Instruction("Grey", mGrey));
-		instructions.add(new Instruction("Blue", mBlue));
-		instructions.add(new Instruction("Black", mBlack));
-		instructions = split(instructions);
-		randomize(instructions);
-		instructions.add(new Instruction("Other", mOther));
-	}
-
-	public Instruction getInstruction(int index){
-		return instructions.get(index);
-	}
-
-	public ArrayList<Instruction> getIntructions(){
-		return instructions;
+	public Set(String mName){
+		mName = name;
+		bricks = new ArrayList<Brick>();
 	}
 	
 	//check if there is a next instruction
 	public boolean hasNext(int ins){
-		if(ins <= instructions.size()-2){
+		if(ins <= bricks.size()-2){
 			return true;
 		}
 		return false;
@@ -69,6 +34,15 @@ public class Set {
 		return true;
 	}
 	
+	public void addStone(int source, int amount){
+		bricks.add(new Brick(source, amount));
+	}
+
+	public Brick getStone(int index) {
+		return bricks.get(index);
+	}
+	
+	/*
 	//split instruction of one color into multiple instructions of max 10 pieces per instruction (amount is random)
 	public ArrayList<Instruction> split(ArrayList<Instruction> ins) {
 		ArrayList<Instruction> newins = new ArrayList<Instruction>();
@@ -91,12 +65,12 @@ public class Set {
 		return newins;
 	}
 	
-	
 	//shuffle all instructions 
 	public void randomize(ArrayList<Instruction> ins){
 		Instruction other = ins.remove(ins.size()-1);
-		Collections.shuffle(ins);	
-	
-
+		Collections.shuffle(ins);
 	}
+	
+	
+	*/
 }
