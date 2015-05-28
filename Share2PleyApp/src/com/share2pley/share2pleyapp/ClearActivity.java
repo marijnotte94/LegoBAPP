@@ -1,9 +1,9 @@
 package com.share2pley.share2pleyapp;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.share2pley.share2pleyapp.Model.Brick;
 import com.share2pley.share2pleyapp.Model.Set;
-import com.share2pley.share2pleyapp.Model.SetLab;
 
 public class ClearActivity extends Activity {
 	
@@ -35,12 +34,12 @@ public class ClearActivity extends Activity {
 	private long startTime, endTime;
 	private long clearTime = 0;
 	private String timeString;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_clear);
-
 
 		//find set belonging to button pressed
 		Intent i = getIntent();
@@ -48,9 +47,9 @@ public class ClearActivity extends Activity {
 		if(b != null){
 			s = b.getString("SETNO");
 		}
+		set = new Set(s,getBaseContext());
+		//set.addBrick(0x7f020074,2);
 		
-		
-		addBricks(s);
 		
 		message = (TextView)findViewById(R.id.textview_message_instruction);
 		startTime = System.nanoTime();
@@ -101,7 +100,7 @@ public class ClearActivity extends Activity {
 		ImageView brick = (ImageView)findViewById(R.id.imageview_brick);
 		current = set.getStone(index);
 		brick.setImageResource(current.getSource());
-		message.setText(s);
+		message.setText(current.getAmount() + "x");
 		animateBrick();
 	}
 
@@ -121,25 +120,7 @@ public class ClearActivity extends Activity {
 		brick.startAnimation(anim);
 	}
 	
-	public Set addBricks(String s){
-		set = new Set(s);
-		final R.drawable drawableResources = new R.drawable();
-		final Class<R.drawable> c = R.drawable.class;
-		final Field[] fields = c.getDeclaredFields();
-
-		for (int j = 0, max = fields.length; j < max; j++) {
-			final int resourceId;
-			try {
-		        resourceId = fields[j].getInt(drawableResources);
-		        if(getResources().getResourceName(resourceId).contains(s)){
-		        	set.addStone(resourceId, 1);
-		        }
-		    } catch (Exception e) {
-		        continue;
-		    }
-		}
-		return set;
-	}
+	
 
 
 

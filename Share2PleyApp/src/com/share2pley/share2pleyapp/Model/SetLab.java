@@ -3,15 +3,14 @@ package com.share2pley.share2pleyapp.Model;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-import android.app.Activity;
-import android.util.Log;
+import android.content.Context;
 
 import com.share2pley.share2pleyapp.R;
 
-
-
 //Lab with all sets
 public class SetLab {
+	
+	private Context context;
 
 	private static Set set1; 
 	private static Set set2; 
@@ -37,7 +36,7 @@ public class SetLab {
 	private SetLab(){
 		sets =  new ArrayList<Set>();
 
-		set1 = new Set("Speelhuis");
+		set1 = new Set("Speelhuis",context);
 
 		final R.drawable drawableResources = new R.drawable();
 		final Class<R.drawable> c = R.drawable.class;
@@ -51,9 +50,9 @@ public class SetLab {
 		        continue;
 		    }
 			
-			if(resourceId >=0x7f020044 && resourceId <= 0x7f020077){
-				set1.addStone(resourceId,1);
-			}
+			//if(resourceId >=0x7f020044 && resourceId <= 0x7f020077){
+				//set1.addStone(resourceId,1);
+			//}
 
 		}
 

@@ -1,24 +1,27 @@
 package com.share2pley.share2pleyapp.Model;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 
+import android.content.Context;
 import android.util.Log;
 
-import com.share2pley.share2pleyapp.Model.Brick;
+import com.share2pley.share2pleyapp.R;
 
 public class Set {
 
 	private String name;
 
 	private ArrayList<Brick> bricks;
+	private Context mContext;
 
-	public Set(String mName){
-		mName = name;
+	public Set(String mName, Context context){
+		name = mName;
+		mContext = context;
 		bricks = new ArrayList<Brick>();
+		addBricks();
 	}
-	
+
 	//check if there is a next instruction
 	public boolean hasNext(int ins){
 		if(ins <= bricks.size()-2){
@@ -33,15 +36,39 @@ public class Set {
 		}
 		return true;
 	}
-	
-	public void addStone(int source, int amount){
-		bricks.add(new Brick(source, amount));
+
+	public void addBrick(int source, int amount){
+		bricks.add(new Brick(source, amount, mContext));
 	}
 
 	public Brick getStone(int index) {
 		return bricks.get(index);
 	}
-	
+
+	public void addBricks(){
+		final R.drawable drawableResources = new R.drawable();
+		final Class<R.drawable> c = R.drawable.class;
+		final Field[] fields = c.getDeclaredFields();
+
+		for (int j = 0, max = fields.length; j < max; j++) {
+			final int resourceId;
+			try {
+				resourceId = fields[j].getInt(drawableResources);
+				String resourceName = mContext.getResources().getString(resourceId);
+				//Log.d(resourceName, resourceName);
+				if(resourceName.contains(name)){
+					
+					int amount = Character.getNumericValue(resourceName.charAt(resourceName.length()-5));	 
+					Log.d("trlala",amount+"");
+					addBrick(resourceId, amount);
+
+				}
+			} catch (Exception e) {
+				continue;
+			}
+		}
+	}
+
 	/*
 	//split instruction of one color into multiple instructions of max 10 pieces per instruction (amount is random)
 	public ArrayList<Instruction> split(ArrayList<Instruction> ins) {
@@ -64,13 +91,13 @@ public class Set {
 		}
 		return newins;
 	}
-	
+
 	//shuffle all instructions 
 	public void randomize(ArrayList<Instruction> ins){
 		Instruction other = ins.remove(ins.size()-1);
 		Collections.shuffle(ins);
 	}
-	
-	
-	*/
+
+
+	 */
 }
