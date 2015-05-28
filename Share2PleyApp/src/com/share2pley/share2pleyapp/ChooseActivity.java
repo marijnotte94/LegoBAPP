@@ -12,6 +12,7 @@ public class ChooseActivity extends Activity {
 	
 	int number = 1;
 	int no;
+	String name;
 	
 	//Adding buttons to layout
 	@Override
@@ -43,7 +44,12 @@ public class ChooseActivity extends Activity {
 		public void onClick(View v) {
 			Intent i = new Intent(getBaseContext(), ClearActivity.class);
 			int tag = (Integer) v.getTag();
-			i.putExtra("SETNO", tag-1);
+			switch (tag){
+			case 1: name = "speelhuis"; break;
+			default: name = "hetgrotebos"; break;
+			}
+			
+			i.putExtra("SETNO", name);
 			startActivity(i);
 			
 		}

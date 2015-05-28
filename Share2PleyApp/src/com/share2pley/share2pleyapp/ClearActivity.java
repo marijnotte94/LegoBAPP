@@ -1,5 +1,8 @@
 package com.share2pley.share2pleyapp;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +13,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.share2pley.share2pleyapp.Model.Brick;
 import com.share2pley.share2pleyapp.Model.Set;
 import com.share2pley.share2pleyapp.Model.SetLab;
-import com.share2pley.share2pleyapp.Model.Brick;
 
 public class ClearActivity extends Activity {
-
+	
 	private Set set;
 	private TextView message;
 	private Button nextButton;
@@ -24,10 +27,10 @@ public class ClearActivity extends Activity {
 	private ImageView brick;
 	private ImageView bag;
 
-	private long xCurrentPos, yCurrentPos, xNewPos, yNewPos;
+	private long xNewPos, yNewPos;
 
 	private int index = 0;
-	private int s = 0;
+	private String s;
 
 	private long startTime, endTime;
 	private long clearTime = 0;
@@ -43,11 +46,12 @@ public class ClearActivity extends Activity {
 		Intent i = getIntent();
 		Bundle b = i.getExtras();
 		if(b != null){
-			s = b.getInt("SETNO");
+			s = b.getString("SETNO");
 		}
-
-
-		set = SetLab.get().getSet(s);
+		
+		
+		addBricks(s);
+		
 		message = (TextView)findViewById(R.id.textview_message_instruction);
 		startTime = System.nanoTime();
 
@@ -95,13 +99,9 @@ public class ClearActivity extends Activity {
 	//find instruction if previous or next button is pushed + layout of letters so that its readable
 	public void update(int i){
 		ImageView brick = (ImageView)findViewById(R.id.imageview_brick);
-
 		current = set.getStone(index);
 		brick.setImageResource(current.getSource());
-
-		message.setText(current.toString());
-
-
+		message.setText(s);
 		animateBrick();
 	}
 
@@ -119,6 +119,26 @@ public class ClearActivity extends Activity {
 		brick.bringToFront();
 
 		brick.startAnimation(anim);
+	}
+	
+	public Set addBricks(String s){
+		set = new Set(s);
+		final R.drawable drawableResources = new R.drawable();
+		final Class<R.drawable> c = R.drawable.class;
+		final Field[] fields = c.getDeclaredFields();
+
+		for (int j = 0, max = fields.length; j < max; j++) {
+			final int resourceId;
+			try {
+		        resourceId = fields[j].getInt(drawableResources);
+		        if(getResources().getResourceName(resourceId).contains(s)){
+		        	set.addStone(resourceId, 1);
+		        }
+		    } catch (Exception e) {
+		        continue;
+		    }
+		}
+		return set;
 	}
 
 
