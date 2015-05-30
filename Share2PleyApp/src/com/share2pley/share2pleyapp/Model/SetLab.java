@@ -1,53 +1,62 @@
 package com.share2pley.share2pleyapp.Model;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
+import android.content.Context;
+
+import com.share2pley.share2pleyapp.R;
 
 //Lab with all sets
 public class SetLab {
 
-	private Set set1; 
-	private Set set2; 
-	private Set set3;
-	private Set set4;
-	private Set set5;
-	private Set set6;
-	private Set set7;
-	private Set set8;
-	private Set set9;
-	private Set set10;
-	private Set set11;
-	private Set set12;
-	private Set set13;
-	private Set set14;
-	private Set set15;
-	private Set set16;
-	
-	private ArrayList<Set> sets;
+	private Context context;
+
+	private static Set set1; 
+	private static Set set2; 
+	private static Set set3;
+	private static Set set4;
+	private static Set set5;
+	private static Set set6;
+	private static Set set7;
+	private static Set set8;
+	private static Set set9;
+	private static Set set10;
+	private static Set set11;
+	private static Set set12;
+	private static Set set13;
+	private static Set set14;
+	private static Set set15;
+	private static Set set16;
+
+	private static ArrayList<Set> sets;
 	private static SetLab sSetLab;
-	
-	
+
+
 	private SetLab(){
 		sets =  new ArrayList<Set>();
-		
-		set1 = new Set(4,4,65,33,33,11,12,12,12);
-		set2 = new Set(4,4,65,33,33,11,12,12,12);
-		set3 = new Set(4,4,65,33,33,11,12,12,12);
-		set4 = new Set(4,4,65,33,33,11,12,12,12);
-		set5 = new Set(4,4,65,33,33,11,12,12,12);
-		set6 = new Set(4,4,65,33,33,11,12,12,12);
-		set7 = new Set(4,4,65,33,33,11,12,12,12);
-		set8 = new Set(4,4,65,33,33,11,12,12,12);
-		set9 = new Set(4,4,65,33,33,11,12,12,12);
-		set10 = new Set(4,4,65,33,33,11,12,12,12);
-		set11 = new Set(4,4,65,33,33,11,12,12,12);
-		set12 = new Set(4,4,65,33,33,11,12,12,12);
-		set13 = new Set(4,4,65,33,33,11,12,12,12);
-		set14 = new Set(4,4,65,33,33,11,12,12,12);
-		set15 = new Set(4,4,65,33,33,11,12,12,12);
-		//correct, dont change!
-		set16 = new Set(6,19,13,9,19,171,204,48,4);
-		
+
+		set1 = new Set("Speelhuis",context);
+
+		final R.drawable drawableResources = new R.drawable();
+		final Class<R.drawable> c = R.drawable.class;
+		final Field[] fields = c.getDeclaredFields();
+
+		for (int i = 0, max = fields.length; i < max; i++) {
+			final int resourceId;
+			try {
+				resourceId = fields[i].getInt(drawableResources);
+			} catch (Exception e) {
+				continue;
+			}
+
+			//if(resourceId >=0x7f020044 && resourceId <= 0x7f020077){
+			//set1.addStone(resourceId,1);
+			//}
+
+		}
+
+
 		sets.add(set1);
 		sets.add(set2);
 		sets.add(set3);
@@ -72,13 +81,15 @@ public class SetLab {
 		}
 		return sSetLab;
 	}
-	
-	public Set getSet(int index){
+
+	public static Set getSet(int index){
 		return sets.get(index); 
 	}
-	
-	public ArrayList<Set> getSetList() {
-		return sets;
+
+	public static int getAmount(){
+		return sets.size();
 	}
+
+
 
 }

@@ -26,7 +26,7 @@ public class MenuActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
-		mSets = SetLab.get().getSetList();
+		//mSets = SetLab.get().getSetList();
 
 		/**
 		 * find the choose set button in the menu and start its activity

@@ -35,7 +35,7 @@ public class SetPagerActivity extends FragmentActivity {
 		mViewPager = (ViewPager)findViewById(R.id.pager);
 		mPagerAdapter = new SetPagerAdapter(getSupportFragmentManager());
 		mViewPager.setAdapter(mPagerAdapter);
-		mSets = SetLab.get().getSetList();
+		//mSets = SetLab.get().getSetList();
 
 		FragmentManager fm = getSupportFragmentManager();
 	}

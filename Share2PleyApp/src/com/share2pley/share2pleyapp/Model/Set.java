@@ -1,65 +1,31 @@
 package com.share2pley.share2pleyapp.Model;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 import java.util.UUID;
+
+import android.content.Context;
+import android.util.Log;
+
+import com.share2pley.share2pleyapp.R;
 
 public class Set {
 	private UUID mId;
+	public String mName;
 
-	private int red;
-	private int green;
-	private int blue;
-	private int pink;
-	private int yellow;
-	private int other;
-	private int white;
-	private int gold;
-	private int grey;
-	private int black;
+	private ArrayList<Brick> bricks;
+	private Context mContext;
 
-	private ArrayList<Instruction> instructions;
-	private final int max = 10;
-
-	public Set(int mWhite, int mGold, int mRed, int mYellow, int mGreen, int mGrey, int mBlack, int mBlue, int mOther){
-		mId = UUID.randomUUID();
-		white = mWhite;
-		gold = mGold;
-		red = mRed;
-		yellow = mYellow;
-		green = mGreen;
-		grey = mGrey;
-		black = mBlack;
-		blue = mBlue;
-		other = mOther;
-
-		instructions = new ArrayList<Instruction>();
-
-		instructions.add(new Instruction("White", mWhite));
-		instructions.add(new Instruction("Gold", mGold));
-		instructions.add(new Instruction("Red", mRed));
-		instructions.add(new Instruction("Yellow", mYellow));
-		instructions.add(new Instruction("Green", mGreen));
-		instructions.add(new Instruction("Grey", mGrey));
-		instructions.add(new Instruction("Blue", mBlue));
-		instructions.add(new Instruction("Black", mBlack));
-		instructions = split(instructions);
-		randomize(instructions);
-		instructions.add(new Instruction("Other", mOther));
+	public Set(String name, Context context){
+		mName = name;
+		mContext = context;
+		bricks = new ArrayList<Brick>();
+		addBricks();
 	}
 
-	public Instruction getInstruction(int index){
-		return instructions.get(index);
-	}
-
-	public ArrayList<Instruction> getIntructions(){
-		return instructions;
-	}
-	
 	//check if there is a next instruction
 	public boolean hasNext(int ins){
-		if(ins <= instructions.size()-2){
+		if(ins <= bricks.size()-2){
 			return true;
 		}
 		return false;
@@ -71,7 +37,40 @@ public class Set {
 		}
 		return true;
 	}
-	
+
+	public void addBrick(int source, int amount){
+		bricks.add(new Brick(source, amount, mContext));
+	}
+
+	public Brick getStone(int index) {
+		return bricks.get(index);
+	}
+
+	public void addBricks(){
+		final R.drawable drawableResources = new R.drawable();
+		final Class<R.drawable> c = R.drawable.class;
+		final Field[] fields = c.getDeclaredFields();
+
+		for (int j = 0, max = fields.length; j < max; j++) {
+			final int resourceId;
+			try {
+				resourceId = fields[j].getInt(drawableResources);
+				String resourceName = mContext.getResources().getString(resourceId);
+				//Log.d(resourceName, resourceName);
+				if(resourceName.contains(mName)){
+					
+					int amount = Character.getNumericValue(resourceName.charAt(resourceName.length()-5));	 
+					Log.d("trlala",amount+"");
+					addBrick(resourceId, amount);
+
+				}
+			} catch (Exception e) {
+				continue;
+			}
+		}
+	}
+
+	/*
 	//split instruction of one color into multiple instructions of max 10 pieces per instruction (amount is random)
 	public ArrayList<Instruction> split(ArrayList<Instruction> ins) {
 		ArrayList<Instruction> newins = new ArrayList<Instruction>();
@@ -93,15 +92,21 @@ public class Set {
 		}
 		return newins;
 	}
-	
-	
+
 	//shuffle all instructions 
 	public void randomize(ArrayList<Instruction> ins){
 		Instruction other = ins.remove(ins.size()-1);
+<<<<<<< HEAD
 		Collections.shuffle(ins);	
 	}
 	
 	public UUID getId() {
 		return mId;
+=======
+		Collections.shuffle(ins);
+>>>>>>> 48765fdcb42d9d5e834ac703570545084fe3dd02
 	}
+
+
+	 */
 }
