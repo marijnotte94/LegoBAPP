@@ -1,10 +1,15 @@
 package com.share2pley.share2pleyapp;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.share2pley.share2pleyapp.Model.Set;
+import com.share2pley.share2pleyapp.Model.SetLab;
 
 public class MenuActivity extends Activity {
 	Button mChooseSetButton;
@@ -12,6 +17,7 @@ public class MenuActivity extends Activity {
 	Button mOtherAppsButton;
 	Button mReferencesButton;
 	Button mExitButton;
+	private ArrayList<Set> mSets;
 	
 	
 	//menu with 4 buttons: choose set, other apps, about us and exit
@@ -20,6 +26,7 @@ public class MenuActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
+		mSets = SetLab.get().getSetList();
 
 		/**
 		 * find the choose set button in the menu and start its activity
@@ -28,7 +35,8 @@ public class MenuActivity extends Activity {
 		mChooseSetButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getBaseContext(), ChooseActivity.class);
+				
+				Intent i = new Intent(getBaseContext(), SetPagerActivity.class);
 				startActivity(i);
 			}
 		});

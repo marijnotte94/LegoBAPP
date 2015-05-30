@@ -6,24 +6,24 @@ import java.util.ArrayList;
 //Lab with all sets
 public class SetLab {
 
-	private static Set set1; 
-	private static Set set2; 
-	private static Set set3;
-	private static Set set4;
-	private static Set set5;
-	private static Set set6;
-	private static Set set7;
-	private static Set set8;
-	private static Set set9;
-	private static Set set10;
-	private static Set set11;
-	private static Set set12;
-	private static Set set13;
-	private static Set set14;
-	private static Set set15;
-	private static Set set16;
+	private Set set1; 
+	private Set set2; 
+	private Set set3;
+	private Set set4;
+	private Set set5;
+	private Set set6;
+	private Set set7;
+	private Set set8;
+	private Set set9;
+	private Set set10;
+	private Set set11;
+	private Set set12;
+	private Set set13;
+	private Set set14;
+	private Set set15;
+	private Set set16;
 	
-	private static ArrayList<Set> sets;
+	private ArrayList<Set> sets;
 	private static SetLab sSetLab;
 	
 	
@@ -73,12 +73,12 @@ public class SetLab {
 		return sSetLab;
 	}
 	
-	public static Set getSet(int index){
+	public Set getSet(int index){
 		return sets.get(index); 
 	}
 	
-	public static int getAmount(){
-		return sets.size();
+	public ArrayList<Set> getSetList() {
+		return sets;
 	}
 
 }

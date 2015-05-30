@@ -3,8 +3,10 @@ package com.share2pley.share2pleyapp.Model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.util.UUID;
 
 public class Set {
+	private UUID mId;
 
 	private int red;
 	private int green;
@@ -21,6 +23,7 @@ public class Set {
 	private final int max = 10;
 
 	public Set(int mWhite, int mGold, int mRed, int mYellow, int mGreen, int mGrey, int mBlack, int mBlue, int mOther){
+		mId = UUID.randomUUID();
 		white = mWhite;
 		gold = mGold;
 		red = mRed;
@@ -96,7 +99,9 @@ public class Set {
 	public void randomize(ArrayList<Instruction> ins){
 		Instruction other = ins.remove(ins.size()-1);
 		Collections.shuffle(ins);	
+	}
 	
-
+	public UUID getId() {
+		return mId;
 	}
 }

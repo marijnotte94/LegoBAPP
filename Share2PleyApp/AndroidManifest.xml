@@ -50,13 +50,19 @@
             android:screenOrientation="portrait" >
         </activity>
 
-        <!-- This is the Activity for choosing the set -->
-        <activity
-            android:name=".ChooseActivity"
-            android:label="ChooseActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+<!--         This is the Activity for choosing the set -->
+<!--         <activity -->
+<!--             android:name=".ChooseActivity" -->
+<!--             android:label="ChooseActivity" -->
+<!--             android:screenOrientation="portrait" > -->
+<!--          </activity>  -->
 
+		<!-- This is the Activity for choosing the set in a swipe menu -->
+		<activity 
+		    android:name=".SetPagerActivity"
+		    android:label="SetPagerActivity"
+		    android:screenOrientation="portrait">
+		</activity>
         <!-- This is the Activity for the other Apps -->
         <activity
             android:name=".ReferenceActivity"
