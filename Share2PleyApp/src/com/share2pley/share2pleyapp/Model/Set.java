@@ -21,7 +21,7 @@ public class Set {
 		mName = name;
 		mContext = context;
 		mBricks = new ArrayList<Brick>();
-		mImgs = context.getResources().obtainTypedArray(R.array.random_imgs);
+		mImgs = context.getResources().obtainTypedArray(R.array.models_imgs);
 		addBricks();
 	}
 

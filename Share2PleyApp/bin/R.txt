@@ -7,8 +7,8 @@ int anim abc_slide_in_top 0x7f040005
 int anim abc_slide_out_bottom 0x7f040006
 int anim abc_slide_out_top 0x7f040007
 int array ageStringsArray 0x7f0c0003
+int array models_imgs 0x7f0c0000
 int array nameStringsArray 0x7f0c0001
-int array random_imgs 0x7f0c0000
 int array typeStringsArray 0x7f0c0002
 int attr actionBarDivider 0x7f010015
 int attr actionBarItemBackground 0x7f010016

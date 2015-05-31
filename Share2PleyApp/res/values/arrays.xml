@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="models_imgs">
+        <item>@drawable/set_1</item>
+        <item>@drawable/set_2</item>
+        <item>@drawable/set_3</item>
+        <item>@drawable/set_4</item>
+        <item>@drawable/set_5</item>
+        <item>@drawable/set_6</item>
+        <item>@drawable/set_7</item>
+        <item>@drawable/set_8</item>
+        <item>@drawable/set_9</item>
+        <item>@drawable/set_10</item>
+        <item>@drawable/set_11</item>
+        <item>@drawable/set_12</item>
+        <item>@drawable/set_13</item>
+        <item>@drawable/set_14</item>
+        <item>@drawable/set_15</item>
+        <item>@drawable/set_16</item>
+    </string-array>
+
+</resources>
