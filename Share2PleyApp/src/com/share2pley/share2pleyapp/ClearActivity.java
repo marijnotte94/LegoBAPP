@@ -87,8 +87,7 @@ public class ClearActivity extends Activity {
 				}
 				//at first instruction: go to choose set screen
 				else{
-					Intent i = new Intent(getBaseContext(), ChooseActivity.class);
-					startActivity(i);
+					finish();
 				}
 			}
 		});		

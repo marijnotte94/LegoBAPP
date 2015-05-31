@@ -2,30 +2,32 @@ package com.share2pley.share2pleyapp.Model;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.UUID;
 
 import android.content.Context;
-import android.util.Log;
+import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import com.share2pley.share2pleyapp.R;
 
 public class Set {
-	private UUID mId;
 	public String mName;
-
-	private ArrayList<Brick> bricks;
+	private ArrayList<Brick> mBricks;
 	private Context mContext;
+	private Bitmap mImage;
+	private TypedArray mImgs;
 
 	public Set(String name, Context context){
 		mName = name;
 		mContext = context;
-		bricks = new ArrayList<Brick>();
+		mBricks = new ArrayList<Brick>();
+		mImgs = context.getResources().obtainTypedArray(R.array.random_imgs);
 		addBricks();
 	}
 
 	//check if there is a next instruction
 	public boolean hasNext(int ins){
-		if(ins <= bricks.size()-2){
+		if(ins <= mBricks.size()-2){
 			return true;
 		}
 		return false;
@@ -39,11 +41,11 @@ public class Set {
 	}
 
 	public void addBrick(int source, int amount){
-		bricks.add(new Brick(source, amount, mContext));
+		mBricks.add(new Brick(source, amount, mContext));
 	}
 
 	public Brick getStone(int index) {
-		return bricks.get(index);
+		return mBricks.get(index);
 	}
 
 	public void addBricks(){
@@ -56,19 +58,20 @@ public class Set {
 			try {
 				resourceId = fields[j].getInt(drawableResources);
 				String resourceName = mContext.getResources().getString(resourceId);
-				//Log.d(resourceName, resourceName);
 				if(resourceName.contains(mName)){
-					
 					int amount = Character.getNumericValue(resourceName.charAt(resourceName.length()-5));	 
-					Log.d("trlala",amount+"");
 					addBrick(resourceId, amount);
-
 				}
 			} catch (Exception e) {
 				continue;
 			}
 		}
 	}
+	
+	public int getImageResource(int index) {
+		return mImgs.getResourceId(index, -1);
+	}
+	
 
 	/*
 	//split instruction of one color into multiple instructions of max 10 pieces per instruction (amount is random)

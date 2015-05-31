@@ -2,17 +2,15 @@ package com.share2pley.share2pleyapp;
 
 import java.util.ArrayList;
 
-import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 
 import com.share2pley.share2pleyapp.Model.Set;
-import com.share2pley.share2pleyapp.Model.SetLab;
 
 /**
  * 
@@ -20,7 +18,7 @@ import com.share2pley.share2pleyapp.Model.SetLab;
  * This class provides the swiping between the sets, so to choose the proper set.
  */
 public class SetPagerActivity extends FragmentActivity {
-	private static final int NUM_PAGES = 12;
+	private static final int NUM_PAGES = 16;
 
 	private ViewPager mViewPager;
 	private ArrayList<Set> mSets;

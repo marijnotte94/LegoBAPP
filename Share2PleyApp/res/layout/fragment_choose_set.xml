@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="vertical" >
 
     <TextView
@@ -21,7 +22,7 @@
         android:layout_height="200sp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/choose_set" />
     
     <TextView
@@ -29,12 +30,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:textStyle="bold"
         android:textColor="#E8490F"
         android:textSize="12sp" />
     
     <TextView
+        android:id="@+id/choose_set_textView_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -44,6 +46,7 @@
         android:textSize="12sp" />
     
     <TextView
+        android:id="@+id/choose_set_textView_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

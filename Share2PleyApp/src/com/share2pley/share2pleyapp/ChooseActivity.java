@@ -48,7 +48,6 @@ public class ChooseActivity extends Activity {
 			case 1: name = "speelhuis"; break;
 			default: name = "hetgrotebos"; break;
 			}
-			
 			i.putExtra("SETNO", name);
 			startActivity(i);
 			

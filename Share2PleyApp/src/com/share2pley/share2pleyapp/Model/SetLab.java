@@ -11,83 +11,60 @@ import com.share2pley.share2pleyapp.R;
 public class SetLab {
 
 	private Context context;
-
-	private static Set set1; 
-	private static Set set2; 
-	private static Set set3;
-	private static Set set4;
-	private static Set set5;
-	private static Set set6;
-	private static Set set7;
-	private static Set set8;
-	private static Set set9;
-	private static Set set10;
-	private static Set set11;
-	private static Set set12;
-	private static Set set13;
-	private static Set set14;
-	private static Set set15;
-	private static Set set16;
-
-	private static ArrayList<Set> sets;
+	private ArrayList<Set> mSetList;
+	private String[] mFileNameArray;
+	private String[] mNameArrayFullLength;
+	private String[] mTypeArray;
+	private String[] mAgesArray;
 	private static SetLab sSetLab;
+	private Context mContext;
 
 
-	private SetLab(){
-		sets =  new ArrayList<Set>();
+	private SetLab(Context context){
+		mContext = context;
+		mNameArrayFullLength = context.getResources().getStringArray(R.array.nameStringsArray);
+		mTypeArray = context.getResources().getStringArray(R.array.typeStringsArray);
+		mAgesArray = context.getResources().getStringArray(R.array.ageStringsArray);
+		mFileNameArray = new String[]{"Speelhuis","hetgrotebos","","","","","","","","","","","","","",""};
+		mSetList =  new ArrayList<Set>();
 
-		set1 = new Set("Speelhuis",context);
-
-		final R.drawable drawableResources = new R.drawable();
-		final Class<R.drawable> c = R.drawable.class;
-		final Field[] fields = c.getDeclaredFields();
-
-		for (int i = 0, max = fields.length; i < max; i++) {
-			final int resourceId;
-			try {
-				resourceId = fields[i].getInt(drawableResources);
-			} catch (Exception e) {
-				continue;
-			}
-
-			//if(resourceId >=0x7f020044 && resourceId <= 0x7f020077){
-			//set1.addStone(resourceId,1);
-			//}
-
+		for (int i=0; i<16; i++) {
+			mSetList.add(new Set(mFileNameArray[i],context));
 		}
-
-
-		sets.add(set1);
-		sets.add(set2);
-		sets.add(set3);
-		sets.add(set4);
-		sets.add(set5);
-		sets.add(set6);
-		sets.add(set7);
-		sets.add(set8);
-		sets.add(set9);
-		sets.add(set10);
-		sets.add(set11);
-		sets.add(set12);
-		sets.add(set13);
-		sets.add(set14);
-		sets.add(set15);
-		sets.add(set16);
 	}
 
-	public static SetLab get(){
+	public static SetLab get(Context context){
 		if (sSetLab == null){
-			sSetLab = new SetLab();
+			sSetLab = new SetLab(context);
 		}
 		return sSetLab;
 	}
 
-	public static Set getSet(int index){
-		return sets.get(index); 
+	public Set getSet(int index){
+		return mSetList.get(index); 
 	}
 
-	public static int getAmount(){
-		return sets.size();
+	public int getAmount(){
+		return mSetList.size();
+	}
+
+	public String getRealString(int i) {
+		return mNameArrayFullLength[i];
+	}
+	
+	//return the type of the set
+	public String getType(int i) {
+		return mTypeArray[i/2];
+	}
+	
+	//returns only the infant age when it's Duplo
+	public String getAge(int i) {
+		if (i<2) {
+			return mAgesArray[0];
+		}
+		else {
+			return mAgesArray[1];
+		}
 	}
 
 
