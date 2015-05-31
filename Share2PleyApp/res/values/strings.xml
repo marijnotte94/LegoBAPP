@@ -26,6 +26,7 @@
     <string name="build">Build</string>
     <string name="choose">Choose</string>
     <string name="back">Back</string>
+    <string name="figurine">Figurine</string>
     
     <!-- Names of the sets -->
     <string-array name ="nameStringsArray">

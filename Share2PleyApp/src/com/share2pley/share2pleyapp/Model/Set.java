@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
 import com.share2pley.share2pleyapp.R;
 
@@ -14,14 +12,17 @@ public class Set {
 	public String mName;
 	private ArrayList<Brick> mBricks;
 	private Context mContext;
-	private Bitmap mImage;
 	private TypedArray mImgs;
+	private TypedArray mFigurines;
 
 	public Set(String name, Context context){
 		mName = name;
 		mContext = context;
 		mBricks = new ArrayList<Brick>();
 		mImgs = context.getResources().obtainTypedArray(R.array.models_imgs);
+		context.getResources().obtainTypedArray(R.array.models_imgs).recycle();
+		mFigurines = context.getResources().obtainTypedArray(R.array.figurines_imgs);
+		context.getResources().obtainTypedArray(R.array.figurines_imgs).recycle();
 		addBricks();
 	}
 
@@ -49,67 +50,33 @@ public class Set {
 	}
 
 	public void addBricks(){
-		final R.drawable drawableResources = new R.drawable();
-		final Class<R.drawable> c = R.drawable.class;
-		final Field[] fields = c.getDeclaredFields();
-
-		for (int j = 0, max = fields.length; j < max; j++) {
-			final int resourceId;
-			try {
-				resourceId = fields[j].getInt(drawableResources);
-				String resourceName = mContext.getResources().getString(resourceId);
-				if(resourceName.contains(mName)){
-					int amount = Character.getNumericValue(resourceName.charAt(resourceName.length()-5));	 
-					addBrick(resourceId, amount);
-				}
-			} catch (Exception e) {
-				continue;
-			}
+		for (int i = 0; i < mImgs.length(); i++) {
+			addBrick(getModelImageResource(i),3);
 		}
+//		final R.drawable drawableResources = new R.drawable();
+//		final Class<R.drawable> c = R.drawable.class;
+//		final Field[] fields = c.getDeclaredFields();
+//
+//		for (int j = 0, max = fields.length; j < max; j++) {
+//			final int resourceId;
+//			try {
+//				resourceId = fields[j].getInt(drawableResources);
+//				String resourceName = mContext.getResources().getString(resourceId);
+//				if(resourceName.contains(mName)){
+//					int amount = Character.getNumericValue(resourceName.charAt(resourceName.length()-5));	 
+//					addBrick(resourceId, amount);
+//				}
+//			} catch (Exception e) {
+//				continue;
+//			}
+//		}
 	}
 	
-	public int getImageResource(int index) {
+	public int getModelImageResource(int index) {
 		return mImgs.getResourceId(index, -1);
 	}
 	
-
-	/*
-	//split instruction of one color into multiple instructions of max 10 pieces per instruction (amount is random)
-	public ArrayList<Instruction> split(ArrayList<Instruction> ins) {
-		ArrayList<Instruction> newins = new ArrayList<Instruction>();
-		Random rand = new Random();
-		for(Instruction instruction : ins){
-			int amount = instruction.getAmount();
-			String color = instruction.getColor();
-			if(amount > max){
-				while(amount > max){
-					int newamount = rand.nextInt((max - 1) + 1) + 1;
-					newins.add(new Instruction(color, newamount));
-					amount = amount - newamount;
-				}
-				newins.add(new Instruction(color,amount));
-			}
-			else{
-				newins.add(instruction);
-			}
-		}
-		return newins;
+	public int getFigurineImageResource(int index) {
+		return mFigurines.getResourceId(index/2, -1);
 	}
-
-	//shuffle all instructions 
-	public void randomize(ArrayList<Instruction> ins){
-		Instruction other = ins.remove(ins.size()-1);
-<<<<<<< HEAD
-		Collections.shuffle(ins);	
-	}
-	
-	public UUID getId() {
-		return mId;
-=======
-		Collections.shuffle(ins);
->>>>>>> 48765fdcb42d9d5e834ac703570545084fe3dd02
-	}
-
-
-	 */
 }

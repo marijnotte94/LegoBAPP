@@ -5,49 +5,45 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical" >
-	
-    
-    
+
     <TextView
         android:id="@+id/textview_message_instruction"
         android:layout_width="280dp"
         android:layout_height="140dp"
         android:layout_gravity="right"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textballoon"
         android:gravity="center"
         android:text="nog in te vullen tekstwolk"
         android:textColor="#106097"
-        android:textSize="20sp"
-        android:background ="@drawable/textballoon" />
+        android:textSize="20sp" />
 
-    
     <ImageView
+        android:id="@+id/imageView_clear_figurine"
+        android:contentDescription="@string/figurine"
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        android:layout_marginRight="190dp"
-        android:src="@drawable/rocket_racer" />
+        android:layout_marginRight="190dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:layout_marginRight = "100dp">
+        android:layout_height="wrap_content"
+        android:layout_marginRight="100dp" >
 
         <ImageView
             android:id="@+id/imageview_brick"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-     
-            android:src="@drawable/lego_brick"/>
-		
+            android:src="@drawable/lego_brick" />
+
         <ImageView
             android:id="@+id/imageview_bag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
             android:layout_marginLeft="80dp"
-            android:src="@drawable/box"
-			/>
+            android:layout_marginTop="80dp"
+            android:src="@drawable/box" />
     </RelativeLayout>
 
     <LinearLayout
@@ -57,7 +53,7 @@
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/button_build_previous"
+            android:id="@+id/button_clear_previous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
@@ -68,7 +64,7 @@
             android:textColor="@color/button_menu_textcolor" />
 
         <Button
-            android:id="@+id/button_build_next"
+            android:id="@+id/button_clear_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"

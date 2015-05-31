@@ -1,11 +1,9 @@
 package com.share2pley.share2pleyapp;
 
-import java.lang.reflect.Field;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -13,23 +11,26 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.share2pley.share2pleyapp.R;
 import com.share2pley.share2pleyapp.Model.Brick;
 import com.share2pley.share2pleyapp.Model.Set;
+import com.share2pley.share2pleyapp.Model.SetLab;
 
 public class ClearActivity extends Activity {
 	
-	private Set set;
-	private TextView message;
-	private Button nextButton;
-	private Button previousButton;
-	private Brick current;
-	private ImageView brick;
-	private ImageView bag;
+	private Set mSet;
+	private int mSetIndex;
+	private TextView mMessage;
+	private Button mNextButton;
+	private Button mPreviousButton;
+	private Brick mCurrent;
+	private ImageView mFigure;
+	private ImageView mBrick;
+	private ImageView mBag;
 
 	private long xNewPos, yNewPos;
 
 	private int index = 0;
-	private String s;
 
 	private long startTime, endTime;
 	private long clearTime = 0;
@@ -45,23 +46,26 @@ public class ClearActivity extends Activity {
 		Intent i = getIntent();
 		Bundle b = i.getExtras();
 		if(b != null){
-			s = b.getString("SETNO");
+			mSetIndex = b.getInt("page");
 		}
-		set = new Set(s,getBaseContext());
+		mSet = SetLab.get(this).getSet(mSetIndex);
 		//set.addBrick(0x7f020074,2);
 		
 		
-		message = (TextView)findViewById(R.id.textview_message_instruction);
+		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
 		startTime = System.nanoTime();
 
-		update(index);	
+		//update(index);
+		mFigure = (ImageView)findViewById(R.id.imageView_clear_figurine);
+		mFigure.setImageResource(SetLab.get(this).getSet(mSetIndex).getFigurineImageResource(mSetIndex));
+		
 
 		//next button pressed for new instruction
-		nextButton = (Button)findViewById(R.id.button_build_next);
-		nextButton.setOnClickListener(new View.OnClickListener() {
+		mNextButton = (Button)findViewById(R.id.button_clear_next);
+		mNextButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				//If there is next instruction, display instruction
-				if(set.hasNext(index)){
+				if(mSet.hasNext(index)){
 					index ++;
 					update(index);
 
@@ -77,11 +81,11 @@ public class ClearActivity extends Activity {
 			}
 		});
 
-		previousButton = (Button)findViewById(R.id.button_build_previous);
-		previousButton.setOnClickListener(new View.OnClickListener(){
+		mPreviousButton = (Button)findViewById(R.id.button_clear_previous);
+		mPreviousButton.setOnClickListener(new View.OnClickListener(){
 			//find previous instruction
 			public void onClick(View v){
-				if(set.hasPrevious(index)){
+				if(mSet.hasPrevious(index)){
 					index --;
 					update(index);
 				}
@@ -97,26 +101,26 @@ public class ClearActivity extends Activity {
 	//find instruction if previous or next button is pushed + layout of letters so that its readable
 	public void update(int i){
 		ImageView brick = (ImageView)findViewById(R.id.imageview_brick);
-		current = set.getStone(index);
-		brick.setImageResource(current.getSource());
-		message.setText(current.getAmount() + "x");
+		mCurrent = mSet.getStone(index);
+		brick.setImageResource(mCurrent.getSource());
+		mMessage.setText(mCurrent.getAmount() + "x");
 		animateBrick();
 	}
 
 	//animation of brick into bag
 	public void animateBrick(){	
-		brick = (ImageView)findViewById(R.id.imageview_brick);
-		bag = (ImageView)findViewById(R.id.imageview_bag);
+		mBrick = (ImageView)findViewById(R.id.imageview_brick);
+		mBag = (ImageView)findViewById(R.id.imageview_bag);
 
-		xNewPos = bag.getLeft() - brick.getLeft();
-		yNewPos = bag.getTop() - brick.getTop();
+		xNewPos = mBag.getLeft() - mBrick.getLeft();
+		yNewPos = mBag.getTop() - mBrick.getTop();
 
 		Animation anim = new TranslateAnimation(0, xNewPos, 0, yNewPos);
 		anim.setDuration(1500);
 		anim.setRepeatCount(Animation.INFINITE);
-		brick.bringToFront();
+		mBrick.bringToFront();
 
-		brick.startAnimation(anim);
+		mBrick.startAnimation(anim);
 	}
 	
 	
