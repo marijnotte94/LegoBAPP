@@ -6,7 +6,14 @@ int anim abc_slide_in_bottom 0x7f040004
 int anim abc_slide_in_top 0x7f040005
 int anim abc_slide_out_bottom 0x7f040006
 int anim abc_slide_out_top 0x7f040007
+<<<<<<< HEAD
 int array random_imgs 0x7f0c0000
+=======
+int array ageStringsArray 0x7f0c0003
+int array models_imgs 0x7f0c0000
+int array nameStringsArray 0x7f0c0001
+int array typeStringsArray 0x7f0c0002
+>>>>>>> gui_builder
 int attr actionBarDivider 0x7f010015
 int attr actionBarItemBackground 0x7f010016
 int attr actionBarPopupTheme 0x7f01000f
@@ -385,7 +392,7 @@ int id action_menu_presenter 0x7f090006
 int id action_mode_bar 0x7f09002f
 int id action_mode_bar_stub 0x7f09002e
 int id action_mode_close_button 0x7f090021
-int id action_settings 0x7f09005a
+int id action_settings 0x7f09005c
 int id activity_choose_set_tableLayout 0x7f090040
 int id activity_chooser_view_content 0x7f090022
 int id always 0x7f090015
@@ -401,11 +408,13 @@ int id button_start 0x7f09004e
 int id button_takePhoto_confirm 0x7f090051
 int id button_takePhoto_takePicture 0x7f090050
 int id checkbox 0x7f09002a
+int id choose_set_textView_age 0x7f090058
 int id choose_set_textView_description 0x7f090056
+int id choose_set_textView_type 0x7f090057
 int id collapseActionView 0x7f090016
-int id crime_camera_progressContainer 0x7f090059
-int id crime_camera_surfaceView 0x7f090057
-int id crime_camera_takePictureButton 0x7f090058
+int id crime_camera_progressContainer 0x7f09005b
+int id crime_camera_surfaceView 0x7f090059
+int id crime_camera_takePictureButton 0x7f09005a
 int id decor_content_parent 0x7f090030
 int id default_activity_button 0x7f090025
 int id dialog 0x7f09001a

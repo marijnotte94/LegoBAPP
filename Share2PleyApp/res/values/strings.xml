@@ -26,5 +26,43 @@
     <string name="build">Build</string>
     <string name="choose">Choose</string>
     <string name="back">Back</string>
+    
+    <!-- Names of the sets -->
+    <string-array name ="nameStringsArray">
+        <item>Speelhuis</item>
+        <item>Het grote Bos</item>
+        <item>Fietswinkel &amp; Café</item>
+        <item>Speelgoedwinkel en Supermarkt</item>
+        <item>Jungle reddingsbasis</item>
+        <item>Emma\'s huis</item>
+        <item>Helikopter Patrouille</item>
+        <item>Sloopterrein</item>
+        <item>Lavals Vuurleeuw</item>
+        <item>Icebites Drilklauw</item>
+        <item>TIE Advanced Protoype™</item>
+        <item>AT-DP™</item>
+        <item>Crafting Kist</item>
+        <item>De Enderdraak</item>
+        <item>Bouwploeg</item>
+        <item>Off-roader</item>
+    </string-array>
+    
+    <!-- Types of the set -->
+    <string-array name = "typeStringsArray">
+        <item>LEGO® Duplo®</item>
+        <item>LEGO® Creator 3-in-1®</item>
+        <item>LEGO® Friends</item>
+        <item>LEGO® City</item>
+        <item>LEGO® Chima™</item>
+        <item>LEGO® Star wars™</item>
+        <item>LEGO® Minecraft</item>
+        <item>LEGO® Technic</item>
+    </string-array>
+    
+    <!-- Ages of the set -->
+    <string-array name = "ageStringsArray">
+        <item>0-4 jr</item>
+        <item>5-14jr</item>
+    </string-array>
 
 </resources>

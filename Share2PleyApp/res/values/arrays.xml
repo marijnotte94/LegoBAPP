@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
     <string-array name="random_imgs">
+=======
+
+    <string-array name="models_imgs">
+>>>>>>> gui_builder
         <item>@drawable/set_1</item>
         <item>@drawable/set_2</item>
         <item>@drawable/set_3</item>
