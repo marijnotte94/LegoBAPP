@@ -1,7 +1,5 @@
 package com.share2pley.share2pleyapp;
 
-import java.util.ArrayList;
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -9,8 +7,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-
-import com.share2pley.share2pleyapp.Model.Set;
 
 /**
  * 
@@ -21,7 +17,6 @@ public class SetPagerActivity extends FragmentActivity {
 	private static final int NUM_PAGES = 16;
 
 	private ViewPager mViewPager;
-	private ArrayList<Set> mSets;
 	private PagerAdapter mPagerAdapter;
 
 	@Override
@@ -34,8 +29,6 @@ public class SetPagerActivity extends FragmentActivity {
 		mPagerAdapter = new SetPagerAdapter(getSupportFragmentManager());
 		mViewPager.setAdapter(mPagerAdapter);
 		//mSets = SetLab.get().getSetList();
-
-		FragmentManager fm = getSupportFragmentManager();
 	}
 
 	private class SetPagerAdapter extends FragmentStatePagerAdapter {
