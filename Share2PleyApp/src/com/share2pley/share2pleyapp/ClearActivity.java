@@ -3,15 +3,16 @@ package com.share2pley.share2pleyapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.share2pley.share2pleyapp.R;
 import com.share2pley.share2pleyapp.Model.Brick;
 import com.share2pley.share2pleyapp.Model.Set;
 import com.share2pley.share2pleyapp.Model.SetLab;
@@ -30,6 +31,7 @@ public class ClearActivity extends Activity {
 	private int mBrickIndex = 0;
 	private long xNewPos, yNewPos;
 	private long mStartTime, mEndTime;
+	private ProgressBar mProgressbar;
 	
 	
 
@@ -49,6 +51,7 @@ public class ClearActivity extends Activity {
 		
 		//start timer
 		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
+		mProgressbar = (ProgressBar)findViewById(R.id.progressbar_clear);
 		mStartTime = System.nanoTime();
 
 		//update(index);
@@ -65,7 +68,7 @@ public class ClearActivity extends Activity {
 				if(mSet.hasNext(mBrickIndex)){
 					mBrickIndex ++;
 					update(mBrickIndex);
-
+					mProgressbar.setProgress(mProgressbar.getProgress()+5);
 				}
 				//If no more instructions go to timeactivity
 				else{
@@ -111,13 +114,23 @@ public class ClearActivity extends Activity {
 
 		xNewPos = mBag.getLeft() - mBrick.getLeft();
 		yNewPos = mBag.getTop() - mBrick.getTop();
-
-		Animation anim = new TranslateAnimation(0, xNewPos, 0, yNewPos);
-		anim.setDuration(1500);
-		anim.setRepeatCount(Animation.INFINITE);
+		
 		mBrick.bringToFront();
 
-		mBrick.startAnimation(anim);
+		Animation transAnim = new TranslateAnimation(0, xNewPos, 0, yNewPos);
+		transAnim.setRepeatCount(transAnim.INFINITE);
+		
+		Animation alphaAnim = new AlphaAnimation(1,0);
+		alphaAnim.setRepeatCount(alphaAnim.INFINITE);
+		
+		
+		
+		AnimationSet set = new AnimationSet(true);
+		set.addAnimation(transAnim);
+		set.addAnimation(alphaAnim);
+		set.setDuration(1500);
+		
+		mBrick.startAnimation(set);
 	}
 	
 	
