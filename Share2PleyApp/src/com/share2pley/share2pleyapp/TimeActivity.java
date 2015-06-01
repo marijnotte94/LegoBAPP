@@ -11,27 +11,24 @@ import android.widget.TextView;
 
 public class TimeActivity extends Activity{
 
-	private TextView text;
-	private Button button;
-	private long time;
-	private long minutes;
-	private long seconds;
+	private TextView mText;
+	private Button mButton;
+	private long mTime;
 
 	//display time after instructions finished
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_time);
-		Intent i = getIntent();
-		Bundle b = i.getExtras();
+		Bundle b = getIntent().getExtras();
 		if(b != null){
-			time = b.getLong("TIME");
+			mTime = b.getLong("TIME");
 		}
-		text = (TextView)findViewById(R.id.timeView);
-		text.setText(timeToString(time));
+		mText = (TextView)findViewById(R.id.timeView);
+		mText.setText(timeToString(mTime));
 
-		button = (Button)findViewById(R.id.goToPhoto);
-		button.setOnClickListener(new View.OnClickListener(){
+		mButton = (Button)findViewById(R.id.goToPhoto);
+		mButton.setOnClickListener(new View.OnClickListener(){
 
 			public void onClick(View v){ 
 				Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
@@ -44,11 +41,11 @@ public class TimeActivity extends Activity{
 		DecimalFormat formatter = new DecimalFormat("00");
 		
 		time = time / 1000000000;
-		minutes = time / 60;
-		seconds = time % 60;
+		long mMinutes = time / 60;
+		long mSeconds = time % 60;
 		
-		String secondsFormat = formatter.format(seconds);
-		String minutesFormat = formatter.format(minutes);
+		String secondsFormat = formatter.format(mSeconds);
+		String minutesFormat = formatter.format(mMinutes);
 		
 		return "Your time is " + minutesFormat + ":" + secondsFormat;
 

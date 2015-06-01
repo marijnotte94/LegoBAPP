@@ -17,8 +17,6 @@ public class MenuActivity extends Activity {
 	Button mOtherAppsButton;
 	Button mReferencesButton;
 	Button mExitButton;
-	private ArrayList<Set> mSets;
-	
 	
 	//menu with 4 buttons: choose set, other apps, about us and exit
 	
@@ -26,7 +24,6 @@ public class MenuActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_menu);
-		//mSets = SetLab.get().getSetList();
 
 		/**
 		 * find the choose set button in the menu and start its activity

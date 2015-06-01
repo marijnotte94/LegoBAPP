@@ -17,8 +17,8 @@ public class NameActivity extends Activity{
 	EditText mFirstName;
 	EditText mLastName;
 	private boolean isAlreadyFilled = false;
-	
-	
+
+
 	//activity to fill in name. Name is saved into db and automatically filled in after app restart.
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -28,10 +28,10 @@ public class NameActivity extends Activity{
 
 		mFirstName = (EditText)findViewById(R.id.edit_fillname_first_name);
 		mLastName = (EditText)findViewById(R.id.edit_fillname_last_name);
-		
+
 		//remove old name if edited
 		getBaseContext().deleteDatabase("Persons");
-		
+
 		//get name from database if exists
 		spDb = new DBHelper(this);
 		try {
@@ -54,8 +54,8 @@ public class NameActivity extends Activity{
 		} catch (CursorIndexOutOfBoundsException e) {
 			Log.i("NameActivity", e.toString());
 		}
-		
-		
+
+
 		//if confirmed save name to db
 		mConfirmButton = (Button)findViewById(R.id.button_fillname_confirm);
 		mConfirmButton.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,9 @@ public class NameActivity extends Activity{
 				if(isAlreadyFilled) {
 					spDb.updateContent(1, mFirstName.getText().toString(), mLastName.getText().toString(), 0);
 				}
-				spDb.insertPerson(mFirstName.getText().toString(), mLastName.getText().toString(), 0);
+				else{
+					spDb.insertPerson(mFirstName.getText().toString(), mLastName.getText().toString(), 0);
+				}
 				Intent i = new Intent(getBaseContext(), MenuActivity.class);
 				startActivity(i);
 				finish();

@@ -27,14 +27,10 @@ public class ClearActivity extends Activity {
 	private ImageView mFigure;
 	private ImageView mBrick;
 	private ImageView mBag;
-
+	private int mBrickIndex = 0;
 	private long xNewPos, yNewPos;
-
-	private int index = 0;
-
-	private long startTime, endTime;
-	private long clearTime = 0;
-	private String timeString;
+	private long mStartTime, mEndTime;
+	
 	
 
 	@Override
@@ -48,34 +44,35 @@ public class ClearActivity extends Activity {
 		if(b != null){
 			mSetIndex = b.getInt("page");
 		}
+		
 		mSet = SetLab.get(this).getSet(mSetIndex);
-		//set.addBrick(0x7f020074,2);
 		
-		
+		//start timer
 		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
-		startTime = System.nanoTime();
+		mStartTime = System.nanoTime();
 
 		//update(index);
+		
+		//match index with array
 		mFigure = (ImageView)findViewById(R.id.imageView_clear_figurine);
 		mFigure.setImageResource(SetLab.get(this).getSet(mSetIndex).getFigurineImageResource(mSetIndex));
 		
-
 		//next button pressed for new instruction
 		mNextButton = (Button)findViewById(R.id.button_clear_next);
 		mNextButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				//If there is next instruction, display instruction
-				if(mSet.hasNext(index)){
-					index ++;
-					update(index);
+				if(mSet.hasNext(mBrickIndex)){
+					mBrickIndex ++;
+					update(mBrickIndex);
 
 				}
 				//If no more instructions go to timeactivity
 				else{
-					endTime = System.nanoTime();
-					clearTime = (endTime - startTime);
+					mEndTime = System.nanoTime();
+					long mClearTime = (mEndTime - mStartTime);
 					Intent i = new Intent(getBaseContext(), TimeActivity.class);
-					i.putExtra("TIME", clearTime);
+					i.putExtra("TIME", mClearTime);
 					startActivity(i);
 				}
 			}
@@ -85,9 +82,9 @@ public class ClearActivity extends Activity {
 		mPreviousButton.setOnClickListener(new View.OnClickListener(){
 			//find previous instruction
 			public void onClick(View v){
-				if(mSet.hasPrevious(index)){
-					index --;
-					update(index);
+				if(mSet.hasPrevious(mBrickIndex)){
+					mBrickIndex --;
+					update(mBrickIndex);
 				}
 				//at first instruction: go to choose set screen
 				else{
@@ -101,7 +98,7 @@ public class ClearActivity extends Activity {
 	//find instruction if previous or next button is pushed + layout of letters so that its readable
 	public void update(int i){
 		ImageView brick = (ImageView)findViewById(R.id.imageview_brick);
-		mCurrent = mSet.getStone(index);
+		mCurrent = mSet.getBrick(mBrickIndex);
 		brick.setImageResource(mCurrent.getSource());
 		mMessage.setText(mCurrent.getAmount() + "x");
 		animateBrick();

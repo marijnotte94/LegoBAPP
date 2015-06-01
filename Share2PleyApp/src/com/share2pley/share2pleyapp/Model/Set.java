@@ -45,7 +45,7 @@ public class Set {
 		mBricks.add(new Brick(source, amount, mContext));
 	}
 
-	public Brick getStone(int index) {
+	public Brick getBrick(int index) {
 		return mBricks.get(index);
 	}
 
