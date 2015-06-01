@@ -3,6 +3,7 @@ package com.share2pley.share2pleyapp.Model;
 import java.util.ArrayList;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.share2pley.share2pleyapp.R;
 
@@ -20,8 +21,9 @@ public class SetLab {
 		mNameArrayFullLength = context.getResources().getStringArray(R.array.nameStringsArray);
 		mTypeArray = context.getResources().getStringArray(R.array.typeStringsArray);
 		mAgesArray = context.getResources().getStringArray(R.array.ageStringsArray);
+		mFileNameArray = new String[]{"Speelhuis","hetgrotebos","","","","","","","","","","","","","",""};
 		mSetList =  new ArrayList<Set>();
-
+		Log.d("naam",mNameArrayFullLength[0]);
 		for (int i=0; i<16; i++) {
 			mSetList.add(new Set(mFileNameArray[i],context));
 		}

@@ -46,6 +46,7 @@ public class SetPagerFragment extends Fragment {
 		TextView ageView = (TextView)rootView.findViewById(R.id.choose_set_textView_age);
 		ageView.setText(SetLab.get(getActivity()).getAge(mPageNumber));
 		ImageView imageView = (ImageView)rootView.findViewById(R.id.imageView_chooseSet);
+		imageView.setImageResource(R.drawable.atdp403221_6);
 		imageView.setImageResource(SetLab.get(getActivity()).getSet(mPageNumber).getModelImageResource(mPageNumber));
 	}
 
