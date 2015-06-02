@@ -3,6 +3,7 @@ package com.share2pley.share2pleyapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -22,8 +23,7 @@ public class ClearActivity extends Activity {
 	private Set mSet;
 	private int mSetIndex;
 	private TextView mMessage;
-	private Button mNextButton;
-	private Button mPreviousButton;
+	private Button mNextButton, mPreviousButton, mMissingButton;
 	private Brick mCurrent;
 	private ImageView mFigure;
 	private ImageView mBrick;
@@ -32,6 +32,7 @@ public class ClearActivity extends Activity {
 	private long xNewPos, yNewPos;
 	private long mStartTime, mEndTime;
 	private ProgressBar mProgressbar;
+	private double mAmountBricks;
 	
 	
 
@@ -48,6 +49,7 @@ public class ClearActivity extends Activity {
 		}
 		
 		mSet = SetLab.get(this).getSet(mSetIndex);
+		mAmountBricks = mSet.getAmountBricks();
 		
 		//start timer
 		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
@@ -68,7 +70,12 @@ public class ClearActivity extends Activity {
 				if(mSet.hasNext(mBrickIndex)){
 					mBrickIndex ++;
 					update(mBrickIndex);
-					mProgressbar.setProgress(mProgressbar.getProgress()+5);
+					Log.d("amount", mAmountBricks+"");
+					double t = 1.0/mAmountBricks;
+					Log.d("t 1e keer",t+"");
+					int d = (int) (t * 100);
+					Log.d("t 2e keer", d+"");
+					mProgressbar.setProgress(mProgressbar.getProgress()+d);
 				}
 				//If no more instructions go to timeactivity
 				else{
@@ -88,13 +95,21 @@ public class ClearActivity extends Activity {
 				if(mSet.hasPrevious(mBrickIndex)){
 					mBrickIndex --;
 					update(mBrickIndex);
+					mProgressbar.setProgress(mProgressbar.getProgress()-1);
 				}
 				//at first instruction: go to choose set screen
 				else{
 					finish();
 				}
 			}
-		});		
+		});	
+		
+		mMissingButton = (Button)findViewById(R.id.button_clear_missing);
+		mMissingButton.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v){
+				//
+			}
+		});
 	}
 
 

@@ -53,6 +53,9 @@ public class Set {
 		for (int i = 0; i < mImgs.length(); i++) {
 			addBrick(getModelImageResource(i),3);
 		}
+	
+	
+	
 //		final R.drawable drawableResources = new R.drawable();
 //		final Class<R.drawable> c = R.drawable.class;
 //		final Field[] fields = c.getDeclaredFields();
@@ -70,6 +73,10 @@ public class Set {
 //				continue;
 //			}
 //		}
+	}
+	
+	public int getAmountBricks(){
+		return mBricks.size();
 	}
 	
 	public int getModelImageResource(int index) {
