@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * 
+ * @author Marijn Otte - ?
+ * 
+ */
 public class TimeActivity extends Activity {
 
 	private TextView mText;
