@@ -3,7 +3,6 @@ package com.share2pley.share2pleyapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -50,7 +49,6 @@ public class ClearActivity extends Activity {
 		if (b != null) {
 			mSetIndex = b.getInt("page");
 		}
-
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
 
@@ -58,6 +56,7 @@ public class ClearActivity extends Activity {
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
 		mProgressbar = (ProgressBar) findViewById(R.id.progressbar_clear);
 		mStartTime = System.nanoTime();
+		update();
 
 		// update(index);
 
@@ -74,12 +73,9 @@ public class ClearActivity extends Activity {
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
 					mBrickIndex++;
-					update(mBrickIndex);
-					Log.d("amount", mAmountBricks + "");
+					update();
 					double t = 1.0 / mAmountBricks;
-					Log.d("t 1e keer", t + "");
 					int d = (int) (t * 100);
-					Log.d("t 2e keer", d + "");
 					mProgressbar.setProgress(mProgressbar.getProgress() + d);
 				}
 				// If no more instructions go to timeactivity
@@ -100,7 +96,7 @@ public class ClearActivity extends Activity {
 			public void onClick(View v) {
 				if (mSet.hasPrevious(mBrickIndex)) {
 					mBrickIndex--;
-					update(mBrickIndex);
+					update();
 					mProgressbar.setProgress(mProgressbar.getProgress() - 1);
 				}
 				// at first instruction: go to choose set screen
@@ -121,7 +117,7 @@ public class ClearActivity extends Activity {
 
 	// find instruction if previous or next button is pushed + layout of letters
 	// so that its readable
-	public void update(int i) {
+	public void update() {
 		ImageView brick = (ImageView) findViewById(R.id.imageview_brick);
 		mCurrent = mSet.getBrick(mBrickIndex);
 		brick.setImageResource(mCurrent.getSource());

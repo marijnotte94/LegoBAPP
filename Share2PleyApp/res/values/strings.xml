@@ -28,6 +28,9 @@
     <string name="back">Back</string>
     <string name="figurine">Figurine</string>
     <string name="missing">Missing</string>
+    <string name="clear_set_image">Clear Set Image</string>
+    <string name="bag">Bag</string>
+    <string name="brick">Brick</string>
     
     <!-- Names of the sets -->
     <string-array name ="nameStringsArray">
