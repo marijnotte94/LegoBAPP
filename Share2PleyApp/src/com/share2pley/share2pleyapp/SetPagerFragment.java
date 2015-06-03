@@ -12,6 +12,11 @@ import android.widget.TextView;
 
 import com.share2pley.share2pleyapp.Model.SetLab;
 
+/**
+ * 
+ * @author Richard Vink - 4233867
+ * 
+ */
 public class SetPagerFragment extends Fragment {
 	public static final String ARG_PAGE = "page";
 	private int mPageNumber;
@@ -24,34 +29,45 @@ public class SetPagerFragment extends Fragment {
 		return fragment;
 	}
 
-	public SetPagerFragment(){}
+	public SetPagerFragment() {
+	}
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mPageNumber = getArguments().getInt(ARG_PAGE);
 	}
 
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_choose_set, container, false);
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		ViewGroup rootView = (ViewGroup) inflater.inflate(
+				R.layout.fragment_choose_set, container, false);
 		setViews(rootView);
 		setChooseViewButton(rootView);
 		return rootView;
 	}
 
 	public void setViews(View rootView) {
-		TextView nameView = (TextView)rootView.findViewById(R.id.choose_set_textView_description);
+		TextView nameView = (TextView) rootView
+				.findViewById(R.id.choose_set_textView_description);
 		nameView.setText(SetLab.get(getActivity()).getRealString(mPageNumber));
-		TextView typeView = (TextView)rootView.findViewById(R.id.choose_set_textView_type);
+		TextView typeView = (TextView) rootView
+				.findViewById(R.id.choose_set_textView_type);
 		typeView.setText(SetLab.get(getActivity()).getType(mPageNumber));
-		TextView ageView = (TextView)rootView.findViewById(R.id.choose_set_textView_age);
+		TextView ageView = (TextView) rootView
+				.findViewById(R.id.choose_set_textView_age);
 		ageView.setText(SetLab.get(getActivity()).getAge(mPageNumber));
-		ImageView imageView = (ImageView)rootView.findViewById(R.id.imageView_chooseSet);
+		ImageView imageView = (ImageView) rootView
+				.findViewById(R.id.imageView_chooseSet);
 		imageView.setImageResource(R.drawable.atdp403221_6);
-		imageView.setImageResource(SetLab.get(getActivity()).getSet(mPageNumber).getModelImageResource(mPageNumber));
+		imageView.setImageResource(SetLab.get(getActivity())
+				.getSet(mPageNumber).getModelImageResource(mPageNumber));
 	}
 
 	public void setChooseViewButton(View rootView) {
-		Button chooseButton = (Button)rootView.findViewById(R.id.fragment_choose_set_chooseButton);
+		Button chooseButton = (Button) rootView
+				.findViewById(R.id.fragment_choose_set_chooseButton);
 		chooseButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

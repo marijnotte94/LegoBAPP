@@ -7,6 +7,11 @@ import android.content.res.TypedArray;
 
 import com.share2pley.share2pleyapp.R;
 
+/**
+ * 
+ * @author Marijn Otte - ?
+ * 
+ */
 public class Set {
 	public String mName;
 	private final ArrayList<Brick> mBricks;

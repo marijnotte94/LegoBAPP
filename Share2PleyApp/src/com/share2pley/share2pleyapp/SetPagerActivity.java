@@ -10,12 +10,11 @@ import android.support.v4.view.ViewPager;
 
 /**
  * 
- * @author richard
- * This class provides the swiping between the sets, so to choose the proper set.
+ * @author Richard Vink - 4233867. This class provides the swiping between the
+ *         sets, so to choose the proper set.
  */
 public class SetPagerActivity extends FragmentActivity {
 	private static final int NUM_PAGES = 16;
-
 	private ViewPager mViewPager;
 	private PagerAdapter mPagerAdapter;
 
@@ -24,11 +23,11 @@ public class SetPagerActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_viewpager_set);
 
-		//Initiate Viewpager and PagerAdapter
-		mViewPager = (ViewPager)findViewById(R.id.pager);
+		// Initiate Viewpager and PagerAdapter
+		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mPagerAdapter = new SetPagerAdapter(getSupportFragmentManager());
 		mViewPager.setAdapter(mPagerAdapter);
-		//mSets = SetLab.get().getSetList();
+		// mSets = SetLab.get().getSetList();
 	}
 
 	private class SetPagerAdapter extends FragmentStatePagerAdapter {
@@ -48,4 +47,3 @@ public class SetPagerActivity extends FragmentActivity {
 		}
 	}
 }
-

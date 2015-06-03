@@ -16,8 +16,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-//activity to take photo of lego
-
+/**
+ * 
+ * @author Richard Vink - 4233867. Activity to take photo.
+ * 
+ */
 public class TakePhotoActivity extends Activity {
 	private static final String TAG = "TakePhotoActivity";
 	public static final String EXTRA_PHOTO_FILENAME = "com.share2pley.share2pleyapp.photo_filename";
