@@ -23,11 +23,11 @@
         android:id="@+id/textview_message_instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
+        android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/textballoon"
         android:gravity="center"
-        android:text="nog in te vullen tekstwolk"
         android:textColor="#106097"
         android:textSize="20sp" />
 
@@ -46,11 +46,14 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/clear_set_image"
             android:src="@drawable/set_1" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginEnd="100dp"
             android:layout_marginRight="100dp" >
 
             <ImageView
@@ -58,13 +61,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_marginLeft="50dp"
-                android:src="@drawable/lego_brick" />
+                android:layout_marginStart="50dp"
+                android:contentDescription="@string/brick" />
 
             <ImageView
                 android:id="@+id/imageview_bag"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
+                android:contentDescription="@string/bag"
                 android:src="@drawable/box" />
         </RelativeLayout>
     </LinearLayout>
@@ -81,6 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/button_menu_effect"
             android:text="@string/previous"
@@ -105,6 +111,7 @@
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:background="@drawable/button_menu_effect"
             android:text="@string/next"
             android:textColor="@color/button_menu_textcolor" />
