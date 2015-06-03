@@ -6,15 +6,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * 
+ * @author Richard Vink - 4233867
+ * 
+ */
 public class MenuActivity extends Activity {
 	Button mChooseSetButton;
 	Button mAboutButton;
 	Button mOtherAppsButton;
 	Button mReferencesButton;
 	Button mExitButton;
-	
-	//menu with 4 buttons: choose set, other apps, about us and exit
-	
+
+	// menu with 4 buttons: choose set, other apps, about us and exit
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,11 +28,11 @@ public class MenuActivity extends Activity {
 		/**
 		 * find the choose set button in the menu and start its activity
 		 */
-		mChooseSetButton = (Button)findViewById(R.id.button_menu_choose_set);
+		mChooseSetButton = (Button) findViewById(R.id.button_menu_choose_set);
 		mChooseSetButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
+
 				Intent i = new Intent(getBaseContext(), SetPagerActivity.class);
 				startActivity(i);
 			}
@@ -35,7 +40,7 @@ public class MenuActivity extends Activity {
 		/**
 		 * find the about button in the menu and start its activity
 		 */
-		mAboutButton = (Button)findViewById(R.id.button_menu_about_us);
+		mAboutButton = (Button) findViewById(R.id.button_menu_about_us);
 		mAboutButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -47,7 +52,7 @@ public class MenuActivity extends Activity {
 		/**
 		 * find the reference button in the menu and start its activity
 		 */
-		mReferencesButton = (Button)findViewById(R.id.button_menu_references);
+		mReferencesButton = (Button) findViewById(R.id.button_menu_references);
 		mReferencesButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -59,11 +64,10 @@ public class MenuActivity extends Activity {
 		/**
 		 * find the exit button and close application
 		 */
-		mExitButton = (Button)findViewById(R.id.button_menu_exit);
+		mExitButton = (Button) findViewById(R.id.button_menu_exit);
 		mExitButton.setOnClickListener(new View.OnClickListener() {
-			
-			
-			//exit app
+
+			// exit app
 			@Override
 			public void onClick(View v) {
 				finish();

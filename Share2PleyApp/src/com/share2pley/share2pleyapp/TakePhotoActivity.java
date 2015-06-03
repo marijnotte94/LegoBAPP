@@ -16,9 +16,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-//activity to take photo of lego
-
-public class TakePhotoActivity extends Activity{
+/**
+ * 
+ * @author Richard Vink - 4233867. Activity to take photo.
+ * 
+ */
+public class TakePhotoActivity extends Activity {
 	private static final String TAG = "TakePhotoActivity";
 	public static final String EXTRA_PHOTO_FILENAME = "com.share2pley.share2pleyapp.photo_filename";
 	private ImageView mImageView;
@@ -30,16 +33,18 @@ public class TakePhotoActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_take_photo);
-		mImageView = (ImageView)findViewById(R.id.imageView_take_photo);
-		mTakePhotoButton = (Button)findViewById(R.id.button_takePhoto_takePicture);
-		mTakePhotoButton.setOnClickListener(new View.OnClickListener(){
+		mImageView = (ImageView) findViewById(R.id.imageView_take_photo);
+		mTakePhotoButton = (Button) findViewById(R.id.button_takePhoto_takePicture);
+		mTakePhotoButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				open();
 				attachment = mImageView.getDrawingCache();
 				if (mImageView.getDrawingCache() != null) {
 					try {
-						FileOutputStream fos = openFileOutput(EXTRA_PHOTO_FILENAME, Context.MODE_WORLD_READABLE);
+						FileOutputStream fos = openFileOutput(
+								EXTRA_PHOTO_FILENAME,
+								Context.MODE_WORLD_READABLE);
 						attachment.compress(Bitmap.CompressFormat.JPEG, 0, fos);
 						fos.close();
 					} catch (FileNotFoundException e) {
@@ -51,40 +56,44 @@ public class TakePhotoActivity extends Activity{
 			}
 		});
 
-		mConfirmButton = (Button)findViewById(R.id.button_takePhoto_confirm);
+		mConfirmButton = (Button) findViewById(R.id.button_takePhoto_confirm);
 		mConfirmButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				// set up message subject and message
-//				String subject = "Cleared LEGO set";
-//				Uri address = Uri.parse("mailto:share2pleytest@gmail.com");
-//				String message = "Test 123 test";
-//				Intent intent = new Intent(Intent.ACTION_SENDTO, address);
-				// ACTION_SENDTO filters for email apps (discard bluetooth and others)
-				Uri file = Uri.fromFile(new File(EXTRA_PHOTO_FILENAME+".JPEG"));
-				String uriText =
-						"mailto:share2pleytest@gmail.com" + 
-								"?subject=" + Uri.encode("Cleared LEGO set") + 
-								"&body=" + Uri.encode("Test 123 Test") + "&attachment=" + file;
+				// String subject = "Cleared LEGO set";
+				// Uri address = Uri.parse("mailto:share2pleytest@gmail.com");
+				// String message = "Test 123 test";
+				// Intent intent = new Intent(Intent.ACTION_SENDTO, address);
+				// ACTION_SENDTO filters for email apps (discard bluetooth and
+				// others)
+				Uri file = Uri
+						.fromFile(new File(EXTRA_PHOTO_FILENAME + ".JPEG"));
+				String uriText = "mailto:share2pleytest@gmail.com"
+						+ "?subject=" + Uri.encode("Cleared LEGO set")
+						+ "&body=" + Uri.encode("Test 123 Test")
+						+ "&attachment=" + file;
 
 				Uri uri = Uri.parse(uriText);
 
 				Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
 				sendIntent.setData(uri);
 				try {
-					startActivity(Intent.createChooser(sendIntent, "Send email"));
+					startActivity(Intent
+							.createChooser(sendIntent, "Send email"));
 				} catch (android.content.ActivityNotFoundException ex) {
 					Log.e(TAG, "There are no email clients installed", ex);
-				} 
-				finish();								
+				}
+				finish();
 			}
 		});
 	}
 
 	public void open() {
-		Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-		startActivityForResult(intent,0);
+		Intent intent = new Intent(
+				android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+		startActivityForResult(intent, 0);
 	}
 
 	@Override
