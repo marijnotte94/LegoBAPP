@@ -28,12 +28,17 @@
     <string name="back">Back</string>
     <string name="figurine">Figurine</string>
     <string name="missing">Missing</string>
+
+    <string name="missing_bricks_title">Amount of missing pieces:</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
     <string name="clear_set_image">Clear Set Image</string>
     <string name="bag">Bag</string>
     <string name="brick">Brick</string>
     
+
     <!-- Names of the sets -->
-    <string-array name ="nameStringsArray">
+    <string-array name="nameStringsArray">
         <item>Speelhuis</item>
         <item>Het grote Bos</item>
         <item>Fietswinkel &amp; Café</item>
@@ -51,9 +56,9 @@
         <item>Bouwploeg</item>
         <item>Off-roader</item>
     </string-array>
-    
+
     <!-- Types of the set -->
-    <string-array name = "typeStringsArray">
+    <string-array name="typeStringsArray">
         <item>LEGO® Duplo®</item>
         <item>LEGO® Creator 3-in-1®</item>
         <item>LEGO® Friends</item>
@@ -63,9 +68,9 @@
         <item>LEGO® Minecraft</item>
         <item>LEGO® Technic</item>
     </string-array>
-    
+
     <!-- Ages of the set -->
-    <string-array name = "ageStringsArray">
+    <string-array name="ageStringsArray">
         <item>0-4 jr</item>
         <item>5-14jr</item>
     </string-array>

@@ -15,7 +15,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:max="100"
+        android:max="10000"
         android:progress="0"
         android:progressDrawable="@drawable/progressbar2" />
 
@@ -41,14 +41,21 @@
         android:layout_width="match_parent"
         android:layout_height="200dp" >
 
-        <ImageView
-            android:id="@+id/imageView_clear_setpicture"
+        <ProgressBar
+            android:id="@+id/progressimage_clear"
+            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_below="@+id/progessBar1"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:max="10000"
+            android:progress="10000"
+            android:rotation="270"
             android:layout_marginStart="20dp"
-            android:contentDescription="@string/clear_set_image"
-            android:src="@drawable/set_1" />
+            android:contentDescription="@string/clear_set_image" />
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -66,8 +73,8 @@
 
             <ImageView
                 android:id="@+id/imageview_bag"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:contentDescription="@string/bag"
                 android:src="@drawable/box" />
