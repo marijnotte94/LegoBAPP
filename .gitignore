@@ -1,6 +1,9 @@
 *.classpath
 *.log
 *.class
+*.apk
+*.dex
+*.ap_
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

@@ -6,7 +6,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical" >
 
-    <ProgressBar
+    <com.share2pley.share2pleyapp.Model.TextProgressBar
         android:id="@+id/progressbar_clear"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
@@ -49,13 +49,12 @@
             android:layout_below="@+id/progessBar1"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
+            android:contentDescription="@string/clear_set_image"
             android:max="10000"
             android:progress="10000"
-            android:rotation="270"
-            android:layout_marginStart="20dp"
-            android:contentDescription="@string/clear_set_image" />
-
+            android:rotation="270" />
 
         <RelativeLayout
             android:layout_width="match_parent"

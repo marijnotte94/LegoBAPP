@@ -5,7 +5,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical" >
 
-    <ProgressBar
+    <com.share2pley.share2pleyapp.Model.TextProgressBar
         android:id="@+id/progressbar_final"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
