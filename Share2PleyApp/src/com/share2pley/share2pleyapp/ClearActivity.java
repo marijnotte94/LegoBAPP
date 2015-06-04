@@ -66,15 +66,16 @@ public class ClearActivity extends FragmentActivity {
 
 		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
 		mProgressBar = (TextProgressBar)findViewById(R.id.progressbar_clear);
-		mProgressImage = (ProgressBar)findViewById(R.id.progressimage_clear);
-		mProgressImage.setProgressDrawable(mSet.getProgressImageResource(mSetIndex));
 		
 		update();
-
-		// match index with array
+		
+		mProgressImage = (ProgressBar)findViewById(R.id.progressimage_clear);
+		mProgressImage.setProgressDrawable(mSet.getProgressImageDrawable(mSetIndex));
+		mProgressImage.setProgress(10000);
+		
 		mFigure = (ImageView) findViewById(R.id.imageView_clear_figurine);
 		mFigure.setImageResource(mSet.getFigurineImageResource(mSetIndex));
-
+		
 		// next button pressed for new instruction
 		mNextButton = (Button) findViewById(R.id.button_clear_next);
 		mNextButton.setOnClickListener(new View.OnClickListener() {

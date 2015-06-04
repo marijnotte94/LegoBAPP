@@ -53,7 +53,6 @@
             android:layout_marginTop="20dp"
             android:contentDescription="@string/clear_set_image"
             android:max="10000"
-            android:progress="10000"
             android:rotation="270" />
 
         <RelativeLayout
@@ -65,7 +64,7 @@
             <ImageView
                 android:id="@+id/imageview_brick"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="60dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginStart="50dp"
                 android:contentDescription="@string/brick" />
