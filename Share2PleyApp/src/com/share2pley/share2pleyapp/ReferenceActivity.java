@@ -16,10 +16,12 @@ import android.widget.ImageView;
  */
 public class ReferenceActivity extends Activity {
 	private ImageView mLegoCity;
+	private ReferenceActivity mReferenceActivity;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		mReferenceActivity = this;
 		setContentView(R.layout.activity_references);
 
 		mLegoCity = (ImageView) findViewById(R.id.imageView_references_legoCity);
@@ -28,11 +30,12 @@ public class ReferenceActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				final String legoCityName = "com.lego.city.my_city";
-				Intent i = new Intent("com.lego.city.my_city");
 				try {
+					Intent i = mReferenceActivity.getPackageManager()
+							.getLaunchIntentForPackage(legoCityName);
 					startActivity(i);
 					return;
-				} catch (ActivityNotFoundException e) {
+				} catch (NullPointerException e) {
 				}
 				try {
 					startActivity(new Intent(Intent.ACTION_VIEW, Uri
