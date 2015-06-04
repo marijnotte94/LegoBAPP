@@ -31,9 +31,17 @@
     <string name="clear_set_image">Clear Set Image</string>
     <string name="bag">Bag</string>
     <string name="brick">Brick</string>
+    <string name="about_first">Share2Pley is started with the thought of toys being accessible for everyone. Sharing toys is not only a durable solution, but can be a financial result for many families too.</string>
+    <string name="about_ontstaan1">Sharing toys and optimal apply</string>
+    <string name="about_ontstaan2">At Share2Pley, we encourage the sharing economy. Instead of buying each time, we share toys. Hereby we take optimal advantage of toys. Who does not want new toys every month? </string>
+    <string name="about_aankopen1">No more expensive buys</string>
+    <string name="about_aankopen2">Every year, much money goes to the buy of toys. Buying new toys on frequently, will be very expensive. Did you know that the average household spends almost 400 euros on toys? At Share2Pley</string>
+    <string name="about_online1">From clicks to bricks</string>
+    <string name="about_online2">For many children, online play is more accessible than physical toys. Deciding what to play and whenever you want to. Combine with Share2Pley both worlds.</string>
     
+
     <!-- Names of the sets -->
-    <string-array name ="nameStringsArray">
+    <string-array name="nameStringsArray">
         <item>Speelhuis</item>
         <item>Het grote Bos</item>
         <item>Fietswinkel &amp; Café</item>
@@ -51,9 +59,9 @@
         <item>Bouwploeg</item>
         <item>Off-roader</item>
     </string-array>
-    
+
     <!-- Types of the set -->
-    <string-array name = "typeStringsArray">
+    <string-array name="typeStringsArray">
         <item>LEGO® Duplo®</item>
         <item>LEGO® Creator 3-in-1®</item>
         <item>LEGO® Friends</item>
@@ -63,9 +71,9 @@
         <item>LEGO® Minecraft</item>
         <item>LEGO® Technic</item>
     </string-array>
-    
+
     <!-- Ages of the set -->
-    <string-array name = "ageStringsArray">
+    <string-array name="ageStringsArray">
         <item>0-4 jr</item>
         <item>5-14jr</item>
     </string-array>
