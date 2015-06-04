@@ -13,8 +13,8 @@ int array atdp_imgs 0x7f0c0004
 int array bouwploeg_imgs 0x7f0c0013
 int array craftingkist_imgs 0x7f0c0012
 int array drilklauw 0x7f0c0011
-int array emna_imgs 0x7f0c0010
-int array enterdraak_imgs 0x7f0c000f
+int array emma_imgs 0x7f0c0010
+int array enderdraak_imgs 0x7f0c000f
 int array fietswinkel_imgs 0x7f0c000e
 int array figurines_imgs 0x7f0c0002
 int array helikopter_imgs 0x7f0c000d
@@ -3245,10 +3245,13 @@ int string about_us 0x7f0a001b
 int string action_settings 0x7f0a0013
 int string app_name 0x7f0a0011
 int string back 0x7f0a0027
+int string bag 0x7f0a002e
+int string brick 0x7f0a002f
 int string build 0x7f0a0025
 int string cancel 0x7f0a002c
 int string choose 0x7f0a0026
 int string choose_set 0x7f0a0018
+int string clear_set_image 0x7f0a002d
 int string confirm_button 0x7f0a0020
 int string exit 0x7f0a001c
 int string figurine 0x7f0a0028

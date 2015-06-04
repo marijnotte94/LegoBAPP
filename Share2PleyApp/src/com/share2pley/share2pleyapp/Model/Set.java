@@ -14,23 +14,29 @@ import com.share2pley.share2pleyapp.R;
  * 
  */
 public class Set {
-	public String mName;
+	private final int mIndex;
 	private final ArrayList<Brick> mBricks;
 	private final Context mContext;
 	private final TypedArray mImgs;
 	private final TypedArray mFigurines;
 	private final TypedArray mProcesses;
+	private TypedArray mSetsArray;
 
-	public Set(String name, Context context) {
-		mName = name;
+	public Set(int setNumber, Context context) {
 		mContext = context;
+		mIndex = setNumber;
 		mBricks = new ArrayList<Brick>();
-		mImgs = context.getResources().obtainTypedArray(R.array.models_imgs);
-		context.getResources().obtainTypedArray(R.array.models_imgs).recycle();
-		mFigurines = context.getResources().obtainTypedArray(R.array.figurines_imgs);
-		context.getResources().obtainTypedArray(R.array.figurines_imgs).recycle();
-		mProcesses = context.getResources().obtainTypedArray(R.array.processes_imgs);
-		context.getResources().obtainTypedArray(R.array.processes_imgs).recycle();
+
+		mImgs = mContext.getResources().obtainTypedArray(R.array.models_imgs);
+		mContext.getResources().obtainTypedArray(R.array.models_imgs).recycle();
+		mFigurines = mContext.getResources().obtainTypedArray(R.array.figurines_imgs);
+		mContext.getResources().obtainTypedArray(R.array.figurines_imgs).recycle();
+		mProcesses = mContext.getResources().obtainTypedArray(R.array.processes_imgs);
+		mContext.getResources().obtainTypedArray(R.array.processes_imgs).recycle();
+		
+		// set the mSetsArray to the proper set
+		mSetsArray = getModelArrayResource(mIndex);
+
 		addBricks();
 	}
 
@@ -58,29 +64,19 @@ public class Set {
 		return mBricks.get(index);
 	}
 
+	/**
+	 * This method used String.split to split the amount of the filename It
+	 * combines the amount with the brick picture to add each brick
+	 */
 	public void addBricks() {
-		for (int i = 0; i < mImgs.length(); i++) {
-			addBrick(getModelImageResource(i), 3);
+		for (int i = 0; i < mSetsArray.length(); i++) {
+			String resource = mContext.getResources().getResourceName(
+					mSetsArray.getResourceId(i, -1));
+			String splitted[] = resource.split("_");
+			String amountString = splitted[1];
+			int amount = Integer.parseInt(amountString);
+			addBrick(mSetsArray.getResourceId(i, -1), amount);
 		}
-
-		// final R.drawable drawableResources = new R.drawable();
-		// final Class<R.drawable> c = R.drawable.class;
-		// final Field[] fields = c.getDeclaredFields();
-		//
-		// for (int j = 0, max = fields.length; j < max; j++) {
-		// final int resourceId;
-		// try {
-		// resourceId = fields[j].getInt(drawableResources);
-		// String resourceName = mContext.getResources().getString(resourceId);
-		// if(resourceName.contains(mName)){
-		// int amount =
-		// Character.getNumericValue(resourceName.charAt(resourceName.length()-5));
-		// addBrick(resourceId, amount);
-		// }
-		// } catch (Exception e) {
-		// continue;
-		// }
-		// }
 	}
 
 	public int getAmountBricks() {
@@ -97,5 +93,112 @@ public class Set {
 	
 	public Drawable getProgressImageResource(int index) {
 		return mContext.getResources().getDrawable(mProcesses.getResourceId(index,-1));
+	}
+
+	public TypedArray getModelArrayResource(int mSetIndex) {
+		switch (mSetIndex) {
+		case 0:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.speelhuis_imgs);
+			mContext.getResources().obtainTypedArray(R.array.speelhuis_imgs)
+					.recycle();
+			break;
+		case 1:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.hetgrotebos_imgs);
+			mContext.getResources().obtainTypedArray(R.array.hetgrotebos_imgs)
+					.recycle();
+			break;
+		case 2:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.fietswinkel_imgs);
+			mContext.getResources().obtainTypedArray(R.array.fietswinkel_imgs)
+					.recycle();
+			break;
+		case 3:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.speelgoedwinkel_imgs);
+			mContext.getResources()
+					.obtainTypedArray(R.array.speelgoedwinkel_imgs).recycle();
+			break;
+		case 4:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.jungle_imgs);
+			mContext.getResources().obtainTypedArray(R.array.jungle_imgs)
+					.recycle();
+			break;
+		case 5:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.emma_imgs);
+			mContext.getResources().obtainTypedArray(R.array.emma_imgs)
+					.recycle();
+			break;
+		case 6:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.helikopter_imgs);
+			mContext.getResources().obtainTypedArray(R.array.helikopter_imgs)
+					.recycle();
+			break;
+		case 7:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.sloopterrein_imgs);
+			mContext.getResources().obtainTypedArray(R.array.sloopterrein_imgs)
+					.recycle();
+			break;
+		case 8:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.vuurleeuw_imgs);
+			mContext.getResources().obtainTypedArray(R.array.vuurleeuw_imgs)
+					.recycle();
+			break;
+		case 9:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.drilklauw);
+			mContext.getResources().obtainTypedArray(R.array.drilklauw)
+					.recycle();
+			break;
+		case 10:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.tie_imgs);
+			mContext.getResources().obtainTypedArray(R.array.tie_imgs)
+					.recycle();
+			break;
+		case 11:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.atdp_imgs);
+			mContext.getResources().obtainTypedArray(R.array.atdp_imgs)
+					.recycle();
+			break;
+		case 12:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.craftingkist_imgs);
+			mContext.getResources().obtainTypedArray(R.array.craftingkist_imgs)
+					.recycle();
+			break;
+		case 13:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.enderdraak_imgs);
+			mContext.getResources().obtainTypedArray(R.array.enderdraak_imgs)
+					.recycle();
+			break;
+		case 14:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.bouwploeg_imgs);
+			mContext.getResources().obtainTypedArray(R.array.bouwploeg_imgs)
+					.recycle();
+			break;
+		case 15:
+			mSetsArray = mContext.getResources().obtainTypedArray(
+					R.array.offroader_imgs);
+			mContext.getResources().obtainTypedArray(R.array.offroader_imgs)
+					.recycle();
+			break;
+		}
+		return mSetsArray;
+	}
+
+	@Override
+	public String toString() {
+		return mIndex + "";
 	}
 }

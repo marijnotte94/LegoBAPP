@@ -1848,7 +1848,7 @@
         <item>@drawable/fietswinkel9341_1</item>
         <item>@drawable/fietswinkel9552_1</item>
     </string-array>
-    <string-array name="enterdraak_imgs">
+    <string-array name="enderdraak_imgs">
         <item>@drawable/enderdraak242026_8</item>
         <item>@drawable/enderdraak243126_4</item>
         <item>@drawable/enderdraak3000844_8</item>
@@ -1951,7 +1951,7 @@
         <item>@drawable/enderdraak6117973_10</item>
         <item>@drawable/enderdraak663626_6</item>
     </string-array>
-    <string-array name="emna_imgs">
+    <string-array name="emma_imgs">
         <item>@drawable/emma235701_2</item>
         <item>@drawable/emma241226_3</item>
         <item>@drawable/emma242001_4</item>

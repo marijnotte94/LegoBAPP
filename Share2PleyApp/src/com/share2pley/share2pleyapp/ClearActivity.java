@@ -2,10 +2,10 @@ package com.share2pley.share2pleyapp;
 
 import android.content.Intent;
 import android.graphics.drawable.ClipDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -45,7 +45,6 @@ public class ClearActivity extends FragmentActivity {
 	private ProgressBar mProgressBar;
 	private ProgressBar mProgressImage;
 	private double mAmountBricks;
-
 	private ClipDrawable mProgressClip;
 
 
@@ -62,18 +61,16 @@ public class ClearActivity extends FragmentActivity {
 		if (b != null) {
 			mSetIndex = b.getInt("page");
 		}
-
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
-
+		Log.d("Amount", mAmountBricks +"");
 
 		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
 		mProgressBar = (ProgressBar)findViewById(R.id.progressbar_clear);
 		mProgressImage = (ProgressBar)findViewById(R.id.progressimage_clear);
 		mProgressImage.setProgressDrawable(mSet.getProgressImageResource(mSetIndex));
 		
-
-		// update(index);
+		update();
 
 		// match index with array
 		mFigure = (ImageView) findViewById(R.id.imageView_clear_figurine);
@@ -85,13 +82,13 @@ public class ClearActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 
+
 				//If there is next instruction, display instruction
 				if(mSet.hasNext(mBrickIndex)){
 					mBrickIndex ++;
-					update(mBrickIndex);		
-					mProgressBar.setProgress(mProgressBar.getProgress()+(int)((1.0/mAmountBricks)*100.0));
-					mProgressImage.setProgress(mProgressImage.getProgress()-(int)((1.0/mAmountBricks)*100.0));
-
+					update();		
+					mProgressBar.setProgress(mProgressBar.getProgress()+(int)((1.0/mAmountBricks)*10000.0));
+					mProgressImage.setProgress(mProgressImage.getProgress()-(int)((1.0/mAmountBricks)*10000.0));
 				}
 				// If no more instructions go to timeactivity
 				else {
@@ -112,10 +109,10 @@ public class ClearActivity extends FragmentActivity {
 			public void onClick(View v) {
 				if (mSet.hasPrevious(mBrickIndex)) {
 					mBrickIndex--;
-					update(mBrickIndex);
-					mProgressBar.setProgress(mProgressBar.getProgress()-(int)((1.0/mAmountBricks)*100.0));
-					mProgressImage.setProgress(mProgressImage.getProgress()+(int)((1.0/mAmountBricks)*100.0));
-
+					update();
+					mProgressBar.setProgress(mProgressBar.getProgress()-(int)((1.0/mAmountBricks)*10000.0));
+					mProgressImage.setProgress(mProgressImage.getProgress()+(int)((1.0/mAmountBricks)*10000.0));
+					
 				}
 				// at first instruction: go to choose set screen
 				else {
@@ -137,7 +134,7 @@ public class ClearActivity extends FragmentActivity {
 
 	// find instruction if previous or next button is pushed + layout of letters
 	// so that its readable
-	public void update(int i) {
+	public void update() {
 		ImageView brick = (ImageView) findViewById(R.id.imageview_brick);
 		mCurrent = mSet.getBrick(mBrickIndex);
 		brick.setImageResource(mCurrent.getSource());
