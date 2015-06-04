@@ -52,7 +52,7 @@
             android:layout_marginTop="20dp"
             android:max="100"
             android:progress="100"
-            android:progressDrawable="@drawable/progress_clip" 
+            
             android:rotation="270"/>
 
         <RelativeLayout

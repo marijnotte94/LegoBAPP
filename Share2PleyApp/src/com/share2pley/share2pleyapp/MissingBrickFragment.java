@@ -12,6 +12,7 @@ public class MissingBrickFragment extends DialogFragment{
 		// Use the Builder class for convenient dialog construction
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		builder.setTitle(R.string.missing_bricks_title)
+		
 		.setItems(R.array.numbers, new DialogInterface.OnClickListener() {
 
 			@Override

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 
 import com.share2pley.share2pleyapp.R;
 
@@ -18,6 +19,7 @@ public class Set {
 	private final Context mContext;
 	private final TypedArray mImgs;
 	private final TypedArray mFigurines;
+	private final TypedArray mProcesses;
 
 	public Set(String name, Context context) {
 		mName = name;
@@ -25,10 +27,10 @@ public class Set {
 		mBricks = new ArrayList<Brick>();
 		mImgs = context.getResources().obtainTypedArray(R.array.models_imgs);
 		context.getResources().obtainTypedArray(R.array.models_imgs).recycle();
-		mFigurines = context.getResources().obtainTypedArray(
-				R.array.figurines_imgs);
-		context.getResources().obtainTypedArray(R.array.figurines_imgs)
-				.recycle();
+		mFigurines = context.getResources().obtainTypedArray(R.array.figurines_imgs);
+		context.getResources().obtainTypedArray(R.array.figurines_imgs).recycle();
+		mProcesses = context.getResources().obtainTypedArray(R.array.processes_imgs);
+		context.getResources().obtainTypedArray(R.array.processes_imgs).recycle();
 		addBricks();
 	}
 
@@ -91,5 +93,9 @@ public class Set {
 
 	public int getFigurineImageResource(int index) {
 		return mFigurines.getResourceId(index / 2, -1);
+	}
+	
+	public Drawable getProgressImageResource(int index) {
+		return mContext.getResources().getDrawable(mProcesses.getResourceId(index,-1));
 	}
 }

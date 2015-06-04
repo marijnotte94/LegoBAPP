@@ -2,6 +2,7 @@ package com.share2pley.share2pleyapp;
 
 import android.content.Intent;
 import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -52,7 +53,9 @@ public class ClearActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_clear);
-
+		
+		mStartTime = System.nanoTime();
+		
 		// find set belonging to button pressed
 		Intent i = getIntent();
 		Bundle b = i.getExtras();
@@ -63,26 +66,18 @@ public class ClearActivity extends FragmentActivity {
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
 
-		mStartTime = System.nanoTime();
 
-		//start timer
 		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
 		mProgressBar = (ProgressBar)findViewById(R.id.progressbar_clear);
 		mProgressImage = (ProgressBar)findViewById(R.id.progressimage_clear);
-		//mProgressClip = (ClipDrawable)findViewById(R.id.clip_progress).getBackground();
-		//mProgressClip.setImageResource(mSet.getModelImageResource(mSetIndex));
-
-
-		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
-		mProgressBar = (ProgressBar) findViewById(R.id.progressbar_clear);
-		mStartTime = System.nanoTime();
+		mProgressImage.setProgressDrawable(mSet.getProgressImageResource(mSetIndex));
+		
 
 		// update(index);
 
 		// match index with array
 		mFigure = (ImageView) findViewById(R.id.imageView_clear_figurine);
-		mFigure.setImageResource(SetLab.get(this).getSet(mSetIndex)
-				.getFigurineImageResource(mSetIndex));
+		mFigure.setImageResource(mSet.getFigurineImageResource(mSetIndex));
 
 		// next button pressed for new instruction
 		mNextButton = (Button) findViewById(R.id.button_clear_next);

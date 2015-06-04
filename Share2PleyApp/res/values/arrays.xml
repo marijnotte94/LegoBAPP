@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name ="numbers">
-	    <item>1</item>
-	    <item>2</item>
-	    <item>3</item>
-	    <item>4</item>
-	    <item>5</item>
-	    <item>6</item>
-	    <item>7</item>
-	    <item>8</item>
-	    <item>9</item>
-	    <item>10</item>
-	    <item>more</item>
-	</string-array>
-	
+
+    <string-array name="numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>more</item>
+    </string-array>
     <string-array name="models_imgs">
         <item>@drawable/set_1</item>
         <item>@drawable/set_2</item>
@@ -41,6 +41,24 @@
         <item>@drawable/figurine_starwars</item>
         <item>@drawable/figurine_minecraft</item>
         <item>@drawable/figurine_technic</item>
+    </string-array>
+    <string-array name="processes_imgs">
+        <item>@drawable/clip_1</item>
+        <item>@drawable/clip_2</item>
+        <item>@drawable/clip_3</item>
+        <item>@drawable/clip_4</item>
+        <item>@drawable/clip_5</item>
+        <item>@drawable/clip_6</item>
+        <item>@drawable/clip_7</item>
+        <item>@drawable/clip_8</item>
+        <item>@drawable/clip_9</item>
+        <item>@drawable/clip_10</item>
+        <item>@drawable/clip_11</item>
+        <item>@drawable/clip_12</item>
+        <item>@drawable/clip_13</item>
+        <item>@drawable/clip_14</item>
+        <item>@drawable/clip_15</item>
+        <item>@drawable/clip_16</item>
     </string-array>
     <string-array name="atdp_imgs">
         <item>@drawable/atdp243201_2</item>
