@@ -1,7 +1,13 @@
 package com.share2pley.share2pleyapp;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 /**
  * 
@@ -9,9 +15,44 @@ import android.os.Bundle;
  * 
  */
 public class ReferenceActivity extends Activity {
+	private ImageView mLegoCity;
+	private ReferenceActivity mReferenceActivity;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		mReferenceActivity = this;
 		setContentView(R.layout.activity_references);
+
+		mLegoCity = (ImageView) findViewById(R.id.imageView_references_legoCity);
+		mLegoCity.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				final String legoCityName = "com.lego.city.my_city";
+				try {
+					Intent i = mReferenceActivity.getPackageManager()
+							.getLaunchIntentForPackage(legoCityName);
+					startActivity(i);
+					return;
+				} catch (NullPointerException e) {
+				}
+				try {
+					startActivity(new Intent(Intent.ACTION_VIEW, Uri
+							.parse("market://details?id=" + legoCityName)));
+				} catch (android.content.ActivityNotFoundException anfe) {
+					try {
+						startActivity(new Intent(
+								Intent.ACTION_VIEW,
+								Uri.parse("https://play.google.com/store/apps/details?id="
+										+ legoCityName)));
+					} catch (ActivityNotFoundException e) {
+						Log.e("TAG", "activity not found");
+					}
+				}
+
+			}
+		});
+
 	}
 }
