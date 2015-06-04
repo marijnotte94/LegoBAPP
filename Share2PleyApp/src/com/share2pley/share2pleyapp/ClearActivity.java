@@ -63,7 +63,6 @@ public class ClearActivity extends FragmentActivity {
 		}
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
-		Log.d("Amount", mAmountBricks +"");
 
 		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
 		mProgressBar = (ProgressBar)findViewById(R.id.progressbar_clear);
