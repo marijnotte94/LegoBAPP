@@ -95,7 +95,7 @@ public class Set {
 		return mFigurines.getResourceId(index / 2, -1);
 	}
 
-	public Drawable getProgressImageResource(int index) {
+	public Drawable getProgressImageDrawable(int index) {
 		return mContext.getResources().getDrawable(
 				mProcesses.getResourceId(index, -1));
 	}

@@ -1,11 +1,9 @@
 package com.share2pley.share2pleyapp;
 
 import android.content.Intent;
-import android.graphics.drawable.ClipDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -19,6 +17,7 @@ import android.widget.TextView;
 import com.share2pley.share2pleyapp.Model.Brick;
 import com.share2pley.share2pleyapp.Model.Set;
 import com.share2pley.share2pleyapp.Model.SetLab;
+import com.share2pley.share2pleyapp.Model.TextProgressBar;
 
 
 public class ClearActivity extends FragmentActivity {
@@ -36,16 +35,16 @@ public class ClearActivity extends FragmentActivity {
 	private TextView mMessage;
 	private Button mNextButton, mPreviousButton, mMissingButton;
 	private Brick mCurrent;
-	private ProgressBar mBreakImage;
 	private ImageView mFigure;
 	private ImageView mBrick;
 	private ImageView mBag;
 	private int mBrickIndex = 0;
 	private long mStartTime, mEndTime;
-	private ProgressBar mProgressBar;
+	private TextProgressBar mProgressBar;
 	private ProgressBar mProgressImage;
 	private double mAmountBricks;
-	private ClipDrawable mProgressClip;
+	private int percentage;
+
 
 
 	@Override
@@ -63,18 +62,20 @@ public class ClearActivity extends FragmentActivity {
 		}
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
+		percentage = (int)((1.0/mAmountBricks)*10000.0);
 
 		mMessage = (TextView)findViewById(R.id.textview_message_instruction);
-		mProgressBar = (ProgressBar)findViewById(R.id.progressbar_clear);
-		mProgressImage = (ProgressBar)findViewById(R.id.progressimage_clear);
-		mProgressImage.setProgressDrawable(mSet.getProgressImageResource(mSetIndex));
+		mProgressBar = (TextProgressBar)findViewById(R.id.progressbar_clear);
 		
 		update();
-
-		// match index with array
+		
+		mProgressImage = (ProgressBar)findViewById(R.id.progressimage_clear);
+		mProgressImage.setProgressDrawable(mSet.getProgressImageDrawable(mSetIndex));
+		mProgressImage.setProgress(10000);
+		
 		mFigure = (ImageView) findViewById(R.id.imageView_clear_figurine);
 		mFigure.setImageResource(mSet.getFigurineImageResource(mSetIndex));
-
+		
 		// next button pressed for new instruction
 		mNextButton = (Button) findViewById(R.id.button_clear_next);
 		mNextButton.setOnClickListener(new View.OnClickListener() {
@@ -85,9 +86,10 @@ public class ClearActivity extends FragmentActivity {
 				//If there is next instruction, display instruction
 				if(mSet.hasNext(mBrickIndex)){
 					mBrickIndex ++;
-					update();		
-					mProgressBar.setProgress(mProgressBar.getProgress()+(int)((1.0/mAmountBricks)*10000.0));
-					mProgressImage.setProgress(mProgressImage.getProgress()-(int)((1.0/mAmountBricks)*10000.0));
+					mProgressBar.setProgress(mProgressBar.getProgress()+percentage);
+					mProgressImage.setProgress(mProgressImage.getProgress()-percentage);
+					update();
+					
 				}
 				// If no more instructions go to timeactivity
 				else {
@@ -108,9 +110,9 @@ public class ClearActivity extends FragmentActivity {
 			public void onClick(View v) {
 				if (mSet.hasPrevious(mBrickIndex)) {
 					mBrickIndex--;
+					mProgressBar.setProgress(mProgressBar.getProgress()-percentage);
+					mProgressImage.setProgress(mProgressImage.getProgress()+percentage);
 					update();
-					mProgressBar.setProgress(mProgressBar.getProgress()-(int)((1.0/mAmountBricks)*10000.0));
-					mProgressImage.setProgress(mProgressImage.getProgress()+(int)((1.0/mAmountBricks)*10000.0));
 					
 				}
 				// at first instruction: go to choose set screen
@@ -138,7 +140,9 @@ public class ClearActivity extends FragmentActivity {
 		mCurrent = mSet.getBrick(mBrickIndex);
 		brick.setImageResource(mCurrent.getSource());
 		mMessage.setText(mCurrent.getAmount() + "x");
+		mProgressBar.setText(mProgressBar.getProgress()/100 +"%");
 		animateBrick();
+		
 	}
 
 	// animation of brick into bag
