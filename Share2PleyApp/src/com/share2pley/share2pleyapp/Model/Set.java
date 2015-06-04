@@ -29,11 +29,15 @@ public class Set {
 
 		mImgs = mContext.getResources().obtainTypedArray(R.array.models_imgs);
 		mContext.getResources().obtainTypedArray(R.array.models_imgs).recycle();
-		mFigurines = mContext.getResources().obtainTypedArray(R.array.figurines_imgs);
-		mContext.getResources().obtainTypedArray(R.array.figurines_imgs).recycle();
-		mProcesses = mContext.getResources().obtainTypedArray(R.array.processes_imgs);
-		mContext.getResources().obtainTypedArray(R.array.processes_imgs).recycle();
-		
+		mFigurines = mContext.getResources().obtainTypedArray(
+				R.array.figurines_imgs);
+		mContext.getResources().obtainTypedArray(R.array.figurines_imgs)
+				.recycle();
+		mProcesses = mContext.getResources().obtainTypedArray(
+				R.array.processes_imgs);
+		mContext.getResources().obtainTypedArray(R.array.processes_imgs)
+				.recycle();
+
 		// set the mSetsArray to the proper set
 		mSetsArray = getModelArrayResource(mIndex);
 
@@ -90,9 +94,10 @@ public class Set {
 	public int getFigurineImageResource(int index) {
 		return mFigurines.getResourceId(index / 2, -1);
 	}
-	
+
 	public Drawable getProgressImageResource(int index) {
-		return mContext.getResources().getDrawable(mProcesses.getResourceId(index,-1));
+		return mContext.getResources().getDrawable(
+				mProcesses.getResourceId(index, -1));
 	}
 
 	public TypedArray getModelArrayResource(int mSetIndex) {
