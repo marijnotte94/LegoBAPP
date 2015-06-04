@@ -23,7 +23,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
-        android:contentDescription="@string/choose_set" />
+        android:contentDescription="@string/choose_set"
+        android:rotation="270" />
     
     <TextView
         android:id="@+id/choose_set_textView_description"
