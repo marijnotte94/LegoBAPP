@@ -157,7 +157,7 @@ public class ClearActivity extends FragmentActivity {
 
 		mBrick.bringToFront();
 
-		Animation transAnim = new TranslateAnimation(0, -25, 0, 150);
+		Animation transAnim = new TranslateAnimation(0, 25, 0, 175);
 		transAnim.setRepeatCount(transAnim.INFINITE);
 
 		Animation alphaAnim = new AlphaAnimation(1, 0);

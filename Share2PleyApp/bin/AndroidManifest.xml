@@ -97,6 +97,12 @@
             android:label="TimeActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <!-- Activity with final result -->
+        <activity
+            android:name=".ResultActivity"
+            android:label="ResultActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

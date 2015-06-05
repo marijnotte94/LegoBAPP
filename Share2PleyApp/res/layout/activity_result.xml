@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_result_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:textColor="#106097" >
+
+    <ImageView
+        android:id="@+id/imageView_final_set"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/result_set_image"
+        android:gravity="center"
+        android:rotation="270"
+        android:src="@drawable/set_1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/textView_final_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/textview_final_intro"
+            android:textColor="#106097" />
+
+        <TextView
+            android:id="@+id/textView_final_missing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#106097" />
+
+        <TextView
+            android:id="@+id/textView_final_outro"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/textview_final_outro"
+            android:textColor="#106097" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center|bottom"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/button_result_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_menu_effect"
+            android:text="@string/yes"
+            android:textColor="@color/button_menu_textcolor" />
+
+        <Button
+            android:id="@+id/button_result_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/button_menu_effect"
+            android:text="@string/no"
+            android:textColor="@color/button_menu_textcolor" />
+    </LinearLayout>
+
+</LinearLayout>

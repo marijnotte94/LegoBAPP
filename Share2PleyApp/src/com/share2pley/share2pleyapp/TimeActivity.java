@@ -37,7 +37,7 @@ public class TimeActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
+				Intent i = new Intent(getBaseContext(), ResultActivity.class);
 				startActivity(i);
 			}
 		});
