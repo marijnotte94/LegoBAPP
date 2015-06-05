@@ -19,7 +19,7 @@
     <string name="first_name">First Name:</string>
     <string name="last_name">Last Name:</string>
     <string name="confirm_button">Confirm</string>
-    <string name="take_picture">Take a picture of your build LEGO model</string>
+    <string name="take_picture">Take a picture of the last bricks you put in the bag</string>
     <string name="take_photo">Take Photo</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
@@ -28,16 +28,14 @@
     <string name="back">Back</string>
     <string name="figurine">Figurine</string>
     <string name="missing">Missing</string>
+    <string name="report">Report</string>
 
     <string name="missing_bricks_title">Amount of missing pieces:</string>
     <string name="ok">Ok</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
     <string name="cancel">Cancel</string>
     <string name="clear_set_image">Clear Set Image</string>
     <string name ="result_set_image">Set Images</string>
-    <string name ="textview_final_intro">Well done! You miss the following pieces. Go look for them!</string>
-    <string name="textview_final_outro">Have you found them?</string>
+    <string name ="textview_final_intro">Well done! You miss the following pieces. Go look for them! If you find some bricks, show them at the information desk.</string>
     <string name="bag">Bag</string>
     <string name="brick">Brick</string>
     <string name="about_first">Share2Pley is started with the thought of toys being accessible for everyone. Sharing toys is not only a durable solution, but can be a financial result for many families too.</string>
