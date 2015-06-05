@@ -33,15 +33,13 @@ public class NameActivity extends Activity {
 		mFirstName = (EditText) findViewById(R.id.edit_fillname_first_name);
 		mLastName = (EditText) findViewById(R.id.edit_fillname_last_name);
 
-		// remove old name if edited
-		getBaseContext().deleteDatabase("Persons");
-
+		this.deleteDatabase("spDatabase.db");
 		// get name from database if exists
 		spDb = new DBHelper(this);
 		try {
-			if (spDb.getData(1) != null) {
+			if (spDb.getPersonData(1) != null) {
 				isAlreadyFilled = true;
-				Cursor rs = spDb.getData(1);
+				Cursor rs = spDb.getPersonData(1);
 				rs.moveToFirst();
 				String firstName = rs.getString(rs
 						.getColumnIndex(DBHelper.PERSONS_COLUMN_FIRSTNAME));
@@ -67,8 +65,9 @@ public class NameActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				if (isAlreadyFilled) {
-					spDb.updateContent(1, mFirstName.getText().toString(),
-							mLastName.getText().toString(), 0);
+					spDb.updatePersonContent(1,
+							mFirstName.getText().toString(), mLastName
+									.getText().toString(), 0);
 				} else {
 					spDb.insertPerson(mFirstName.getText().toString(),
 							mLastName.getText().toString(), 0);
