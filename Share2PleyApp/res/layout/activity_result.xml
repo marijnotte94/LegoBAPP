@@ -6,7 +6,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical"
     android:textColor="#106097" >
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" >
-		
+
         <TextView
             android:id="@+id/textView_final_intro"
             android:layout_width="wrap_content"
@@ -49,12 +49,19 @@
             android:textColor="#106097" />
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/textView_result_missing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </TextView>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center|bottom"
         android:layout_weight="1" >
-        
+
         <Button
             android:id="@+id/button_result_exit"
             android:layout_width="wrap_content"
