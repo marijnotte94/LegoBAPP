@@ -1,5 +1,6 @@
 package com.share2pley.share2pleyapp;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import android.content.Intent;
@@ -42,8 +43,9 @@ public class ClearActivity extends FragmentActivity {
 	private ProgressBar mProgressImage;
 	private double mAmountBricks;
 	private int percentage;
-	private int mRandom;
+	
 	private int mIndex = 0;
+	private ArrayList<Integer> mIndexPhotos = new ArrayList<Integer>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,8 +64,15 @@ public class ClearActivity extends FragmentActivity {
 		mAmountBricks = mSet.getAmountBricks();
 		percentage = (int) ((1.0 / mAmountBricks) * 10000.0);
 		
+	
 		Random r = new Random();
-		mRandom = r.nextInt((int) (mAmountBricks-1)) + 1;
+		int mAmountPhotos = (int) Math.ceil(mAmountBricks / 100); 
+		for (int k = 0; k<mAmountPhotos; k++){
+			int mRandom = r.nextInt((int) (mAmountBricks-2)) + 1;
+			mIndexPhotos.add(mRandom);
+		}
+		
+		
 		 
 
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
@@ -87,10 +96,10 @@ public class ClearActivity extends FragmentActivity {
 
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
-					//if(mIndex == mRandom){
-					//	Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
-					//	startActivity(i);
-					//}
+					if(mIndexPhotos.contains(mIndex)){
+						Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
+						startActivity(i);
+					}
 					mBrickIndex++;
 					mProgressBar.setProgress(mProgressBar.getProgress()
 							+ percentage);
