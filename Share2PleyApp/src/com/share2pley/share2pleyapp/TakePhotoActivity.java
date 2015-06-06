@@ -68,6 +68,7 @@ public class TakePhotoActivity extends Activity {
 				// Intent intent = new Intent(Intent.ACTION_SENDTO, address);
 				// ACTION_SENDTO filters for email apps (discard bluetooth and
 				// others)
+				/*
 				Uri file = Uri
 						.fromFile(new File(EXTRA_PHOTO_FILENAME + ".JPEG"));
 				String uriText = "mailto:share2pleytest@gmail.com"
@@ -84,7 +85,7 @@ public class TakePhotoActivity extends Activity {
 							.createChooser(sendIntent, "Send email"));
 				} catch (android.content.ActivityNotFoundException ex) {
 					Log.e(TAG, "There are no email clients installed", ex);
-				}
+				}*/
 				finish();
 			}
 		});

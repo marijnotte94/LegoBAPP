@@ -1,5 +1,7 @@
 package com.share2pley.share2pleyapp;
 
+import java.util.Random;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -40,6 +42,8 @@ public class ClearActivity extends FragmentActivity {
 	private ProgressBar mProgressImage;
 	private double mAmountBricks;
 	private int percentage;
+	private int mRandom;
+	private int mIndex = 0;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,10 @@ public class ClearActivity extends FragmentActivity {
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
 		percentage = (int) ((1.0 / mAmountBricks) * 10000.0);
+		
+		Random r = new Random();
+		mRandom = r.nextInt((int) (mAmountBricks-1)) + 1;
+		 
 
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
 		mProgressBar = (TextProgressBar) findViewById(R.id.progressbar_clear);
@@ -79,11 +87,16 @@ public class ClearActivity extends FragmentActivity {
 
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
+					//if(mIndex == mRandom){
+					//	Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
+					//	startActivity(i);
+					//}
 					mBrickIndex++;
 					mProgressBar.setProgress(mProgressBar.getProgress()
 							+ percentage);
 					mProgressImage.setProgress(mProgressImage.getProgress()
 							- percentage);
+					mIndex++;
 					update();
 
 				}
@@ -163,7 +176,7 @@ public class ClearActivity extends FragmentActivity {
 
 		mBrick.bringToFront();
 
-		Animation transAnim = new TranslateAnimation(0, -25, 0, 150);
+		Animation transAnim = new TranslateAnimation(0, 25, 0, 175);
 		transAnim.setRepeatCount(transAnim.INFINITE);
 
 		Animation alphaAnim = new AlphaAnimation(1, 0);

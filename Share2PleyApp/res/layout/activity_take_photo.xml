@@ -14,7 +14,8 @@
         android:layout_marginTop="10dp"
         android:text="@string/take_picture"
         android:textColor="#106097"
-        android:textSize="20sp" />
+        android:textSize="20sp" 
+        android:gravity="center"/>
 
     <ImageView
         android:id="@+id/imageView_take_photo"
