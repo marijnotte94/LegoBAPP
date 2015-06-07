@@ -11,6 +11,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
 import com.share2pley.share2pleyapp.Model.Missing;
 
 /**
@@ -29,6 +30,9 @@ public class DBHelper extends SQLiteOpenHelper {
 	public static final String MISSING_COLUMN_SET = "SetNumber";
 	public static final String MISSING_COLUMN_BRICKNAME = "BrickName";
 	public static final String MISSING_COLUMN_AMOUNT = "Amount";
+	private static final String SETS_TABLE_NAME = "Sets";
+	private static final String SETS_COLUMN_SETNUMBER = "setNumber";
+	private static final String SETS_COLUMN_ISDONE = "isDone";
 	public HashMap hp;
 
 	public DBHelper(Context context) {
@@ -41,13 +45,17 @@ public class DBHelper extends SQLiteOpenHelper {
 				+ "(id integer primary key, Firstname text, Lastname text, Cleared integer)");
 		db.execSQL("create table Missing "
 				+ "(id integer primary key, PersonId integer, SetNumber integer, BrickName text, Amount integer)");
-
+		db.execSQL("create table " + SETS_TABLE_NAME + " (id primary key, "
+				+ SETS_COLUMN_SETNUMBER + " integer, " + SETS_COLUMN_ISDONE
+				+ " integer)");
+		addSets(db);
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("DROP TABLE IF EXISTS Persons");
 		db.execSQL("DROP TABLE IF EXISTS Missing");
+		db.execSQL("DROP TABLE IF EXISTS Sets");
 		onCreate(db);
 	}
 
@@ -89,6 +97,23 @@ public class DBHelper extends SQLiteOpenHelper {
 		return res;
 	}
 
+	public ArrayList<DatabaseSetHelper> getSetData(int id) {
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor c = db.rawQuery("select * from Sets where " + SETS_COLUMN_ISDONE
+				+ " = " + id + "", null);
+		ArrayList<DatabaseSetHelper> mSets = new ArrayList<DatabaseSetHelper>();
+
+		if (c.moveToFirst()) {
+			do {
+				int setId = c.getInt(c.getColumnIndex(SETS_COLUMN_SETNUMBER));
+				int isDone = c.getInt(c.getColumnIndex(SETS_COLUMN_ISDONE));
+				DatabaseSetHelper mSet = new DatabaseSetHelper(setId, isDone);
+				mSets.add(mSet);
+			} while (c.moveToNext());
+		}
+		return mSets;
+	}
+
 	public int personNumberOfRows() {
 		SQLiteDatabase db = this.getReadableDatabase();
 		int numRows = (int) DatabaseUtils.queryNumEntries(db,
@@ -103,6 +128,12 @@ public class DBHelper extends SQLiteOpenHelper {
 		return numRows;
 	}
 
+	public int setsNumberOfRows() {
+		SQLiteDatabase db = this.getReadableDatabase();
+		int numRows = (int) DatabaseUtils.queryNumEntries(db, SETS_TABLE_NAME);
+		return numRows;
+	}
+
 	public boolean updatePersonContent(Integer id, String firstname,
 			String lastname, int cleared) {
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -112,6 +143,17 @@ public class DBHelper extends SQLiteOpenHelper {
 		contentValues.put("Cleared", cleared);
 		db.update("Persons", contentValues, "id = ?",
 				new String[] { Integer.toString(id) });
+		return true;
+	}
+
+	public boolean updateSetContent(Integer setId, int value) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues contentValues = new ContentValues();
+		contentValues.put(SETS_COLUMN_SETNUMBER, setId);
+		contentValues.put(SETS_COLUMN_ISDONE, value);
+		db.update("Sets", contentValues, SETS_COLUMN_ISDONE + " = ? AND "
+				+ SETS_COLUMN_SETNUMBER + " = ?",
+				new String[] { Integer.toString(0), Integer.toString(setId) });
 		return true;
 	}
 
@@ -148,5 +190,19 @@ public class DBHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 		return db.delete("Missing", "id = ?",
 				new String[] { Integer.toString(id) });
+	}
+
+	public Integer deleteMissings() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		return db.delete(MISSING_TABLE_NAME, null, null);
+	}
+
+	public void addSets(SQLiteDatabase db) {
+		for (int i = 1; i <= 16; i++) {
+			ContentValues values = new ContentValues();
+			values.put(SETS_COLUMN_SETNUMBER, i);
+			values.put(SETS_COLUMN_ISDONE, 0);
+			db.insert(SETS_TABLE_NAME, null, values);
+		}
 	}
 }

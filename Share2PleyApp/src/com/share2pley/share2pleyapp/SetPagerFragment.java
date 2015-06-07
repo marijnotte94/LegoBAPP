@@ -74,7 +74,7 @@ public class SetPagerFragment extends Fragment {
 				Intent i = new Intent(getActivity(), ClearActivity.class);
 				i.putExtra(ARG_PAGE, mPageNumber);
 				startActivity(i);
-
+				getActivity().finish();
 			}
 		});
 	}
