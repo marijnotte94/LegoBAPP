@@ -24,7 +24,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:contentDescription="@string/result_set_image"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:rotation="270"
         android:src="@drawable/set_1" />
 
@@ -37,22 +37,18 @@
             android:id="@+id/textView_final_intro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="@string/textview_final_intro"
             android:textColor="#106097" />
-
-        <TextView
-            android:id="@+id/textView_final_missing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="#106097" />
+        
     </RelativeLayout>
 
     <TextView
         android:id="@+id/textView_result_missing"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="#106097"
         android:orientation="vertical" >
     </TextView>
 
