@@ -16,6 +16,7 @@ public class ResultActivity extends Activity {
 	private Button mExit;
 	private DBHelper mDBHelper;
 	private List<Missing> mMissings;
+	private int mMissingBricks;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,14 @@ public class ResultActivity extends Activity {
 		}
 		for (Missing m : mMissings) {
 			missingTextView.append(m.toString() + "\n");
+			mMissingBricks += m.getAmount();
+		}
+		if (mMissingBricks <= 10) {
+			messageTextView.setText("Good job! You cleared the whole set with "
+					+ mMissingBricks + " bricks missing, try looking for them");
+		} else {
+			messageTextView.setText("Okay, you miss " + mMissingBricks
+					+ " bricks. Try to find them.");
 		}
 		mExit = (Button) findViewById(R.id.button_result_exit);
 		mExit.setOnClickListener(new View.OnClickListener() {

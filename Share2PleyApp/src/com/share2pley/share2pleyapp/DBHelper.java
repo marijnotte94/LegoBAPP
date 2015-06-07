@@ -44,9 +44,10 @@ public class DBHelper extends SQLiteOpenHelper {
 				+ "(id integer primary key, Firstname text, Lastname text, Cleared integer)");
 		db.execSQL("create table Missing "
 				+ "(id integer primary key, PersonId integer, SetNumber integer, BrickName text, Amount integer)");
-		// db.execSQL("create table Sets "
-		// + "(setId integer primary key, isDone integer)");
-		// addSets();
+		db.execSQL("create table " + SETS_TABLE_NAME + " (id primary key, "
+				+ SETS_COLUMN_SETNUMBER + " integer, " + SETS_COLUMN_ISDONE
+				+ " integer)");
+		addSets(db);
 	}
 
 	@Override
@@ -95,6 +96,13 @@ public class DBHelper extends SQLiteOpenHelper {
 		return res;
 	}
 
+	public Cursor getSetDAta(int id) {
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor res = db
+				.rawQuery("select * from Sets where id=" + id + "", null);
+		return res;
+	}
+
 	public int personNumberOfRows() {
 		SQLiteDatabase db = this.getReadableDatabase();
 		int numRows = (int) DatabaseUtils.queryNumEntries(db,
@@ -109,6 +117,12 @@ public class DBHelper extends SQLiteOpenHelper {
 		return numRows;
 	}
 
+	public int setsNumberOfRows() {
+		SQLiteDatabase db = this.getReadableDatabase();
+		int numRows = (int) DatabaseUtils.queryNumEntries(db, SETS_TABLE_NAME);
+		return numRows;
+	}
+
 	public boolean updatePersonContent(Integer id, String firstname,
 			String lastname, int cleared) {
 		SQLiteDatabase db = this.getWritableDatabase();
@@ -118,6 +132,16 @@ public class DBHelper extends SQLiteOpenHelper {
 		contentValues.put("Cleared", cleared);
 		db.update("Persons", contentValues, "id = ?",
 				new String[] { Integer.toString(id) });
+		return true;
+	}
+
+	public boolean updateSetContent(Integer setId, int value) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues contentValues = new ContentValues();
+		contentValues.put(SETS_COLUMN_SETNUMBER, setId);
+		contentValues.put(SETS_COLUMN_ISDONE, value);
+		db.update("Sets", contentValues, "id = ?",
+				new String[] { Integer.toString(setId) });
 		return true;
 	}
 
@@ -156,11 +180,10 @@ public class DBHelper extends SQLiteOpenHelper {
 				new String[] { Integer.toString(id) });
 	}
 
-	public void addSets() {
-		SQLiteDatabase db = this.getWritableDatabase();
-		ContentValues values = new ContentValues();
-		for (int i = 1; i <= 16; i++) {
-			values.put(SETS_COLUMN_SETNUMBER, i);
+	public void addSets(SQLiteDatabase db) {
+		for (int i = 0; i <= 16; i++) {
+			ContentValues values = new ContentValues();
+			values.put(SETS_COLUMN_SETNUMBER, 1);
 			values.put(SETS_COLUMN_ISDONE, 0);
 			db.insert(SETS_TABLE_NAME, null, values);
 		}
