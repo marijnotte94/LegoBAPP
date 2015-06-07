@@ -22,9 +22,14 @@ public class ResultActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_result);
 
+		TextView messageTextView = (TextView) findViewById(R.id.textView_final_intro);
 		TextView missingTextView = (TextView) findViewById(R.id.textView_result_missing);
 		mDBHelper = new DBHelper(this);
 		mMissings = mDBHelper.getMissingBicksById();
+		if (mMissings.isEmpty()) {
+			messageTextView
+					.setText("Well done! You cleared the whole set without missing pieces!");
+		}
 		for (Missing m : mMissings) {
 			missingTextView.append(m.toString() + "\n");
 		}

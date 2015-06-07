@@ -29,6 +29,9 @@ public class DBHelper extends SQLiteOpenHelper {
 	public static final String MISSING_COLUMN_SET = "SetNumber";
 	public static final String MISSING_COLUMN_BRICKNAME = "BrickName";
 	public static final String MISSING_COLUMN_AMOUNT = "Amount";
+	private static final String SETS_TABLE_NAME = "Sets";
+	private static final String SETS_COLUMN_SETNUMBER = "setNumber";
+	private static final String SETS_COLUMN_ISDONE = "isDone";
 	public HashMap hp;
 
 	public DBHelper(Context context) {
@@ -41,13 +44,16 @@ public class DBHelper extends SQLiteOpenHelper {
 				+ "(id integer primary key, Firstname text, Lastname text, Cleared integer)");
 		db.execSQL("create table Missing "
 				+ "(id integer primary key, PersonId integer, SetNumber integer, BrickName text, Amount integer)");
-
+		// db.execSQL("create table Sets "
+		// + "(setId integer primary key, isDone integer)");
+		// addSets();
 	}
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		db.execSQL("DROP TABLE IF EXISTS Persons");
 		db.execSQL("DROP TABLE IF EXISTS Missing");
+		db.execSQL("DROP TABLE IF EXISTS Sets");
 		onCreate(db);
 	}
 
@@ -148,5 +154,15 @@ public class DBHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 		return db.delete("Missing", "id = ?",
 				new String[] { Integer.toString(id) });
+	}
+
+	public void addSets() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		for (int i = 1; i <= 16; i++) {
+			values.put(SETS_COLUMN_SETNUMBER, i);
+			values.put(SETS_COLUMN_ISDONE, 0);
+			db.insert(SETS_TABLE_NAME, null, values);
+		}
 	}
 }
