@@ -29,7 +29,7 @@ public class TimeActivity extends Activity {
 		Bundle b = getIntent().getExtras();
 		if (b != null) {
 			mTime = b.getLong("TIME");
-			mSetIndex = b.getInt("page");
+			mSetIndex = b.getInt("SETNO");
 		}
 		mText = (TextView) findViewById(R.id.timeView);
 		mText.setText(timeToString(mTime));
@@ -40,7 +40,7 @@ public class TimeActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(getBaseContext(), ResultActivity.class);
-				i.putExtra("page", mSetIndex);
+				i.putExtra("SETNO", mSetIndex);
 				startActivity(i);
 				finish();
 			}

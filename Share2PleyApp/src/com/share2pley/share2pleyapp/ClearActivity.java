@@ -1,11 +1,13 @@
 package com.share2pley.share2pleyapp;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -42,8 +44,7 @@ public class ClearActivity extends FragmentActivity {
 	private ProgressBar mProgressImage;
 	private double mAmountBricks;
 	private int percentage;
-	private int mRandom;
-	private int mIndex = 0;
+	private ArrayList<Integer> mIndexPhotos = new ArrayList<Integer>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,14 +58,28 @@ public class ClearActivity extends FragmentActivity {
 		Bundle b = i.getExtras();
 		if (b != null) {
 			mSetIndex = b.getInt("page");
+			
 		}
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
 		percentage = (int) ((1.0 / mAmountBricks) * 10000.0);
+<<<<<<< HEAD
 
 		Random r = new Random();
 		mRandom = r.nextInt((int) (mAmountBricks - 1)) + 1;
 
+=======
+		
+	
+		Random r = new Random();
+		int mAmountPhotos = (int) Math.ceil(mAmountBricks / 100); 
+		for (int k = 0; k<mAmountPhotos; k++){
+			int mRandom = r.nextInt((int) (mAmountBricks-2)) + 1;
+			mIndexPhotos.add(mRandom);
+		}
+		
+		
+>>>>>>> 950a7c923aeb6f94cabca9f5d1316c5224706bab
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
 		mProgressBar = (TextProgressBar) findViewById(R.id.progressbar_clear);
 
@@ -83,21 +98,28 @@ public class ClearActivity extends FragmentActivity {
 		mNextButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
+<<<<<<< HEAD
 					// if(mIndex == mRandom){
 					// Intent i = new Intent(getBaseContext(),
 					// TakePhotoActivity.class);
 					// startActivity(i);
 					// }
+=======
+					if(mIndexPhotos.contains(mBrickIndex)){
+						Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
+						startActivity(i);
+					}
+>>>>>>> 950a7c923aeb6f94cabca9f5d1316c5224706bab
 					mBrickIndex++;
 					mProgressBar.setProgress(mProgressBar.getProgress()
 							+ percentage);
 					mProgressImage.setProgress(mProgressImage.getProgress()
 							- percentage);
-					mIndex++;
 					update();
+					
+					
 
 				}
 				// If no more instructions go to timeactivity
@@ -106,7 +128,11 @@ public class ClearActivity extends FragmentActivity {
 					long mClearTime = (mEndTime - mStartTime);
 					Intent i = new Intent(getBaseContext(), TimeActivity.class);
 					i.putExtra("TIME", mClearTime);
+<<<<<<< HEAD
 					i.putExtra("page", mSetIndex + 1);
+=======
+					i.putExtra("SETNO", mSetIndex);
+>>>>>>> 950a7c923aeb6f94cabca9f5d1316c5224706bab
 					startActivity(i);
 					finish();
 				}

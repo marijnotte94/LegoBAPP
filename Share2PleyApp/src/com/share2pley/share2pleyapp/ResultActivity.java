@@ -1,17 +1,17 @@
 package com.share2pley.share2pleyapp;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
 import com.share2pley.share2pleyapp.Model.Missing;
+import com.share2pley.share2pleyapp.Model.Set;
+import com.share2pley.share2pleyapp.Model.SetLab;
 
 public class ResultActivity extends Activity {
 
@@ -20,14 +20,21 @@ public class ResultActivity extends Activity {
 	private List<Missing> mMissings;
 	private int mMissingBricks;
 	private int mSetIndex;
+	private Set mSet;
+	private ImageView mSetImage;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_result);
-
-		mSetIndex = getIntent().getExtras().getInt("page");
 		TextView messageTextView = (TextView) findViewById(R.id.textView_final_intro);
+
+		mSetIndex = getIntent().getExtras().getInt("SETNO");
+
+		mSet = SetLab.get(this).getSet(mSetIndex);
+		mSetImage = (ImageView) findViewById(R.id.imageView_final_set);
+		mSetImage.setImageResource(mSet.getModelImageResource(mSetIndex));
+
 		TextView missingTextView = (TextView) findViewById(R.id.textView_result_missing);
 		mDBHelper = new DBHelper(this);
 		mMissings = mDBHelper.getMissingBicksById();
@@ -46,16 +53,13 @@ public class ResultActivity extends Activity {
 			messageTextView.setText("Okay, you miss " + mMissingBricks
 					+ " bricks. Try to find them.");
 		}
+
 		mExit = (Button) findViewById(R.id.button_result_exit);
 		mExit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				mDBHelper.deleteMissings();
 				mDBHelper.updateSetContent(mSetIndex, 1);
-				ArrayList<DatabaseSetHelper> mSets = mDBHelper.getSetData(1);
-				for (DatabaseSetHelper m : mSets) {
-					Log.d("TAG", m.toString());
-				}
 				finish();
 			}
 		});
