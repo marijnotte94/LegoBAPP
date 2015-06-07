@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -43,8 +44,6 @@ public class ClearActivity extends FragmentActivity {
 	private ProgressBar mProgressImage;
 	private double mAmountBricks;
 	private int percentage;
-	
-	private int mIndex = 0;
 	private ArrayList<Integer> mIndexPhotos = new ArrayList<Integer>();
 
 	@Override
@@ -59,6 +58,7 @@ public class ClearActivity extends FragmentActivity {
 		Bundle b = i.getExtras();
 		if (b != null) {
 			mSetIndex = b.getInt("page");
+			
 		}
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
@@ -73,8 +73,6 @@ public class ClearActivity extends FragmentActivity {
 		}
 		
 		
-		 
-
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
 		mProgressBar = (TextProgressBar) findViewById(R.id.progressbar_clear);
 
@@ -93,10 +91,9 @@ public class ClearActivity extends FragmentActivity {
 		mNextButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
-					if(mIndexPhotos.contains(mIndex)){
+					if(mIndexPhotos.contains(mBrickIndex)){
 						Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
 						startActivity(i);
 					}
@@ -105,8 +102,9 @@ public class ClearActivity extends FragmentActivity {
 							+ percentage);
 					mProgressImage.setProgress(mProgressImage.getProgress()
 							- percentage);
-					mIndex++;
 					update();
+					
+					
 
 				}
 				// If no more instructions go to timeactivity

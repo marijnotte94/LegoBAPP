@@ -1,6 +1,8 @@
 package com.share2pley.share2pleyapp;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,6 +10,8 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.share2pley.share2pleyapp.Model.Missing;
 
 /**
  * 
@@ -115,6 +119,29 @@ public class DBHelper extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 		return db.delete("Persons", "id = ?",
 				new String[] { Integer.toString(id) });
+	}
+
+	public List<Missing> getMissingBicksById() {
+		List<Missing> missings = new ArrayList<Missing>();
+
+		String selectQuery = "SELECT * FROM " + MISSING_TABLE_NAME;
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor c = db.rawQuery(selectQuery, null);
+
+		if (c.moveToFirst()) {
+			do {
+				int personId = c.getInt(c
+						.getColumnIndex(MISSING_COLUMN_PERSONID));
+				int setNumber = c.getInt(c.getColumnIndex(MISSING_COLUMN_SET));
+				String description = c.getString(c
+						.getColumnIndex(MISSING_COLUMN_BRICKNAME));
+				int amount = c.getInt(c.getColumnIndex(MISSING_COLUMN_AMOUNT));
+				Missing missing = new Missing(personId, setNumber, description,
+						amount);
+				missings.add(missing);
+			} while (c.moveToNext());
+		}
+		return missings;
 	}
 
 	public Integer deleteMissing(Integer id) {
