@@ -61,10 +61,9 @@ public class ClearActivity extends FragmentActivity {
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
 		percentage = (int) ((1.0 / mAmountBricks) * 10000.0);
-		
+
 		Random r = new Random();
-		mRandom = r.nextInt((int) (mAmountBricks-1)) + 1;
-		 
+		mRandom = r.nextInt((int) (mAmountBricks - 1)) + 1;
 
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
 		mProgressBar = (TextProgressBar) findViewById(R.id.progressbar_clear);
@@ -87,10 +86,11 @@ public class ClearActivity extends FragmentActivity {
 
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
-					//if(mIndex == mRandom){
-					//	Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
-					//	startActivity(i);
-					//}
+					// if(mIndex == mRandom){
+					// Intent i = new Intent(getBaseContext(),
+					// TakePhotoActivity.class);
+					// startActivity(i);
+					// }
 					mBrickIndex++;
 					mProgressBar.setProgress(mProgressBar.getProgress()
 							+ percentage);
@@ -106,6 +106,7 @@ public class ClearActivity extends FragmentActivity {
 					long mClearTime = (mEndTime - mStartTime);
 					Intent i = new Intent(getBaseContext(), TimeActivity.class);
 					i.putExtra("TIME", mClearTime);
+					i.putExtra("page", mSetIndex + 1);
 					startActivity(i);
 					finish();
 				}

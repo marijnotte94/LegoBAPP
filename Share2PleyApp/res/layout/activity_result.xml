@@ -69,7 +69,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:background="@drawable/button_menu_effect"
-            android:text="@string/exit"
+            android:text="@string/menu"
             android:textColor="@color/button_menu_textcolor" />
     </LinearLayout>
 

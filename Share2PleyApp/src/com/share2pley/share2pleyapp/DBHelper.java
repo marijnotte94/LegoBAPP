@@ -11,6 +11,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
 import com.share2pley.share2pleyapp.Model.Missing;
 
 /**
@@ -96,11 +97,21 @@ public class DBHelper extends SQLiteOpenHelper {
 		return res;
 	}
 
-	public Cursor getSetDAta(int id) {
+	public ArrayList<DatabaseSetHelper> getSetData(int id) {
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor res = db
-				.rawQuery("select * from Sets where id=" + id + "", null);
-		return res;
+		Cursor c = db.rawQuery("select * from Sets where " + SETS_COLUMN_ISDONE
+				+ " = " + id + "", null);
+		ArrayList<DatabaseSetHelper> mSets = new ArrayList<DatabaseSetHelper>();
+
+		if (c.moveToFirst()) {
+			do {
+				int setId = c.getInt(c.getColumnIndex(SETS_COLUMN_SETNUMBER));
+				int isDone = c.getInt(c.getColumnIndex(SETS_COLUMN_ISDONE));
+				DatabaseSetHelper mSet = new DatabaseSetHelper(setId, isDone);
+				mSets.add(mSet);
+			} while (c.moveToNext());
+		}
+		return mSets;
 	}
 
 	public int personNumberOfRows() {
@@ -140,8 +151,9 @@ public class DBHelper extends SQLiteOpenHelper {
 		ContentValues contentValues = new ContentValues();
 		contentValues.put(SETS_COLUMN_SETNUMBER, setId);
 		contentValues.put(SETS_COLUMN_ISDONE, value);
-		db.update("Sets", contentValues, "id = ?",
-				new String[] { Integer.toString(setId) });
+		db.update("Sets", contentValues, SETS_COLUMN_ISDONE + " = ? AND "
+				+ SETS_COLUMN_SETNUMBER + " = ?",
+				new String[] { Integer.toString(0), Integer.toString(setId) });
 		return true;
 	}
 
@@ -180,10 +192,15 @@ public class DBHelper extends SQLiteOpenHelper {
 				new String[] { Integer.toString(id) });
 	}
 
+	public Integer deleteMissings() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		return db.delete(MISSING_TABLE_NAME, null, null);
+	}
+
 	public void addSets(SQLiteDatabase db) {
-		for (int i = 0; i <= 16; i++) {
+		for (int i = 1; i <= 16; i++) {
 			ContentValues values = new ContentValues();
-			values.put(SETS_COLUMN_SETNUMBER, 1);
+			values.put(SETS_COLUMN_SETNUMBER, i);
 			values.put(SETS_COLUMN_ISDONE, 0);
 			db.insert(SETS_TABLE_NAME, null, values);
 		}
