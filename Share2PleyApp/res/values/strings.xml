@@ -45,6 +45,11 @@
     <string name="about_online1">From clicks to bricks</string>
     <string name="about_online2">For many children, online play is more accessible than physical toys. Deciding what to play and whenever you want to. Combine with Share2Pley both worlds.</string>
     <string name="reference_city">Lego City App</string>
+    <string name="reference_friends">Lego Friends App</string>
+    <string name="reference_chima">Lego Chima App</string>
+    <string name="reference_starwars">Lego Star Wars App</string>
+    <string name="reference_technic">Lego Technic App</string>
+    <string name="reference_duplo">Duplo Trains App</string>
     
 
     <!-- Names of the sets -->
