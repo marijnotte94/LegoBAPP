@@ -15,7 +15,12 @@ import android.widget.ImageView;
  * 
  */
 public class ReferenceActivity extends Activity {
+	private ImageView mDuplo;
 	private ImageView mLegoCity;
+	private ImageView mFriends;
+	private ImageView mChima;
+	private ImageView mStarwars;
+	private ImageView mTechnic;
 	private ReferenceActivity mReferenceActivity;
 
 	@Override
@@ -24,35 +29,83 @@ public class ReferenceActivity extends Activity {
 		mReferenceActivity = this;
 		setContentView(R.layout.activity_references);
 
+		mDuplo = (ImageView) findViewById(R.id.imageView_references_duplo);
+		mDuplo.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				setApp("com.lego.duplo.trains");
+			}
+		});
+
 		mLegoCity = (ImageView) findViewById(R.id.imageView_references_legoCity);
 		mLegoCity.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				final String legoCityName = "com.lego.city.my_city";
-				try {
-					Intent i = mReferenceActivity.getPackageManager()
-							.getLaunchIntentForPackage(legoCityName);
-					startActivity(i);
-					return;
-				} catch (NullPointerException e) {
-				}
-				try {
-					startActivity(new Intent(Intent.ACTION_VIEW, Uri
-							.parse("market://details?id=" + legoCityName)));
-				} catch (android.content.ActivityNotFoundException anfe) {
-					try {
-						startActivity(new Intent(
-								Intent.ACTION_VIEW,
-								Uri.parse("https://play.google.com/store/apps/details?id="
-										+ legoCityName)));
-					} catch (ActivityNotFoundException e) {
-						Log.e("TAG", "activity not found");
-					}
-				}
+				setApp("com.lego.city.my_city");
+			}
+		});
 
+		mFriends = (ImageView) findViewById(R.id.imageView_references_friends);
+		mFriends.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				setApp("com.lego.friends.artmaker");
+			}
+		});
+
+		mChima = (ImageView) findViewById(R.id.imageView_references_chima);
+		mChima.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				setApp("com.wb.speedorz");
+			}
+		});
+
+		mStarwars = (ImageView) findViewById(R.id.imageView_references_starwars);
+		mStarwars.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				setApp("com.lego.starwars.thenewyodachronicles");
+			}
+		});
+
+		mTechnic = (ImageView) findViewById(R.id.imageView_references_technic);
+		mTechnic.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				setApp("com.lego.technic.race");
 			}
 		});
 
 	}
+
+	public void setApp(String appName) {
+		try {
+			Intent i = mReferenceActivity.getPackageManager()
+					.getLaunchIntentForPackage(appName);
+			startActivity(i);
+			return;
+		} catch (NullPointerException e) {
+		}
+		try {
+			startActivity(new Intent(Intent.ACTION_VIEW,
+					Uri.parse("market://details?id=" + appName)));
+		} catch (android.content.ActivityNotFoundException anfe) {
+			try {
+				startActivity(new Intent(
+						Intent.ACTION_VIEW,
+						Uri.parse("https://play.google.com/store/apps/details?id="
+								+ appName)));
+			} catch (ActivityNotFoundException e) {
+				Log.e("TAG", "activity not found");
+			}
+		}
+	}
+
 }
