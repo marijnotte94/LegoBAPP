@@ -1,6 +1,6 @@
 package com.share2pley.share2pleyapp;
 
-import java.io.File;
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,13 +8,16 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * 
@@ -28,13 +31,14 @@ public class TakePhotoActivity extends Activity {
 	private Button mTakePhotoButton;
 	private Button mConfirmButton;
 	private Bitmap attachment;
-	private int mCurrentIndex;
+	private Context context = this;
+	private boolean photoTaken = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_take_photo);
-	
+
 		mImageView = (ImageView) findViewById(R.id.imageView_take_photo);
 		mTakePhotoButton = (Button) findViewById(R.id.button_takePhoto_takePicture);
 		mTakePhotoButton.setOnClickListener(new View.OnClickListener() {
@@ -63,32 +67,15 @@ public class TakePhotoActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// set up message subject and message
-				// String subject = "Cleared LEGO set";
-				// Uri address = Uri.parse("mailto:share2pleytest@gmail.com");
-				// String message = "Test 123 test";
-				// Intent intent = new Intent(Intent.ACTION_SENDTO, address);
-				// ACTION_SENDTO filters for email apps (discard bluetooth and
-				// others)
-				/*
-				Uri file = Uri
-						.fromFile(new File(EXTRA_PHOTO_FILENAME + ".JPEG"));
-				String uriText = "mailto:share2pleytest@gmail.com"
-						+ "?subject=" + Uri.encode("Cleared LEGO set")
-						+ "&body=" + Uri.encode("Test 123 Test")
-						+ "&attachment=" + file;
-
-				Uri uri = Uri.parse(uriText);
-
-				Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
-				sendIntent.setData(uri);
-				try {
-					startActivity(Intent
-							.createChooser(sendIntent, "Send email"));
-				} catch (android.content.ActivityNotFoundException ex) {
-					Log.e(TAG, "There are no email clients installed", ex);
-				}*/
-				finish();
+				if(photoTaken == true){
+					finish();	
+				}
+				else{
+					CharSequence text = "Please take a picture";
+					int duration = Toast.LENGTH_SHORT;
+					Toast toast = Toast.makeText(context, text, duration);
+					toast.show();
+				}
 			}
 		});
 	}
@@ -105,8 +92,25 @@ public class TakePhotoActivity extends Activity {
 			super.onActivityResult(requestCode, resultCode, data);
 			Bitmap bp = (Bitmap) data.getExtras().get("data");
 			mImageView.setImageBitmap(bp);
+			photoTaken = true;
+			
+			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+			SharedPreferences.Editor editor = prefs.edit();
+			
+			String stringAttachment = BitMapToString(bp);
+			editor.putString("string_id", stringAttachment);
+			editor.commit();
+		
 		} catch (Exception e) {
 			Log.e(TAG, "Error in retrieving back photo ", e);
 		}
+	}
+	
+	public String BitMapToString(Bitmap bitmap){
+	     ByteArrayOutputStream baos=new  ByteArrayOutputStream();
+	     bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
+	     byte [] b=baos.toByteArray();
+	     String temp=Base64.encodeToString(b, Base64.DEFAULT);
+	     return temp;
 	}
 }

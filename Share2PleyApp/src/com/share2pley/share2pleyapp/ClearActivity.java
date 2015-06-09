@@ -113,7 +113,6 @@ public class ClearActivity extends FragmentActivity {
 					long mClearTime = (mEndTime - mStartTime);
 					Intent i = new Intent(getBaseContext(), TimeActivity.class);
 					i.putExtra("TIME", mClearTime);
-					i.putExtra("SETNO", mSetIndex);
 					startActivity(i);
 					finish();
 				}

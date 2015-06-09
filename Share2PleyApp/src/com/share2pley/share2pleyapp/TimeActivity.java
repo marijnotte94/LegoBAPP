@@ -19,7 +19,6 @@ public class TimeActivity extends Activity {
 	private TextView mText;
 	private Button mButton;
 	private long mTime;
-	private int mSetIndex;
 
 	// display time after instructions finished
 	@Override
@@ -29,7 +28,7 @@ public class TimeActivity extends Activity {
 		Bundle b = getIntent().getExtras();
 		if (b != null) {
 			mTime = b.getLong("TIME");
-			mSetIndex = b.getInt("SETNO");
+			
 		}
 		mText = (TextView) findViewById(R.id.timeView);
 		mText.setText(timeToString(mTime));
@@ -39,9 +38,7 @@ public class TimeActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getBaseContext(), ResultActivity.class);
-				i.putExtra("SETNO", mSetIndex);
-						
+				Intent i = new Intent(getBaseContext(), ResultActivity.class);				
 				startActivity(i);
 			}
 		});
