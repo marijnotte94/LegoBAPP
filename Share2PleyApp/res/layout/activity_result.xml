@@ -24,9 +24,8 @@
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:contentDescription="@string/result_set_image"
-        android:rotation="270"
-        android:src="@drawable/set_1" />
+        android:contentDescription="@string/result_set_image" />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
