@@ -43,6 +43,10 @@ public class SetLab {
 		return mSetList.get(index);
 	}
 
+	public ArrayList<Set> getSetList() {
+		return mSetList;
+	}
+
 	public int getAmount() {
 		return mSetList.size();
 	}

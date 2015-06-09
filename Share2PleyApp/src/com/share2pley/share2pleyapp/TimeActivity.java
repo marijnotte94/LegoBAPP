@@ -40,6 +40,7 @@ public class TimeActivity extends Activity {
 			public void onClick(View v) {
 				Intent i = new Intent(getBaseContext(), ResultActivity.class);				
 				startActivity(i);
+				finish();
 			}
 		});
 	}

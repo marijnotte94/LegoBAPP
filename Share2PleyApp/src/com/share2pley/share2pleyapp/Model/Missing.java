@@ -47,7 +47,6 @@ public class Missing {
 
 	@Override
 	public String toString() {
-		return mDescription + ", " + mAmount;
+		return "Brickname: " + mDescription + ", " + "Amount: " + mAmount;
 	}
-
 }

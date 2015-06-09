@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -38,13 +37,13 @@ public class ClearActivity extends FragmentActivity {
 	private ImageView mFigure;
 	private ImageView mBrick;
 	private ImageView mBag;
-	private int mBrickIndex = 0;
+	private int mBrickIndex;
 	private long mStartTime, mEndTime;
 	private TextProgressBar mProgressBar;
 	private ProgressBar mProgressImage;
 	private double mAmountBricks;
 	private int percentage;
-	private ArrayList<Integer> mIndexPhotos = new ArrayList<Integer>();
+	private final ArrayList<Integer> mIndexPhotos = new ArrayList<Integer>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,25 +53,22 @@ public class ClearActivity extends FragmentActivity {
 		mStartTime = System.nanoTime();
 
 		// find set belonging to button pressed
-		Intent i = getIntent();
-		Bundle b = i.getExtras();
+		Bundle b = getIntent().getExtras();
 		if (b != null) {
 			mSetIndex = b.getInt("page");
-			
 		}
+
 		mSet = SetLab.get(this).getSet(mSetIndex);
 		mAmountBricks = mSet.getAmountBricks();
 		percentage = (int) ((1.0 / mAmountBricks) * 10000.0);
-		
-	
+
 		Random r = new Random();
-		int mAmountPhotos = (int) Math.ceil(mAmountBricks / 100); 
-		for (int k = 0; k<mAmountPhotos; k++){
-			int mRandom = r.nextInt((int) (mAmountBricks-2)) + 1;
+		int mAmountPhotos = (int) Math.ceil(mAmountBricks / 100);
+		for (int k = 0; k < mAmountPhotos; k++) {
+			int mRandom = r.nextInt((int) (mAmountBricks - 2)) + 1;
 			mIndexPhotos.add(mRandom);
 		}
-		
-		
+
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
 		mProgressBar = (TextProgressBar) findViewById(R.id.progressbar_clear);
 
@@ -93,8 +89,9 @@ public class ClearActivity extends FragmentActivity {
 			public void onClick(View v) {
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
-					if(mIndexPhotos.contains(mBrickIndex)){
-						Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
+					if (mIndexPhotos.contains(mBrickIndex)) {
+						Intent i = new Intent(getBaseContext(),
+								TakePhotoActivity.class);
 						startActivity(i);
 					}
 					mBrickIndex++;
@@ -103,8 +100,6 @@ public class ClearActivity extends FragmentActivity {
 					mProgressImage.setProgress(mProgressImage.getProgress()
 							- percentage);
 					update();
-					
-					
 
 				}
 				// If no more instructions go to timeactivity
@@ -113,6 +108,7 @@ public class ClearActivity extends FragmentActivity {
 					long mClearTime = (mEndTime - mStartTime);
 					Intent i = new Intent(getBaseContext(), TimeActivity.class);
 					i.putExtra("TIME", mClearTime);
+					i.putExtra("SETNO", mSetIndex + 1);
 					startActivity(i);
 					finish();
 				}
@@ -177,9 +173,6 @@ public class ClearActivity extends FragmentActivity {
 	public void animateBrick() {
 		mBrick = (ImageView) findViewById(R.id.imageview_brick);
 		mBag = (ImageView) findViewById(R.id.imageview_bag);
-
-		// xNewPos = mBag.getLeft() - mBrick.getLeft();
-		// yNewPos = mBag.getTop() - mBrick.getTop();
 
 		mBrick.bringToFront();
 
