@@ -16,22 +16,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/about_first"
-        android:textColor="#106097"
-        android:textSize="12sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="@string/about_ontstaan1"
+        android:text="@string/about_waarom1"
         android:textColor="#106097"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -44,17 +32,17 @@
         android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="@string/about_ontstaan2"
+        android:text="@string/about_waarom2"
         android:textColor="#106097"
-        android:textSize="12sp" />
-
+        android:textSize="10sp" />
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="@string/about_aankopen1"
+        android:text="@string/about_wat1"
         android:textColor="#106097"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -62,22 +50,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="@string/about_aankopen2"
+        android:text="@string/about_wat2"
         android:textColor="#106097"
-        android:textSize="12sp" />
-
+        android:textSize="10sp" />
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
-        android:text="@string/about_online1"
+        android:text="@string/about_hoe1"
         android:textColor="#106097"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -85,13 +73,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginRight="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="@string/about_online2"
+        android:text="@string/about_hoe2"
         android:textColor="#106097"
-        android:textSize="12sp" />
+        android:textSize="10sp" />
 
 </LinearLayout>
