@@ -1,5 +1,8 @@
 package com.share2pley.share2pleyapp;
 
+import java.util.ArrayList;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
 import com.share2pley.share2pleyapp.Model.SetLab;
 
 /**
@@ -21,10 +25,19 @@ public class SetPagerFragment extends Fragment {
 	public static final String ARG_PAGE = "page";
 	private int mPageNumber;
 
-	public static SetPagerFragment create(int pageNumber) {
+	public static SetPagerFragment create(int pageNumber, Context context) {
 		SetPagerFragment fragment = new SetPagerFragment();
+		DBHelper mDBHelper = new DBHelper(context);
+		ArrayList<DatabaseSetHelper> sets = mDBHelper.getSetData();
+		int index = sets.get(pageNumber).getIndex();
+		int res = pageNumber;
+		for (int i = 0; i < index; i++) {
+			if (sets.get(i).getSolved() == 1) {
+				res++;
+			}
+		}
 		Bundle args = new Bundle();
-		args.putInt(ARG_PAGE, pageNumber);
+		args.putInt(ARG_PAGE, res);
 		fragment.setArguments(args);
 		return fragment;
 	}
