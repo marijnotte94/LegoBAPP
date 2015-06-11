@@ -63,6 +63,18 @@
         android:layout_weight="1" >
 
         <Button
+            android:id="@+id/fragment_choose_set_instructionsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/button_menu_effect"
+            android:text="@string/instructions"
+            android:textColor="@color/button_menu_textcolor" />
+        
+        <Button
             android:id="@+id/fragment_choose_set_chooseButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
