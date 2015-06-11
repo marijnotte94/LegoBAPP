@@ -20,6 +20,7 @@ public class TimeActivity extends Activity {
 	private Button mButton;
 	private long mTime;
 	private int mSetIndex;
+	private int mAmountBricks;
 
 	// display time after instructions finished
 	@Override
@@ -30,9 +31,19 @@ public class TimeActivity extends Activity {
 		if (b != null) {
 			mTime = b.getLong("TIME");
 			mSetIndex = b.getInt("SETNO");
+			mAmountBricks = b.getInt("AMOUNTBRICKS");
 		}
 		mText = (TextView) findViewById(R.id.timeView);
-		mText.setText(timeToString(mTime));
+		
+		if(mAmountBricks * 10 >= mTime/500000000){
+			mText.setText(mAmountBricks + "Well done! Your time is: " + timeToString(mTime) + " You completed the set within the time!");
+		}
+		else{
+			mText.setText(mAmountBricks + "Well done! Your time is: " + timeToString(mTime));
+		}
+		
+		
+		
 
 		mButton = (Button) findViewById(R.id.goToPhoto);
 		mButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +69,7 @@ public class TimeActivity extends Activity {
 		String secondsFormat = formatter.format(mSeconds);
 		String minutesFormat = formatter.format(mMinutes);
 
-		return "Your time is " + minutesFormat + ":" + secondsFormat;
+		return minutesFormat + ":" + secondsFormat;
 
 	}
 }

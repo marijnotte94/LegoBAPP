@@ -572,9 +572,6 @@
         <item>@drawable/specialspeelhuis6019419_1</item>
         <!-- <item>@drawable/speelhuis6021186_3</item> -->
         <item>@drawable/specialspeelhuis6022733_1</item>
-        <item>@drawable/speelhuis6023864_1</item>
-        <item>@drawable/speelhuis6023960_1</item>
-        <item>@drawable/speelhuis6024189_1</item>
         <item>@drawable/specialspeelhuis6024974_1</item>
         <item>@drawable/specialspeelhuis6024979_1</item>
         <!-- <item>@drawable/speelhuis6025374_3</item> -->
@@ -592,143 +589,161 @@
         <!-- <item>@drawable/speelhuis6121595_1</item> -->
         <item>@drawable/specialspeelhuis4583859_1</item>
         <item>@drawable/specialspeelhuis6019916_1</item>
+        <item>@drawable/speelhuismini6023864_1</item>
+        <item>@drawable/speelhuismini6023960_1</item>
+        <item>@drawable/speelhuismini6024189_1</item>
     </string-array>
     <string-array name="speelgoedwinkel_imgs">
-        <item>@drawable/speelgoedwinkel241226_7</item>
-        <item>@drawable/speelgoedwinkel242001_1</item>
-        <item>@drawable/speelgoedwinkel243121_3</item>
-        <item>@drawable/speelgoedwinkel249626_2</item>
-        <item>@drawable/speelgoedwinkel300401_29</item>
-        <item>@drawable/speelgoedwinkel300421_1</item>
-        <item>@drawable/speelgoedwinkel300501_12</item>
-        <item>@drawable/speelgoedwinkel3005740_2</item>
-        <item>@drawable/speelgoedwinkel3006844_2</item>
-        <item>@drawable/speelgoedwinkel300901_2</item>
-        <item>@drawable/speelgoedwinkel302301_7</item>
-        <item>@drawable/speelgoedwinkel302321_3</item>
-        <item>@drawable/speelgoedwinkel302401_6</item>
-        <item>@drawable/speelgoedwinkel306826_3</item>
-        <item>@drawable/speelgoedwinkel306926_2</item>
-        <item>@drawable/speelgoedwinkel362326_2</item>
-        <item>@drawable/speelgoedwinkel366026_2</item>
-        <item>@drawable/speelgoedwinkel366501_3</item>
-        <item>@drawable/speelgoedwinkel366601_5</item>
-        <item>@drawable/speelgoedwinkel371001_9</item>
-        <item>@drawable/speelgoedwinkel393723_1</item>
-        <item>@drawable/speelgoedwinkel403221_1</item>
-        <item>@drawable/speelgoedwinkel403226_2</item>
-        <item>@drawable/speelgoedwinkel4113233_2</item>
-        <item>@drawable/speelgoedwinkel4113949_1</item>
-        <item>@drawable/speelgoedwinkel4114584_1</item>
-        <item>@drawable/speelgoedwinkel4121934_6</item>
-        <item>@drawable/speelgoedwinkel4121965_4</item>
-        <item>@drawable/speelgoedwinkel4143254_2</item>
-        <item>@drawable/speelgoedwinkel4159553_2</item>
-        <item>@drawable/speelgoedwinkel4162916_1</item>
-        <item>@drawable/speelgoedwinkel4177741_4</item>
-        <item>@drawable/speelgoedwinkel4210469_1</item>
-        <item>@drawable/speelgoedwinkel4210651_2</item>
-        <item>@drawable/speelgoedwinkel4210660_5</item>
-        <item>@drawable/speelgoedwinkel4210728_1</item>
-        <item>@drawable/speelgoedwinkel4210848_5</item>
-        <item>@drawable/speelgoedwinkel4211001_5</item>
-        <item>@drawable/speelgoedwinkel4211051_1</item>
-        <item>@drawable/speelgoedwinkel4211053_6</item>
-        <item>@drawable/speelgoedwinkel4211063_8</item>
-        <item>@drawable/speelgoedwinkel4211094_3</item>
-        <item>@drawable/speelgoedwinkel4211098_4</item>
-        <item>@drawable/speelgoedwinkel4211100_2</item>
-        <item>@drawable/speelgoedwinkel4211103_5</item>
-        <item>@drawable/speelgoedwinkel4211186_1</item>
-        <item>@drawable/speelgoedwinkel4211247_1</item>
-        <item>@drawable/speelgoedwinkel4211395_2</item>
-        <item>@drawable/speelgoedwinkel4211396_1</item>
-        <item>@drawable/speelgoedwinkel4211404_3</item>
-        <item>@drawable/speelgoedwinkel4211425_1</item>
-        <item>@drawable/speelgoedwinkel4211438_1</item>
-        <item>@drawable/speelgoedwinkel4211452_4</item>
-        <item>@drawable/speelgoedwinkel4211520_2</item>
-        <item>@drawable/speelgoedwinkel4211881_1</item>
-        <item>@drawable/speelgoedwinkel4212075_1</item>
-        <item>@drawable/speelgoedwinkel4213567_1</item>
-        <item>@drawable/speelgoedwinkel4219773_1</item>
-        <item>@drawable/speelgoedwinkel4228198_1</item>
-        <item>@drawable/speelgoedwinkel4244368_1</item>
-        <item>@drawable/speelgoedwinkel4249891_2</item>
-        <item>@drawable/speelgoedwinkel4258308_1</item>
-        <item>@drawable/speelgoedwinkel4261628_1</item>
-        <item>@drawable/speelgoedwinkel4279270_1</item>
-        <item>@drawable/speelgoedwinkel4498370_2</item>
-        <item>@drawable/speelgoedwinkel4502089_2</item>
-        <item>@drawable/speelgoedwinkel4504229_1</item>
-        <item>@drawable/speelgoedwinkel4504369_6</item>
-        <item>@drawable/speelgoedwinkel4509911_2</item>
-        <item>@drawable/speelgoedwinkel4521187_9</item>
-        <item>@drawable/speelgoedwinkel4521504_2</item>
-        <item>@drawable/speelgoedwinkel4521947_3</item>
-        <item>@drawable/speelgoedwinkel4521948_14</item>
-        <item>@drawable/speelgoedwinkel4523339_1</item>
-        <item>@drawable/speelgoedwinkel4524449_1</item>
-        <item>@drawable/speelgoedwinkel4529236_2</item>
-        <item>@drawable/speelgoedwinkel4533771_2</item>
-        <item>@drawable/speelgoedwinkel4535740_2</item>
-        <item>@drawable/speelgoedwinkel4538456_10</item>
-        <item>@drawable/speelgoedwinkel4540040_3</item>
-        <item>@drawable/speelgoedwinkel4543086_12</item>
-        <item>@drawable/speelgoedwinkel4543857_1</item>
-        <item>@drawable/speelgoedwinkel4546705_1</item>
-        <item>@drawable/speelgoedwinkel4549942_1</item>
-        <item>@drawable/speelgoedwinkel4550017_4</item>
-        <item>@drawable/speelgoedwinkel4552033_2</item>
-        <item>@drawable/speelgoedwinkel4558593_1</item>
-        <item>@drawable/speelgoedwinkel4558954_3</item>
-        <item>@drawable/speelgoedwinkel4565322_2</item>
-        <item>@drawable/speelgoedwinkel4567331_1</item>
-        <item>@drawable/speelgoedwinkel4567909_1</item>
-        <item>@drawable/speelgoedwinkel4568956_2</item>
-        <item>@drawable/speelgoedwinkel4570666_1</item>
+
+        <!-- <item>@drawable/speelgoedwinkel241226_7</item> -->
+        <!-- <item>@drawable/speelgoedwinkel242001_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel243121_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel249626_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel300401_29</item> -->
+        <!-- <item>@drawable/speelgoedwinkel300421_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel300501_12</item> -->
+        <!-- <item>@drawable/speelgoedwinkel3005740_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel3006844_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel300901_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel302301_7</item> -->
+        <!-- <item>@drawable/speelgoedwinkel302321_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel302401_6</item> -->
+        <!-- <item>@drawable/speelgoedwinkel306826_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel306926_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel362326_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel366026_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel366501_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel366601_5</item> -->
+        <!-- <item>@drawable/speelgoedwinkel371001_9</item> -->
+        <!-- <item>@drawable/speelgoedwinkel393723_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel403221_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel403226_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4113233_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4113949_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4114584_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4121934_6</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4121965_4</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4143254_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4159553_2</item> -->
+
+
+        <!-- <item>@drawable/speelgoedwinkel4177741_4</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4210469_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4210651_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4210660_5</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4210728_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4210848_5</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211001_5</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211051_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211053_6</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211063_8</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211094_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211098_4</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211100_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211103_5</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211186_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211247_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211395_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211396_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211404_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211425_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211438_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211452_4</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211520_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4211881_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4212075_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4213567_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4219773_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4228198_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4244368_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4249891_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4258308_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4261628_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4279270_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4498370_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4502089_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4504229_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4504369_6</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4509911_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4521187_9</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4521504_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4521947_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4521948_14</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4523339_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4524449_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4529236_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4533771_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4535740_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4538456_10</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4540040_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4543086_12</item> -->
+
+
+        <!-- <item>@drawable/speelgoedwinkel4546705_1</item> -->
+
+
+        <!-- <item>@drawable/speelgoedwinkel4550017_4</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4552033_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4558593_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4558954_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4565322_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4567331_1</item> -->
+
+
+        <!-- <item>@drawable/speelgoedwinkel4568956_2</item> -->
+
         <item>@drawable/speelgoedwinkel4578107_14</item>
         <item>@drawable/speelgoedwinkel4578109_2</item>
-        <item>@drawable/speelgoedwinkel4578110_5</item>
-        <item>@drawable/speelgoedwinkel4584727_1</item>
-        <item>@drawable/speelgoedwinkel4585146_1</item>
-        <item>@drawable/speelgoedwinkel4598522_2</item>
-        <item>@drawable/speelgoedwinkel4599499_3</item>
+        <!-- <item>@drawable/speelgoedwinkel4578110_5</item> -->
+
+
+        <!-- <item>@drawable/speelgoedwinkel4585146_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4598522_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4599499_3</item> -->
         <item>@drawable/speelgoedwinkel4616581_14</item>
-        <item>@drawable/speelgoedwinkel4619599_10</item>
-        <item>@drawable/speelgoedwinkel4632567_2</item>
-        <item>@drawable/speelgoedwinkel4632574_4</item>
-        <item>@drawable/speelgoedwinkel4633691_15</item>
-        <item>@drawable/speelgoedwinkel4639698_1</item>
+        <!-- <item>@drawable/speelgoedwinkel4619599_10</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4632567_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4632574_4</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4633691_15</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4639698_1</item> -->
         <item>@drawable/speelgoedwinkel4645400_2</item>
         <item>@drawable/speelgoedwinkel4655080_5</item>
-        <item>@drawable/speelgoedwinkel4655208_2</item>
-        <item>@drawable/speelgoedwinkel4655257_1</item>
-        <item>@drawable/speelgoedwinkel474026_3</item>
-        <item>@drawable/speelgoedwinkel6000740_3</item>
-        <item>@drawable/speelgoedwinkel6001806_2</item>
-        <item>@drawable/speelgoedwinkel6004435_1</item>
-        <item>@drawable/speelgoedwinkel6006217_1</item>
-        <item>@drawable/speelgoedwinkel6024020_14</item>
+        <!-- <item>@drawable/speelgoedwinkel4655208_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel4655257_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel474026_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel6000740_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel6001806_2</item> -->
+
+
+        <!-- <item>@drawable/speelgoedwinkel6006217_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel6024020_14</item> -->
         <item>@drawable/speelgoedwinkel6028132_4</item>
-        <item>@drawable/speelgoedwinkel6040316_1</item>
-        <item>@drawable/speelgoedwinkel6052126_3</item>
-        <item>@drawable/speelgoedwinkel6054438_1</item>
-        <item>@drawable/speelgoedwinkel6071226_6</item>
-        <item>@drawable/speelgoedwinkel6081988_1</item>
+
+        <!-- <item>@drawable/speelgoedwinkel6052126_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel6054438_1</item> -->
+        <!-- <item>@drawable/speelgoedwinkel6071226_6</item> -->
+        <!-- <item>@drawable/speelgoedwinkel6081988_1</item> -->
         <item>@drawable/speelgoedwinkel6092588_2</item>
-        <item>@drawable/speelgoedwinkel6092590_3</item>
-        <item>@drawable/speelgoedwinkel6092659_1</item>
+        <!-- <item>@drawable/speelgoedwinkel6092590_3</item> -->
+        <!-- <item>@drawable/speelgoedwinkel6092659_1</item> -->
         <item>@drawable/speelgoedwinkel6102774_2</item>
         <item>@drawable/speelgoedwinkel6102776_2</item>
         <item>@drawable/speelgoedwinkel6103769_2</item>
         <item>@drawable/speelgoedwinkel6103771_2</item>
         <item>@drawable/speelgoedwinkel6103774_2</item>
-        <item>@drawable/speelgoedwinkel611101_2</item>
-        <item>@drawable/speelgoedwinkel614101_6</item>
-        <item>@drawable/speelgoedwinkel614124_8</item>
-        <item>@drawable/speelgoedwinkel614126_8</item>
-        <item>@drawable/speelgoedwinkel80170_2</item>
+        <!-- <item>@drawable/speelgoedwinkel611101_2</item> -->
+        <!-- <item>@drawable/speelgoedwinkel614101_6</item> -->
+        <!-- <item>@drawable/speelgoedwinkel614124_8</item> -->
+        <!-- <item>@drawable/speelgoedwinkel614126_8</item> -->
+        <!-- <item>@drawable/speelgoedwinkel80170_2</item> -->
+        <item>@drawable/speelgoedwinkelmini4567909_1</item>
+        <item>@drawable/speelgoedwinkelmini4584727_1</item>
+        <item>@drawable/speelgoedwinkelmini6040316_1</item>
+        <item>@drawable/speelgoedwinkelmini4570666_1</item>
+  cv                    <item>@drawable/speelgoedwinkelmini4162916_1</item>
+        <item>@drawable/speelgoedwinkelmini4549942_1</item>
+        <item>@drawable/speelgoedwinkelmini6004435_1</item>
+        <item>@drawable/speelgoedwinkelmini4543857_1</item>
     </string-array>
     <string-array name="sloopterrein_imgs">
         <item>@drawable/sloopterrein241226_5</item>
@@ -1107,220 +1122,226 @@
         <item>@drawable/offroader6122217_4</item>
     </string-array>
     <string-array name="jungle_imgs">
-        <item>@drawable/jungle249626_2</item>
-        <item>@drawable/jungle258426_1</item>
-        <item>@drawable/jungle300101_1</item>
-        <item>@drawable/jungle3005740_1</item>
-        <item>@drawable/jungle3005744_1</item>
-        <item>@drawable/jungle3006840_1</item>
-        <item>@drawable/jungle302028_4</item>
-        <item>@drawable/jungle303901_1</item>
-        <item>@drawable/jungle317626_1</item>
-        <item>@drawable/jungle3200126_1</item>
-        <item>@drawable/jungle370001_1</item>
-        <item>@drawable/jungle370526_1</item>
-        <item>@drawable/jungle370826_1</item>
-        <item>@drawable/jungle374128_2</item>
-        <item>@drawable/jungle403228_1</item>
-        <item>@drawable/jungle4107758_2</item>
-        <item>@drawable/jungle4112982_2</item>
-        <item>@drawable/jungle4113233_2</item>
-        <item>@drawable/jungle4113854_4</item>
-        <item>@drawable/jungle4113917_8</item>
-        <item>@drawable/jungle4113993_1</item>
-        <item>@drawable/jungle4114077_2</item>
-        <item>@drawable/jungle4114306_4</item>
-        <item>@drawable/jungle4114309_2</item>
-        <item>@drawable/jungle4114324_4</item>
-        <item>@drawable/jungle4114348_3</item>
-        <item>@drawable/jungle4114584_1</item>
-        <item>@drawable/jungle4118790_1</item>
-        <item>@drawable/jungle4124096_5</item>
-        <item>@drawable/jungle4140562_1</item>
-        <item>@drawable/jungle4157270_1</item>
-        <item>@drawable/jungle416223_1</item>
-        <item>@drawable/jungle4162465_1</item>
-        <item>@drawable/jungle4163917_5</item>
-        <item>@drawable/jungle4177431_1</item>
-        <item>@drawable/jungle4183133_12</item>
-        <item>@drawable/jungle4187743_7</item>
-        <item>@drawable/jungle4206482_1</item>
-        <item>@drawable/jungle4210631_2</item>
-        <item>@drawable/jungle4211051_1</item>
-        <item>@drawable/jungle4211055_1</item>
-        <item>@drawable/jungle4211110_1</item>
-        <item>@drawable/jungle4211119_1</item>
-        <item>@drawable/jungle4211166_8</item>
-        <item>@drawable/jungle4211180_18</item>
-        <item>@drawable/jungle4211181_7</item>
-        <item>@drawable/jungle4211183_16</item>
-        <item>@drawable/jungle4211186_1</item>
-        <item>@drawable/jungle4211189_2</item>
-        <item>@drawable/jungle4211195_2</item>
-        <item>@drawable/jungle4211197_1</item>
-        <item>@drawable/jungle4211199_3</item>
-        <item>@drawable/jungle4211200_4</item>
-        <item>@drawable/jungle4211201_1</item>
-        <item>@drawable/jungle4211202_10</item>
-        <item>@drawable/jungle4211205_1</item>
-        <item>@drawable/jungle4211210_5</item>
-        <item>@drawable/jungle4211211_1</item>
-        <item>@drawable/jungle4211221_1</item>
-        <item>@drawable/jungle4211222_2</item>
-        <item>@drawable/jungle4211242_11</item>
-        <item>@drawable/jungle4211257_4</item>
-        <item>@drawable/jungle4211357_1</item>
-        <item>@drawable/jungle4211370_1</item>
-        <item>@drawable/jungle4211373_2</item>
-        <item>@drawable/jungle4211395_1</item>
-        <item>@drawable/jungle4211410_4</item>
-        <item>@drawable/jungle4211419_3</item>
-        <item>@drawable/jungle4211436_1</item>
-        <item>@drawable/jungle4211445_2</item>
-        <item>@drawable/jungle4211469_5</item>
-        <item>@drawable/jungle4211473_1</item>
-        <item>@drawable/jungle4211486_1</item>
-        <item>@drawable/jungle4211491_1</item>
-        <item>@drawable/jungle4211503_3</item>
-        <item>@drawable/jungle4211512_1</item>
-        <item>@drawable/jungle4211525_2</item>
-        <item>@drawable/jungle4211564_1</item>
-        <item>@drawable/jungle4211570_2</item>
-        <item>@drawable/jungle4212454_4</item>
-        <item>@drawable/jungle4215513_2</item>
-        <item>@drawable/jungle4216479_5</item>
-        <item>@drawable/jungle4216625_1</item>
-        <item>@drawable/jungle4216668_2</item>
-        <item>@drawable/jungle4216695_2</item>
-        <item>@drawable/jungle4219773_1</item>
-        <item>@drawable/jungle4221590_1</item>
-        <item>@drawable/jungle4226966_1</item>
-        <item>@drawable/jungle4243920_1</item>
-        <item>@drawable/jungle4251564_1</item>
-        <item>@drawable/jungle4270470_1</item>
-        <item>@drawable/jungle4277016_2</item>
-        <item>@drawable/jungle4277361_1</item>
-        <item>@drawable/jungle4278359_2</item>
-        <item>@drawable/jungle4289542_1</item>
-        <item>@drawable/jungle4293876_1</item>
-        <item>@drawable/jungle4297083_1</item>
+
+        <!-- <item>@drawable/jungle249626_2</item> -->
+        <!-- <item>@drawable/jungle258426_1</item> -->
+        <!-- <item>@drawable/jungle300101_1</item> -->
+        <!-- <item>@drawable/jungle3005740_1</item> -->
+        <!-- <item>@drawable/jungle3005744_1</item> -->
+        <!-- <item>@drawable/jungle3006840_1</item> -->
+        <!-- <item>@drawable/jungle302028_4</item> -->
+        <!-- <item>@drawable/jungle303901_1</item> -->
+        <!-- <item>@drawable/jungle317626_1</item> -->
+        <!-- <item>@drawable/jungle3200126_1</item> -->
+        <!-- <item>@drawable/jungle370001_1</item> -->
+        <!-- <item>@drawable/jungle370526_1</item> -->
+        <!-- <item>@drawable/jungle370826_1</item> -->
+        <!-- <item>@drawable/jungle374128_2</item> -->
+        <!-- <item>@drawable/jungle403228_1</item> -->
+        <!-- <item>@drawable/jungle4107758_2</item> -->
+        <!-- <item>@drawable/jungle4112982_2</item> -->
+        <!-- <item>@drawable/jungle4113233_2</item> -->
+        <!-- <item>@drawable/jungle4113854_4</item> -->
+        <!-- <item>@drawable/jungle4113917_8</item> -->
+        <!-- <item>@drawable/jungle4113993_1</item> -->
+        <!-- <item>@drawable/jungle4114077_2</item> -->
+        <!-- <item>@drawable/jungle4114306_4</item> -->
+        <!-- <item>@drawable/jungle4114309_2</item> -->
+        <!-- <item>@drawable/jungle4114324_4</item> -->
+        <!-- <item>@drawable/jungle4114348_3</item> -->
+        <!-- <item>@drawable/jungle4114584_1</item> -->
+        <!-- <item>@drawable/jungle4118790_1</item> -->
+        <!-- <item>@drawable/jungle4124096_5</item> -->
+        <!-- <item>@drawable/jungle4140562_1</item> -->
+        <!-- <item>@drawable/jungle4157270_1</item> -->
+        <!-- <item>@drawable/jungle416223_1</item> -->
+        <!-- <item>@drawable/jungle4162465_1</item> -->
+        <!-- <item>@drawable/jungle4163917_5</item> -->
+        <!-- <item>@drawable/jungle4177431_1</item> -->
+        <!-- <item>@drawable/jungle4183133_12</item> -->
+        <!-- <item>@drawable/jungle4187743_7</item> -->
+        <!-- <item>@drawable/jungle4206482_1</item> -->
+        <!-- <item>@drawable/jungle4210631_2</item> -->
+        <!-- <item>@drawable/jungle4211051_1</item> -->
+        <!-- <item>@drawable/jungle4211055_1</item> -->
+        <!-- <item>@drawable/jungle4211110_1</item> -->
+        <!-- <item>@drawable/jungle4211119_1</item> -->
+        <!-- <item>@drawable/jungle4211166_8</item> -->
+        <!-- <item>@drawable/jungle4211180_18</item> -->
+        <!-- <item>@drawable/jungle4211181_7</item> -->
+        <!-- <item>@drawable/jungle4211183_16</item> -->
+        <!-- <item>@drawable/jungle4211186_1</item> -->
+        <!-- <item>@drawable/jungle4211189_2</item> -->
+        <!-- <item>@drawable/jungle4211195_2</item> -->
+        <!-- <item>@drawable/jungle4211197_1</item> -->
+        <!-- <item>@drawable/jungle4211199_3</item> -->
+        <!-- <item>@drawable/jungle4211200_4</item> -->
+        <!-- <item>@drawable/jungle4211201_1</item> -->
+        <!-- <item>@drawable/jungle4211202_10</item> -->
+        <!-- <item>@drawable/jungle4211205_1</item> -->
+        <!-- <item>@drawable/jungle4211210_5</item> -->
+        <!-- <item>@drawable/jungle4211211_1</item> -->
+        <!-- <item>@drawable/jungle4211221_1</item> -->
+        <!-- <item>@drawable/jungle4211222_2</item> -->
+        <!-- <item>@drawable/jungle4211242_11</item> -->
+        <!-- <item>@drawable/jungle4211257_4</item> -->
+        <!-- <item>@drawable/jungle4211357_1</item> -->
+        <!-- <item>@drawable/jungle4211370_1</item> -->
+        <!-- <item>@drawable/jungle4211373_2</item> -->
+        <!-- <item>@drawable/jungle4211395_1</item> -->
+        <!-- <item>@drawable/jungle4211410_4</item> -->
+        <!-- <item>@drawable/jungle4211419_3</item> -->
+        <!-- <item>@drawable/jungle4211436_1</item> -->
+        <!-- <item>@drawable/jungle4211445_2</item> -->
+        <!-- <item>@drawable/jungle4211469_5</item> -->
+        <!-- <item>@drawable/jungle4211473_1</item> -->
+        <!-- <item>@drawable/jungle4211486_1</item> -->
+        <!-- <item>@drawable/jungle4211491_1</item> -->
+        <!-- <item>@drawable/jungle4211503_3</item> -->
+        <!-- <item>@drawable/jungle4211512_1</item> -->
+        <!-- <item>@drawable/jungle4211525_2</item> -->
+        <!-- <item>@drawable/jungle4211564_1</item> -->
+        <!-- <item>@drawable/jungle4211570_2</item> -->
+        <!-- <item>@drawable/jungle4212454_4</item> -->
+        <!-- <item>@drawable/jungle4215513_2</item> -->
+        <!-- <item>@drawable/jungle4216479_5</item> -->
+        <!-- <item>@drawable/jungle4216625_1</item> -->
+        <!-- <item>@drawable/jungle4216668_2</item> -->
+        <!-- <item>@drawable/jungle4216695_2</item> -->
+        <!-- <item>@drawable/jungle4219773_1</item> -->
+        <!-- <item>@drawable/jungle4221590_1</item> -->
+        <!-- <item>@drawable/jungle4226966_1</item> -->
+        <!-- <item>@drawable/jungle4243920_1</item> -->
+        <!-- <item>@drawable/jungle4251564_1</item> -->
+        <!-- <item>@drawable/jungle4270470_1</item> -->
+        <!-- <item>@drawable/jungle4277016_2</item> -->
+        <!-- <item>@drawable/jungle4277361_1</item> -->
+        <!-- <item>@drawable/jungle4278359_2</item> -->
+        <!-- <item>@drawable/jungle4289542_1</item> -->
+        <!-- <item>@drawable/jungle4293876_1</item> -->
+        <!-- <item>@drawable/jungle4297083_1</item> -->
         <item>@drawable/jungle4297719_1</item>
-        <item>@drawable/jungle4494474_2</item>
-        <item>@drawable/jungle4500069_8</item>
-        <item>@drawable/jungle4504376_3</item>
-        <item>@drawable/jungle4504378_1</item>
-        <item>@drawable/jungle4507311_1</item>
-        <item>@drawable/jungle4508646_1</item>
-        <item>@drawable/jungle4516546_1</item>
-        <item>@drawable/jungle4517992_2</item>
-        <item>@drawable/jungle4518400_2</item>
-        <item>@drawable/jungle452826_1</item>
-        <item>@drawable/jungle4529236_1</item>
-        <item>@drawable/jungle4529247_1</item>
-        <item>@drawable/jungle4533772_1</item>
-        <item>@drawable/jungle4535765_1</item>
-        <item>@drawable/jungle4537937_8</item>
-        <item>@drawable/jungle4538126_1</item>
-        <item>@drawable/jungle4538950_2</item>
-        <item>@drawable/jungle4543858_2</item>
-        <item>@drawable/jungle4550324_3</item>
-        <item>@drawable/jungle4550325_7</item>
-        <item>@drawable/jungle4552353_2</item>
-        <item>@drawable/jungle4558169_2</item>
-        <item>@drawable/jungle4558954_1</item>
-        <item>@drawable/jungle4560178_1</item>
-        <item>@drawable/jungle4565319_2</item>
-        <item>@drawable/jungle4565394_1</item>
-        <item>@drawable/jungle4567334_1</item>
-        <item>@drawable/jungle4569058_2</item>
-        <item>@drawable/jungle4585337_2</item>
-        <item>@drawable/jungle4594238_8</item>
-        <item>@drawable/jungle4599984_1</item>
-        <item>@drawable/jungle4609726_1</item>
+        <!-- <item>@drawable/jungle4494474_2</item> -->
+        <!-- <item>@drawable/jungle4500069_8</item> -->
+        <!-- <item>@drawable/jungle4504376_3</item> -->
+        <!-- <item>@drawable/jungle4504378_1</item> -->
+        <!-- <item>@drawable/jungle4507311_1</item> -->
+        <!-- <item>@drawable/jungle4508646_1</item> -->
+        <!-- <item>@drawable/jungle4516546_1</item> -->
+        <!-- <item>@drawable/jungle4517992_2</item> -->
+        <!-- <item>@drawable/jungle4518400_2</item> -->
+        <!-- <item>@drawable/jungle452826_1</item> -->
+        <!-- <item>@drawable/jungle4529236_1</item> -->
+        <!-- <item>@drawable/jungle4529247_1</item> -->
+        <!-- <item>@drawable/jungle4533772_1</item> -->
+        <!-- <item>@drawable/jungle4535765_1</item> -->
+        <!-- <item>@drawable/jungle4537937_8</item> -->
+        <!-- <item>@drawable/jungle4538126_1</item> -->
+        <!-- <item>@drawable/jungle4538950_2</item> -->
+        <!-- <item>@drawable/jungle4543858_2</item> -->
+        <!-- <item>@drawable/jungle4550324_3</item> -->
+        <!-- <item>@drawable/jungle4550325_7</item> -->
+        <!-- <item>@drawable/jungle4552353_2</item> -->
+        <!-- <item>@drawable/jungle4558169_2</item> -->
+        <!-- <item>@drawable/jungle4558954_1</item> -->
+        <!-- <item>@drawable/jungle4560178_1</item> -->
+        <!-- <item>@drawable/jungle4565319_2</item> -->
+        <!-- <item>@drawable/jungle4565394_1</item> -->
+        <!-- <item>@drawable/jungle4567334_1</item> -->
+        <!-- <item>@drawable/jungle4569058_2</item> -->
+        <!-- <item>@drawable/jungle4585337_2</item> -->
+        <!-- <item>@drawable/jungle4594238_8</item> -->
+        <!-- <item>@drawable/jungle4599984_1</item> -->
+        <!-- <item>@drawable/jungle4609726_1</item> -->
         <item>@drawable/jungle4610602_1</item>
-        <item>@drawable/jungle4611702_2</item>
-        <item>@drawable/jungle4615649_1</item>
-        <item>@drawable/jungle4619599_6</item>
-        <item>@drawable/jungle4620318_1</item>
-        <item>@drawable/jungle4621545_1</item>
-        <item>@drawable/jungle4621548_2</item>
+        <!-- <item>@drawable/jungle4611702_2</item> -->
+        <!-- <item>@drawable/jungle4615649_1</item> -->
+        <!-- <item>@drawable/jungle4619599_6</item> -->
+        <!-- <item>@drawable/jungle4620318_1</item> -->
+        <!-- <item>@drawable/jungle4621545_1</item> -->
+        <!-- <item>@drawable/jungle4621548_2</item> -->
         <item>@drawable/jungle4625279_1</item>
-        <item>@drawable/jungle4625626_4</item>
-        <item>@drawable/jungle4632576_1</item>
-        <item>@drawable/jungle4640844_1</item>
+        <!-- <item>@drawable/jungle4625626_4</item> -->
+        <!-- <item>@drawable/jungle4632576_1</item> -->
+        <!-- <item>@drawable/jungle4640844_1</item> -->
         <item>@drawable/jungle4644070_1</item>
-        <item>@drawable/jungle4644102_2</item>
-        <item>@drawable/jungle4646844_1</item>
-        <item>@drawable/jungle4648118_1</item>
-        <item>@drawable/jungle4649066_2</item>
-        <item>@drawable/jungle4651898_4</item>
-        <item>@drawable/jungle4654128_2</item>
-        <item>@drawable/jungle4654448_1</item>
-        <item>@drawable/jungle4655241_2</item>
-        <item>@drawable/jungle4655257_2</item>
+        <!-- <item>@drawable/jungle4644102_2</item> -->
+        <!-- <item>@drawable/jungle4646844_1</item> -->
+        <!-- <item>@drawable/jungle4648118_1</item> -->
+        <!-- <item>@drawable/jungle4649066_2</item> -->
+        <!-- <item>@drawable/jungle4651898_4</item> -->
+        <!-- <item>@drawable/jungle4654128_2</item> -->
+        <!-- <item>@drawable/jungle4654448_1</item> -->
+        <!-- <item>@drawable/jungle4655241_2</item> -->
+        <!-- <item>@drawable/jungle4655257_2</item> -->
         <item>@drawable/jungle4656509_4</item>
         <item>@drawable/jungle4660867_2</item>
-        <item>@drawable/jungle4667463_1</item>
-        <item>@drawable/jungle486501_2</item>
-        <item>@drawable/jungle6004990_2</item>
-        <item>@drawable/jungle6011794_1</item>
-        <item>@drawable/jungle6015344_1</item>
+        <!-- <item>@drawable/jungle4667463_1</item> -->
+        <!-- <item>@drawable/jungle486501_2</item> -->
+        <!-- <item>@drawable/jungle6004990_2</item> -->
+        <!-- <item>@drawable/jungle6011794_1</item> -->
+        <!-- <item>@drawable/jungle6015344_1</item> -->
         <item>@drawable/jungle6017002_1</item>
-        <item>@drawable/jungle6017003_2</item>
-        <item>@drawable/jungle6017021_1</item>
-        <item>@drawable/jungle6017034_1</item>
+        <!-- <item>@drawable/jungle6017003_2</item> -->
+
         <item>@drawable/jungle6022011_1</item>
-        <item>@drawable/jungle6023827_1</item>
-        <item>@drawable/jungle6023832_5</item>
-        <item>@drawable/jungle6024495_1</item>
+        <!-- <item>@drawable/jungle6023827_1</item> -->
+        <!-- <item>@drawable/jungle6023832_5</item> -->
+        <!-- <item>@drawable/jungle6024495_1</item> -->
         <item>@drawable/jungle6024672_1</item>
-        <item>@drawable/jungle6025026_2</item>
+        <!-- <item>@drawable/jungle6025026_2</item> -->
         <item>@drawable/jungle6030306_4</item>
-        <item>@drawable/jungle6030716_1</item>
-        <item>@drawable/jungle6031821_1</item>
+        <!-- <item>@drawable/jungle6030716_1</item> -->
+        <!-- <item>@drawable/jungle6031821_1</item> -->
         <item>@drawable/jungle6032918_2</item>
         <item>@drawable/jungle6035584_1</item>
-        <item>@drawable/jungle6037610_1</item>
-        <item>@drawable/jungle6038682_2</item>
-        <item>@drawable/jungle6044725_8</item>
+        <!-- <item>@drawable/jungle6037610_1</item> -->
+        <!-- <item>@drawable/jungle6038682_2</item> -->
+        <!-- <item>@drawable/jungle6044725_8</item> -->
         <item>@drawable/jungle6046383_1</item>
-        <item>@drawable/jungle6050914_1</item>
-        <item>@drawable/jungle6051511_1</item>
-        <item>@drawable/jungle6053803_1</item>
+        <!-- <item>@drawable/jungle6050914_1</item> -->
+        <!-- <item>@drawable/jungle6051511_1</item> -->
+
         <item>@drawable/jungle6055380_1</item>
         <item>@drawable/jungle6055563_1</item>
         <item>@drawable/jungle6055871_2</item>
         <item>@drawable/jungle6056288_1</item>
         <item>@drawable/jungle6058749_2</item>
         <item>@drawable/jungle6062166_2</item>
-        <item>@drawable/jungle6066114_4</item>
+        <!-- <item>@drawable/jungle6066114_4</item> -->
         <item>@drawable/jungle6069259_4</item>
         <item>@drawable/jungle6071281_1</item>
-        <item>@drawable/jungle6071287_1</item>
-        <item>@drawable/jungle6071304_1</item>
-        <item>@drawable/jungle6073208_1</item>
-        <item>@drawable/jungle6073396_1</item>
+        <!-- <item>@drawable/jungle6071287_1</item> -->
+
         <item>@drawable/jungle6074686_1</item>
         <item>@drawable/jungle6074805_2</item>
         <item>@drawable/jungle6074884_2</item>
         <item>@drawable/jungle6075171_1</item>
-        <item>@drawable/jungle6076606_1</item>
         <item>@drawable/jungle6077779_1</item>
         <item>@drawable/jungle6079725_4</item>
-        <item>@drawable/jungle6081990_1</item>
+        <!-- <item>@drawable/jungle6081990_1</item> -->
         <item>@drawable/jungle6086772_1</item>
-        <item>@drawable/jungle6092768_1</item>
-        <item>@drawable/jungle6096113_1</item>
-        <item>@drawable/jungle6100565_1</item>
-        <item>@drawable/jungle6106283_1</item>
+        <!-- <item>@drawable/jungle6092768_1</item> -->
+
+
+        <!-- <item>@drawable/jungle6100565_1</item> -->
+        <!-- <item>@drawable/jungle6106283_1</item> -->
         <item>@drawable/jungle6116614_1</item>
-        <item>@drawable/jungle6117940_1</item>
-        <item>@drawable/jungle614121_1</item>
-        <item>@drawable/jungle614123_1</item>
-        <item>@drawable/jungle614301_1</item>
-        <item>@drawable/jungle623101_3</item>
-        <item>@drawable/jungle626440_2</item>
-        <item>@drawable/jungle654101_1</item>
+        <!-- <item>@drawable/jungle6117940_1</item> -->
+        <!-- <item>@drawable/jungle614121_1</item> -->
+        <!-- <item>@drawable/jungle614123_1</item> -->
+        <!-- <item>@drawable/jungle614301_1</item> -->
+        <!-- <item>@drawable/jungle623101_3</item> -->
+        <!-- <item>@drawable/jungle626440_2</item> -->
+        <!-- <item>@drawable/jungle654101_1</item> -->
+        <item>@drawable/junglemini6096113_1</item>
+        <item>@drawable/junglemini6076606_1</item>
+        <item>@drawable/junglemini6053803_1</item>
+        <item>@drawable/junglemini6073208_1</item>
+        <item>@drawable/junglemini6017021_1</item>
+        <item>@drawable/junglemini6073396_1</item>
+        <item>@drawable/junglemini6017034_1</item>
+        <item>@drawable/junglemini6071304_1</item>
     </string-array>
     <string-array name="hetgrotebos_imgs">
 
@@ -1354,7 +1375,7 @@
         <!-- <item>@drawable/hetgrotebos6005479_4</item> -->
         <!-- <item>@drawable/hetgrotebos6030160_1</item> -->
         <item>@drawable/specialhetgrotebos6034814_1</item>
-        <item>@drawable/hetgrotebos6035746_1</item>
+
         <!-- <item>@drawable/hetgrotebos6048851_2</item> -->
         <!-- <item>@drawable/hetgrotebos6055609_1</item> -->
         <!-- <item>@drawable/hetgrotebos6056425_3</item> -->
@@ -1362,7 +1383,7 @@
         <!-- <item>@drawable/hetgrotebos6057649_1</item> -->
         <!-- <item>@drawable/hetgrotebos6057745_1</item> -->
         <item>@drawable/specialhetgrotebos6059083_2</item>
-        <item>@drawable/hetgrotebos6070646_1</item>
+
         <!-- <item>@drawable/hetgrotebos6070667_2</item> -->
         <!-- <item>@drawable/hetgrotebos6094052_6</item> -->
         <item>@drawable/specialhetgrotebos6094105_1</item>
@@ -1376,11 +1397,13 @@
         <!-- <item>@drawable/hetgrotebos6099445_1</item> -->
         <item>@drawable/specialhetgrotebos6099452_1</item>
         <item>@drawable/specialhetgrotebos6099457_1</item>
-        <item>@drawable/hetgrotebos6100164_1</item>
         <item>@drawable/specialhetgrotebos6101171_1</item>
         <item>@drawable/specialhetgrotebos6102381_1</item>
         <!-- <item>@drawable/hetgrotebos6106136_1</item> -->
         <item>@drawable/specialhetgrotebos6106430_1</item>
+        <item>@drawable/hetgrotebosmini6100164_1</item>
+        <item>@drawable/hetgrotebosmini6070646_1</item>
+        <item>@drawable/hetgrotebosmini6035746_1</item>
     </string-array>
     <string-array name="helikopter_imgs">
         <item>@drawable/helikopter241226_9</item>
@@ -1602,28 +1625,130 @@
         <item>@drawable/helikopter9553_1</item>
     </string-array>
     <string-array name="fietswinkel_imgs">
+        <item>@drawable/fietswinkel_1_4210795_1</item>
+        <item>@drawable/fietswinkel_1_6011461_1</item>
+        <item>@drawable/fietswinkel_2_4113917_2</item>
+        <item>@drawable/fietswinkel_2_4185259_1</item>
+        <item>@drawable/fietswinkel_2_4211438_1</item>
+        <item>@drawable/fietswinkel_3_6066097_1</item>
+        <item>@drawable/fietswinkel_3_241226_1</item>
+        <item>@drawable/fietswinkel_3_302226_1</item>
+        <item>@drawable/fietswinkel_3_4210631_1</item>
+        <item>@drawable/fietswinkel_3_4568734_3</item>
+        <item>@drawable/fietswinkel_3_4210651_2</item>
+        <item>@drawable/fietswinkel_4_4211632_1</item>
+        <item>@drawable/fietswinkel_4_4211349_1</item>
+        <item>@drawable/fietswinkel_4_4211570_1</item>
+        <item>@drawable/fietswinkel_4_407026_2</item>
+        <item>@drawable/fietswinkel_4_4179825_2</item>
+        <item>@drawable/fietswinkel_4_4179830_1</item>
+        <item>@drawable/fietswinkel_4_4179833_1</item>
+        <item>@drawable/fietswinkel_4_602026_1</item>
+        <item>@drawable/fietswinkel_5_6034044_3</item>
+        <item>@drawable/fietswinkel_5_300501_1</item>
+        <item>@drawable/fietswinkel_5_6031787_3</item>
+        <item>@drawable/fietswinkel_5_4264360_1</item>
+        <item>@drawable/fietswinkel_5_302326_1</item>
+        <item>@drawable/fietswinkel_5_4613153_1</item>
+        <item>@drawable/fietswinkel_6_302301_1</item>
+        <item>@drawable/fietswinkel_6_4547489_1</item>
+        <item>@drawable/fietswinkel_6_403226_2</item>
+        <item>@drawable/fietswinkel_6_4113917_1</item>
+        <item>@drawable/fietswinkel_6_4114309_1</item>
+        <item>@drawable/fietswinkel_6_4569836_1</item>
+        <item>@drawable/fietswinkel_7_3000840_4</item>
+        <item>@drawable/fietswinkel_7_379426_2</item>
+        <item>@drawable/fietswinkel_7_4568956_4</item>
+        <item>@drawable/fietswinkel_8_4121932_1</item>
+        <item>@drawable/fietswinkel_8_301001_2</item>
+        <item>@drawable/fietswinkel_8_300501_1</item>
+        <item>@drawable/fietswinkel_8_235701_1</item>
+        <item>@drawable/fietswinkel_8_611201_1</item>
+        <item>@drawable/fietswinkel_8_362201_1</item>
+        <item>@drawable/fietswinkel_9_4179833_1</item>
+        <item>@drawable/fietswinkel_9_4211569_1</item>
+        <item>@drawable/fietswinkel_10_4211398_1</item>
+        <item>@drawable/fietswinkel_10_4247771_2</item>
+        <item>@drawable/fietswinkel_11_4124083_1</item>
+        <item>@drawable/fietswinkel_12_4536521_1</item>
+        <item>@drawable/fietswinkel_12_4536998_1</item>
+        <item>@drawable/fietswinkel_12_4539097_1</item>
+        <item>@drawable/fietswinkel_13_4211396_1</item>
+        <item>@drawable/fietswinkel_13_302401_1</item>
+        <item>@drawable/fietswinkel_13_6038531_1</item>
+        <item>@drawable/fietswinkel_13_4533771_1</item>
+        <item>@drawable/fietswinkel_14_242001_1</item>
+        <item>@drawable/fietswinkel_14_302401_2</item>
+        <item>@drawable/fietswinkel_14_4211098_2</item>
+        <item>@drawable/fietswinkel_15_4539102_1</item>
+        <item>@drawable/fietswinkel_15_4288298_1</item>
+        <item>@drawable/fietswinkel_15_4541379_1</item>
+        <item>@drawable/fietswinkel_15_4536998_2</item>
+        <item>@drawable/fietswinkel_15_4536521_2</item>
+        <item>@drawable/fietswinkel_16_4541376_1</item>
+        <item>@drawable/fietswinkel_16_4539102_1</item>
+        <item>@drawable/fietswinkel_16_6038531_6</item>
+        <item>@drawable/fietswinkel_17_614124_1</item>
+        <item>@drawable/fietswinkel_17_4278409_1</item>
+        <item>@drawable/fietswinkel_17_474026_1</item>
+        <item>@drawable/fietswinkel_17_4538456_1</item>
+        <item>@drawable/fietswinkel_17_4599499_2</item>
+        <item>@drawable/fietswinkel_18_4288513_3</item>
+        <item>@drawable/fietswinkel_18_4536998_3</item>
+        <item>@drawable/fietswinkel_18_4536521_3</item>
+        <item>@drawable/fietswinkel_19_4529241_2</item>
+        <item>@drawable/fietswinkel_19_4109995_2</item>
+        <item>@drawable/fietswinkel_19_4288513_1</item>
+        <item>@drawable/fietswinkel_19_4162465_1</item>
+        <item>@drawable/fietswinkel_19_4113915_1</item>
+        <item>@drawable/fietswinkel_19_4124455_1</item>
+        <item>@drawable/fietswinkel_19_4113916_2</item>
+        <item>@drawable/fietswinkel_19_4579306_2</item>
+        <item>@drawable/fietswinkel_20_614124_1</item>
+        <item>@drawable/fietswinkel_20_4649422_1</item>
+        <item>@drawable/fietswinkel_20_474026_1</item>
+        <item>@drawable/fietswinkel_20_403226_1</item>
+        <item>@drawable/fietswinkel_20_287726_1</item>
+        <item>@drawable/fietswinkel_20_4529241_1</item>
+        <item>@drawable/fietswinkel_20_4211429_1</item>
+        <item>@drawable/fietswinkel_20_4219726_1</item>
+        <item>@drawable/fietswinkel_20_6062574_2</item>
+        <item>@drawable/fietswinkel_20_4216695_1</item>
+        <item>@drawable/fietswinkel_21_4210631_1</item>
+        <item>@drawable/fietswinkel_21_4622569_1</item>
+        <item>@drawable/fietswinkel_21_4211841_1</item>
+        <item>@drawable/fietswinkelmini6112629_1</item>
+        <item>@drawable/fietswinkelmini6093516_1</item>
+        <item>@drawable/fietswinkelmini6100203_1</item>
+        <item>@drawable/fietswinkelmini4651441_1</item>
+        <item>@drawable/fietswinkelmini4649274_1</item>
+        <item>@drawable/fietswinkelmini4629972_1</item>
+        <item>@drawable/fietswinkelmini4622574_2</item>
+        <item>@drawable/fietswinkelmini4558856_1</item>
+        <item>@drawable/fietswinkelmini4529755_1</item>
+        <item>@drawable/fietswinkelmini4524098_1</item>
+        <item>@drawable/fietswinkelmini4526110_1</item>
+        <item>@drawable/fietswinkelmini4275535_1</item>
+        <item>@drawable/fietswinkelmini9341_1</item>
+        <item>@drawable/fietswinkelmini4162916_1</item>
 
-        <!-- <item>@drawable/fietswinkel235701_4</item> -->
-        <!-- <item>@drawable/fietswinkel241226_4</item> -->
-        <!-- <item>@drawable/fietswinkel242001_5</item> -->
         <!-- <item>@drawable/fietswinkel255526_3</item> -->
-        <!-- <item>@drawable/fietswinkel287726_4</item> -->
-        <!-- <item>@drawable/fietswinkel3000840_4</item> -->
-        <!-- <item>@drawable/fietswinkel300501_15</item> -->
+
+
         <!-- <item>@drawable/fietswinkel3005744_3</item> -->
         <!-- <item>@drawable/fietswinkel300901_2</item> -->
         <!-- <item>@drawable/fietswinkel300926_1</item> -->
-        <!-- <item>@drawable/fietswinkel301001_6</item> -->
+
+
         <!-- <item>@drawable/fietswinkel302026_2</item> -->
-        <!-- <item>@drawable/fietswinkel302226_12</item> -->
-        <!-- <item>@drawable/fietswinkel302301_15</item> -->
-        <!-- <item>@drawable/fietswinkel302326_10</item> -->
-        <!-- <item>@drawable/fietswinkel302401_18</item> -->
+
+
         <!-- <item>@drawable/fietswinkel302426_6</item> -->
         <!-- <item>@drawable/fietswinkel306924_2</item> -->
         <!-- <item>@drawable/fietswinkel307021_3</item> -->
         <!-- <item>@drawable/fietswinkel307024_5</item> -->
-        <!-- <item>@drawable/fietswinkel362201_6</item> -->
+
+
         <!-- <item>@drawable/fietswinkel362324_2</item> -->
         <!-- <item>@drawable/fietswinkel362326_3</item> -->
         <!-- <item>@drawable/fietswinkel365901_4</item> -->
@@ -1634,60 +1759,60 @@
         <!-- <item>@drawable/fietswinkel371024_2</item> -->
         <!-- <item>@drawable/fietswinkel371026_7</item> -->
         <!-- <item>@drawable/fietswinkel379421_1</item> -->
-        <!-- <item>@drawable/fietswinkel379426_3</item> -->
+
+
         <!-- <item>@drawable/fietswinkel379526_2</item> -->
         <!-- <item>@drawable/fietswinkel383101_2</item> -->
         <!-- <item>@drawable/fietswinkel389921_2</item> -->
         <!-- <item>@drawable/fietswinkel389924_1</item> -->
         <!-- <item>@drawable/fietswinkel394026_1</item> -->
         <!-- <item>@drawable/fietswinkel400626_1</item> -->
-        <!-- <item>@drawable/fietswinkel403226_5</item> -->
-        <!-- <item>@drawable/fietswinkel407026_7</item> -->
+
+
         <!-- <item>@drawable/fietswinkel407924_1</item> -->
-        <!-- <item>@drawable/fietswinkel4109995_10</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4112980_1</item> -->
         <!-- <item>@drawable/fietswinkel4112982_4</item> -->
         <!-- <item>@drawable/fietswinkel4113205_1</item> -->
         <!-- <item>@drawable/fietswinkel4113233_3</item> -->
-        <!-- <item>@drawable/fietswinkel4113915_11</item> -->
-        <!-- <item>@drawable/fietswinkel4113916_14</item> -->
-        <!-- <item>@drawable/fietswinkel4113917_6</item> -->
-        <!-- <item>@drawable/fietswinkel4114309_3</item> -->
-        <!-- <item>@drawable/fietswinkel4121932_4</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4121966_2</item> -->
-        <!-- <item>@drawable/fietswinkel4124083_1</item> -->
-        <!-- <item>@drawable/fietswinkel4124455_4</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4143346_1</item> -->
         <!-- <item>@drawable/fietswinkel4153653_3</item> -->
         <!-- <item>@drawable/fietswinkel4162443_1</item> -->
-        <!-- <item>@drawable/fietswinkel4162465_8</item> -->
-        <!-- <item>@drawable/fietswinkel4162916_1</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4163696_4</item> -->
-        <!-- <item>@drawable/fietswinkel4179825_10</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4179826_8</item> -->
         <!-- <item>@drawable/fietswinkel4179828_3</item> -->
         <!-- <item>@drawable/fietswinkel4179829_6</item> -->
-        <!-- <item>@drawable/fietswinkel4179830_15</item> -->
-        <!-- <item>@drawable/fietswinkel4179833_17</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4183133_8</item> -->
         <!-- <item>@drawable/fietswinkel4183544_2</item> -->
         <!-- <item>@drawable/fietswinkel4183901_8</item> -->
-        <!-- <item>@drawable/fietswinkel4185259_3</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4187209_4</item> -->
         <!-- <item>@drawable/fietswinkel4188357_2</item> -->
         <!-- <item>@drawable/fietswinkel4190219_2</item> -->
         <!-- <item>@drawable/fietswinkel4194746_5</item> -->
         <!-- <item>@drawable/fietswinkel4196736_3</item> -->
         <!-- <item>@drawable/fietswinkel4200023_4</item> -->
-        <!-- <item>@drawable/fietswinkel4210631_20</item> -->
-        <!-- <item>@drawable/fietswinkel4210651_8</item> -->
-        <!-- <item>@drawable/fietswinkel4210795_1</item> -->
-        <!-- <item>@drawable/fietswinkel4211098_7</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4211100_2</item> -->
         <!-- <item>@drawable/fietswinkel4211107_1</item> -->
         <!-- <item>@drawable/fietswinkel4211159_2</item> -->
         <!-- <item>@drawable/fietswinkel4211186_4</item> -->
-        <!-- <item>@drawable/fietswinkel4211349_5</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4211353_3</item> -->
         <!-- <item>@drawable/fietswinkel4211360_2</item> -->
         <!-- <item>@drawable/fietswinkel4211383_6</item> -->
@@ -1695,15 +1820,15 @@
         <!-- <item>@drawable/fietswinkel4211393_2</item> -->
         <!-- <item>@drawable/fietswinkel4211394_2</item> -->
         <!-- <item>@drawable/fietswinkel4211395_3</item> -->
-        <!-- <item>@drawable/fietswinkel4211396_2</item> -->
-        <!-- <item>@drawable/fietswinkel4211398_27</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4211399_8</item> -->
         <!-- <item>@drawable/fietswinkel4211401_5</item> -->
         <!-- <item>@drawable/fietswinkel4211407_3</item> -->
         <!-- <item>@drawable/fietswinkel4211408_4</item> -->
         <!-- <item>@drawable/fietswinkel4211413_2</item> -->
-        <!-- <item>@drawable/fietswinkel4211429_6</item> -->
-        <!-- <item>@drawable/fietswinkel4211438_4</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4211445_9</item> -->
         <!-- <item>@drawable/fietswinkel4211452_2</item> -->
         <!-- <item>@drawable/fietswinkel4211469_2</item> -->
@@ -1712,32 +1837,34 @@
         <!-- <item>@drawable/fietswinkel4211503_3</item> -->
         <!-- <item>@drawable/fietswinkel4211511_1</item> -->
         <!-- <item>@drawable/fietswinkel4211525_7</item> -->
-        <!-- <item>@drawable/fietswinkel4211569_2</item> -->
-        <!-- <item>@drawable/fietswinkel4211570_3</item> -->
-        <!-- <item>@drawable/fietswinkel4211632_5</item> -->
-        <!-- <item>@drawable/fietswinkel4211841_1</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4215513_1</item> -->
         <!-- <item>@drawable/fietswinkel4216479_3</item> -->
         <!-- <item>@drawable/fietswinkel4216581_3</item> -->
-        <!-- <item>@drawable/fietswinkel4216695_2</item> -->
-        <!-- <item>@drawable/fietswinkel4219726_3</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4222960_4</item> -->
         <!-- <item>@drawable/fietswinkel4228198_1</item> -->
         <!-- <item>@drawable/fietswinkel4243819_1</item> -->
         <!-- <item>@drawable/fietswinkel4244363_2</item> -->
         <!-- <item>@drawable/fietswinkel4246901_4</item> -->
-        <!-- <item>@drawable/fietswinkel4247771_2</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4251163_4</item> -->
-        <!-- <item>@drawable/fietswinkel4264360_35</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4271344_2</item> -->
         <!-- <item>@drawable/fietswinkel4273590_2</item> -->
-        <item>@drawable/fietswinkel4275535_1</item>
+
+
         <!-- <item>@drawable/fietswinkel4278013_1</item> -->
-        <!-- <item>@drawable/fietswinkel4278409_1</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4279270_1</item> -->
         <!-- <item>@drawable/fietswinkel4282745_2</item> -->
-        <!-- <item>@drawable/fietswinkel4288298_1</item> -->
-        <!-- <item>@drawable/fietswinkel4288513_4</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4295260_2</item> -->
         <!-- <item>@drawable/fietswinkel4504229_1</item> -->
         <!-- <item>@drawable/fietswinkel4504379_1</item> -->
@@ -1750,109 +1877,108 @@
         <!-- <item>@drawable/fietswinkel4521439_12</item> -->
         <!-- <item>@drawable/fietswinkel4521504_2</item> -->
         <!-- <item>@drawable/fietswinkel452226_1</item> -->
-        <item>@drawable/fietswinkel4524098_1</item>
-        <item>@drawable/fietswinkel4526110_1</item>
+
+
         <!-- <item>@drawable/fietswinkel452826_1</item> -->
         <!-- <item>@drawable/fietswinkel4529236_4</item> -->
-
-
         <!-- <item>@drawable/fietswinkel4529239_4</item> -->
-        <!-- <item>@drawable/fietswinkel4529241_10</item> -->
-        <item>@drawable/fietswinkel4529755_1</item>
-        <!-- <item>@drawable/fietswinkel4533771_6</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4534267_1</item> -->
         <!-- <item>@drawable/fietswinkel4536520_1</item> -->
-        <!-- <item>@drawable/fietswinkel4536521_12</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4536522_4</item> -->
-        <!-- <item>@drawable/fietswinkel4536998_18</item> -->
-        <!-- <item>@drawable/fietswinkel4538456_7</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4539061_5</item> -->
         <!-- <item>@drawable/fietswinkel4539062_7</item> -->
-        <!-- <item>@drawable/fietswinkel4539097_12</item> -->
-        <!-- <item>@drawable/fietswinkel4539102_20</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4539114_8</item> -->
         <!-- <item>@drawable/fietswinkel4540040_3</item> -->
-        <!-- <item>@drawable/fietswinkel4541376_14</item> -->
-        <!-- <item>@drawable/fietswinkel4541379_7</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4541528_3</item> -->
         <!-- <item>@drawable/fietswinkel4541956_4</item> -->
-        <!-- <item>@drawable/fietswinkel4547489_2</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4550171_2</item> -->
         <!-- <item>@drawable/fietswinkel4552033_2</item> -->
         <!-- <item>@drawable/fietswinkel4558168_4</item> -->
         <!-- <item>@drawable/fietswinkel4558170_3</item> -->
         <!-- <item>@drawable/fietswinkel4558172_2</item> -->
-        <item>@drawable/fietswinkel4558856_1</item>
+
+
         <!-- <item>@drawable/fietswinkel4565324_2</item> -->
         <item>@drawable/specialfietswinkel4568711_2</item>
-        <!-- <item>@drawable/fietswinkel4568734_5</item> -->
-        <!-- <item>@drawable/fietswinkel4568956_4</item> -->
+
         <!-- <item>@drawable/fietswinkel4569733_3</item> -->
-        <!-- <item>@drawable/fietswinkel4569836_3</item> -->
+
+
         <!-- <item>@drawable/fietswinkel4578094_8</item> -->
         <item>@drawable/specialfietswinkel4578109_2</item>
         <!-- <item>@drawable/fietswinkel4578110_1</item> -->
-        <!-- <item>@drawable/fietswinkel4579306_2</item> -->
+
         <item>@drawable/specialfietswinkel4588025_2</item>
         <!-- <item>@drawable/fietswinkel4598522_2</item> -->
-        <!-- <item>@drawable/fietswinkel4599499_2</item> -->
+
         <item>@drawable/specialfietswinkel4599974_1</item>
-        <!-- <item>@drawable/fietswinkel4613153_4</item> -->
         <item>@drawable/specialfietswinkel4618324_1</item>
         <!-- <item>@drawable/fietswinkel4619543_1</item> -->
         <!-- <item>@drawable/fietswinkel4619599_9</item> -->
         <!-- <item>@drawable/fietswinkel4620761_2</item> -->
         <!-- <item>@drawable/fietswinkel4622060_2</item> -->
-        <!-- <item>@drawable/fietswinkel4622569_1</item> -->
-        <item>@drawable/fietswinkel4622574_2</item>
+
+
         <!-- <item>@drawable/fietswinkel4622803_1</item> -->
         <!-- <item>@drawable/fietswinkel4624473_4</item> -->
         <item>@drawable/specialfietswinkel4625281_12</item>
         <item>@drawable/specialfietswinkel4626703_1</item>
-        <item>@drawable/fietswinkel4629972_1</item>
+
         <!-- <item>@drawable/fietswinkel4638658_2</item> -->
-        <item>@drawable/fietswinkel4649274_1</item>
-        <!-- <item>@drawable/fietswinkel4649422_7</item> -->
-        <item>@drawable/fietswinkel4651441_1</item>
+
         <item>@drawable/specialfietswinkel4654448_1</item>
         <!-- <item>@drawable/fietswinkel4654577_2</item> -->
         <!-- <item>@drawable/fietswinkel4654580_3</item> -->
         <!-- <item>@drawable/fietswinkel4654582_2</item> -->
-        <!-- <item>@drawable/fietswinkel474026_3</item> -->
+
+
         <!-- <item>@drawable/fietswinkel6000606_1</item> -->
         <item>@drawable/specialfietswinkel6000881_8</item>
         <!-- <item>@drawable/fietswinkel6011456_2</item> -->
-        <!-- <item>@drawable/fietswinkel6011461_1</item> -->
-        <!-- <item>@drawable/fietswinkel602026_2</item> -->
+
+
         <!-- <item>@drawable/fietswinkel6024020_12</item> -->
         <!-- <item>@drawable/fietswinkel6029947_4</item> -->
         <!-- <item>@drawable/fietswinkel6030718_3</item> -->
-        <!-- <item>@drawable/fietswinkel6031787_3</item> -->
-        <!-- <item>@drawable/fietswinkel6034044_3</item> -->
+
         <item>@drawable/specialfietswinkel6034929_2</item>
-        <!-- <item>@drawable/fietswinkel6038531_7</item> -->
+
         <!-- <item>@drawable/fietswinkel6044591_1</item> -->
         <item>@drawable/specialfietswinkel6045942_2</item>
         <!-- <item>@drawable/fietswinkel6050914_1</item> -->
         <!-- <item>@drawable/fietswinkel6051511_5</item> -->
         <item>@drawable/specialfietswinkel6052777_8</item>
-        <item>@drawable/specialfietswinkel6062574_6</item>
-        <!-- <item>@drawable/fietswinkel6066097_5</item> -->
+        <item>@drawable/specialfietswinkel6062574_4</item>
+
         <!-- <item>@drawable/fietswinkel6066114_3</item> -->
         <item>@drawable/specialfietswinkel6076799_2</item>
-        <item>@drawable/fietswinkel6093516_1</item>
-        <item>@drawable/fietswinkel6100203_1</item>
+
         <!-- <item>@drawable/fietswinkel6106280_1</item> -->
-        <!-- <item>@drawable/fietswinkel611201_1</item> -->
-        <item>@drawable/fietswinkel6112629_1</item>
+
+
         <!-- <item>@drawable/fietswinkel613421_2</item> -->
         <!-- <item>@drawable/fietswinkel614121_3</item> -->
-        <!-- <item>@drawable/fietswinkel614124_3</item> -->
+
+
         <!-- <item>@drawable/fietswinkel614326_3</item> -->
         <!-- <item>@drawable/fietswinkel617926_1</item> -->
         <!-- <item>@drawable/fietswinkel663626_2</item> -->
-        <!-- <item>@drawable/fietswinkel9341_1</item> -->
+
+
         <!-- <item>@drawable/fietswinkel9552_1</item> -->
+
     </string-array>
     <string-array name="enderdraak_imgs">
         <item>@drawable/enderdraak242026_8</item>

@@ -71,7 +71,7 @@ public class TakePhotoActivity extends Activity {
 					finish();	
 				}
 				else{
-					CharSequence text = "Please take a picture";
+					CharSequence text = getResources().getString(R.string.toastPhoto);
 					int duration = Toast.LENGTH_SHORT;
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
