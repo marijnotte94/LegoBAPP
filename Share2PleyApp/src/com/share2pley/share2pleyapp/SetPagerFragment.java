@@ -1,26 +1,24 @@
 package com.share2pley.share2pleyapp;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
 import com.share2pley.share2pleyapp.Model.SetLab;
@@ -108,60 +106,38 @@ public class SetPagerFragment extends Fragment {
 		instructionsButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				DOCS(v);
+				copyReadAssets();
 			}
 		});
 	}
 
-	public void DOCS(View btnDocs) {
-		File fileBrochure = new File(
-				"android.resource://com.project.datastructure/assets/abc.pdf");
-		if (!fileBrochure.exists()) {
-			CopyAssetsbrochure();
-		}
+	private void copyReadAssets() {
+		AssetManager assetManager = getActivity().getAssets();
 
-		/** PDF reader code */
-		File file = new File(
-				"android.resource://com.share2pley.share2pleyapp/assets/speelhuis.pdf");
+		InputStream in = null;
+		OutputStream out = null;
+		File file = new File(getActivity().getFilesDir(), "speelhuis.pdf");
+		try {
+			in = assetManager.open("speelhuis.pdf");
+			out = getActivity().openFileOutput(file.getName(),
+					Context.MODE_WORLD_READABLE);
+
+			copyFile(in, out);
+			in.close();
+			in = null;
+			out.flush();
+			out.close();
+			out = null;
+		} catch (Exception e) {
+			Log.e("tag", e.getMessage());
+		}
 
 		Intent intent = new Intent(Intent.ACTION_VIEW);
-		intent.setDataAndType(Uri.fromFile(file), "application/pdf");
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		try {
-			startActivity(intent);
-		} catch (ActivityNotFoundException e) {
-			Toast.makeText(getActivity().getApplicationContext(),
-					"NO Pdf Viewer", Toast.LENGTH_SHORT).show();
-		}
-	}
+		intent.setDataAndType(
+				Uri.parse("file://" + getActivity().getFilesDir()
+						+ "/speelhuis.pdf"), "application/pdf");
 
-	private void CopyAssetsbrochure() {
-		AssetManager assetManager = getActivity().getAssets();
-		String[] files = null;
-		try {
-			files = assetManager.list("");
-		} catch (IOException e) {
-		}
-		for (int i = 0; i < files.length; i++) {
-			String fStr = files[i];
-			if (fStr.equalsIgnoreCase("abc.pdf")) {
-				InputStream in = null;
-				OutputStream out = null;
-				try {
-					in = assetManager.open(files[i]);
-					out = new FileOutputStream("/sdcard/" + files[i]);
-					copyFile(in, out);
-					in.close();
-					in = null;
-					out.flush();
-					out.close();
-					out = null;
-					break;
-				} catch (Exception e) {
-				}
-			}
-		}
+		startActivity(intent);
 	}
 
 	private void copyFile(InputStream in, OutputStream out) throws IOException {
@@ -171,4 +147,5 @@ public class SetPagerFragment extends Fragment {
 			out.write(buffer, 0, read);
 		}
 	}
+
 }
