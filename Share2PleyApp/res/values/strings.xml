@@ -71,6 +71,25 @@
         <item>Bouwploeg</item>
         <item>Off-roader</item>
     </string-array>
+    
+    <string-array name="assetsArray">
+        <item>/speelhuis.pdf</item>
+        <item>/hetgrotebos.pdf</item>
+        <item>/fiets.pdf</item>
+        <item>/speelgoed.pdf</item>
+        <item>/jungle.pdf</item>
+        <item>/emma.pdf</item>
+        <item>/helikopter.pdf</item>
+        <item>/sloopterrein.pdf</item>
+        <item>/vuurleeuw.pdf</item>
+        <item>/drilklauw.pdf</item>
+        <item>/tie.pdf</item>
+        <item>/atdp.pdf</item>
+        <item>/crafting.pdf</item>
+        <item>/enderdraak.pdf</item>
+        <item>/bouwploeg.pdf</item>
+        <item>/offroader.pdf</item>
+    </string-array>
 
     <!-- Types of the set -->
     <string-array name="typeStringsArray">
