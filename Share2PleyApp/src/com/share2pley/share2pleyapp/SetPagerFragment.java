@@ -1,9 +1,17 @@
 package com.share2pley.share2pleyapp;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
 import com.share2pley.share2pleyapp.Model.SetLab;
@@ -58,6 +67,7 @@ public class SetPagerFragment extends Fragment {
 				R.layout.fragment_choose_set, container, false);
 		setViews(rootView);
 		setChooseViewButton(rootView);
+		setInstructionsViewButton(rootView);
 		return rootView;
 	}
 
@@ -90,5 +100,75 @@ public class SetPagerFragment extends Fragment {
 				getActivity().finish();
 			}
 		});
+	}
+
+	public void setInstructionsViewButton(View rootView) {
+		Button instructionsButton = (Button) rootView
+				.findViewById(R.id.fragment_choose_set_instructionsButton);
+		instructionsButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				DOCS(v);
+			}
+		});
+	}
+
+	public void DOCS(View btnDocs) {
+		File fileBrochure = new File(
+				"android.resource://com.project.datastructure/assets/abc.pdf");
+		if (!fileBrochure.exists()) {
+			CopyAssetsbrochure();
+		}
+
+		/** PDF reader code */
+		File file = new File(
+				"android.resource://com.share2pley.share2pleyapp/assets/speelhuis.pdf");
+
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		try {
+			startActivity(intent);
+		} catch (ActivityNotFoundException e) {
+			Toast.makeText(getActivity().getApplicationContext(),
+					"NO Pdf Viewer", Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	private void CopyAssetsbrochure() {
+		AssetManager assetManager = getActivity().getAssets();
+		String[] files = null;
+		try {
+			files = assetManager.list("");
+		} catch (IOException e) {
+		}
+		for (int i = 0; i < files.length; i++) {
+			String fStr = files[i];
+			if (fStr.equalsIgnoreCase("abc.pdf")) {
+				InputStream in = null;
+				OutputStream out = null;
+				try {
+					in = assetManager.open(files[i]);
+					out = new FileOutputStream("/sdcard/" + files[i]);
+					copyFile(in, out);
+					in.close();
+					in = null;
+					out.flush();
+					out.close();
+					out = null;
+					break;
+				} catch (Exception e) {
+				}
+			}
+		}
+	}
+
+	private void copyFile(InputStream in, OutputStream out) throws IOException {
+		byte[] buffer = new byte[1024];
+		int read;
+		while ((read = in.read(buffer)) != -1) {
+			out.write(buffer, 0, read);
+		}
 	}
 }
