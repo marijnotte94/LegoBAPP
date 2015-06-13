@@ -97,10 +97,9 @@ public class DBHelper extends SQLiteOpenHelper {
 		return res;
 	}
 
-	public ArrayList<DatabaseSetHelper> getSetData(int id) {
+	public ArrayList<DatabaseSetHelper> getSetData() {
 		SQLiteDatabase db = this.getReadableDatabase();
-		Cursor c = db.rawQuery("select * from Sets where " + SETS_COLUMN_ISDONE
-				+ " = " + id + "", null);
+		Cursor c = db.rawQuery("select * from Sets", null);
 		ArrayList<DatabaseSetHelper> mSets = new ArrayList<DatabaseSetHelper>();
 
 		if (c.moveToFirst()) {

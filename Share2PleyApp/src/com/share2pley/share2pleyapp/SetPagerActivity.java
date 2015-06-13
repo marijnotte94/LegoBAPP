@@ -37,21 +37,28 @@ public class SetPagerActivity extends FragmentActivity {
 	private class SetPagerAdapter extends FragmentPagerAdapter {
 		private final DBHelper mDBHelper;
 		private final ArrayList<DatabaseSetHelper> mSets;
+		private final ArrayList<DatabaseSetHelper> mSetsChoosed;
 
 		public SetPagerAdapter(FragmentManager fragmentManager) {
 			super(fragmentManager);
 			mDBHelper = new DBHelper(getBaseContext());
-			mSets = mDBHelper.getSetData(0);
+			mSets = mDBHelper.getSetData();
+			mSetsChoosed = new ArrayList<DatabaseSetHelper>();
+			for (DatabaseSetHelper set : mSets) {
+				if (set.getSolved() == 0) {
+					mSetsChoosed.add(set);
+				}
+			}
 		}
 
 		@Override
 		public Fragment getItem(int pos) {
-			return SetPagerFragment.create(pos);
+			return SetPagerFragment.create(pos, getBaseContext());
 		}
 
 		@Override
 		public int getCount() {
-			return mSets.size();
+			return mSetsChoosed.size();
 		}
 
 		@Override
