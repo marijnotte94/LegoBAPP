@@ -63,6 +63,14 @@ public class Set {
 	public void addBrick(int source, int amount) {
 		mBricks.add(new Brick(source, amount, mContext));
 	}
+	
+	public void addBrick(Brick brick){
+		mBricks.add(brick);
+	}
+	
+	public void removeBrick(int index){
+		mBricks.remove(index);
+	}
 
 	public Brick getBrick(int index) {
 		return mBricks.get(index);
@@ -83,8 +91,16 @@ public class Set {
 		}
 	}
 
-	public int getAmountBricks() {
+	public int getAmountSteps() {
 		return mBricks.size();
+	}
+	
+	public int getAmountBricks() {
+		int mAmount = 0;
+		for(int i = 0; i < mBricks.size(); i++){
+			mAmount += getBrick(i).getAmount();
+		}
+		return mAmount;
 	}
 
 	public int getModelImageResource(int index) {

@@ -10,10 +10,11 @@ import android.content.Context;
 public class Brick {
 	private final int mSource;
 	private int mAmount;
+	
 
 	public Brick(int source, int amount, Context context) {
 		mSource = source;
-		mAmount = amount;
+		mAmount = amount;	
 	}
 
 	public int getAmount() {
@@ -32,5 +33,8 @@ public class Brick {
 	public String toString() {
 		return mAmount + "x";
 	}
+
+	
+
 
 }
