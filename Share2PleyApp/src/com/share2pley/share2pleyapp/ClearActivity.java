@@ -94,11 +94,11 @@ public class ClearActivity extends FragmentActivity {
 			public void onClick(View v) {
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
-					if (mIndexPhoto==mBrickIndex) {
-						Intent i = new Intent(getBaseContext(),
-								TakePhotoActivity.class);
-						startActivity(i);
-					}
+//					if (mIndexPhoto==mBrickIndex) {
+//						Intent i = new Intent(getBaseContext(),
+//								TakePhotoActivity.class);
+//						startActivity(i);
+//					}
 					mBrickIndex++;
 					mProgressBar.setProgress(mProgressBar.getProgress()
 							+ percentage);
@@ -199,7 +199,7 @@ public class ClearActivity extends FragmentActivity {
 			@Override public void onAnimationEnd(Animation animation)
 			{	
 				if (mSet.hasNext(mBrickIndex)){
-					if(getResources().getResourceName(mSet.getBrick(mBrickIndex+1).getSource()).contains("_"+mIndexDrawing+"_")){
+					if(getResources().getResourceName(mSet.getBrick(mBrickIndex).getSource()).contains("_n") && getResources().getResourceName(mSet.getBrick(mBrickIndex+1).getSource()).contains("_n")){
 						mBrickIndex++;
 						mProgressBar.setProgress(mProgressBar.getProgress()
 								+ percentage);
