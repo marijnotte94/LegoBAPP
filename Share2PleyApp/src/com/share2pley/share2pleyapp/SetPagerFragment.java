@@ -1,6 +1,13 @@
 package com.share2pley.share2pleyapp;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +16,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
 import com.share2pley.share2pleyapp.Model.SetLab;
 
 /**
@@ -21,10 +30,19 @@ public class SetPagerFragment extends Fragment {
 	public static final String ARG_PAGE = "page";
 	private int mPageNumber;
 
-	public static SetPagerFragment create(int pageNumber) {
+	public static SetPagerFragment create(int pageNumber, Context context) {
 		SetPagerFragment fragment = new SetPagerFragment();
+		DBHelper mDBHelper = new DBHelper(context);
+		ArrayList<DatabaseSetHelper> sets = mDBHelper.getSetData();
+		int index = sets.get(pageNumber).getIndex();
+		int res = pageNumber;
+		for (int i = 0; i < index; i++) {
+			if (sets.get(i).getSolved() == 1) {
+				res++;
+			}
+		}
 		Bundle args = new Bundle();
-		args.putInt(ARG_PAGE, pageNumber);
+		args.putInt(ARG_PAGE, res);
 		fragment.setArguments(args);
 		return fragment;
 	}
@@ -45,6 +63,7 @@ public class SetPagerFragment extends Fragment {
 				R.layout.fragment_choose_set, container, false);
 		setViews(rootView);
 		setChooseViewButton(rootView);
+		setInstructionsViewButton(rootView);
 		return rootView;
 	}
 
@@ -77,5 +96,36 @@ public class SetPagerFragment extends Fragment {
 				getActivity().finish();
 			}
 		});
+	}
+
+	public void setInstructionsViewButton(View rootView) {
+		Button instructionsButton = (Button) rootView
+				.findViewById(R.id.fragment_choose_set_instructionsButton);
+		instructionsButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				try {
+					startPdf(mPageNumber);
+				} catch (ActivityNotFoundException e) {
+					Toast.makeText(getActivity(), "No PDF reader installed.",
+							100).show();
+				}
+			}
+		});
+	}
+
+	private void startPdf(int pageNumber) {
+		AssetManager assetManager = getActivity().getAssets();
+		try {
+			String[] files = assetManager.list("");
+			Intent intent = new Intent(Intent.ACTION_VIEW);
+			String[] array = getResources().getStringArray(R.array.assetsArray);
+			intent.setDataAndType(
+					Uri.parse("file://" + getActivity().getFilesDir()
+							+ Uri.parse(array[pageNumber])), "application/pdf");
+			startActivity(intent);
+		} catch (IOException e) {
+			Toast.makeText(getActivity(), "It is not working", 100);
+		}
 	}
 }
