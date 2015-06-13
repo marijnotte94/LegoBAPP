@@ -30,6 +30,7 @@
     <string name="figurine">Figurine</string>
     <string name="missing">Missing</string>
     <string name="report">Report</string>
+    <string name="replay">Replay</string>
 
     <string name="missing_bricks_title">Amount of missing pieces:</string>
     <string name="ok">Ok</string>
@@ -51,6 +52,16 @@
     <string name="reference_technic">Lego Technic App</string>
     <string name="reference_duplo">Duplo Trains App</string>
     <string name="instructions">Instructions</string>
+    
+    <string name="nomissing">Well done! You cleared the whole set without missing pieces!</string>
+    <string name="onemissing1">Good job! You cleared the whole set with </string>
+    <string name="onemissing2"> brick missing, try looking for it.</string>
+    <string name="fewmissing1">Good job! You cleared the whole set with </string>
+    <string name="fewmissing2"> bricks missing, try looking for them.</string>
+    <string name="moremissing1">Okay, you miss </string>
+    <string name="moremissing2"> bricks. Try to find them.</string>
+    <string name="timeresult">Well done! Your time is: </string>
+    <string name="intime"> You completed the set within the time!</string>
     
 
     <!-- Names of the sets -->

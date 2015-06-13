@@ -28,8 +28,6 @@ public class TakePhotoActivity extends Activity {
 	private static final String TAG = "TakePhotoActivity";
 	public static final String EXTRA_PHOTO_FILENAME = "com.share2pley.share2pleyapp.photo_filename";
 	private ImageView mImageView;
-	private Button mTakePhotoButton;
-	private Button mConfirmButton;
 	private Bitmap attachment;
 	private Context context = this;
 	private boolean photoTaken = false;
@@ -40,7 +38,7 @@ public class TakePhotoActivity extends Activity {
 		setContentView(R.layout.activity_take_photo);
 
 		mImageView = (ImageView) findViewById(R.id.imageView_take_photo);
-		mTakePhotoButton = (Button) findViewById(R.id.button_takePhoto_takePicture);
+		Button mTakePhotoButton = (Button) findViewById(R.id.button_takePhoto_takePicture);
 		mTakePhotoButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -62,9 +60,8 @@ public class TakePhotoActivity extends Activity {
 			}
 		});
 
-		mConfirmButton = (Button) findViewById(R.id.button_takePhoto_confirm);
+		Button mConfirmButton = (Button) findViewById(R.id.button_takePhoto_confirm);
 		mConfirmButton.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				if(photoTaken == true){

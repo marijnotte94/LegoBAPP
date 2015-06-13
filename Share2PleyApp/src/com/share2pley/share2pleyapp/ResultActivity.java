@@ -18,10 +18,8 @@ import com.share2pley.share2pleyapp.Model.Missing;
 
 public class ResultActivity extends Activity {
 
-	private Button mExit;
 	private DBHelper mDBHelper;
 	private List<Missing> mMissings;
-	private ImageView mReportImage;
 	private static final String TAG = "ResultActivity";
 	private int mMissingBricks;
 	private int mSetIndex;
@@ -36,7 +34,7 @@ public class ResultActivity extends Activity {
 		String data = prefs.getString("string_id", "no id");
 		Bitmap bp = StringToBitMap(data);
 
-		mReportImage = (ImageView) findViewById(R.id.imageView_final_set);
+		ImageView mReportImage = (ImageView) findViewById(R.id.imageView_final_set);
 		mReportImage.setImageBitmap(bp);
 
 		TextView messageTextView = (TextView) findViewById(R.id.textView_final_intro);
@@ -53,18 +51,22 @@ public class ResultActivity extends Activity {
 
 		if (mMissings.isEmpty()) {
 			messageTextView
-					.setText("Well done! You cleared the whole set without missing pieces!");
+					.setText(getString(R.string.nomissing));
+		}
+		else if(mMissingBricks == 1){
+			messageTextView.setText(getString(R.string.onemissing1) + " "
+					+ mMissingBricks + " " + getString(R.string.onemissing2));
 		}
 
 		else if (mMissingBricks <= 10 && mMissingBricks > 0) {
-			messageTextView.setText("Good job! You cleared the whole set with "
-					+ mMissingBricks + " bricks missing, try looking for them");
+			messageTextView.setText(getString(R.string.fewmissing1) + " "
+					+ mMissingBricks + " " + getString(R.string.fewmissing2));
 		} else {
-			messageTextView.setText("Okay, you miss " + mMissingBricks
-					+ " bricks. Try to find them.");
+			messageTextView.setText(getString(R.string.moremissing1) + mMissingBricks
+					+ getString(R.string.moremissing2));
 		}
 
-		mExit = (Button) findViewById(R.id.button_result_exit);
+		Button mExit = (Button) findViewById(R.id.button_result_exit);
 		mExit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -87,5 +89,4 @@ public class ResultActivity extends Activity {
 			return null;
 		}
 	}
-
 }

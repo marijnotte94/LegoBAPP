@@ -1,14 +1,11 @@
 package com.share2pley.share2pleyapp;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -29,27 +26,21 @@ public class ClearActivity extends FragmentActivity {
 
 	/**
 	 * 
-	 * @author Marijn Otte - & Richard Vink 4233867
+	 * @author Marijn Otte - 4222695 & Richard Vink 4233867
 	 * 
 	 */
 	private Set mSet;
-	private ArrayList<Brick> mMinis = new ArrayList<Brick>();
 	private int mSetIndex;
 	private TextView mMessage;
-	private Button mNextButton, mPreviousButton, mMissingButton;
 	private Brick mCurrent;
-	private ImageView mFigure;
 	private ImageView mBrick;
-	private ImageView mBag;
 	private int mBrickIndex;
-	private long mStartTime, mEndTime;
 	private TextProgressBar mProgressBar;
 	private ProgressBar mProgressImage;
-	private double mAmountSteps;
+	private int mPercentage;
+	private long mStartTime;
 	private int mAmountBricks;
-	private int percentage;
 	private int mIndexPhoto;
-	private int mIndexDrawing = 1;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -66,9 +57,9 @@ public class ClearActivity extends FragmentActivity {
 
 		mSet = SetLab.get(this).getSet(mSetIndex);
 
-		mAmountSteps = mSet.getAmountSteps();
+		int mAmountSteps = mSet.getAmountSteps();
 		mAmountBricks = mSet.getAmountBricks();
-		percentage = (int) ((1.0 / mAmountSteps) * 10000.0);
+		mPercentage = (int) ((1.0 / mAmountSteps) * 10000.0);
 
 		Random r = new Random();
 		mIndexPhoto = r.nextInt((int) (mAmountSteps - 2)) + 1;
@@ -84,33 +75,31 @@ public class ClearActivity extends FragmentActivity {
 				.getProgressImageDrawable(mSetIndex));
 		mProgressImage.setProgress(10000);
 
-		mFigure = (ImageView) findViewById(R.id.imageView_clear_figurine);
+		ImageView mFigure = (ImageView) findViewById(R.id.imageView_clear_figurine);
 		mFigure.setImageResource(mSet.getFigurineImageResource(mSetIndex));
 
 		// next button pressed for new instruction
-		mNextButton = (Button) findViewById(R.id.button_clear_next);
+		Button mNextButton = (Button) findViewById(R.id.button_clear_next);
 		mNextButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
-//					if (mIndexPhoto==mBrickIndex) {
-//						Intent i = new Intent(getBaseContext(),
-//								TakePhotoActivity.class);
-//						startActivity(i);
-//					}
+					//if (mIndexPhoto==mBrickIndex) {
+					//	Intent i = new Intent(getBaseContext(),
+					//			TakePhotoActivity.class);
+					//	startActivity(i);
+					//}
 					mBrickIndex++;
 					mProgressBar.setProgress(mProgressBar.getProgress()
-							+ percentage);
+							+ mPercentage);
 					mProgressImage.setProgress(mProgressImage.getProgress()
-							- percentage);
+							- mPercentage);
 					update();
-					mIndexDrawing++;
-
 				}
 				// If no more instructions go to timeactivity
 				else {
-					mEndTime = System.nanoTime();
+					long mEndTime = System.nanoTime();
 					long mClearTime = (mEndTime - mStartTime);
 					Intent i = new Intent(getBaseContext(), TimeActivity.class);
 					i.putExtra("TIME", mClearTime);
@@ -118,12 +107,11 @@ public class ClearActivity extends FragmentActivity {
 					i.putExtra("AMOUNTBRICKS", mAmountBricks);
 					startActivity(i);
 					finish();
-
 				}
 			}
 		});
 
-		mPreviousButton = (Button) findViewById(R.id.button_clear_previous);
+		Button mPreviousButton = (Button) findViewById(R.id.button_clear_previous);
 		mPreviousButton.setOnClickListener(new View.OnClickListener() {
 			// find previous instruction
 			@Override
@@ -131,11 +119,10 @@ public class ClearActivity extends FragmentActivity {
 				if (mSet.hasPrevious(mBrickIndex)) {
 					mBrickIndex--;
 					mProgressBar.setProgress(mProgressBar.getProgress()
-							- percentage);
+							- mPercentage);
 					mProgressImage.setProgress(mProgressImage.getProgress()
-							+ percentage);
+							+ mPercentage);
 					update();
-					mIndexDrawing--;
 
 				}
 				// at first instruction: go to choose set screen
@@ -146,22 +133,37 @@ public class ClearActivity extends FragmentActivity {
 
 		});
 
-		mMissingButton = (Button) findViewById(R.id.button_clear_missing);
+		Button mMissingButton = (Button) findViewById(R.id.button_clear_missing);
 		mMissingButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				FragmentManager fm = getSupportFragmentManager();
 				String source = getResources().getResourceName(
 						mCurrent.getSource());
-				String sources[] = source.split(" ");
+				String sources[] = source.split("_");
 				String name = sources[0];
+				String sAmount = sources[1];
+				int amount = Integer.parseInt(sAmount);
+
 				name = name.replaceAll("\\D+", "");
 				MissingBrickDialogFragment dialog = new MissingBrickDialogFragment();
 				Bundle bundle = new Bundle();
 				bundle.putInt("SETNUMBER", mSetIndex);
 				bundle.putString("BRICKNAME", name);
+				bundle.putInt("AMOUNT",amount);
 				dialog.setArguments(bundle);
 				dialog.show(fm, "Dialog Fragment");
+			}
+		});
+
+		Button mReplayButton = (Button) findViewById(R.id.button_clear_replay);
+		mReplayButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				while(containsN(mBrickIndex) && containsN(mBrickIndex-1)){
+					mBrickIndex--;
+				}
+				update();
 			}
 		});
 	}
@@ -169,7 +171,6 @@ public class ClearActivity extends FragmentActivity {
 	// find instruction if previous or next button is pushed + layout of letters
 	// so that its readable
 	public void update() {
-
 		mCurrent = mSet.getBrick(mBrickIndex);
 		mBrick.setImageResource(mCurrent.getSource());
 		mMessage.setText(mCurrent.getAmount() + "x");
@@ -180,7 +181,7 @@ public class ClearActivity extends FragmentActivity {
 
 	// animation of brick into bag
 	public void animateBrick(int amount) {
-		mBag = (ImageView) findViewById(R.id.imageview_bag);
+		ImageView mBag = (ImageView) findViewById(R.id.imageview_bag);
 		mBrick.bringToFront();
 
 		Animation transAnim = new TranslateAnimation(0, 25, 0, 175);
@@ -199,43 +200,24 @@ public class ClearActivity extends FragmentActivity {
 			@Override public void onAnimationEnd(Animation animation)
 			{	
 				if (mSet.hasNext(mBrickIndex)){
-					if(getResources().getResourceName(mSet.getBrick(mBrickIndex).getSource()).contains("_n") && getResources().getResourceName(mSet.getBrick(mBrickIndex+1).getSource()).contains("_n")){
+					if(containsN(mBrickIndex) && containsN(mBrickIndex+1)){
 						mBrickIndex++;
 						mProgressBar.setProgress(mProgressBar.getProgress()
-								+ percentage);
+								+ mPercentage);
 						mProgressImage.setProgress(mProgressImage.getProgress()
-								- percentage);
-
+								- mPercentage);
 						update();
 					}
-
 				}
-
 			}
-
 		});
-
 		mBrick.startAnimation(set);
-
 	}
-
-	//	public void addMiniBricks(){
-	//		mBrickIndex = 0;
-	//		for(int i = 0; i<mMinis.size()-1; i++){
-	//			mCurrent = mMinis.get(i);
-	//			mBrick.setImageResource(mCurrent.getSource());
-	//			mMessage.setText(mCurrent.getAmount() + "x");
-	//			mProgressBar.setText(mProgressBar.getProgress() / 100 + "%");
-	//			animateBrick(mCurrent.getAmount()-1);
-	//			mBrickIndex++;
-	//			try {
-	//			    Thread.sleep(3000);                 
-	//			} catch(InterruptedException ex) {
-	//			    Thread.currentThread().interrupt();
-	//			}
-	//		}
-	//		
-
-	//	}
-
+	
+	public boolean containsN(int index){
+		if(getResources().getResourceName(mSet.getBrick(index).getSource()).contains("_n")){
+			return true;
+		}
+		return false;
+	}
 }

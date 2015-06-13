@@ -16,8 +16,6 @@ import android.widget.TextView;
  */
 public class TimeActivity extends Activity {
 
-	private TextView mText;
-	private Button mButton;
 	private long mTime;
 	private int mSetIndex;
 	private int mAmountBricks;
@@ -33,19 +31,19 @@ public class TimeActivity extends Activity {
 			mSetIndex = b.getInt("SETNO");
 			mAmountBricks = b.getInt("AMOUNTBRICKS");
 		}
-		mText = (TextView) findViewById(R.id.timeView);
+		TextView mText = (TextView) findViewById(R.id.timeView);
 		
 		if(mAmountBricks * 10 >= mTime/500000000){
-			mText.setText(mAmountBricks + "Well done! Your time is: " + timeToString(mTime) + " You completed the set within the time!");
+			mText.setText(getString(R.string.timeresult) + " " + timeToString(mTime) + " " + getString(R.string.intime));
 		}
 		else{
-			mText.setText(mAmountBricks + "Well done! Your time is: " + timeToString(mTime));
+			mText.setText(getString(R.string.timeresult) + " " + timeToString(mTime));
 		}
 		
 		
 		
 
-		mButton = (Button) findViewById(R.id.goToPhoto);
+		Button mButton = (Button) findViewById(R.id.goToPhoto);
 		mButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
