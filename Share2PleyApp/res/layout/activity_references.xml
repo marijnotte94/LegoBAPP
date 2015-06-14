@@ -104,5 +104,24 @@
             android:contentDescription="@string/reference_technic"
             android:src="@drawable/reference_technic" />
     </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center|bottom"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/button_reference_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/button_menu_effect"
+            android:text="@string/back"
+            android:textColor="@color/button_menu_textcolor" />
+    </LinearLayout>
 
 </LinearLayout>
