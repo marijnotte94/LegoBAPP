@@ -16,10 +16,9 @@ import android.widget.EditText;
  * 
  */
 public class NameActivity extends Activity {
+	private EditText mFirstName;
+	private EditText mLastName;
 	private DBHelper spDb;
-	Button mConfirmButton;
-	EditText mFirstName;
-	EditText mLastName;
 	private boolean isAlreadyFilled = false;
 
 	// activity to fill in name. Name is saved into db and automatically filled
@@ -60,7 +59,7 @@ public class NameActivity extends Activity {
 		}
 
 		// if confirmed save name to db
-		mConfirmButton = (Button) findViewById(R.id.button_fillname_confirm);
+		Button mConfirmButton = (Button) findViewById(R.id.button_fillname_confirm);
 		mConfirmButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
