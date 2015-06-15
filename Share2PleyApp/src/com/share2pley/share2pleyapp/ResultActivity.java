@@ -62,13 +62,13 @@ public class ResultActivity extends Activity {
 			messageTextView.setText(getString(R.string.moremissing1)
 					+ mMissingBricks + getString(R.string.moremissing2));
 		}
+		mDBHelper.deleteMissings();
+		mDBHelper.updateSetContent(mSetIndex, 1);
 
 		Button mExit = (Button) findViewById(R.id.button_result_exit);
 		mExit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mDBHelper.deleteMissings();
-				mDBHelper.updateSetContent(mSetIndex, 1);
 				finish();
 			}
 		});
