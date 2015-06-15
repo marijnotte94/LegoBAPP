@@ -20,7 +20,6 @@ public class ResultActivity extends Activity {
 
 	private DBHelper mDBHelper;
 	private List<Missing> mMissings;
-	private static final String TAG = "ResultActivity";
 	private int mMissingBricks;
 	private int mSetIndex;
 
@@ -50,10 +49,8 @@ public class ResultActivity extends Activity {
 		}
 
 		if (mMissings.isEmpty()) {
-			messageTextView
-					.setText(getString(R.string.nomissing));
-		}
-		else if(mMissingBricks == 1){
+			messageTextView.setText(getString(R.string.nomissing));
+		} else if (mMissingBricks == 1) {
 			messageTextView.setText(getString(R.string.onemissing1) + " "
 					+ mMissingBricks + " " + getString(R.string.onemissing2));
 		}
@@ -62,16 +59,16 @@ public class ResultActivity extends Activity {
 			messageTextView.setText(getString(R.string.fewmissing1) + " "
 					+ mMissingBricks + " " + getString(R.string.fewmissing2));
 		} else {
-			messageTextView.setText(getString(R.string.moremissing1) + mMissingBricks
-					+ getString(R.string.moremissing2));
+			messageTextView.setText(getString(R.string.moremissing1)
+					+ mMissingBricks + getString(R.string.moremissing2));
 		}
+		mDBHelper.deleteMissings();
+		mDBHelper.updateSetContent(mSetIndex, 1);
 
 		Button mExit = (Button) findViewById(R.id.button_result_exit);
 		mExit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				mDBHelper.deleteMissings();
-				mDBHelper.updateSetContent(mSetIndex, 1);
 				finish();
 			}
 		});
