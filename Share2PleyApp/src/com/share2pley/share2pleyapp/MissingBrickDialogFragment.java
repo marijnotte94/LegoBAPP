@@ -24,32 +24,36 @@ public class MissingBrickDialogFragment extends DialogFragment {
 		spDb = new DBHelper(getActivity());
 
 		// Use the Builder class for convenient dialog construction
-		AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(getActivity(),R.layout.select_dialog_multichoice_material));
+		AlertDialog.Builder builder = new AlertDialog.Builder(
+				new ContextThemeWrapper(getActivity(),
+						android.R.layout.select_dialog_multichoice));
 		builder.setTitle(R.string.missing_bricks_title);
 
 		final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-				getActivity(),
-				android.R.layout.select_dialog_item);
-		for(int i = 0; i<mAmount; i++){
-			arrayAdapter.add(i+1+"");
+				getActivity(), android.R.layout.select_dialog_item);
+		for (int i = 0; i < mAmount; i++) {
+			arrayAdapter.add(i + 1 + "s");
 		}
-		builder.setAdapter(arrayAdapter,
-				new DialogInterface.OnClickListener() {
+		builder.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				spDb.insertMissing(mSetNumber, mBrickName, which + 1);
+				if (spDb.getMissing(mSetNumber, mBrickName) != null) {
+					spDb.updateMissing(mSetNumber, mBrickName, which + 1);
+				} else {
+					spDb.insertMissing(mSetNumber, mBrickName, which + 1);
+				}
 				dialog.dismiss();
 			}
 		}).setNegativeButton(R.string.cancel,
 				new DialogInterface.OnClickListener() {
 
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();
 
-			}
-		});
+					}
+				});
 
 		// Create the AlertDialog object and return it
 		return builder.create();

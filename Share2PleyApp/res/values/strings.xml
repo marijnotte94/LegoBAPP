@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
@@ -121,4 +122,130 @@
         <item>5-14jr</item>
     </string-array>
 
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Share2PleyApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Strings for start fragment -->
+    <string name="start_button">Start</string>
+    <string name="start_banner">LEGO®  HUREN TIJDENS UW VAKANTIE</string>
+    <string name="lego_duplo">LEGO® Duplo</string>
+    <string name="share2pley">Share2Pley</string>
+    <string name="choose_set">Choose a Set</string>
+    <string name="menu">Menu</string>
+    <string name="other_apps">Other LEGO® Apps</string>
+    <string name="about_us">About Us</string>
+    <string name="exit">Exit</string>
+    <string name="fill_name">Fill in your name here:</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="confirm_button">Confirm</string>
+    <string name="take_picture">Take a picture of the last bricks you put in the bag</string>
+    <string name="toastPhoto">Please take a picture first</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="build">Build</string>
+    <string name="choose">Choose</string>
+    <string name="back">Back</string>
+    <string name="figurine">Figurine</string>
+    <string name="missing">Missing</string>
+    <string name="report">Report</string>
+    <string name="replay">Replay</string>
+
+    <string name="missing_bricks_title">Amount of missing pieces:</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_set_image">Clear Set Image</string>
+    <string name ="result_set_image">Set Images</string>
+    <string name="bag">Bag</string>
+    <string name="brick">Brick</string>    
+    <string name="about_waarom1">Why:</string>
+    <string name="about_waarom2">Share2Pley is started with the thought of toys being accessible for everyone. Sharing toys is not only a durable solution, but can be a financial result for many families too.</string>
+    <string name="about_wat1">What:</string>
+    <string name="about_wat2">Sharing toys and optimal apply, at Share2Pley we encourage the sharing economy. Instead of buying toys each time, we share toys. Hereby we take optimal advantage of toys. Who does not want new toys every time?</string>
+    <string name="about_hoe1">How:</string>
+    <string name="about_hoe2">Sixteen different packages with LEGO®. For boy, girls and of course for everyone. From ages 3 to 99 years. What can be more fun than playing together?\nYou do not have to take toys with you! No more worries about packing, cleaning or loss!\nOur toys are controlled, complete and 100% clean. And a nice way to learn new toys!\nFrom clicks to bricks, for many children is playing online more accessible than physical play. Choosing what and when to play by yourself. Combine with Share2Pley 2 different worlds: every time different kind of toys during your holiday.</string>
+    <string name="reference_city">Lego City App</string>
+    <string name="reference_friends">Lego Friends App</string>
+    <string name="reference_chima">Lego Chima App</string>
+    <string name="reference_starwars">Lego Star Wars App</string>
+    <string name="reference_technic">Lego Technic App</string>
+    <string name="reference_duplo">Duplo Trains App</string>
+    <string name="instructions">Instructions</string>
+    
+    <string name="nomissing">Well done! You cleared the whole set without missing pieces!</string>
+    <string name="onemissing1">Good job! You cleared the whole set with </string>
+    <string name="onemissing2"> brick missing, try looking for it.</string>
+    <string name="fewmissing1">Good job! You cleared the whole set with </string>
+    <string name="fewmissing2"> bricks missing, try looking for them.</string>
+    <string name="moremissing1">Okay, you miss </string>
+    <string name="moremissing2"> bricks. Try to find them.</string>
+    <string name="timeresult">Well done! Your time is: </string>
+    <string name="intime"> You completed the set within the time!</string>
+    <string name="tijd">Tijd</string>
+    
+
+    <!-- Names of the sets -->
+    <string-array name="nameStringsArray">
+        <item>Speelhuis</item>
+        <item>Het grote Bos</item>
+        <item>Fietswinkel &amp; Café</item>
+        <item>Speelgoedwinkel en Supermarkt</item>
+        <item>Jungle reddingsbasis</item>
+        <item>Emma\'s huis</item>
+        <item>Helikopter Patrouille</item>
+        <item>Sloopterrein</item>
+        <item>Lavals Vuurleeuw</item>
+        <item>Icebites Drilklauw</item>
+        <item>TIE Advanced Protoype™</item>
+        <item>AT-DP™</item>
+        <item>Crafting Kist</item>
+        <item>De Enderdraak</item>
+        <item>Bouwploeg</item>
+        <item>Off-roader</item>
+    </string-array>
+    
+    <string-array name="assetsArray">
+        <item>/speelhuis.pdf</item>
+        <item>/hetgrotebos.pdf</item>
+        <item>/fiets.pdf</item>
+        <item>/speelgoed.pdf</item>
+        <item>/jungle.pdf</item>
+        <item>/emma.pdf</item>
+        <item>/helikopter.pdf</item>
+        <item>/sloopterrein.pdf</item>
+        <item>/vuurleeuw.pdf</item>
+        <item>/drilklauw.pdf</item>
+        <item>/tie.pdf</item>
+        <item>/atdp.pdf</item>
+        <item>/crafting.pdf</item>
+        <item>/enderdraak.pdf</item>
+        <item>/bouwploeg.pdf</item>
+        <item>/offroader.pdf</item>
+    </string-array>
+
+    <!-- Types of the set -->
+    <string-array name="typeStringsArray">
+        <item>LEGO® Duplo®</item>
+        <item>LEGO® Creator 3-in-1®</item>
+        <item>LEGO® Friends</item>
+        <item>LEGO® City</item>
+        <item>LEGO® Chima™</item>
+        <item>LEGO® Star wars™</item>
+        <item>LEGO® Minecraft</item>
+        <item>LEGO® Technic</item>
+    </string-array>
+
+    <!-- Ages of the set -->
+    <string-array name="ageStringsArray">
+        <item>0-4 jr</item>
+        <item>5-14jr</item>
+    </string-array>
+
+>>>>>>> master
 </resources>

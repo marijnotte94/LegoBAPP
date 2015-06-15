@@ -156,6 +156,19 @@ public class DBHelper extends SQLiteOpenHelper {
 		return true;
 	}
 
+	public boolean updateMissing(int setNumber, String brickName, int amount) {
+		SQLiteDatabase db = this.getWritableDatabase();
+		ContentValues contentValues = new ContentValues();
+
+		contentValues.put("SetNumber", setNumber);
+		contentValues.put("BrickName", brickName);
+		contentValues.put("Amount", amount);
+		db.update("Missing", contentValues, MISSING_COLUMN_BRICKNAME
+				+ " = ? AND " + MISSING_COLUMN_SET + " = ?", new String[] {
+				brickName, Integer.toString(setNumber) });
+		return true;
+	}
+
 	public Integer deletePerson(Integer id) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		return db.delete("Persons", "id = ?",
@@ -183,6 +196,25 @@ public class DBHelper extends SQLiteOpenHelper {
 			} while (c.moveToNext());
 		}
 		return missings;
+	}
+
+	public Missing getMissing(int setNumber, String brickName) {
+		String selectQuery = "SELECT * FROM " + MISSING_TABLE_NAME + " WHERE "
+				+ MISSING_COLUMN_SET + " = " + setNumber + " AND "
+				+ MISSING_COLUMN_BRICKNAME + " = " + brickName;
+		SQLiteDatabase db = this.getReadableDatabase();
+		Cursor c = db.rawQuery(selectQuery, null);
+
+		if (c.moveToFirst()) {
+			int personId = c.getInt(c.getColumnIndex(MISSING_COLUMN_PERSONID));
+			int number = c.getInt(c.getColumnIndex(MISSING_COLUMN_SET));
+			String description = c.getString(c
+					.getColumnIndex(MISSING_COLUMN_BRICKNAME));
+			int amount = c.getInt(c.getColumnIndex(MISSING_COLUMN_AMOUNT));
+			Missing missing = new Missing(personId, number, description, amount);
+			return missing;
+		}
+		return null;
 	}
 
 	public Integer deleteMissing(Integer id) {
