@@ -34,7 +34,13 @@ public class SetPagerFragment extends Fragment {
 		SetPagerFragment fragment = new SetPagerFragment();
 		DBHelper mDBHelper = new DBHelper(context);
 		ArrayList<DatabaseSetHelper> sets = mDBHelper.getSetData();
-		int index = sets.get(pageNumber).getIndex();
+		ArrayList<DatabaseSetHelper> resSets = new ArrayList<DatabaseSetHelper>();
+		for (int i = 0; i < sets.size(); i++) {
+			if (sets.get(i).getSolved() == 0) {
+				resSets.add(sets.get(i));
+			}
+		}
+		int index = resSets.get(pageNumber).getIndex();
 		int res = pageNumber;
 		for (int i = 0; i < index; i++) {
 			if (sets.get(i).getSolved() == 1) {
