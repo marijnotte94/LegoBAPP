@@ -62,6 +62,7 @@
     <string name="moremissing2"> bricks. Try to find them.</string>
     <string name="timeresult">Well done! Your time is: </string>
     <string name="intime"> You completed the set within the time!</string>
+    <string name="tijd">Tijd</string>
     
 
     <!-- Names of the sets -->

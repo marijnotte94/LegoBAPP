@@ -24,8 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:textColor="#106097" 
-        android:text="Tijd"/>
+        android:text="@string/tijd"/>
 
     <Button
         android:id="@+id/goToPhoto"

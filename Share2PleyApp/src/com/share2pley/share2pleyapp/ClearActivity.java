@@ -62,7 +62,7 @@ public class ClearActivity extends FragmentActivity {
 		mPercentage = (int) ((1.0 / mAmountSteps) * 10000.0);
 
 		Random r = new Random();
-		mIndexPhoto = r.nextInt((int) (mAmountSteps - 2)) + 1;
+		mIndexPhoto = r.nextInt(mAmountSteps - 2) + 1;
 
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
 		mProgressBar = (TextProgressBar) findViewById(R.id.progressbar_clear);
