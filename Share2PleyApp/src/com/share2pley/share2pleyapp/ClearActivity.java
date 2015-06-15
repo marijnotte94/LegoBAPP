@@ -85,11 +85,11 @@ public class ClearActivity extends FragmentActivity {
 			public void onClick(View v) {
 				// If there is next instruction, display instruction
 				if (mSet.hasNext(mBrickIndex)) {
-					//if (mIndexPhoto==mBrickIndex) {
-					//	Intent i = new Intent(getBaseContext(),
-					//			TakePhotoActivity.class);
-					//	startActivity(i);
-					//}
+					if (mIndexPhoto==mBrickIndex) {
+						Intent i = new Intent(getBaseContext(),
+								TakePhotoActivity.class);
+						startActivity(i);
+					}
 					mBrickIndex++;
 					mProgressBar.setProgress(mProgressBar.getProgress()
 							+ mPercentage);
