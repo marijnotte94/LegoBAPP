@@ -9,10 +9,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.share2pley.share2pleyapp.Model.HttpAsyncTask;
+import com.share2pley.share2pleyapp.Model.PrototypeSetLab;
 
 //activity to homescren.
 /**
@@ -23,11 +26,19 @@ import android.widget.Button;
 public class StartActivity extends Activity {
 	Button mStartButton;
 
+	private static final String HOST = "brickset.com";
+	private static final String ENDPOINT = "http://brickset.com/api/v2.asmx/";
+	private static final String API_KEY = "hTsg-Vmye-dO8e";
+	private static final String METHOD_CHECK_KEY = "getSets";
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		// Setup the GUI with the corresponding XML file
 		super.onCreate(savedInstanceState);
+		String url = Uri.parse(ENDPOINT).buildUpon()
+				.appendEncodedPath(METHOD_CHECK_KEY).build().toString();
+		new HttpAsyncTask(this).execute(url);
 		getResources().getStringArray(R.array.assetsArray);
 		setContentView(R.layout.activity_start);
 
@@ -65,7 +76,7 @@ public class StartActivity extends Activity {
 					out.close();
 					out = null;
 				} catch (Exception e) {
-					Log.e("tag", e.getMessage());
+					e.printStackTrace();
 				}
 			}
 		} catch (IOException e) {
