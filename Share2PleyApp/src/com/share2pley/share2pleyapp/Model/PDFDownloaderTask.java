@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.share2pley.share2pleyapp.Downloader;
 
@@ -48,7 +47,6 @@ public class PDFDownloaderTask extends AsyncTask<File, String, Intent> {
 		Intent intent = new Intent();
 		intent.setAction(Intent.ACTION_VIEW);
 		Uri uri = Uri.fromFile(file);
-		Log.i("showpdf", uri.toString());
 		intent.setDataAndType(uri, "application/pdf");
 		return intent;
 	}

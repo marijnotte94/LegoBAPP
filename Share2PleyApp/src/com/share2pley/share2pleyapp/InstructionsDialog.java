@@ -24,6 +24,7 @@ import com.share2pley.share2pleyapp.Model.SetLab;
 
 public class InstructionsDialog extends DialogFragment {
 	private int mPageNumber;
+	private String mNotEnoughSpace = "";
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -58,6 +59,10 @@ public class InstructionsDialog extends DialogFragment {
 						createPdfFile(Environment.getDownloadCacheDirectory()
 								.toString(), which);
 					}
+				} else {
+					mNotEnoughSpace = "Not enough space on Phone";
+					Toast.makeText(getActivity(), mNotEnoughSpace,
+							Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -85,9 +90,8 @@ public class InstructionsDialog extends DialogFragment {
 			try {
 				getActivity().startActivity(intent);
 			} catch (ActivityNotFoundException e) {
-				e.printStackTrace();
-				Toast.makeText(this.getActivity(), "No PDF Reader Found", 100)
-						.show();
+				Toast.makeText(this.getActivity(), "No PDF Reader Found",
+						Toast.LENGTH_SHORT).show();
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -111,6 +115,7 @@ public class InstructionsDialog extends DialogFragment {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("deprecation")
 	public String getAvailableExternalMemorySize() {
 		if (externalMemoryAvailable()) {
 			File path = Environment.getExternalStorageDirectory();
@@ -128,6 +133,7 @@ public class InstructionsDialog extends DialogFragment {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("deprecation")
 	public String getAvailableInternalMemorySize() {
 		File path = Environment.getDataDirectory();
 		StatFs stat = new StatFs(path.getPath());

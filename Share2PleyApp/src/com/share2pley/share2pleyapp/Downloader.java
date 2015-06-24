@@ -6,15 +6,12 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import android.util.Log;
-
 public class Downloader {
 
 	public static void DownloadFile(String fileURL, File directory) {
 		try {
 
 			FileOutputStream f = new FileOutputStream(directory);
-			Log.i("DOWNLOADER", fileURL);
 			URL u = new URL(fileURL);
 			HttpURLConnection c = (HttpURLConnection) u.openConnection();
 			c.setRequestMethod("GET");
