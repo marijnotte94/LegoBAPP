@@ -10,8 +10,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.share2pley.share2pleyapp.Model.PrototypeSet;
-import com.share2pley.share2pleyapp.Model.PrototypeSetLab;
+import com.share2pley.share2pleyapp.Model.Set;
+import com.share2pley.share2pleyapp.Model.SetLab;
 
 /**
  * 
@@ -37,11 +37,11 @@ public class SetPagerActivity extends FragmentActivity {
 		// private final DBHelper mDBHelper;
 		// private final ArrayList<DatabaseSetHelper> mSets;
 		// private final ArrayList<DatabaseSetHelper> mSetsChoosed;
-		private final List<PrototypeSet> mSets;
+		private final List<Set> mSets;
 
 		public SetPagerAdapter(FragmentManager fragmentManager) {
 			super(fragmentManager);
-			mSets = PrototypeSetLab.get(getBaseContext()).getSetList();
+			mSets = SetLab.get(getBaseContext()).getSetList();
 			// mDBHelper = new DBHelper(getBaseContext());
 			// mSets = mDBHelper.getSetData();
 			// mSetsChoosed = new ArrayList<DatabaseSetHelper>();

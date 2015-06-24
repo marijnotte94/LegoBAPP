@@ -10,7 +10,6 @@ import android.widget.ArrayAdapter;
 
 public class MissingBrickDialogFragment extends DialogFragment {
 	private int mSetNumber;
-	private int mAmount;
 	private String mBrickName;
 	private DBHelper spDb;
 
@@ -32,7 +31,7 @@ public class MissingBrickDialogFragment extends DialogFragment {
 		final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
 				getActivity(), android.R.layout.select_dialog_item);
 		for (int i = 0; i < mAmount; i++) {
-			arrayAdapter.add(i + 1 + "s");
+			arrayAdapter.add(i + 1 + "");
 		}
 		builder.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
 

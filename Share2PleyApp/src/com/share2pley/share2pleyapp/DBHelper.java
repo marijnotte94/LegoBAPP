@@ -1,7 +1,6 @@
 package com.share2pley.share2pleyapp;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import android.content.ContentValues;
@@ -10,9 +9,10 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
-import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
 import com.share2pley.share2pleyapp.Model.Missing;
+import com.share2pley.share2pleyapp.Model.Set;
 
 /**
  * 
@@ -32,8 +32,6 @@ public class DBHelper extends SQLiteOpenHelper {
 	public static final String MISSING_COLUMN_AMOUNT = "Amount";
 	private static final String SETS_TABLE_NAME = "Sets";
 	private static final String SETS_COLUMN_SETNUMBER = "setNumber";
-	private static final String SETS_COLUMN_ISDONE = "isDone";
-	public HashMap hp;
 
 	public DBHelper(Context context) {
 		super(context, DATABASE_NAME, null, 1);
@@ -42,13 +40,11 @@ public class DBHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL("create table Persons "
-				+ "(id integer primary key, Firstname text, Lastname text, Cleared integer)");
+				+ "(id integer primary key, Firstname text, Lastname text)");
 		db.execSQL("create table Missing "
 				+ "(id integer primary key, PersonId integer, SetNumber integer, BrickName text, Amount integer)");
-		db.execSQL("create table " + SETS_TABLE_NAME + " (id primary key, "
-				+ SETS_COLUMN_SETNUMBER + " integer, " + SETS_COLUMN_ISDONE
-				+ " integer)");
-		addSets(db);
+		db.execSQL("create table Sets" + " (id integer primary key, "
+				+ SETS_COLUMN_SETNUMBER + " String)");
 	}
 
 	@Override
@@ -59,15 +55,16 @@ public class DBHelper extends SQLiteOpenHelper {
 		onCreate(db);
 	}
 
-	public boolean insertPerson(String firstname, String lastname, int cleared) {
+	public boolean insertPerson(int id, String firstname, String lastname) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
 
+		contentValues.put("id", id);
 		contentValues.put("Firstname", firstname);
 		contentValues.put("Lastname", lastname);
-		contentValues.put("Cleared", cleared);
 
 		db.insert("Persons", null, contentValues);
+		Log.i("DBHELPER", personNumberOfRows() + "");
 		return true;
 	}
 
@@ -97,16 +94,17 @@ public class DBHelper extends SQLiteOpenHelper {
 		return res;
 	}
 
-	public ArrayList<DatabaseSetHelper> getSetData() {
+	public ArrayList<Set> getSetData() {
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor c = db.rawQuery("select * from Sets", null);
-		ArrayList<DatabaseSetHelper> mSets = new ArrayList<DatabaseSetHelper>();
+		ArrayList<Set> mSets = new ArrayList<Set>();
 
 		if (c.moveToFirst()) {
 			do {
-				int setId = c.getInt(c.getColumnIndex(SETS_COLUMN_SETNUMBER));
-				int isDone = c.getInt(c.getColumnIndex(SETS_COLUMN_ISDONE));
-				DatabaseSetHelper mSet = new DatabaseSetHelper(setId, isDone);
+				String setId = c.getString(c
+						.getColumnIndex(SETS_COLUMN_SETNUMBER));
+				Set mSet = new Set();
+				mSet.setFullId(setId);
 				mSets.add(mSet);
 			} while (c.moveToNext());
 		}
@@ -134,25 +132,22 @@ public class DBHelper extends SQLiteOpenHelper {
 	}
 
 	public boolean updatePersonContent(Integer id, String firstname,
-			String lastname, int cleared) {
+			String lastname) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
 		contentValues.put("Firstname", firstname);
 		contentValues.put("Lastname", lastname);
-		contentValues.put("Cleared", cleared);
 		db.update("Persons", contentValues, "id = ?",
 				new String[] { Integer.toString(id) });
 		return true;
 	}
 
-	public boolean updateSetContent(Integer setId, int value) {
+	public boolean insertSet(String setId) {
 		SQLiteDatabase db = this.getWritableDatabase();
 		ContentValues contentValues = new ContentValues();
+		contentValues.put("id", setsNumberOfRows() + 1);
 		contentValues.put(SETS_COLUMN_SETNUMBER, setId);
-		contentValues.put(SETS_COLUMN_ISDONE, value);
-		db.update("Sets", contentValues, SETS_COLUMN_ISDONE + " = ? AND "
-				+ SETS_COLUMN_SETNUMBER + " = ?",
-				new String[] { Integer.toString(0), Integer.toString(setId) });
+		db.insert("Sets", null, contentValues);
 		return true;
 	}
 
@@ -175,7 +170,7 @@ public class DBHelper extends SQLiteOpenHelper {
 				new String[] { Integer.toString(id) });
 	}
 
-	public List<Missing> getMissingBicksById() {
+	public List<Missing> getMissingBricksById() {
 		List<Missing> missings = new ArrayList<Missing>();
 
 		String selectQuery = "SELECT * FROM " + MISSING_TABLE_NAME;
@@ -201,7 +196,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	public Missing getMissing(int setNumber, String brickName) {
 		String selectQuery = "SELECT * FROM " + MISSING_TABLE_NAME + " WHERE "
 				+ MISSING_COLUMN_SET + " = " + setNumber + " AND "
-				+ MISSING_COLUMN_BRICKNAME + " = " + brickName;
+				+ MISSING_COLUMN_BRICKNAME + " = " + "\"" + brickName + "\"";
 		SQLiteDatabase db = this.getReadableDatabase();
 		Cursor c = db.rawQuery(selectQuery, null);
 
@@ -226,14 +221,5 @@ public class DBHelper extends SQLiteOpenHelper {
 	public Integer deleteMissings() {
 		SQLiteDatabase db = this.getWritableDatabase();
 		return db.delete(MISSING_TABLE_NAME, null, null);
-	}
-
-	public void addSets(SQLiteDatabase db) {
-		for (int i = 1; i <= 16; i++) {
-			ContentValues values = new ContentValues();
-			values.put(SETS_COLUMN_SETNUMBER, i);
-			values.put(SETS_COLUMN_ISDONE, 0);
-			db.insert(SETS_TABLE_NAME, null, values);
-		}
 	}
 }
