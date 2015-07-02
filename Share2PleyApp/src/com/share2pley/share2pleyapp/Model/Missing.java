@@ -1,5 +1,10 @@
 package com.share2pley.share2pleyapp.Model;
 
+/**
+ * 
+ * @author Richard Vink - 4233867
+ * 
+ */
 public class Missing {
 	private int mPersonId;
 	private int mSetNumber;

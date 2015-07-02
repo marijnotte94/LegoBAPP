@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -30,7 +31,7 @@ public class TakePhotoActivity extends Activity {
 	public static final String EXTRA_PHOTO_FILENAME = "com.share2pley.share2pleyapp.photo_filename";
 	private ImageView mImageView;
 	private Bitmap attachment;
-	private Context context = this;
+	private final Context context = this;
 	private boolean photoTaken = false;
 	byte[] im;
 
@@ -58,6 +59,7 @@ public class TakePhotoActivity extends Activity {
 
 		Button mTakePhotoButton = (Button) findViewById(R.id.button_takePhoto_takePicture);
 		mTakePhotoButton.setOnClickListener(new View.OnClickListener() {
+			@SuppressLint("WorldReadableFiles")
 			@Override
 			public void onClick(View v) {
 				open();
@@ -76,6 +78,7 @@ public class TakePhotoActivity extends Activity {
 				//						Log.e(TAG, "Error in closing Stream ", e);
 				//					}
 				//				}
+
 			}
 		});
 
@@ -83,11 +86,11 @@ public class TakePhotoActivity extends Activity {
 		mConfirmButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if(photoTaken == true){
-					finish();	
-				}
-				else{
-					CharSequence text = getResources().getString(R.string.toastPhoto);
+				if (photoTaken == true) {
+					finish();
+				} else {
+					CharSequence text = getResources().getString(
+							R.string.toastPhoto);
 					int duration = Toast.LENGTH_SHORT;
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
@@ -110,7 +113,9 @@ public class TakePhotoActivity extends Activity {
 			mImageView.setImageBitmap(bp);
 			photoTaken = true;
 
+
 			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
 			SharedPreferences.Editor editor = prefs.edit();
 
 			String stringAttachment = BitMapToString(bp);
@@ -121,6 +126,7 @@ public class TakePhotoActivity extends Activity {
 			Log.e(TAG, "Error in retrieving back photo ", e);
 		}
 	}
+
 
 	public String BitMapToString(Bitmap bitmap){
 		ByteArrayOutputStream baos=new  ByteArrayOutputStream();

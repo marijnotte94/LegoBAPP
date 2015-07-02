@@ -1531,7 +1531,7 @@
         <!-- <item>@drawable/helikopter4504369_1</item> -->
         <!-- <item>@drawable/helikopter4514842_2</item> -->
         <!-- <item>@drawable/helikopter4515367_2</item> -->
-                                        <!-- <item>@drawable/helikopter4521846_2</item> -->
+        <!-- <item>@drawable/helikopter4521846_2</item> -->
         <item>@drawable/helikopter4525032_1</item>
         <!-- <item>@drawable/helikopter4526982_1</item> -->
         <item>@drawable/helikopter4527604_6</item>
@@ -1564,7 +1564,6 @@
         <!-- <item>@drawable/helikopter4641048_2</item> -->
         <item>@drawable/helikopter4646527_1_n</item>
         <item>@drawable/helikopter4296997_1_n</item>
-       
 
         <!-- <item>@drawable/helikopter4646861_2</item> -->
         <item>@drawable/helikopter4654448_1</item>
@@ -1587,7 +1586,6 @@
         <item>@drawable/helikopter6051823_3</item>
         <!-- <item>@drawable/helikopter6055123_1</item> -->
         <item>@drawable/helikopter6055309_10</item>
-        
         <item>@drawable/helikopter6058858_6</item>
         <item>@drawable/helikopter6066119_2</item>
         <!-- <item>@drawable/helikopter6069068_1</item> -->
@@ -2269,12 +2267,7 @@
         <item>@drawable/emma6017048_1_n</item>
         <item>@drawable/emma6034744_1_n</item>
         <item>@drawable/emma6101893_1_n</item>
-                <item>@drawable/emma4106552_1</item>
-        
-        
-        
-        
-        
+        <item>@drawable/emma4106552_1</item>
     </string-array>
     <string-array name="drilklauw">
         <item>@drawable/drilklauw241901_2</item>
@@ -2743,5 +2736,4 @@
         <item>@drawable/bouwploeg6102449_5</item>
         <item>@drawable/bouwploeg6115616_2</item>
     </string-array>
-
-</resources>
+</resources>

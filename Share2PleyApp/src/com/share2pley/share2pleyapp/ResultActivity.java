@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.share2pley.share2pleyapp.Model.Missing;
+import com.share2pley.share2pleyapp.Model.Set;
+import com.share2pley.share2pleyapp.Model.SetLab;
 
 public class ResultActivity extends Activity {
 
@@ -42,7 +44,7 @@ public class ResultActivity extends Activity {
 
 		TextView missingTextView = (TextView) findViewById(R.id.textView_result_missing);
 		mDBHelper = new DBHelper(this);
-		mMissings = mDBHelper.getMissingBicksById();
+		mMissings = mDBHelper.getMissingBricksById();
 		for (Missing m : mMissings) {
 			missingTextView.append(m.toString() + "\n");
 			mMissingBricks += m.getAmount();
@@ -63,7 +65,10 @@ public class ResultActivity extends Activity {
 					+ mMissingBricks + getString(R.string.moremissing2));
 		}
 		mDBHelper.deleteMissings();
-		mDBHelper.updateSetContent(mSetIndex, 1);
+		Set set = SetLab.get(this).getSet(mSetIndex);
+		String setFullId = set.getFullId();
+		SetLab.get(this).removeSet(set);
+		mDBHelper.insertSet(setFullId);
 
 		Button mExit = (Button) findViewById(R.id.button_result_exit);
 		mExit.setOnClickListener(new View.OnClickListener() {

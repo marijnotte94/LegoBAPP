@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clip xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@+id/clip"
+    android:clipOrientation="horizontal"
+    android:gravity="left"
+    android:drawable="@drawable/figurine_chima" >
+</clip>

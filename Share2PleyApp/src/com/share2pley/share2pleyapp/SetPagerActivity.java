@@ -1,6 +1,6 @@
 package com.share2pley.share2pleyapp;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,7 +10,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
+import com.share2pley.share2pleyapp.Model.Set;
+import com.share2pley.share2pleyapp.Model.SetLab;
 
 /**
  * 
@@ -18,7 +19,6 @@ import com.share2pley.share2pleyapp.Model.DatabaseSetHelper;
  *         sets, so to choose the proper set.
  */
 public class SetPagerActivity extends FragmentActivity {
-	private static final int NUM_PAGES = 16;
 	private ViewPager mViewPager;
 	private PagerAdapter mPagerAdapter;
 
@@ -34,20 +34,22 @@ public class SetPagerActivity extends FragmentActivity {
 	}
 
 	private class SetPagerAdapter extends FragmentPagerAdapter {
-		private final DBHelper mDBHelper;
-		private final ArrayList<DatabaseSetHelper> mSets;
-		private final ArrayList<DatabaseSetHelper> mSetsChoosed;
+		// private final DBHelper mDBHelper;
+		// private final ArrayList<DatabaseSetHelper> mSets;
+		// private final ArrayList<DatabaseSetHelper> mSetsChoosed;
+		private final List<Set> mSets;
 
 		public SetPagerAdapter(FragmentManager fragmentManager) {
 			super(fragmentManager);
-			mDBHelper = new DBHelper(getBaseContext());
-			mSets = mDBHelper.getSetData();
-			mSetsChoosed = new ArrayList<DatabaseSetHelper>();
-			for (DatabaseSetHelper set : mSets) {
-				if (set.getSolved() == 0) {
-					mSetsChoosed.add(set);
-				}
-			}
+			mSets = SetLab.get(getBaseContext()).getSetList();
+			// mDBHelper = new DBHelper(getBaseContext());
+			// mSets = mDBHelper.getSetData();
+			// mSetsChoosed = new ArrayList<DatabaseSetHelper>();
+			// for (DatabaseSetHelper set : mSets) {
+			// if (set.getSolved() == 0) {
+			// mSetsChoosed.add(set);
+			// }
+			// }
 		}
 
 		@Override
@@ -57,7 +59,7 @@ public class SetPagerActivity extends FragmentActivity {
 
 		@Override
 		public int getCount() {
-			return mSetsChoosed.size();
+			return mSets.size();
 		}
 
 		@Override

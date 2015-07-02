@@ -1,39 +1,29 @@
 package com.share2pley.share2pleyapp.Model;
 
 import java.util.ArrayList;
-
-import com.share2pley.share2pleyapp.R;
+import java.util.List;
 
 import android.content.Context;
 
-
-
-//Lab with all sets
 /**
  * 
  * @author Richard Vink - 4233867
  * 
  */
 public class SetLab {
-	private final ArrayList<Set> mSetList;
-	private final String[] mNameArrayFullLength;
-	private final String[] mTypeArray;
-	private final String[] mAgesArray;
+	private List<Set> mSets;
 	private static SetLab sSetLab;
 
 	private SetLab(Context context) {
-		mNameArrayFullLength = context.getResources().getStringArray(
-				R.array.nameStringsArray);
-		mTypeArray = context.getResources().getStringArray(
-				R.array.typeStringsArray);
-		mAgesArray = context.getResources().getStringArray(
-				R.array.ageStringsArray);
-		mSetList = new ArrayList<Set>();
-		for (int i = 0; i < 16; i++) {
-			mSetList.add(new Set(i, context));
-		}
+		mSets = new ArrayList<Set>();
 	}
 
+	/**
+	 * Makes sure there is only 1 setlab for the given context
+	 * 
+	 * @param context
+	 * @return
+	 */
 	public static SetLab get(Context context) {
 		if (sSetLab == null) {
 			sSetLab = new SetLab(context);
@@ -41,33 +31,29 @@ public class SetLab {
 		return sSetLab;
 	}
 
-	public Set getSet(int index) {
-		return mSetList.get(index);
-	}
-
-	public ArrayList<Set> getSetList() {
-		return mSetList;
+	public List<Set> getSetList() {
+		return mSets;
 	}
 
 	public int getAmount() {
-		return mSetList.size();
+		return mSets.size();
 	}
 
-	public String getRealString(int i) {
-		return mNameArrayFullLength[i];
+	public Set getSet(int index) {
+		return mSets.get(index);
 	}
 
-	// return the type of the set
-	public String getType(int i) {
-		return mTypeArray[i / 2];
+	public void addSet(Set set) {
+		mSets.add(set);
 	}
 
-	// returns only the infant age when it's Duplo
-	public String getAge(int i) {
-		if (i < 2) {
-			return mAgesArray[0];
-		} else {
-			return mAgesArray[1];
-		}
+	public void setAllSets(List<Set> sets) {
+		mSets = sets;
 	}
+
+	public void removeSet(Set set) {
+		mSets.remove(set);
+	}
+
 }
+

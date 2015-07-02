@@ -5,7 +5,7 @@
     android:background="#FFFFFF"
     android:orientation="vertical" >
 
-   <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -19,10 +19,9 @@
 
         <ImageView
             style="@style/LegoDuplo"
-            android:contentDescription="@string/lego_duplo"
             android:layout_weight="2"
-            android:src="@drawable/logo_duplo_lego"/>
-
+            android:contentDescription="@string/lego_duplo"
+            android:src="@drawable/logo_duplo_lego" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,9 +60,9 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:contentDescription="@string/share2pley"
         android:layout_height="50dp"
         android:layout_gravity="center"
+        android:contentDescription="@string/share2pley"
         android:src="@drawable/logo_share2pley" />
 
     <LinearLayout

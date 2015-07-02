@@ -1,18 +1,15 @@
 package com.share2pley.share2pleyapp;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-
 import android.app.Activity;
-import android.content.Context;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.res.AssetManager;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.share2pley.share2pleyapp.Model.SetFetcherTask;
 
 //activity to homescren.
 /**
@@ -22,13 +19,21 @@ import android.widget.Button;
  */
 public class StartActivity extends Activity {
 	Button mStartButton;
+	private ProgressDialog loadingDialog;
+	private static final String ENDPOINT = "http://brickset.com/api/v2.asmx/";
+	private static final String METHOD_GET_SETS = "getSets";
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		// Setup the GUI with the corresponding XML file
 		super.onCreate(savedInstanceState);
-		getResources().getStringArray(R.array.assetsArray);
+		String url = Uri.parse(ENDPOINT).buildUpon()
+				.appendEncodedPath(METHOD_GET_SETS).build().toString();
+		loadingDialog = new ProgressDialog(this);
+		final SetFetcherTask setTask = new SetFetcherTask(this, loadingDialog,
+				this);
+		setTask.execute(url);
 		setContentView(R.layout.activity_start);
 
 		/**
@@ -39,45 +44,13 @@ public class StartActivity extends Activity {
 		mStartButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
-				startActivity(i);
-			}
-		});
-	}
-
-	private void copyReadAssets() {
-		AssetManager assetManager = getAssets();
-		InputStream in = null;
-		OutputStream out = null;
-		try {
-			String[] fileNames = assetManager.list("");
-			for (int i = 0; i < fileNames.length; i++) {
-				File file = new File(getFilesDir(), fileNames[i]);
-				try {
-					in = assetManager.open(fileNames[i]);
-					out = openFileOutput(file.getName(),
-							Context.MODE_WORLD_READABLE);
-
-					copyFile(in, out);
-					in.close();
-					in = null;
-					out.flush();
-					out.close();
-					out = null;
-				} catch (Exception e) {
-					Log.e("tag", e.getMessage());
+				if (setTask.getStatus() == AsyncTask.Status.FINISHED) {
+					Intent i = new Intent(getBaseContext(), NameActivity.class);
+					startActivity(i);
+				} else {
+					loadingDialog.show();
 				}
 			}
-		} catch (IOException e) {
-
-		}
-	}
-
-	private void copyFile(InputStream in, OutputStream out) throws IOException {
-		byte[] buffer = new byte[1024];
-		int read;
-		while ((read = in.read(buffer)) != -1) {
-			out.write(buffer, 0, read);
-		}
+		});
 	}
 }
