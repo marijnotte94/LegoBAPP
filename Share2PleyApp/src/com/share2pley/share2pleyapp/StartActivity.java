@@ -39,7 +39,7 @@ public class StartActivity extends Activity {
 		mStartButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getBaseContext(), NameActivity.class);
+				Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
 				startActivity(i);
 			}
 		});

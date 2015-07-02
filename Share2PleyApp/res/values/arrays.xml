@@ -42,7 +42,7 @@
         <item>@drawable/figurine_minecraft</item>
         <item>@drawable/figurine_technic</item>
     </string-array>
-      <string-array name="assetsArray">
+    <string-array name="assetsArray">
         <item>/speelhuis.pdf</item>
         <item>/hetgrotebos.pdf</item>
         <item>/fiets.pdf</item>
@@ -1404,223 +1404,228 @@
         <item>@drawable/hetgrotebos6035746_1_n</item>
     </string-array>
     <string-array name="helikopter_imgs">
-        <item>@drawable/helikopter241226_9</item>
-        <item>@drawable/helikopter243128_1</item>
-        <item>@drawable/helikopter246501_3</item>
-        <item>@drawable/helikopter256926_1</item>
-        <item>@drawable/helikopter287726_2</item>
-        <item>@drawable/helikopter3000841_2</item>
-        <item>@drawable/helikopter300501_4</item>
-        <item>@drawable/helikopter300528_2</item>
-        <item>@drawable/helikopter3005740_2</item>
-        <item>@drawable/helikopter3005741_2</item>
-        <item>@drawable/helikopter3005748_1</item>
-        <item>@drawable/helikopter3006343_1</item>
-        <item>@drawable/helikopter300901_7</item>
-        <item>@drawable/helikopter300923_2</item>
-        <item>@drawable/helikopter302024_3</item>
-        <item>@drawable/helikopter302123_1</item>
-        <item>@drawable/helikopter302128_2</item>
-        <item>@drawable/helikopter302221_2</item>
-        <item>@drawable/helikopter302226_2</item>
-        <item>@drawable/helikopter302228_1</item>
-        <item>@drawable/helikopter302323_11</item>
-        <item>@drawable/helikopter303423_2</item>
-        <item>@drawable/helikopter303523_4</item>
-        <item>@drawable/helikopter303623_1</item>
-        <item>@drawable/helikopter306901_1</item>
-        <item>@drawable/helikopter346026_2</item>
-        <item>@drawable/helikopter362201_1</item>
-        <item>@drawable/helikopter362223_4</item>
-        <item>@drawable/helikopter366501_8</item>
-        <item>@drawable/helikopter366601_5</item>
-        <item>@drawable/helikopter366623_7</item>
-        <item>@drawable/helikopter368026_1</item>
-        <item>@drawable/helikopter371001_1</item>
-        <item>@drawable/helikopter371028_1</item>
-        <item>@drawable/helikopter379424_4</item>
-        <item>@drawable/helikopter379526_9</item>
-        <item>@drawable/helikopter383226_1</item>
-        <item>@drawable/helikopter395826_1</item>
-        <item>@drawable/helikopter407001_1</item>
-        <item>@drawable/helikopter4105221_2</item>
-        <item>@drawable/helikopter4106552_1</item>
-        <item>@drawable/helikopter4107736_3</item>
-        <item>@drawable/helikopter4107762_3</item>
-        <item>@drawable/helikopter4112838_1</item>
-        <item>@drawable/helikopter4113261_2</item>
-        <item>@drawable/helikopter4114689_14</item>
-        <item>@drawable/helikopter4119227_2</item>
-        <item>@drawable/helikopter4119482_1</item>
-        <item>@drawable/helikopter4121932_3</item>
-        <item>@drawable/helikopter4124083_1</item>
-        <item>@drawable/helikopter4124096_2</item>
-        <item>@drawable/helikopter4128576_1</item>
-        <item>@drawable/helikopter4157108_1</item>
-        <item>@drawable/helikopter4160393_2</item>
-        <item>@drawable/helikopter4160736_4</item>
+
+        <!-- <item>@drawable/helikopter241226_9</item> -->
+        <!-- <item>@drawable/helikopter243128_1</item> -->
+        <!-- <item>@drawable/helikopter246501_3</item> -->
+        <!-- <item>@drawable/helikopter256926_1</item> -->
+        <!-- <item>@drawable/helikopter287726_2</item> -->
+        <!-- <item>@drawable/helikopter3000841_2</item> -->
+        <!-- <item>@drawable/helikopter300501_4</item> -->
+        <!-- <item>@drawable/helikopter300528_2</item> -->
+        <!-- <item>@drawable/helikopter3005740_2</item> -->
+        <!-- <item>@drawable/helikopter3005741_2</item> -->
+        <!-- <item>@drawable/helikopter3005748_1</item> -->
+        <!-- <item>@drawable/helikopter3006343_1</item> -->
+        <!-- <item>@drawable/helikopter300901_7</item> -->
+        <!-- <item>@drawable/helikopter300923_2</item> -->
+        <!-- <item>@drawable/helikopter302024_3</item> -->
+        <!-- <item>@drawable/helikopter302123_1</item> -->
+        <!-- <item>@drawable/helikopter302128_2</item> -->
+        <!-- <item>@drawable/helikopter302221_2</item> -->
+        <!-- <item>@drawable/helikopter302226_2</item> -->
+        <!-- <item>@drawable/helikopter302228_1</item> -->
+        <!-- <item>@drawable/helikopter302323_11</item> -->
+        <!-- <item>@drawable/helikopter303423_2</item> -->
+        <!-- <item>@drawable/helikopter303523_4</item> -->
+        <!-- <item>@drawable/helikopter303623_1</item> -->
+        <!-- <item>@drawable/helikopter306901_1</item> -->
+        <!-- <item>@drawable/helikopter346026_2</item> -->
+        <!-- <item>@drawable/helikopter362201_1</item> -->
+        <!-- <item>@drawable/helikopter362223_4</item> -->
+        <!-- <item>@drawable/helikopter366501_8</item> -->
+        <!-- <item>@drawable/helikopter366601_5</item> -->
+        <!-- <item>@drawable/helikopter366623_7</item> -->
+        <!-- <item>@drawable/helikopter368026_1</item> -->
+        <!-- <item>@drawable/helikopter371001_1</item> -->
+        <!-- <item>@drawable/helikopter371028_1</item> -->
+        <!-- <item>@drawable/helikopter379424_4</item> -->
+        <!-- <item>@drawable/helikopter379526_9</item> -->
+        <!-- <item>@drawable/helikopter383226_1</item> -->
+        <!-- <item>@drawable/helikopter395826_1</item> -->
+        <!-- <item>@drawable/helikopter407001_1</item> -->
+        <!-- <item>@drawable/helikopter4105221_2</item> -->
+        <!-- <item>@drawable/helikopter4107736_3</item> -->
+        <!-- <item>@drawable/helikopter4107762_3</item> -->
+        <!-- <item>@drawable/helikopter4112838_1</item> -->
+        <!-- <item>@drawable/helikopter4113261_2</item> -->
+        <!-- <item>@drawable/helikopter4114689_14</item> -->
+        <!-- <item>@drawable/helikopter4119227_2</item> -->
+        <!-- <item>@drawable/helikopter4121932_3</item> -->
+        <!-- <item>@drawable/helikopter4124083_1</item> -->
+        <!-- <item>@drawable/helikopter4124096_2</item> -->
+        <!-- <item>@drawable/helikopter4160393_2</item> -->
+        <!-- <item>@drawable/helikopter4160736_4</item> -->
         <item>@drawable/helikopter4161067_1</item>
-        <item>@drawable/helikopter4161734_5</item>
-        <item>@drawable/helikopter4162916_3</item>
-        <item>@drawable/helikopter4163306_1</item>
-        <item>@drawable/helikopter4166618_1</item>
+        <!-- <item>@drawable/helikopter4161734_5</item> -->
+        <!-- <item>@drawable/helikopter4166618_1</item> -->
         <item>@drawable/helikopter4180486_2</item>
-        <item>@drawable/helikopter4193511_1</item>
-        <item>@drawable/helikopter4201019_3</item>
-        <item>@drawable/helikopter4206482_1</item>
-        <item>@drawable/helikopter4210725_8</item>
+        <!-- <item>@drawable/helikopter4193511_1</item> -->
+        <!-- <item>@drawable/helikopter4201019_3</item> -->
+        <!-- <item>@drawable/helikopter4206482_1</item> -->
+        <!-- <item>@drawable/helikopter4210725_8</item> -->
         <item>@drawable/helikopter4210866_2</item>
         <item>@drawable/helikopter4210867_2</item>
         <item>@drawable/helikopter4210873_2</item>
-        <item>@drawable/helikopter4210934_1</item>
         <item>@drawable/helikopter4210940_1</item>
-        <item>@drawable/helikopter4210997_3</item>
-        <item>@drawable/helikopter4211000_6</item>
-        <item>@drawable/helikopter4211001_2</item>
-        <item>@drawable/helikopter4211039_1</item>
-        <item>@drawable/helikopter4211061_1</item>
-        <item>@drawable/helikopter4211064_4</item>
-        <item>@drawable/helikopter4211066_2</item>
-        <item>@drawable/helikopter4211085_2</item>
-        <item>@drawable/helikopter4211090_4</item>
-        <item>@drawable/helikopter4211093_2</item>
-        <item>@drawable/helikopter4211094_2</item>
-        <item>@drawable/helikopter4211096_2</item>
-        <item>@drawable/helikopter4211099_2</item>
-        <item>@drawable/helikopter4211105_8</item>
-        <item>@drawable/helikopter4211106_4</item>
-        <item>@drawable/helikopter4211127_8</item>
-        <item>@drawable/helikopter4211134_1</item>
-        <item>@drawable/helikopter4211150_2</item>
-        <item>@drawable/helikopter4211185_1</item>
-        <item>@drawable/helikopter4211194_2</item>
-        <item>@drawable/helikopter4211366_1</item>
-        <item>@drawable/helikopter4211369_2</item>
-        <item>@drawable/helikopter4211383_2</item>
-        <item>@drawable/helikopter4211389_11</item>
-        <item>@drawable/helikopter4211396_2</item>
-        <item>@drawable/helikopter4211481_3</item>
-        <item>@drawable/helikopter4211491_1</item>
-        <item>@drawable/helikopter4211492_1</item>
-        <item>@drawable/helikopter4211506_6</item>
-        <item>@drawable/helikopter4211516_3</item>
-        <item>@drawable/helikopter4211521_2</item>
-        <item>@drawable/helikopter4211764_4</item>
-        <item>@drawable/helikopter4211795_2</item>
-        <item>@drawable/helikopter4211833_4</item>
-        <item>@drawable/helikopter4213567_2</item>
-        <item>@drawable/helikopter4216660_1</item>
-        <item>@drawable/helikopter4216945_1</item>
-        <item>@drawable/helikopter4222019_2</item>
-        <item>@drawable/helikopter4222693_2</item>
-        <item>@drawable/helikopter4226358_1</item>
-        <item>@drawable/helikopter4227392_1</item>
-        <item>@drawable/helikopter4239373_1</item>
-        <item>@drawable/helikopter4243812_1</item>
-        <item>@drawable/helikopter4244627_2</item>
-        <item>@drawable/helikopter4251149_1</item>
-        <item>@drawable/helikopter4256097_1</item>
-        <item>@drawable/helikopter4256149_2</item>
-        <item>@drawable/helikopter4258354_1</item>
-        <item>@drawable/helikopter4259673_1</item>
-        <item>@drawable/helikopter4260124_2</item>
-        <item>@drawable/helikopter4260488_4</item>
-        <item>@drawable/helikopter4278273_2</item>
-        <item>@drawable/helikopter428623_4</item>
-        <item>@drawable/helikopter4294180_2</item>
-        <item>@drawable/helikopter4295260_3</item>
-        <item>@drawable/helikopter4296997_1</item>
-        <item>@drawable/helikopter4297713_3</item>
-        <item>@drawable/helikopter4298609_1</item>
-        <item>@drawable/helikopter447723_2</item>
+        <!-- <item>@drawable/helikopter4210997_3</item> -->
+        <!-- <item>@drawable/helikopter4211000_6</item> -->
+        <!-- <item>@drawable/helikopter4211001_2</item> -->
+        <!-- <item>@drawable/helikopter4211039_1</item> -->
+        <!-- <item>@drawable/helikopter4211061_1</item> -->
+        <!-- <item>@drawable/helikopter4211064_4</item> -->
+        <!-- <item>@drawable/helikopter4211066_2</item> -->
+        <!-- <item>@drawable/helikopter4211085_2</item> -->
+        <!-- <item>@drawable/helikopter4211090_4</item> -->
+        <!-- <item>@drawable/helikopter4211093_2</item> -->
+        <!-- <item>@drawable/helikopter4211094_2</item> -->
+        <!-- <item>@drawable/helikopter4211096_2</item> -->
+        <!-- <item>@drawable/helikopter4211099_2</item> -->
+        <!-- <item>@drawable/helikopter4211105_8</item> -->
+        <!-- <item>@drawable/helikopter4211106_4</item> -->
+        <!-- <item>@drawable/helikopter4211127_8</item> -->
+        <!-- <item>@drawable/helikopter4211134_1</item> -->
+        <!-- <item>@drawable/helikopter4211150_2</item> -->
+        <!-- <item>@drawable/helikopter4211185_1</item> -->
+        <!-- <item>@drawable/helikopter4211194_2</item> -->
+        <!-- <item>@drawable/helikopter4211366_1</item> -->
+        <!-- <item>@drawable/helikopter4211369_2</item> -->
+        <!-- <item>@drawable/helikopter4211383_2</item> -->
+        <!-- <item>@drawable/helikopter4211389_11</item> -->
+        <!-- <item>@drawable/helikopter4211396_2</item> -->
+        <!-- <item>@drawable/helikopter4211481_3</item> -->
+        <!-- <item>@drawable/helikopter4211491_1</item> -->
+        <!-- <item>@drawable/helikopter4211492_1</item> -->
+        <!-- <item>@drawable/helikopter4211506_6</item> -->
+        <!-- <item>@drawable/helikopter4211516_3</item> -->
+        <!-- <item>@drawable/helikopter4211521_2</item> -->
+        <!-- <item>@drawable/helikopter4211764_4</item> -->
+        <!-- <item>@drawable/helikopter4211795_2</item> -->
+        <!-- <item>@drawable/helikopter4211833_4</item> -->
+        <!-- <item>@drawable/helikopter4213567_2</item> -->
+        <!-- <item>@drawable/helikopter4216660_1</item> -->
+        <!-- <item>@drawable/helikopter4216945_1</item> -->
+        <!-- <item>@drawable/helikopter4222019_2</item> -->
+        <!-- <item>@drawable/helikopter4226358_1</item> -->
+        <!-- <item>@drawable/helikopter4227392_1</item> -->
+        <!-- <item>@drawable/helikopter4239373_1</item> -->
+        <!-- <item>@drawable/helikopter4243812_1</item> -->
+        <!-- <item>@drawable/helikopter4244627_2</item> -->
+        <!-- <item>@drawable/helikopter4251149_1</item> -->
+        <!-- <item>@drawable/helikopter4256097_1</item> -->
+        <!-- <item>@drawable/helikopter4256149_2</item> -->
+        <!-- <item>@drawable/helikopter4258354_1</item> -->
+        <!-- <item>@drawable/helikopter4259673_1</item> -->
+        <!-- <item>@drawable/helikopter4260124_2</item> -->
+        <!-- <item>@drawable/helikopter4260488_4</item> -->
+        <!-- <item>@drawable/helikopter4278273_2</item> -->
+        <!-- <item>@drawable/helikopter428623_4</item> -->
+        <!-- <item>@drawable/helikopter4294180_2</item> -->
+        <!-- <item>@drawable/helikopter4295260_3</item> -->
+        <!-- <item>@drawable/helikopter4297713_3</item> -->
+        <!-- <item>@drawable/helikopter447723_2</item> -->
         <item>@drawable/helikopter4494850_1</item>
         <item>@drawable/helikopter4500878_2</item>
-        <item>@drawable/helikopter4500978_1</item>
-        <item>@drawable/helikopter4502068_1</item>
-        <item>@drawable/helikopter4504369_1</item>
-        <item>@drawable/helikopter4505990_1</item>
-        <item>@drawable/helikopter4514842_2</item>
-        <item>@drawable/helikopter4515367_2</item>
-        <item>@drawable/helikopter4516843_7</item>
-        <item>@drawable/helikopter4521846_2</item>
+        <!-- <item>@drawable/helikopter4500978_1</item> -->
+        <!-- <item>@drawable/helikopter4502068_1</item> -->
+        <!-- <item>@drawable/helikopter4504369_1</item> -->
+        <!-- <item>@drawable/helikopter4514842_2</item> -->
+        <!-- <item>@drawable/helikopter4515367_2</item> -->
+                                        <!-- <item>@drawable/helikopter4521846_2</item> -->
         <item>@drawable/helikopter4525032_1</item>
-        <item>@drawable/helikopter4526982_1</item>
+        <!-- <item>@drawable/helikopter4526982_1</item> -->
         <item>@drawable/helikopter4527604_6</item>
-        <item>@drawable/helikopter4535833_1</item>
+        <!-- <item>@drawable/helikopter4535833_1</item> -->
         <item>@drawable/helikopter4539442_1</item>
-        <item>@drawable/helikopter4540203_1</item>
-        <item>@drawable/helikopter4542131_2</item>
-        <item>@drawable/helikopter4543998_6</item>
-        <item>@drawable/helikopter4560183_3</item>
+        <!-- <item>@drawable/helikopter4540203_1</item> -->
+        <!-- <item>@drawable/helikopter4542131_2</item> -->
+        <!-- <item>@drawable/helikopter4543998_6</item> -->
+        <!-- <item>@drawable/helikopter4560183_3</item> -->
         <item>@drawable/helikopter4560933_1</item>
-        <item>@drawable/helikopter4565393_3</item>
+        <!-- <item>@drawable/helikopter4565393_3</item> -->
         <item>@drawable/helikopter4566703_1</item>
-        <item>@drawable/helikopter4567887_2</item>
-        <item>@drawable/helikopter4567914_1</item>
-        <item>@drawable/helikopter4567918_1</item>
-        <item>@drawable/helikopter4568637_4</item>
-        <item>@drawable/helikopter4568644_4</item>
+        <!-- <item>@drawable/helikopter4567887_2</item> -->
+        <item>@drawable/helikopter4567914_1_n</item>
+        <item>@drawable/helikopter4567918_1_n</item>
+        <item>@drawable/helikopter4516843_7_n</item>
+        <!-- <item>@drawable/helikopter4568637_4</item> -->
+        <!-- <item>@drawable/helikopter4568644_4</item> -->
         <item>@drawable/helikopter4582251_2</item>
         <item>@drawable/helikopter4583718_1</item>
-        <item>@drawable/helikopter4595710_1</item>
-        <item>@drawable/helikopter4597131_2</item>
-        <item>@drawable/helikopter4598769_2</item>
-        <item>@drawable/helikopter4598955_1</item>
-        <item>@drawable/helikopter459926_1</item>
-        <item>@drawable/helikopter4599453_1</item>
+        <!-- <item>@drawable/helikopter4595710_1</item> -->
+        <!-- <item>@drawable/helikopter4597131_2</item> -->
+        <!-- <item>@drawable/helikopter4598769_2</item> -->
+        <!-- <item>@drawable/helikopter459926_1</item> -->
         <item>@drawable/helikopter4609330_2</item>
         <item>@drawable/helikopter4609342_2</item>
         <item>@drawable/helikopter4609397_1</item>
-        <item>@drawable/helikopter4613418_1</item>
-        <item>@drawable/helikopter4615649_1</item>
-        <item>@drawable/helikopter4640026_2</item>
-        <item>@drawable/helikopter4641048_2</item>
-        <item>@drawable/helikopter4646527_1</item>
-        <item>@drawable/helikopter4646861_2</item>
+        <!-- <item>@drawable/helikopter4615649_1</item> -->
+        <!-- <item>@drawable/helikopter4640026_2</item> -->
+        <!-- <item>@drawable/helikopter4641048_2</item> -->
+        <item>@drawable/helikopter4646527_1_n</item>
+        <item>@drawable/helikopter4296997_1_n</item>
+       
+
+        <!-- <item>@drawable/helikopter4646861_2</item> -->
         <item>@drawable/helikopter4654448_1</item>
         <item>@drawable/helikopter4654618_1</item>
-        <item>@drawable/helikopter4656783_18</item>
+        <!-- <item>@drawable/helikopter4656783_18</item> -->
         <item>@drawable/helikopter4666322_6</item>
-        <item>@drawable/helikopter6001494_2</item>
-        <item>@drawable/helikopter6020193_4</item>
+        <!-- <item>@drawable/helikopter6001494_2</item> -->
+        <!-- <item>@drawable/helikopter6020193_4</item> -->
         <item>@drawable/helikopter6021752_4</item>
-        <item>@drawable/helikopter6021844_1</item>
-        <item>@drawable/helikopter6021851_1</item>
-        <item>@drawable/helikopter6022320_1</item>
-        <item>@drawable/helikopter6022354_1</item>
-        <item>@drawable/helikopter6023948_4</item>
-        <item>@drawable/helikopter6024730_2</item>
-        <item>@drawable/helikopter6030711_2</item>
+        <!-- <item>@drawable/helikopter6023948_4</item> -->
+        <!-- <item>@drawable/helikopter6024730_2</item> -->
+        <!-- <item>@drawable/helikopter6030711_2</item> -->
         <item>@drawable/helikopter6031056_2</item>
         <item>@drawable/helikopter6032213_1</item>
-        <item>@drawable/helikopter6034044_4</item>
+        <!-- <item>@drawable/helikopter6034044_4</item> -->
         <item>@drawable/helikopter6035405_2</item>
-        <item>@drawable/helikopter6036006_1</item>
-        <item>@drawable/helikopter6037399_1</item>
+        <!-- <item>@drawable/helikopter6037399_1</item> -->
         <item>@drawable/helikopter6037449_1</item>
-        <item>@drawable/helikopter6042955_4</item>
+        <!-- <item>@drawable/helikopter6042955_4</item> -->
         <item>@drawable/helikopter6051823_3</item>
-        <item>@drawable/helikopter6055123_1</item>
+        <!-- <item>@drawable/helikopter6055123_1</item> -->
         <item>@drawable/helikopter6055309_10</item>
-        <item>@drawable/helikopter6055887_2</item>
-        <item>@drawable/helikopter6056241_2</item>
-        <item>@drawable/helikopter6056258_1</item>
-        <item>@drawable/helikopter6056326_1</item>
-        <item>@drawable/helikopter6056458_1</item>
+        
         <item>@drawable/helikopter6058858_6</item>
         <item>@drawable/helikopter6066119_2</item>
-        <item>@drawable/helikopter6069068_1</item>
-        <item>@drawable/helikopter6092649_2</item>
+        <!-- <item>@drawable/helikopter6069068_1</item> -->
+        <!-- <item>@drawable/helikopter6092649_2</item> -->
         <item>@drawable/helikopter6096958_1</item>
-        <item>@drawable/helikopter6112622_1</item>
-        <item>@drawable/helikopter6112623_1</item>
         <item>@drawable/helikopter6116606_1</item>
-        <item>@drawable/helikopter6117940_1</item>
-        <item>@drawable/helikopter615726_2</item>
-        <item>@drawable/helikopter621501_3</item>
-        <item>@drawable/helikopter663601_2</item>
-        <item>@drawable/helikopter74156_2</item>
-        <item>@drawable/helikopter9553_1</item>
+        <!-- <item>@drawable/helikopter6117940_1</item> -->
+        <!-- <item>@drawable/helikopter615726_2</item> -->
+        <!-- <item>@drawable/helikopter621501_3</item> -->
+        <!-- <item>@drawable/helikopter663601_2</item> -->
+        <!-- <item>@drawable/helikopter74156_2</item> -->
+        <!-- <item>@drawable/helikopter9553_1</item> -->
+        <item>@drawable/helikopter4598955_1_n</item>
+        <item>@drawable/helikopter4157108_1_n</item>
+        <item>@drawable/helikopter6036006_1_n</item>
+        <item>@drawable/helikopter4210934_1_n</item>
+        <item>@drawable/helikopter6056241_2_n</item>
+        <item>@drawable/helikopter4163306_1_n</item>
+        <item>@drawable/helikopter4298609_1_n</item>
+        <item>@drawable/helikopter6056326_1_n</item>
+        <item>@drawable/helikopter6055887_2_n</item>
+        <item>@drawable/helikopter4222693_2_n</item>
+        <item>@drawable/helikopter4162916_3_n</item>
+        <item>@drawable/helikopter6056458_1_n</item>
+        <item>@drawable/helikopter6056258_1_n</item>
+        <item>@drawable/helikopter4613418_1_n</item>
+        <item>@drawable/helikopter6021844_1_n</item>
+        <item>@drawable/helikopter6021851_1_n</item>
+        <item>@drawable/helikopter6022320_1_n</item>
+        <item>@drawable/helikopter6022354_1_n</item>
+        <item>@drawable/helikopter6112622_1_n</item>
+        <item>@drawable/helikopter6112623_1_n</item>
+        <item>@drawable/helikopter4106552_1_n</item>
+        <item>@drawable/helikopter4599453_1_n</item>
+        <item>@drawable/helikopter4119482_1_n</item>
+        <item>@drawable/helikopter4128576_1_n</item>
+        <item>@drawable/helikopter4505990_1_n</item>
+        <item>@drawable/helikopter6056458_1_n</item>
     </string-array>
     <string-array name="fietswinkel_imgs">
 
@@ -2042,7 +2047,6 @@
         <!-- <item>@drawable/emma383228_1</item> -->
         <!-- <item>@drawable/emma393701_1</item> -->
         <!-- <item>@drawable/emma407001_2</item> -->
-        <!-- <item>@drawable/emma4106552_1</item> -->
         <item>@drawable/emma4107050_1</item>
         <!-- <item>@drawable/emma4107432_1</item> -->
         <!-- <item>@drawable/emma4107736_1</item> -->
@@ -2265,6 +2269,12 @@
         <item>@drawable/emma6017048_1_n</item>
         <item>@drawable/emma6034744_1_n</item>
         <item>@drawable/emma6101893_1_n</item>
+                <item>@drawable/emma4106552_1</item>
+        
+        
+        
+        
+        
     </string-array>
     <string-array name="drilklauw">
         <item>@drawable/drilklauw241901_2</item>

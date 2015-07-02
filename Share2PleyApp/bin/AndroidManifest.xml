@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-sdk
@@ -36,6 +36,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+             >
         </activity>
 
         <!-- This is the Activity for filling in the name of the user -->
@@ -93,6 +94,13 @@
             android:label="TakePhotoActivity"
             android:screenOrientation="landscape" >
         </activity>
+        
+         <!-- This is the Activitity of camera -->
+        <activity
+            android:name=".CameraActivity"
+            android:label="CameraActivity"
+            android:screenOrientation="landscape" >
+        </activity>
 
         <!-- Activity where time displayed -->
         <activity
@@ -109,7 +117,7 @@
         <activity
             android:name=".PDFViewerActivity"
             android:label="PDFViewerActivity"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 

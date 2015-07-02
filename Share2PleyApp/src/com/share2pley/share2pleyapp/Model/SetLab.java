@@ -2,9 +2,11 @@ package com.share2pley.share2pleyapp.Model;
 
 import java.util.ArrayList;
 
+import com.share2pley.share2pleyapp.R;
+
 import android.content.Context;
 
-import com.share2pley.share2pleyapp.R;
+
 
 //Lab with all sets
 /**

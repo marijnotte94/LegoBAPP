@@ -20,6 +20,7 @@
     <string name="last_name">Last Name:</string>
     <string name="confirm_button">Confirm</string>
     <string name="take_picture">Take a picture of the last bricks you put in the bag</string>
+    <string name ="notCorrectPhoto">This is not the correct brick, please try again</string>
     <string name="toastPhoto">Please take a picture first</string>
     <string name="take_photo">Take Photo</string>
     <string name="next">Next</string>

@@ -2,11 +2,11 @@ package com.share2pley.share2pleyapp.Model;
 
 import java.util.ArrayList;
 
+import com.share2pley.share2pleyapp.R;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-
-import com.share2pley.share2pleyapp.R;
 
 /**
  * 
@@ -112,8 +112,9 @@ public class Set {
 	}
 
 	public Drawable getProgressImageDrawable(int index) {
-		return mContext.getResources().getDrawable(
-				mProcesses.getResourceId(index, -1));
+		return mContext.getResources().getDrawable(R.drawable.atdp243201_2);
+	//	return mContext.getResources().getDrawable(
+	//			mProcesses.getResourceId(index, -1));
 	}
 
 	public TypedArray getModelArrayResource(int mSetIndex) {

@@ -62,8 +62,8 @@ public class ClearActivity extends FragmentActivity {
 		mPercentage = (int) ((1.0 / mAmountSteps) * 10000.0);
 
 		Random r = new Random();
-		mIndexPhoto = r.nextInt(mAmountSteps - 2) + 1;
-
+		//mIndexPhoto = r.nextInt(mAmountSteps - 2) + 1;
+		mIndexPhoto = 2;
 		mMessage = (TextView) findViewById(R.id.textview_message_instruction);
 		mProgressBar = (TextProgressBar) findViewById(R.id.progressbar_clear);
 		mBrick = (ImageView) findViewById(R.id.imageview_brick);
@@ -88,6 +88,7 @@ public class ClearActivity extends FragmentActivity {
 					if (mIndexPhoto==mBrickIndex) {
 						Intent i = new Intent(getBaseContext(),
 								TakePhotoActivity.class);
+						i.putExtra("IMAGE", mCurrent.getSource());
 						startActivity(i);
 					}
 					mBrickIndex++;
