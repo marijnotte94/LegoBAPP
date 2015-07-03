@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="figurines_imgs">
         <item>@drawable/figurine_duplo</item>
         <item>@drawable/figurine_creator</item>
@@ -10,4 +11,5 @@
         <item>@drawable/figurine_minecraft</item>
         <item>@drawable/figurine_technic</item>
     </string-array>
+
 </resources>

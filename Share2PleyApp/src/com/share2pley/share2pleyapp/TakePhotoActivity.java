@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Base64;
@@ -32,34 +33,52 @@ public class TakePhotoActivity extends Activity {
 	private Bitmap attachment;
 	private final Context context = this;
 	private boolean photoTaken = false;
+	byte[] im;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_take_photo);
 
-		mImageView = (ImageView) findViewById(R.id.imageView_take_photo);
+
+		Intent i = getIntent();
+		Bundle b = i.getExtras();
+		if(b != null){
+			String photoData = b.getString("photoTaken");
+			if(photoData.equals("YES")){
+				photoTaken = true;
+			}
+			
+		}
+		else{
+			Log.d("stringnull","werknie");
+		}
+
+
+
+
 		Button mTakePhotoButton = (Button) findViewById(R.id.button_takePhoto_takePicture);
 		mTakePhotoButton.setOnClickListener(new View.OnClickListener() {
 			@SuppressLint("WorldReadableFiles")
 			@Override
 			public void onClick(View v) {
 				open();
-				attachment = mImageView.getDrawingCache();
-				if (mImageView.getDrawingCache() != null) {
-					try {
-						@SuppressWarnings("deprecation")
-						FileOutputStream fos = openFileOutput(
-								EXTRA_PHOTO_FILENAME,
-								Context.MODE_WORLD_READABLE);
-						attachment.compress(Bitmap.CompressFormat.JPEG, 0, fos);
-						fos.close();
-					} catch (FileNotFoundException e) {
-						Log.e(TAG, "Error file not found ", e);
-					} catch (IOException e) {
-						Log.e(TAG, "Error in closing Stream ", e);
-					}
-				}
+				finish();
+				//				attachment = mImageView.getDrawingCache();
+				//				if (mImageView.getDrawingCache() != null) {
+				//					try {
+				//						FileOutputStream fos = openFileOutput(
+				//								EXTRA_PHOTO_FILENAME,
+				//								Context.MODE_WORLD_READABLE);
+				//						attachment.compress(Bitmap.CompressFormat.JPEG, 0, fos);
+				//						fos.close();
+				//					} catch (FileNotFoundException e) {
+				//						Log.e(TAG, "Error file not found ", e);
+				//					} catch (IOException e) {
+				//						Log.e(TAG, "Error in closing Stream ", e);
+				//					}
+				//				}
+
 			}
 		});
 
@@ -81,9 +100,9 @@ public class TakePhotoActivity extends Activity {
 	}
 
 	public void open() {
-		Intent intent = new Intent(
-				android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-		startActivityForResult(intent, 0);
+		Intent i = new Intent(getBaseContext(), CameraActivity.class);
+		startActivity(i);
+		finish();
 	}
 
 	@Override
@@ -94,8 +113,9 @@ public class TakePhotoActivity extends Activity {
 			mImageView.setImageBitmap(bp);
 			photoTaken = true;
 
-			SharedPreferences prefs = PreferenceManager
-					.getDefaultSharedPreferences(context);
+
+			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
 			SharedPreferences.Editor editor = prefs.edit();
 
 			String stringAttachment = BitMapToString(bp);
@@ -107,11 +127,27 @@ public class TakePhotoActivity extends Activity {
 		}
 	}
 
-	public String BitMapToString(Bitmap bitmap) {
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-		byte[] b = baos.toByteArray();
-		String temp = Base64.encodeToString(b, Base64.DEFAULT);
+
+	public String BitMapToString(Bitmap bitmap){
+		ByteArrayOutputStream baos=new  ByteArrayOutputStream();
+		bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
+		byte [] b=baos.toByteArray();
+		String temp=Base64.encodeToString(b, Base64.DEFAULT);
 		return temp;
 	}
+
+	public Bitmap StringToBitMap(String encodedString) {
+		try {
+			byte[] encodeByte = Base64.decode(encodedString, Base64.DEFAULT);
+			Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0,
+					encodeByte.length);
+			return bitmap;
+		} catch (Exception e) {
+			e.getMessage();
+			return null;
+		}
+	}
+	
+	
+	
 }

@@ -34,7 +34,7 @@ public class TimeActivity extends Activity {
 		TextView mText = (TextView) findViewById(R.id.timeView);
 		
 		if(mAmountBricks * 10 >= mTime/500000000){
-			mText.setText(getString(R.string.timeresult) + " " + timeToString(mTime) + " " + getString(R.string.intime));
+			mText.setText(getString(R.string.timeresult) + " " + timeToString(mTime) + " \n" + getString(R.string.intime));
 		}
 		else{
 			mText.setText(getString(R.string.timeresult) + " " + timeToString(mTime));

@@ -80,7 +80,7 @@ public class NameActivity extends Activity {
 								mLastName.getText().toString());
 						Log.i("JA", "Hij komt hier");
 					}
-					Intent i = new Intent(getBaseContext(), MenuActivity.class);
+					Intent i = new Intent(getBaseContext(), TakePhotoActivity.class);
 					startActivity(i);
 					finish();
 				}
