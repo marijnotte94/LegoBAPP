@@ -40,7 +40,7 @@ public class TakePhotoActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_take_photo);
 
-
+		mImageView = (ImageView) findViewById(R.id.imageView_take_photo);
 		Intent i = getIntent();
 		Bundle b = i.getExtras();
 		if(b != null){
@@ -48,6 +48,9 @@ public class TakePhotoActivity extends Activity {
 			if(photoData.equals("YES")){
 				photoTaken = true;
 			}
+			String image = b.getString("image");
+			Bitmap bip = StringToBitMap(image);
+			mImageView.setImageBitmap(bip);
 			
 		}
 		else{
