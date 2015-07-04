@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 /**
@@ -68,6 +69,15 @@ public class ReferenceActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				setApp("com.lego.technic.race");
+			}
+		});
+		
+		Button mBackButton = (Button) findViewById(R.id.button_reference_back);
+		mBackButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				finish();
 			}
 		});
 

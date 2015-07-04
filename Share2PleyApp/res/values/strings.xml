@@ -20,6 +20,7 @@
     <string name="last_name">Last Name:</string>
     <string name="confirm_button">Confirm</string>
     <string name="take_picture">Take a picture of the last bricks you put in the bag</string>
+    <string name ="notCorrectPhoto">This is not the correct brick, please try again</string>
     <string name="toastPhoto">Please take a picture first</string>
     <string name="take_photo">Take Photo</string>
     <string name="next">Next</string>
@@ -40,11 +41,11 @@
     <string name="bag">Bag</string>
     <string name="brick">Brick</string>    
     <string name="about_waarom1">Why:</string>
-    <string name="about_waarom2">Share2Pley has started with the thought of toys being accessible for everyone. Sharing toys is not only a durable solution, but can be a financial result for many families too.</string>
+    <string name="about_waarom2">Share2Pley is started with the thought of toys being accessible for everyone. Sharing toys is not only a durable solution, but can be a financial result for many families too.</string>
     <string name="about_wat1">What:</string>
     <string name="about_wat2">Sharing toys and optimal apply, at Share2Pley we encourage the sharing economy. Instead of buying toys each time, we share toys. Hereby we take optimal advantage of toys. Who does not want new toys every time?</string>
     <string name="about_hoe1">How:</string>
-    <string name="about_hoe2">Sixteen different packages with LEGO®. For boys, girls and of course for everyone. From ages 3 to 99 years. What can be more fun than playing together?\nYou do not have to take toys with you! No more worries about packing, cleaning or losing!\nOur toys are controlled, complete and 100% clean. And a nice way to learn new toys!\nFrom clicks to bricks, for many children is playing online more accessible than physical play. Choosing what and when to play by yourself. Combine with Share2Pley 2 different worlds: every time different kind of toys during your holiday.</string>
+    <string name="about_hoe2">Sixteen different packages with LEGO®. For boy, girls and of course for everyone. From ages 3 to 99 years. What can be more fun than playing together?\nYou do not have to take toys with you! No more worries about packing, cleaning or loss!\nOur toys are controlled, complete and 100% clean. And a nice way to learn new toys!\nFrom clicks to bricks, for many children is playing online more accessible than physical play. Choosing what and when to play by yourself. Combine with Share2Pley 2 different worlds: every time different kind of toys during your holiday.</string>
     <string name="reference_city">Lego City App</string>
     <string name="reference_friends">Lego Friends App</string>
     <string name="reference_chima">Lego Chima App</string>
@@ -62,7 +63,6 @@
     <string name="moremissing2"> bricks. Try to find them.</string>
     <string name="timeresult">Well done! Your time is: </string>
     <string name="intime"> You completed the set within the time!</string>
-    <string name="tijd">Tijd</string>
     
 
     <!-- Names of the sets -->
@@ -121,5 +121,4 @@
         <item>0-4 jr</item>
         <item>5-14jr</item>
     </string-array>
-
 </resources>

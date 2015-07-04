@@ -144,13 +144,7 @@ public class ClearActivity extends FragmentActivity {
 			}
 		});
 
-		Button mReplayButton = (Button) findViewById(R.id.button_clear_replay);
-		mReplayButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				update();
-			}
-		});
+		
 	}
 
 	// find instruction if previous or next button is pushed + layout of letters
