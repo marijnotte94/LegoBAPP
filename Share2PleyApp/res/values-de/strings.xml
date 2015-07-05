@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Share2Pley</string>
+    <string name="action_settings">Einstellungen</string>
+
+    <!-- Strings for start fragment -->
+    <string name="start_button">Anfang</string>
+    <string name="start_banner">LEGO® MIETEN WÄHREND IHRE URLAUB</string>
+    <string name="lego_duplo">LEGO® Duplo</string>
+    <string name="share2pley">Share2Pley</string>
+    <string name="choose_set">Wähle ein Set</string>
+    <string name="menu">Menü</string>
+    <string name="other_apps">Andere LEGO® Apps</string>
+    <string name="about_us">About Us</string>
+    <string name="exit">Ende</string>
+    <string name="fill_name">Fülle dein Name:</string>
+    <string name="first_name">Vorname:</string>
+    <string name="last_name">Nachame:</string>
+    <string name="confirm_button">Bestätig</string>
+    <string name="take_picture">Mach ein Foto von dem lätzten Stein</string>
+    <string name="toastPhoto">Bitte, Mach ein Foto erst</string>
+    <string name="take_photo">Mach ein Foto</string>
+    <string name="next">Nächster</string>
+    <string name="previous">Vorige</string>
+    <string name="choose">Wähle</string>
+    <string name="back">Zurück</string>
+    <string name="figurine">Figurine</string>
+    <string name="missing">Fehlende</string>
+    <string name="report">Rapport</string>
+
+    <string name="missing_bricks_title">Anzahl fehlende Steine:</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Storniere</string>
+    <string name="clear_set_image">Clear Set Image</string>
+    <string name ="result_set_image">Set Images</string>
+    <string name="bag">Bag</string>
+    <string name="brick">Stein</string>    
+    <string name="about_waarom1">Warum:</string>
+    <string name="about_waarom2">Share2Pley entstand aus der Idee, dass Spielzeuge für jeder zugänglich sein sollte. Spielzeug teilen ist nicht nur eine nachhaltige Lösung, sondern auch eine finanzielle Lösung für viele Familien.</string>
+    <string name="about_wat1">Wie:</string>
+    <string name="about_wat2">Spielzeuge teilen und optimal nutzen. Bei Share2Pley wir ermutigen das Teil Wirtschaft. Stattdessen Spielzeuge kaufen jedes Mal, leihen wir Spielzeuge aus. Hierbei wir nutzen Spielzeuge optimal. Wer möchte nicht neues Spielzeug jeden Monat?</string>
+    <string name="about_hoe1">How:</string>
+    <string name="about_hoe2">16 unterschiedliche Pakete mit LEGO®. Für Jungens, Mädchen und naturlich für alle. Im Alter von 3 bis 99. Was macht mehr spass als zusammen spielen?\nDu brauchst keine Spielzeuge von Zuause! Keine Sorgen über Packung, Reinigung oder Verlierung!\nUnsere Spielzeuge seid geprüft, komplett und 100% hygienisch. Und eine schöne Erfahrung Spielzeuge zu entdecken.\nVon Klicks zu Steine, für Viele Kinder seid Spielen online mehr züganglich als physische Spiele. Wählen was und wann zu spielen. Kombiniere mit Share2Pley 2 verschiedene Welten: jeder Zeit unterschiedliche Spielzeug während deine Urlaub.</string>
+    <string name="reference_city">Lego City App</string>
+    <string name="reference_friends">Lego Friends App</string>
+    <string name="reference_chima">Lego Chima App</string>
+    <string name="reference_starwars">Lego Star Wars App</string>
+    <string name="reference_technic">Lego Technic App</string>
+    <string name="reference_duplo">Duplo Trains App</string>
+    <string name="instructions">Instructions</string>
+    <string name="disassembleAll">Jetzt, nehm die andere Steine und setze sie in die Tasche.</string>
+    
+    <string name="nomissing">Genial! Du klärst die ganze Set ohne fehlende Steine.!</string>
+    <string name="onemissing1">Gut gemacht! Du klärst die ganze Set mit </string>
+    <string name="onemissing2"> fehlende Stein, bitte versuche die Stein zu finden.</string>
+    <string name="fewmissing1">Gut gemacht! Du klärst die ganze Set mit </string>
+    <string name="fewmissing2"> fehlende Steine, bitte versuche sie zu finden.</string>
+    <string name="moremissing1">Ok, du fehlst </string>
+    <string name="moremissing2"> Steine. bitte versuche sie zu finden.</string>
+    <string name="timeresult">Bravo! Deine Zeit ist: </string>
+    <string name="intime"> Du gestellte die Set fertig innerhalb der Zeit!</string>
+    <string name="tijd">Zeit</string>
+
+</resources>

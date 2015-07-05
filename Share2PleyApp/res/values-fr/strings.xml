@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Share2Pley</string>
+    <string name="action_settings">Paramètres</string>
+
+    <!-- Strings for start fragment -->
+    <string name="start_button">Début</string>
+    <string name="start_banner">LEGO® LOUER PENDANT VOTRE SÉJOUR</string>
+    <string name="lego_duplo">LEGO® Duplo</string>
+    <string name="share2pley">Share2Pley</string>
+    <string name="choose_set">Choisir un ensemble</string>
+    <string name="menu">Menu</string>
+    <string name="other_apps">Autre LEGO® Applications</string>
+    <string name="about_us">À propos de nous</string>
+    <string name="exit">Sortie</string>
+    <string name="fill_name">Comment tu t\'appele?</string>
+    <string name="first_name">Prénom:</string>
+    <string name="last_name">Nom de famille:</string>
+    <string name="confirm_button">d\'Accord</string>
+    <string name="take_picture">Prendais une photo de la dernier brique</string>
+    <string name="toastPhoto"> Prendais une photo d\'abord</string>
+    <string name="take_photo">Prendrais une photo</string>
+    <string name="next">Suivant</string>
+    <string name="previous">Précédant</string>
+   
+    <string name="choose">Choisir</string>
+    <string name="back">Retour</string>
+    <string name="figurine">Mini-personnage</string>
+    <string name="missing">Manquante</string>
+    <string name="report">Rapport</string>
+
+    <string name="missing_bricks_title">Numeró de la brique manquante:</string>
+    <string name="ok">d\'Accord</string>
+    <string name="cancel">Annuler</string>
+    <string name="clear_set_image">Clear Set Image</string>
+    <string name ="result_set_image">Set Images</string>
+    <string name="bag">Bag</string>
+    <string name="brick">Brick</string>    
+    <string name="about_waarom1">Pourquoi:</string>
+    <string name="about_waarom2">Share2Pley origine de l\'idée que les jouents doivent être accessibles à tous. Le partage de jouets n\'est pas seulement une solution durable, mais il est également une solution financière pour de nombreuses familles.</string>
+    <string name="about_wat1">Que:</string>
+    <string name="about_wat2">Le partage de jouets et utilisation optimale, au Share2Pley, nous applaudons l\'économie partage. Au lieu d\'acheter chaque fois, nous partageons jouets. Pour cette raison on utilisé la fonction du jouet optimale. Qui ne veut pas de nouveaux jouets à chaque fois?</string>
+    <string name="about_hoe1">Comment:</string>
+    <string name="about_hoe2">16 autres ensembles avec LEGO®. Pour les garçons, les filles et bien sûr pour tous. D\'âgés de 3 à 99. Quoi de plus amusant que de jouer ensemble?\nTu n\'es pas emporter les jouets. Pas de soucis plus sur l\'emballage, le nettoyage ou de perdre! \nNos jouets sont vérifié, complet et 100% propre. Et une belle façon d\'apprendre jouets.\nDe clics à briques. Pour des enfants nombreaux, jouer en ligne est plus accessible que le jeu physique. Choisir quoi et quand à jouer par toi-même. Combiner avec Share2Pley 2 mondes différents: à chaque fois différents types de jouets tombant sur ta vacances.</string>
+    <string name="reference_city">Lego City App</string>
+    <string name="reference_friends">Lego Friends App</string>
+    <string name="reference_chima">Lego Chima App</string>
+    <string name="reference_starwars">Lego Star Wars App</string>
+    <string name="reference_technic">Lego Technic App</string>
+    <string name="reference_duplo">Duplo Trains App</string>
+    <string name="instructions">Instructions</string>
+    <string name="disassembleAll">Mettre la reste dans le sac.</string>
+    
+    <string name="nomissing">Bravo! Tu démontas l\'ensemble sans les briques manquante!</string>
+    <string name="onemissing1">Bon travail! Tu démontas l\'ensemble avec </string>
+    <string name="onemissing2"> brique manquante, essayez de regarder pour la.</string>
+    <string name="fewmissing1">Bon travail! Tu démontas l\'ensemble avec </string>
+    <string name="fewmissing2"> briques manquante, essayez de regarder pour leur.</string>
+    <string name="moremissing1">d\'Accord, Tu oublies </string>
+    <string name="moremissing2"> briques. Essayez de regarder pour leur.</string>
+    <string name="timeresult">Bravo! Votre temps est: </string>
+    <string name="intime"> Tu as terminé l\'ensemble dans le limite de temps!</string>
+    <string name="tijd">Temps</string>
+
+</resources>

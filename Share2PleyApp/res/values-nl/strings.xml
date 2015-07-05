@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Share2Pley</string>
+    <string name="action_settings">Einstellungen</string>
+
+    <!-- Strings for start fragment -->
+    <string name="start_button">Start</string>
+    <string name="start_banner">LEGO® HUREN TIJDENS UW VAKANTIE</string>
+    <string name="lego_duplo">LEGO® Duplo</string>
+    <string name="share2pley">Share2Pley</string>
+    <string name="choose_set">Kies een Set</string>
+    <string name="menu">Menu</string>
+    <string name="other_apps">Andere LEGO® Apps</string>
+    <string name="about_us">Over ons</string>
+    <string name="exit">Sluit af</string>
+    <string name="fill_name">Vul je naam in:</string>
+    <string name="first_name">Voornaam:</string>
+    <string name="last_name">Achternaam:</string>
+    <string name="confirm_button">Bevestig</string>
+    <string name="take_picture">Maak een foto van de laatste steen</string>
+    <string name="toastPhoto">Gelieve eerst een foto te maken</string>
+    <string name="take_photo">Maak een foto</string>
+    <string name="next">Volgende</string>
+    <string name="previous">Vorige</string>
+    <string name="choose">Kies</string>
+    <string name="back">Terug</string>
+    <string name="figurine">Figurine</string>
+    <string name="missing">Missend</string>
+    <string name="report">Rapport</string>
+
+    <string name="missing_bricks_title">Aantal missende stukjes:</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annuleer</string>
+    <string name="clear_set_image">Clear Set Image</string>
+    <string name ="result_set_image">Set Images</string>
+    <string name="bag">Bag</string>
+    <string name="brick">Steen</string>    
+    <string name="about_waarom1">Waarom:</string>
+    <string name="about_waarom2">Share2Pley is ontstaan vanuit de gedachte dat speelgoed toegankelijk moet zijn voor iedereen. Speelgoed delen is namelijk niet alleen een duurzame oplossing, maar het is ook financieel een uitkomst voor veel gezinnen.</string>
+    <string name="about_wat1">Wat:</string>
+    <string name="about_wat2">Speelgoed delen en optimaal benutten, Bij Share2Pley moedigen we de deeleconomie aan. In plaats van elke keer opnieuw kopen, delen we speelgoed. Hierdoor benutten we de functie van het speelgoed optimaal. Wie wil er nu niet elke maand nieuw speelgoed?</string>
+    <string name="about_hoe1">Hoe:</string>
+    <string name="about_hoe2">Zestien verschillende pakketten met LEGO®. Voor jongens, meisjes en natuurlijk voor iedereen. Van 3 tot 99 jaar. Wat is er nou leuker dan samen spelen?\nJe hoeft geen speelgoed meer mee te nemen! Geen zorgen om inpakken, schoonmaken of kwijtraken!\nOns speelgoed is gecontroleerd, compleet en 100% hygiënisch. En een leuke manier om nieuw speelgoed te ontdekken!\nVan clicks naar bricks. Voor veel kinderen is online speelplezier tegenwoordig toegankelijker dan fysiek speelgoed. Zelf kiezen wat je wilt en spelen wanneer het jou uitkomt. Combineer met Share2Pley beide werelden: elke keer nieuw speelgoed tijdens de vakantie.</string>
+    <string name="reference_city">Lego City App</string>
+    <string name="reference_friends">Lego Friends App</string>
+    <string name="reference_chima">Lego Chima App</string>
+    <string name="reference_starwars">Lego Star Wars App</string>
+    <string name="reference_technic">Lego Technic App</string>
+    <string name="reference_duplo">Duplo Trains App</string>
+    <string name="instructions">Instructions</string>
+    <string name="disassembleAll">Haal nu ook de overige stukjes uit elkaar en stop deze in de tas.</string>
+    
+    <string name="nomissing">Geweldig! Je hebt de set voltooid zonder stukjes te missen!</string>
+    <string name="onemissing1">Goed gedaan! Je hebt de set voltooid met </string>
+    <string name="onemissing2"> ontbrekend steentje, probeer deze te vinden.</string>
+    <string name="fewmissing1">oed gedaan! Je hebt de set voltooid met </string>
+    <string name="fewmissing2"> ontbrekende steentjes, probeer ze te vinden.</string>
+    <string name="moremissing1">Okee, je mist </string>
+    <string name="moremissing2"> steentjes. Probeer ze te vinden.</string>
+    <string name="timeresult">Goed zo! Je tijd is: </string>
+    <string name="intime"> Je hebt de set voltooid binnen de tijd!</string>
+    <string name="tijd">Tijd</string>
+
+</resources>
