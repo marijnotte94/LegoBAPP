@@ -29,14 +29,13 @@
     <string name="missing">Missing</string>
     <string name="report">Report</string>
     <string name="replay">Replay</string>
-
     <string name="missing_bricks_title">Amount of missing pieces:</string>
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
     <string name="clear_set_image">Clear Set Image</string>
-    <string name ="result_set_image">Set Images</string>
+    <string name="result_set_image">Set Images</string>
     <string name="bag">Bag</string>
-    <string name="brick">Brick</string>    
+    <string name="brick">Brick</string>
     <string name="about_waarom1">Why:</string>
     <string name="about_waarom2">Share2Pley has started with the thought of toys being accessible for everyone. Sharing toys is not only durable, but can be a financial solution for many families too.</string>
     <string name="about_wat1">What:</string>
@@ -51,7 +50,6 @@
     <string name="reference_duplo">Duplo Trains App</string>
     <string name="instructions">Instructions</string>
     <string name="disassembleAll">Now disassemble all the other pieces and put them in the bag as well.</string>
-    
     <string name="nomissing">Well done! You cleared the whole set without missing pieces!</string>
     <string name="onemissing1">Good job! You cleared the whole set with </string>
     <string name="onemissing2"> brick missing, try looking for it.</string>

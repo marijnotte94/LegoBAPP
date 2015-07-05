@@ -17,19 +17,18 @@
         android:max="100"
         android:progress="100"
         android:progressDrawable="@drawable/progressbar2" />
-    
+
     <TextView
         android:id="@+id/timeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginEnd="20dp"
-        android:textColor="#106097" 
-        android:text="@string/tijd"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:textColor="#106097" />
 
     <Button
         android:id="@+id/goToPhoto"

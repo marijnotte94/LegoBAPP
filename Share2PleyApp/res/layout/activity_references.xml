@@ -104,5 +104,4 @@
             android:contentDescription="@string/reference_technic"
             android:src="@drawable/reference_technic" />
     </LinearLayout>
-
 </LinearLayout>

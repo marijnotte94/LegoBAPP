@@ -120,5 +120,4 @@
             android:text="@string/next"
             android:textColor="@color/button_menu_textcolor" />
     </LinearLayout>
- 
 </LinearLayout>

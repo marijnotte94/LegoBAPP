@@ -78,7 +78,6 @@ public class NameActivity extends Activity {
 					} else {
 						spDb.insertPerson(1, mFirstName.getText().toString(),
 								mLastName.getText().toString());
-						Log.i("JA", "Hij komt hier");
 					}
 					Intent i = new Intent(getBaseContext(), MenuActivity.class);
 					startActivity(i);
