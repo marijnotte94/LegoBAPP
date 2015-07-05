@@ -32,23 +32,23 @@ public class TimeActivity extends Activity {
 			mAmountBricks = b.getInt("AMOUNTBRICKS");
 		}
 		TextView mText = (TextView) findViewById(R.id.timeView);
-		
-		if(mAmountBricks * 10 >= mTime/500000000){
-			mText.setText(getString(R.string.timeresult) + " " + timeToString(mTime) + " " + getString(R.string.intime));
+
+		if (mAmountBricks * 10 >= mTime / 500000000) {
+			mText.setText(getString(R.string.timeresult) + " "
+					+ timeToString(mTime) + " " + getString(R.string.intime));
+			mText.append("\n\n" + getString(R.string.disassembleAll));
+		} else {
+			mText.setText(getString(R.string.timeresult) + " "
+					+ timeToString(mTime));
+			mText.append("\n\n" + getString(R.string.disassembleAll));
 		}
-		else{
-			mText.setText(getString(R.string.timeresult) + " " + timeToString(mTime));
-		}
-		
-		
-		
 
 		Button mButton = (Button) findViewById(R.id.goToPhoto);
 		mButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getBaseContext(), ResultActivity.class);	
+				Intent i = new Intent(getBaseContext(), ResultActivity.class);
 				i.putExtra("SETNO", mSetIndex);
 				startActivity(i);
 				finish();

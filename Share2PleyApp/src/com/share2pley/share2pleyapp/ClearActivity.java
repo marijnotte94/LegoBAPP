@@ -132,7 +132,7 @@ public class ClearActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 				FragmentManager fm = getSupportFragmentManager();
-				String name = mCurrent.getName();
+				String name = mCurrent.getId();
 				int amount = mSet.getBricks().get(mBrickIndex).getQuantity();
 				MissingBrickDialogFragment dialog = new MissingBrickDialogFragment();
 				Bundle bundle = new Bundle();

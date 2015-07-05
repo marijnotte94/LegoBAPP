@@ -68,8 +68,8 @@ public class ResultActivity extends Activity {
 			messageTextView.setText(getString(R.string.fewmissing1) + " "
 					+ mMissingBricks + " " + getString(R.string.fewmissing2));
 		} else {
-			messageTextView.setText(getString(R.string.moremissing1)
-					+ mMissingBricks + getString(R.string.moremissing2));
+			messageTextView.setText(getString(R.string.moremissing1) + " "
+					+ mMissingBricks + " " + getString(R.string.moremissing2));
 		}
 		mDBHelper.deleteMissings();
 		Set set = SetLab.get(this).getSet(mSetIndex);
