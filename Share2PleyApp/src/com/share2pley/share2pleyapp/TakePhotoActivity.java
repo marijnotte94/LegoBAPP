@@ -44,14 +44,15 @@ public class TakePhotoActivity extends Activity {
 		Intent i = getIntent();
 		Bundle b = i.getExtras();
 		if(b != null){
-			String photoData = b.getString("photoTaken");
-			if(photoData.equals("YES")){
+			String image = b.getString("image");
+			Bitmap bmpPhoto = StringToBitMap(image);
+			String original = b.getString("original");
+			Bitmap bmpOriginal = StringToBitMap(original);
+			mImageView.setImageBitmap(bmpPhoto);
+			
+			if(ImageProcessor.isCorrectBrick(bmpOriginal, bmpPhoto)){
 				photoTaken = true;
 			}
-			String image = b.getString("image");
-			Bitmap bip = StringToBitMap(image);
-			mImageView.setImageBitmap(bip);
-			
 		}
 		else{
 			Log.d("stringnull","werknie");
@@ -108,27 +109,27 @@ public class TakePhotoActivity extends Activity {
 		finish();
 	}
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		try {
-			super.onActivityResult(requestCode, resultCode, data);
-			Bitmap bp = (Bitmap) data.getExtras().get("data");
-			mImageView.setImageBitmap(bp);
-			photoTaken = true;
-
-
-			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-			SharedPreferences.Editor editor = prefs.edit();
-
-			String stringAttachment = BitMapToString(bp);
-			editor.putString("string_id", stringAttachment);
-			editor.commit();
-
-		} catch (Exception e) {
-			Log.e(TAG, "Error in retrieving back photo ", e);
-		}
-	}
+//	@Override
+//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//		try {
+//			super.onActivityResult(requestCode, resultCode, data);
+//			Bitmap bp = (Bitmap) data.getExtras().get("data");
+//			mImageView.setImageBitmap(bp);
+//			photoTaken = true;
+//
+//
+//			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+//
+//			SharedPreferences.Editor editor = prefs.edit();
+//
+//			String stringAttachment = BitMapToString(bp);
+//			editor.putString("string_id", stringAttachment);
+//			editor.commit();
+//
+//		} catch (Exception e) {
+//			Log.e(TAG, "Error in retrieving back photo ", e);
+//		}
+//	}
 
 
 	public String BitMapToString(Bitmap bitmap){
