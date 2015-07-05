@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <com.share2pley.share2pleyapp.Model.TextProgressBar
+        android:id="@+id/progressbar_final"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/progessBar1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/progressbar2" />
+    
+    <TextView
+        android:id="@+id/timeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="20sp"
+        android:textColor="#106097" 
+        android:text="@string/tijd"/>
+
+    <Button
+        android:id="@+id/goToPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/button_menu_effect"
+        android:text="@string/next"
+        android:textSize="20sp"
+        android:textColor="@color/button_menu_textcolor" />
+
+</LinearLayout>

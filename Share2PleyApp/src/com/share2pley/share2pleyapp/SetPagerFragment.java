@@ -40,25 +40,6 @@ public class SetPagerFragment extends Fragment {
 	 */
 	public static SetPagerFragment create(int pageNumber, Context context) {
 		SetPagerFragment fragment = new SetPagerFragment(context);
-		// DBHelper mDBHelper = new DBHelper(context);
-		// ArrayList<DatabaseSetHelper> sets = mDBHelper.getSetData();
-		// ArrayList<DatabaseSetHelper> resSets = new
-		// ArrayList<DatabaseSetHelper>();
-		// for (int i = 0; i < sets.size(); i++) {
-		// if (sets.get(i).getSolved() == 0) {
-		// resSets.add(sets.get(i));
-		// }
-		// }
-		// int index = resSets.get(pageNumber).getIndex();
-		// int res = pageNumber;
-		// for (int i = 0; i < index; i++) {
-		// if (sets.get(i).getSolved() == 1) {
-		// res++;
-		// }
-		// }
-		// Bundle args = new Bundle();
-		// args.putInt(ARG_PAGE, res);
-		// fragment.setArguments(args);
 		Bundle args = new Bundle();
 		args.putInt(ARG_PAGE, pageNumber);
 		fragment.setArguments(args);
@@ -100,22 +81,16 @@ public class SetPagerFragment extends Fragment {
 	public void setViews(View rootView) {
 		TextView nameView = (TextView) rootView
 				.findViewById(R.id.choose_set_textView_description);
-		// nameView.setText(SetLab.get(getActivity()).getRealString(mPageNumber));
 		nameView.setText(SetLab.get(mContext).getSet(mPageNumber)
 				.getNameDescription());
 		TextView typeView = (TextView) rootView
 				.findViewById(R.id.choose_set_textView_type);
 		typeView.setText(SetLab.get(getActivity()).getSet(mPageNumber)
 				.getTheme());
-		// TextView ageView = (TextView) rootView
-		// .findViewById(R.id.choose_set_textView_age);
-		// ageView.setText(SetLab.get(getActivity()).getAge(mPageNumber));
 		ImageView imageView = (ImageView) rootView
 				.findViewById(R.id.imageView_chooseSet);
 		imageView.setImageBitmap(SetLab.get(getActivity()).getSet(mPageNumber)
 				.getBitmap());
-		// imageView.setImageResource(SetLab.get(getActivity())
-		// .getSet(mPageNumber).getModelImageResource(mP));
 	}
 
 	/**

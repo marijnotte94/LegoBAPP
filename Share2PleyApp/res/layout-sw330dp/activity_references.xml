@@ -14,7 +14,7 @@
         android:textColor="#106097"
         android:textSize="30sp" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -26,26 +26,30 @@
 
         <ImageView
             android:id="@+id/imageView_references_duplo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginRight="35dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/reference_duplo"
             android:src="@drawable/reference_duplo" />
 
         <ImageView
             android:id="@+id/imageView_references_legoCity"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/reference_city"
             android:src="@drawable/reference_city" />
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
@@ -56,26 +60,30 @@
 
         <ImageView
             android:id="@+id/imageView_references_chima"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginRight="35dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/reference_chima"
             android:src="@drawable/reference_chima" />
 
         <ImageView
             android:id="@+id/imageView_references_friends"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/reference_friends"
             android:src="@drawable/reference_friends" />
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
@@ -86,23 +94,28 @@
 
         <ImageView
             android:id="@+id/imageView_references_starwars"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginRight="35dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/reference_starwars"
+            android:gravity="start"
             android:src="@drawable/reference_starwars" />
 
         <ImageView
             android:id="@+id/imageView_references_technic"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/reference_technic"
             android:src="@drawable/reference_technic" />
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

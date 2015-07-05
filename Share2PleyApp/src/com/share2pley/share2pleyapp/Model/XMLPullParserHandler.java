@@ -179,7 +179,8 @@ public class XMLPullParserHandler {
 
 			parser = factory.newPullParser();
 			parser.setInput(in, null);
-			String instruction;
+			boolean isUSA = false;
+			String resString = "";
 
 			int eventType = parser.getEventType();
 			while (eventType != XmlPullParser.END_DOCUMENT) {
@@ -192,7 +193,11 @@ public class XMLPullParserHandler {
 
 				case XmlPullParser.END_TAG:
 					if (tagName.equalsIgnoreCase("URL")) {
-						instructionsList.add(mText);
+						resString = mText;
+					} else if (tagName.equalsIgnoreCase("description")) {
+						if (!mText.toLowerCase().contains("v39")) {
+							instructionsList.add(resString);
+						}
 					}
 					break;
 				default:

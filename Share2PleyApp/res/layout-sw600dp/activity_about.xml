@@ -8,20 +8,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/about_us"
         android:textColor="#106097"
-        android:textSize="30sp" />
+        android:textSize="50sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:text="@string/about_waarom1"
         android:textColor="#106097"
-        android:textSize="15sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
@@ -31,20 +31,20 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/about_waarom2"
         android:textColor="#106097"
-        android:textSize="10sp" />
+        android:textSize="22sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         android:text="@string/about_wat1"
         android:textColor="#106097"
-        android:textSize="15sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
@@ -54,20 +54,20 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/about_wat2"
         android:textColor="#106097"
-        android:textSize="10sp" />
+        android:textSize="22sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="@string/about_hoe1"
         android:textColor="#106097"
-        android:textSize="15sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
@@ -77,9 +77,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/about_hoe2"
         android:textColor="#106097"
-        android:textSize="10sp" />
+        android:textSize="22sp" />
 
 </LinearLayout>

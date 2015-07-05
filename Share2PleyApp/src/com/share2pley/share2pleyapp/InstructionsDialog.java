@@ -37,7 +37,9 @@ public class InstructionsDialog extends DialogFragment {
 		final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
 				getActivity(), android.R.layout.select_dialog_item);
 		for (int i = 0; i < mAmount; i++) {
-			arrayAdapter.add(i + 1 + "");
+			arrayAdapter.add(SetLab.get(getActivity()).getSet(mPageNumber)
+					.getName()
+					+ " " + (i + 1));
 		}
 		builder.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
 
